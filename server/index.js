@@ -7,7 +7,7 @@ const port = process.env.PORT || 3200;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({origin: "https://www.vroommates.agerard.dev"}));
 
 // Start server
 app.listen(port, () => {

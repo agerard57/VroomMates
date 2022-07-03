@@ -1,0 +1,7 @@
+verbose: true
+show_kramdown_warnings: true
+
+# Load default rules
+default: true
+# Allow inline HTML
+MD033: false

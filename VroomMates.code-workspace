@@ -1,0 +1,24 @@
+{
+  "folders": [
+		{
+			"name": "Root",
+			"path": "."
+		},
+		{
+			"name": "Docs",
+			"path": "./docs"
+		},
+		{
+			"name": "Database",
+			"path": "./database"
+		},
+    {
+			"name": "Server",
+			"path": "./server"
+		},
+    {
+			"name": "Client",
+			"path": "./client"
+		}
+  ]
+}

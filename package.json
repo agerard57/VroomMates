@@ -1,0 +1,19 @@
+{
+  "name": "vroommates",
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "server",
+    "client",
+    "database",
+    "docs"
+  ],
+  "scripts": {
+    "start": "concurrently \"yarn workspace server start\" \"yarn workspace client start\""
+  },
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  }
+}

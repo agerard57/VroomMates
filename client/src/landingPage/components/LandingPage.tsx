@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { BlueBorderBackground } from "../../core";
 
-export const LandingPage: FC = () => {(
+export const LandingPage: FC = () => (
   <>
     <BlueBorderBackground backgroundColor={"white"}>
       <hr />
@@ -10,4 +10,3 @@ export const LandingPage: FC = () => {(
     </BlueBorderBackground>
   </>
 );
-}

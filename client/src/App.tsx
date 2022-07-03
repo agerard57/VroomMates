@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-// eslint-disable-next-line import/no-internal-modules
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { FC, Suspense } from "react";

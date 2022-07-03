@@ -1,7 +1,7 @@
 import { i18n as core } from "../core";
 import { i18n as LoadingScreen } from "../loadingScreen";
 
-type Modules = Record<string, { fr: any; en: any }>; // eslint-disable-line @typescript-eslint/no-explicit-any
+type Modules = Record<string, { fr: any; en: any }>;
 
 const normalize = (
   modules: Modules,

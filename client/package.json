@@ -14,7 +14,6 @@
     "@types/react-bootstrap": "^0.32.29",
     "@types/react-dom": "^17.0.11",
     "bootstrap": "^5.1.3",
-    "eslint-plugin-sonarjs": "^0.10.0",
     "i18next": "^21.5.3",
     "i18next-browser-languagedetector": "^6.1.2",
     "i18next-http-backend": "^1.3.1",
@@ -28,20 +27,13 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "check:eslint": "npx eslint --max-warnings 0 .",
     "check:prettier": "npx prettier --check .",
     "check:unused-exports": "npx ts-unused-exports ./tsconfig.json",
-    "check": "npm run check:unused-exports && npm run check:prettier && npm run check:eslint",
+    "check": "npm run check:unused-exports && npm run check:prettier",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -56,17 +48,8 @@
     ]
   },
   "devDependencies": {
-    "@emotion/eslint-plugin": "^11.5.0",
     "@trivago/prettier-plugin-sort-imports": "^3.1.1",
     "@types/react-pdf": "^5.0.9",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "eslint": "^7.11.0",
-    "eslint-config-airbnb": "^19.0.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
     "markdownlint": "^0.24.0",
     "prettier": "^2.4.1",
     "react-toast-notifications": "^2.5.1",

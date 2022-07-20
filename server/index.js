@@ -4,9 +4,10 @@ const mongoose = require("mongoose");
 const getRoutes = require("./src/routes/index");
 const userController = require("./src/controllers/users.controller");
 
-require("dotenv").config();
 
-const port = process.env.PORT || 3200;
+require("dotenv").config();
+const db= require("./src/config/db.config");
+const port= require("./src/config/port.config");
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use(express.json());
 /* const dbConfig = require("./src/config/db.config");
 const consoleMessage = require("./src/utils/consoleMessage"); */
 const server = mongoose.connect(
-  `mongodb+srv://VroomMates-dev:0FQQQLpmzPc3Lqfb@mns.rfbjm.mongodb.net/VroomMates`,
+  `mongodb+srv://${db.USER}:${db.PWD}@${db.DBNAME}.mongodb.net/${db.TABLE}`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -1,9 +1,8 @@
-const cors = require('cors');
-const express = require('express');
+const cors = require("cors");
+const express = require("express");
 const mongoose = require("mongoose");
-
+const getRoutes = require("./src/routes/index");
 const userController = require("./src/controllers/users.controller");
-
 
 require("dotenv").config();
 
@@ -23,10 +22,10 @@ const server = mongoose.connect(
   `mongodb+srv://VroomMates-dev:0FQQQLpmzPc3Lqfb@mns.rfbjm.mongodb.net/VroomMates`,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true
-    }
+    useUnifiedTopology: true,
+  }
 );
-mongoose.set('debug', true);
+mongoose.set("debug", true);
 
 // Setup server to start listening
 /* const serverConfig = require("./src/config/server.config");
@@ -34,17 +33,20 @@ mongoose.set('debug', true);
 server.then(() => {
   app.listen(port, () => {
     console.log(`Server started on port ${port}`);
-  });});
+  });
+});
 
 // Error checker for mongoose
 const co = mongoose.connection;
 co.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-
-
-app.get('/', (req, res) => { res.send('Hello from Express!') });
+app.get("/", (req, res) => {
+  res.send("Hello from Express!");
+});
 
 app.route("/user").get(userController.getAll);
+
+getRoutes(app);
 
 //route
 app.get("/hello", (req, res) => {

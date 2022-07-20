@@ -1,19 +1,18 @@
-const UserModel = require("../models/users.model");
+const UsersModel = require("../models/users.model");
 
 // //////////////////
 // Get all controller
 exports.getAll = (_req, res) => {
-    UserModel.find().then((user) => {
-      res.json(user);
-      console.log(user);
-    });
-  };
+  UsersModel.find().then((users) => {
+    res.json(users);
+  });
+};
 
 // //////////////////
 // Get one controller
-exports.getOne = (req, res) => {
-    const id = req.params.id;
-    UsersModel.findOne({ id: id }).then((users) => {
-      res.json(users);
-    });
-  };
+exports.getOneById = (req, res) => {
+  const id = req.params.id;
+  UsersModel.findOne({ _id: id }).then((user) => {
+    res.json(user);
+  });
+};

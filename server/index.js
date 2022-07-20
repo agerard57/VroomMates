@@ -2,12 +2,10 @@ const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const getRoutes = require("./src/routes/index");
-const userController = require("./src/controllers/users.controller");
-
 
 require("dotenv").config();
-const db= require("./src/config/db.config");
-const port= require("./src/config/port.config");
+const db = require("./src/config/db.config");
+const port = require("./src/config/port.config");
 
 const app = express();
 
@@ -44,8 +42,6 @@ co.on("error", console.error.bind(console, "MongoDB connection error:"));
 app.get("/", (req, res) => {
   res.send("Hello from Express!");
 });
-
-app.route("/user").get(userController.getAll);
 
 getRoutes(app);
 

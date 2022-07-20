@@ -1,7 +1,7 @@
-const chatRooms = require("../controllers/chatRooms.controller");
+const chatRoomsController = require("../controllers/chatRooms.controller");
 
 module.exports = function (app) {
-  app.route("/chats").get(chatRooms.getAll);
+  app.route("/chats").get(chatRoomsController.getAll);
 
-  app.route("/chat/:id").get(chatRooms.getOneById);
+  app.route("/chat/:id").get(chatRoomsController.getOneByTripId);
 };

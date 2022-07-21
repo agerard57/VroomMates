@@ -65,8 +65,8 @@ const userSchema = mongoose.Schema(
     registered_since: {
       type: "Date",
     },
-    is_admin: {
-      type: "Boolean",
+    status: {
+      type: "String",
     },
   },
   { collection: "Users" }

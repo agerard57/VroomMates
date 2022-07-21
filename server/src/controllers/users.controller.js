@@ -16,3 +16,14 @@ exports.getOneById = (req, res) => {
     res.json(user);
   });
 };
+
+// //////////////////
+// Get one controller
+exports.countUsers = (_req, res) => {
+  UsersModel.count({ status: "driver" }).then((deez) => {
+    res.json(deez);
+  });
+};
+
+// //////////////////
+// Get last name,

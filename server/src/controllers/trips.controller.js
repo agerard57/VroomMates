@@ -16,3 +16,18 @@ exports.getOneById = (req, res) => {
     res.json(trip);
   });
 };
+
+// //////////////////
+// Sums all the prices of the trips
+exports.sumPrices = (_req, res) => {
+  TripsModel.aggregate([
+    {
+      $group: {
+        _id: null,
+        total: { $sum: "$price_per_seat.total" },
+      },
+    },
+  ]).then((total) => {
+    res.json(total);
+  });
+};

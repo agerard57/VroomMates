@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { FC } from "react";
 
-import { Flags } from "./flags";
+import { Header } from "./header";
 
 export const Layout: FC = ({ children }) => (
-  <div className="App">
-    <Flags />
-    {children}
-  </div>
+  <>
+    <Header />
+    <div className="App">{children}</div>
+  </>
 );

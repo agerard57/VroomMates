@@ -49,11 +49,14 @@ const tripsSchema = mongoose.Schema(
     trip_duration: {
       type: "number",
     },
+    startDate: { type: "Date" },
+    endDate: { type: "Date" },
     distance: {
       type: "number",
     },
     status: {
       type: "String",
+      enum: ["pending", "confirmed", "ongoing", "done", "cancelled"],
     },
   },
   { collection: "Trips" }

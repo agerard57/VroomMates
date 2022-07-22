@@ -67,6 +67,8 @@ const userSchema = mongoose.Schema(
     },
     status: {
       type: "String",
+      enum: ["passenger", "driver", "admin", "banned"],
+      required: true,
     },
   },
   { collection: "Users" }

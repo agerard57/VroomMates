@@ -17,4 +17,6 @@ module.exports = function routes(app) {
   require("./trips.routes")(app);
   require("./drivers.routes")(app);
   require("./notifications.routes")(app);
+
+  require("./landingPage.routes")(app);
 };

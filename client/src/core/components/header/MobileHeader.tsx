@@ -10,7 +10,7 @@ import fullLogo from "../../images/FullLogo.png";
 
 export const MobileHeader: FC = () => (
   <Navbar
-    sticky="top"
+    fixed="top"
     css={css`
       padding: 0;
       a {

@@ -37,6 +37,10 @@
   text-align: center;
 }
 
+.App>*{
+    padding-top: 10vh
+}
+
 .App-link {
   color: #61dafb;
 }

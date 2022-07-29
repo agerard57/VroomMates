@@ -46,8 +46,8 @@ exports.getStats = (_req, res) => {
   Promise.all([getTripsStats(), getUsersStats()])
     .then(([tripsStats, usersStats]) => {
       res.status(200).json({
-        trips: tripsStats,
-        users: usersStats,
+        trips: tripsStats[0],
+        users: usersStats[0],
       });
     })
     .catch((err) => {

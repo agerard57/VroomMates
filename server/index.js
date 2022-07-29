@@ -39,15 +39,4 @@ server.then(() => {
 const co = mongoose.connection;
 co.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-app.get("/", (req, res) => {
-  res.send("Hello from Express!");
-});
-
 getRoutes(app);
-
-//route
-app.get("/hello", (req, res) => {
-  res.status(200).json({
-    message: "Hello World",
-  });
-});

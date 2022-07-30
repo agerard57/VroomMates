@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import ReactECharts from "echarts-for-react";
 import { FC, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 import { Input, RoundedContour } from "../../core";
 import HomeImage1 from "../assets/images/home-image-1.png";
@@ -12,16 +13,18 @@ import { getStats } from "../services";
 import { StatBox } from "./StatBox";
 
 export const LandingPage: FC = () => {
+  const { t } = useTranslation("LandingPage");
+
   const [stats, setStats] = useState<Stats>(StatsInitializer);
 
   const data = [
     [
-      { name: "Passengers", value: 264 },
-      { name: "Drivers", value: 34 },
+      { name: t("statsSection.charts.users.passengers"), value: 264 },
+      { name: t("statsSection.charts.users.drivers"), value: 34 },
     ],
     [
-      { name: "Single trips", value: 500 },
-      { name: "Frequent trips", value: 100 },
+      { name: t("statsSection.charts.trips.single"), value: 500 },
+      { name: t("statsSection.charts.trips.frequent"), value: 100 },
     ],
   ];
   const options = {
@@ -122,7 +125,7 @@ export const LandingPage: FC = () => {
             color: white;
           `}
         >
-          Ready to go on a trip?
+          {t("landingSection.title")}
         </h1>
         <img
           src={HomeImage1}
@@ -140,25 +143,35 @@ export const LandingPage: FC = () => {
                 text-align: center;
               `}
             >
-              Let's find you a ride then!
+              {t("landingSection.search.title")}
             </h2>
             <hr />
             <Row>
               <Col>
-                <Input inputTitle="Single Trip" />
+                <Input
+                  inputTitle={t("landingSection.search.tripType.singleTrip")}
+                />
               </Col>
               <Col>
-                <Input inputTitle="Frequent Trip" />
+                <span>{t("landingSection.search.tripType.or")}</span>
+              </Col>
+              <Col>
+                <Input
+                  inputTitle={t("landingSection.search.tripType.frequentTrip")}
+                />
               </Col>
             </Row>
             <Row>
-              <Input inputTitle="Leaving from..." />
+              <Input inputTitle={t("landingSection.search.tripPoints.from")} />
             </Row>
             <Row>
-              <Input inputTitle="Going to..." />
+              <span>{t("landingSection.search.tripPoints.to")}</span>
             </Row>
             <Row>
-              <Input inputTitle="Date" />
+              <Input inputTitle={t("landingSection.search.tripPoints.getTo")} />
+            </Row>
+            <Row>
+              <Input inputTitle={t("landingSection.search.date")} />
             </Row>
             <Row>
               <div
@@ -179,7 +192,7 @@ export const LandingPage: FC = () => {
                     color: white;
                   `}
                 >
-                  Find me a VroomMate!
+                  {t("landingSection.search.searchButton")}
                 </span>
               </div>
             </Row>
@@ -198,7 +211,7 @@ export const LandingPage: FC = () => {
             `}
           >
             <Col>
-              <h3>Car pooling? Why?</h3>
+              <h3>{t("descriptionSection.title")}</h3>
             </Col>
             <Col>
               <img
@@ -218,37 +231,32 @@ export const LandingPage: FC = () => {
               font-weight: 400;
             `}
           >
-            At VroomMates, we firmly believe that carpooling represents one of
-            the most efficient means of economical and ecological transport: not
-            only do you save money by using our service, but you also help to
-            split the carbon footprint that you would have created by using your
-            car alone! Don't forget that it will also reduce congestion on busy
-            highways 😁.
+            {t("descriptionSection.description")}
           </span>
         </Container>
       </section>
       <section>
         <Container fluid>
-          <h3>Some exiting stats!</h3>
+          <h3>{t("statsSection.title")}</h3>
           <Row className="mx-0 grid gap-0">
             <Col>
               <StatBox
                 value={stats.trips.totalTrips}
-                caption="Ride made"
+                caption={t("statsSection.boxes.rides")}
                 color="#8BC43F"
               />
             </Col>
             <Col>
               <StatBox
                 value={stats.trips.totalDistance.$numberDecimal}
-                caption="Total miles"
+                caption={t("statsSection.boxes.distance")}
                 color="#8BC43F"
               />
             </Col>
             <Col>
               <StatBox
                 value={stats.users.totalUsers}
-                caption="Total users"
+                caption={t("statsSection.boxes.users")}
                 color="#8BC43F"
               />
             </Col>

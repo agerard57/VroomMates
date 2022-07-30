@@ -19,12 +19,24 @@ export const LandingPage: FC = () => {
 
   const data = [
     [
-      { name: t("statsSection.charts.users.passengers"), value: 264 },
-      { name: t("statsSection.charts.users.drivers"), value: 34 },
+      {
+        name: t("statsSection.charts.users.passengers"),
+        value: stats.users.nbPassengers,
+      },
+      {
+        name: t("statsSection.charts.users.drivers"),
+        value: stats.users.nbDrivers,
+      },
     ],
     [
-      { name: t("statsSection.charts.trips.single"), value: 500 },
-      { name: t("statsSection.charts.trips.frequent"), value: 100 },
+      {
+        name: t("statsSection.charts.trips.single"),
+        value: stats.trips.nbSingleTrips,
+      },
+      {
+        name: t("statsSection.charts.trips.frequent"),
+        value: stats.trips.nbFrequentTrips,
+      },
     ],
   ];
   const options = {

@@ -5,12 +5,21 @@ import { FC } from "react";
 import { RoundedContour } from "../../core";
 
 type Props = {
-  number: number;
+  value: number | string;
   caption: string;
   color: string;
 };
 
-export const StatBox: FC<Props> = ({ number, caption, color }) => (
+// If it is an integer, we want to convert it as a string.
+// If it is a string, that means it is a float, so we want to round it.
+const processedValue = (value: number | string): string => {
+  if (typeof value === "number") {
+    return value.toString();
+  }
+  return parseFloat(value).toPrecision(2);
+};
+
+export const StatBox: FC<Props> = ({ value, caption, color }) => (
   <RoundedContour>
     <div>
       <div
@@ -24,7 +33,7 @@ export const StatBox: FC<Props> = ({ number, caption, color }) => (
           font-weight: 700;
         `}
       >
-        {number}
+        {processedValue(value)}
       </div>
       <hr />
       <span

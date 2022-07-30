@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import ReactECharts from "echarts-for-react";
 import { FC, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 import { Input, RoundedContour } from "../../core";
 import HomeImage1 from "../assets/images/home-image-1.png";
+import HomeImage2 from "../assets/images/home-image-2.png";
 import { Stats, StatsInitializer } from "../interfaces";
 import { getStats } from "../services";
 import { StatBox } from "./StatBox";
@@ -12,13 +14,94 @@ import { StatBox } from "./StatBox";
 export const LandingPage: FC = () => {
   const [stats, setStats] = useState<Stats>(StatsInitializer);
 
+  const data = [
+    [
+      { name: "Passengers", value: 264 },
+      { name: "Drivers", value: 34 },
+    ],
+    [
+      { name: "Single trips", value: 500 },
+      { name: "Frequent trips", value: 100 },
+    ],
+  ];
+  const options = {
+    title: {
+      left: "center",
+      textStyle: {
+        color: "#999",
+        fontWeight: "normal",
+        fontSize: 16,
+      },
+    },
+    series: data.map(function (data, idx) {
+      const top = idx * 50;
+      return {
+        type: "pie",
+        radius: [100, 55],
+        responsive: true,
+        maintainAspectRatio: false,
+        top: top + "%",
+        height: "50%",
+        left: "center",
+        scale: true,
+        scaleSize: 1,
+        width: 500,
+        itemStyle: {
+          borderColor: "#fff",
+          borderWidth: 1,
+        },
+        label: {
+          alignTo: "edge",
+          formatter: "{name|{b}}\n{time|{c}}",
+          minMargin: 5,
+          edgeDistance: 90,
+          lineHeight: 15,
+          rich: {
+            time: {
+              fontSize: 10,
+              color: "#999",
+            },
+          },
+        },
+        labelLine: {
+          length: 15,
+          length2: 0,
+          maxSurfaceAngle: 80,
+        },
+        data: data,
+      };
+    }),
+  };
+
+  const usersData = {
+    labels: ["Passengers", "Drivers"],
+    datasets: [
+      {
+        label: "# of Users",
+        data: [stats.users.nbPassengers, stats.users.nbDrivers],
+        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
+      },
+    ],
+  };
+
+  const tripsData = {
+    labels: ["Single trips", "Frequent trips"],
+    datasets: [
+      {
+        label: "# of Trips",
+        data: [stats.trips.nbSingleTrips, stats.trips.nbFrequentTrips],
+        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
+      },
+    ],
+  };
+
   useEffect(() => {
     getStats().then((stats) => {
       setStats(stats);
     });
-  });
+  }, []);
 
-  console.log(stats);
+  console.log(stats.trips.totalDistance.$numberDecimal);
   return (
     <>
       <section
@@ -54,7 +137,7 @@ export const LandingPage: FC = () => {
               css={css`
                 font-family: "Baloo2";
                 font-weight: 500;
-                color: black;
+                text-align: center;
               `}
             >
               Let's find you a ride then!
@@ -109,14 +192,24 @@ export const LandingPage: FC = () => {
             padding: 5vw;
           `}
         >
-          <h2
+          <Row
             css={css`
-              font-family: "Baloo2";
-              font-weight: 600;
+              padding: 5vw 0;
             `}
           >
-            Car pooling? Why?
-          </h2>
+            <Col>
+              <h3>Car pooling? Why?</h3>
+            </Col>
+            <Col>
+              <img
+                src={HomeImage2}
+                alt="home-image-2"
+                css={css`
+                  width: 100%;
+                `}
+              />
+            </Col>
+          </Row>
           <span
             css={css`
               display: table;
@@ -130,31 +223,41 @@ export const LandingPage: FC = () => {
             only do you save money by using our service, but you also help to
             split the carbon footprint that you would have created by using your
             car alone! Don't forget that it will also reduce congestion on busy
-            highways :)
+            highways 😁.
           </span>
         </Container>
       </section>
       <section>
-        <h2
-          css={css`
-            font-family: "Baloo2";
-            font-weight: 600;
-          `}
-        >
-          Some exiting stats!
-        </h2>
         <Container fluid>
+          <h3>Some exiting stats!</h3>
           <Row className="mx-0 grid gap-0">
             <Col>
-              <StatBox number={200} caption="Ride made" color="#8BC43F" />
+              <StatBox
+                value={stats.trips.totalTrips}
+                caption="Ride made"
+                color="#8BC43F"
+              />
             </Col>
             <Col>
-              <StatBox number={200} caption="Ride made" color="#8BC43F" />
+              <StatBox
+                value={stats.trips.totalDistance.$numberDecimal}
+                caption="Total miles"
+                color="#8BC43F"
+              />
             </Col>
             <Col>
-              <StatBox number={200} caption="Ride made" color="#8BC43F" />
+              <StatBox
+                value={stats.users.totalUsers}
+                caption="Total users"
+                color="#8BC43F"
+              />
             </Col>
           </Row>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <ReactECharts option={options} style={{ height: "500px" }} />
         </Container>
       </section>
     </>

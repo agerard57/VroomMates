@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import { FC } from "react";
 
-import { RoundedContour } from "../../core";
+import { RoundedContour } from "../../../core";
 
 type Props = {
   value: number | string;

@@ -5,12 +5,12 @@ import { BlueBorderBackground } from "../../core";
 export const LandingPage: FC = () => {
   const [helloWorld, setHelloWorld] = useState("");
   useEffect(() => {
-    const url= `${process.env.REACT_APP_API_URL}/hello`;
+    const url= `${process.env.REACT_APP_API_URL}/user`;
     fetch(url)
     .then((res)=>res.json())
     .then((data)=>{
-      console.log(data);
-      setHelloWorld(data.message)});
+      console.log(data[0].name.first_name);
+      setHelloWorld(data[0].name.first_name)});
     },[]);
   return(
   <>

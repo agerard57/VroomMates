@@ -5,6 +5,7 @@ import { initReactI18next } from "react-i18next";
 import { resources } from "./resources";
 
 const lng = ["fr", "en"];
+
 i18n
   .use(new LanguageDetector())
   .use(initReactI18next)

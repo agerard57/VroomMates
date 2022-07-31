@@ -12,15 +12,15 @@ export const Input: FC<Props> = ({ inputTitle }) => (
       box-sizing: border-box;
 
       background: #ffffff;
-      border: 2px solid rgba(0, 0, 0, 0.15);
+      border: 2px solid #a7a7a7;
       border-radius: 60px;
     `}
   >
     <span
       css={css`
         font-family: "Baloo2";
-        font-weight: 600;
-        color: rgba(0, 0, 0, 0.74);
+        font-weight: 400;
+        color: #a7a7a7;
       `}
     >
       {inputTitle}

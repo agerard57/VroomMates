@@ -1,0 +1,38 @@
+{
+  "landingSection": {
+    "title": "Ready to go on a trip?",
+    "search": {
+      "title": "Let’s find you a ride then!",
+      "tripType": {
+        "singleTrip": "Single trip",
+        "or": "or",
+        "frequentTrip": "Frequent trip"
+      },
+      "tripPoints": {
+        "from": "Leaving from…",
+        "to": "to",
+        "getTo": "Get to…"
+      },
+      "date": "When?",
+      "searchButton": "Find me a VroomMate!"
+    }
+  },
+
+  "descriptionSection": {
+    "title": "Car pooling? Why?",
+    "description": "At VroomMates, we firmly believe that carpooling represents one of the most efficient means of economical and ecological transport: not only do you save money by using our service, but you also help to split the carbon footprint that you would have created by using your car alone! Don’t forget that it will also reduce congestion on busy highways 😉."
+  },
+
+  "statsSection": {
+    "title": "Some exciting stats!",
+    "boxes": {
+      "rides": "Rides made",
+      "distance": "Total miles",
+      "users": "Total users"
+    },
+    "charts": {
+      "users": { "passengers": "Passengers", "drivers": "Drivers" },
+      "trips": { "single": "Single trips", "frequent": "Frequent trips" }
+    }
+  }
+}

@@ -35,8 +35,19 @@
 
 .App {
   text-align: center;
+      font-family: "Baloo2";
+}
+
+.App>*:first-child{
+    padding-top: 10vh
 }
 
 .App-link {
   color: #61dafb;
 }
+
+h3{
+    font-family: "Baloo2";
+    font-weight: 600;
+    text-align: left;
+  }

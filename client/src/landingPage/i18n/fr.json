@@ -1,0 +1,38 @@
+{
+  "landingSection": {
+    "title": "Prêt à partir en voyage ?",
+    "search": {
+      "title": "Il est grand temps de se trouver un VroomMate !",
+      "tripType": {
+        "singleTrip": "Voyage unique",
+        "or": "ou",
+        "frequentTrip": "Voyage fréquent"
+      },
+      "tripPoints": {
+        "from": "Partir de…",
+        "to": "pour",
+        "getTo": "Arriver à…"
+      },
+      "date": "Quand?",
+      "searchButton": "Lancer la recherche !"
+    }
+  },
+
+  "descriptionSection": {
+    "title": "Du covoiturage ? Pourquoi ?",
+    "description": "Chez VroomMates, nous croyons fermement que le covoiturage représente l'un des moyens de transport économique et écologique les plus efficaces : non seulement vous économisez de l'argent en utilisant notre service, mais vous aidez également à diviser l'empreinte carbone que vous auriez créée en utilisant votre voiture seule ! N'oubliez pas que cela réduit également le traffic sur les autoroutes 😉"
+  },
+
+  "statsSection": {
+    "title": "Quelques super statistiques !",
+    "boxes": {
+      "rides": "Voyages faits",
+      "distance": "Distance totale",
+      "users": "Utilisateurs totaux"
+    },
+    "charts": {
+      "users": { "passengers": "Passagers", "drivers": "Conducteurs" },
+      "trips": { "single": "Voyages uniques", "frequent": "Voyages fréquents" }
+    }
+  }
+}

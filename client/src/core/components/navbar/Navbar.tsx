@@ -4,7 +4,6 @@ import { FC } from "react";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import Row from "react-bootstrap/Row";
 import { useTranslation } from "react-i18next";
 
 import { DashboardIcon } from "./DashboardIcon";
@@ -45,7 +44,7 @@ export const Navbar: FC = () => {
           .col{
             text-align: center;
         }
-        `}/* TODO: REMOVE THE CSS RULES AS WE WANT TO TO IT ANOTHER WAY */
+        `} /* TODO: REMOVE THE CSS RULES AS WE WANT TO TO IT ANOTHER WAY */
       >
         <Container className="d-flex justify-content-center">
           <Col>

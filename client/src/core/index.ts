@@ -5,4 +5,5 @@ export {
   Layout,
   RoundedContour,
   Input,
+  Button,
 } from "./components";

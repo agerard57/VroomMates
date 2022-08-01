@@ -49,41 +49,33 @@ export const Navbar: FC = () => {
         <Container className="d-flex justify-content-center">
           <Col>
             <Nav.Link href="/home">
-              <a>
-                <HomeIcon />
-              </a>
+              <HomeIcon />
               <br />
-              <a className="selectedBlue">{t("navbar.home")}</a>
+              <span className="selectedBlue">{t("navbar.home")}</span>
             </Nav.Link>
           </Col>
 
           <Col>
             <Nav.Link href="/home">
-              <a>
-                <SearchIcon />
-              </a>
+              <SearchIcon />
               <br />
-              <a className="notSelectedBlue">{t("navbar.search")}</a>
+              <span className="notSelectedBlue">{t("navbar.search")}</span>
             </Nav.Link>
           </Col>
 
           <Col>
             <Nav.Link href="/home">
-              <a>
-                <InboxIcon />
-              </a>
+              <InboxIcon />
               <br />
-              <a className="selectedOrange">{t("navbar.inbox")}</a>
+              <span className="selectedOrange">{t("navbar.inbox")}</span>
             </Nav.Link>
           </Col>
 
           <Col>
             <Nav.Link href="/home">
-              <a>
-                <DashboardIcon />
-              </a>
+              <DashboardIcon />
               <br />
-              <a className="notSelectedOrange">{t("navbar.dashboard")}</a>
+              <span className="notSelectedOrange">{t("navbar.dashboard")}</span>
             </Nav.Link>
           </Col>
         </Container>

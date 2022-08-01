@@ -13,8 +13,8 @@ export const StatsSection: FC = () => {
   return (
     <section>
       <Container fluid>
-        <h3>{t("statsSection.title")}</h3>
         <Row className="mx-0 grid gap-0">
+          <h3>{t("statsSection.title")}</h3>
           <Col>
             <StatBox
               value={stats.trips.totalTrips}
@@ -26,14 +26,14 @@ export const StatsSection: FC = () => {
             <StatBox
               value={stats.trips.totalDistance.$numberDecimal}
               caption={t("statsSection.boxes.distance")}
-              color="#8BC43F"
+              color="#82BBFF"
             />
           </Col>
           <Col>
             <StatBox
               value={stats.users.totalUsers}
               caption={t("statsSection.boxes.users")}
-              color="#8BC43F"
+              color="#FF551F"
             />
           </Col>
         </Row>

@@ -3,10 +3,26 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 
 type Props = {
-  inputTitle: String;
+  inputTitle: string;
 };
 
 export const Input: FC<Props> = ({ inputTitle }) => (
+  <input
+    css={css`
+      box-sizing: border-box;
+
+      background: #ffffff;
+      border: 2px solid #a7a7a7;
+      border-radius: 60px;
+    `}
+    type="text"
+    id="name"
+    name={inputTitle}
+    required
+  />
+);
+
+/* 
   <div
     css={css`
       box-sizing: border-box;
@@ -25,5 +41,4 @@ export const Input: FC<Props> = ({ inputTitle }) => (
     >
       {inputTitle}
     </span>
-  </div>
-);
+  </div> */

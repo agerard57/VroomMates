@@ -4,7 +4,10 @@ import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { Input, RoundedContour } from "../../../core";
+import { Input, RoundedContour, Button } from "../../../core";
+import arrivalIcon from "../../assets/icons/arrivalIcon.svg";
+import calendarIcon from "../../assets/icons/calendarIcon.svg";
+import departureIcon from "../../assets/icons/departureIcon.svg";
 
 export const SearchBox: FC = () => {
   const { t } = useTranslation("LandingPage");
@@ -30,7 +33,11 @@ export const SearchBox: FC = () => {
           <Row>
             <Col>
               <Input
-                inputTitle={t("landingSection.search.tripType.singleTrip")}
+                inputName="singleTrip"
+                inputType="text"
+                inputPlaceholder={t(
+                  "landingSection.search.tripType.singleTrip"
+                )}
               />
             </Col>
             <Col>
@@ -38,44 +45,43 @@ export const SearchBox: FC = () => {
             </Col>
             <Col>
               <Input
-                inputTitle={t("landingSection.search.tripType.frequentTrip")}
+                inputName="frequentTrip"
+                inputType="text"
+                inputPlaceholder={t(
+                  "landingSection.search.tripType.frequentTrip"
+                )}
               />
             </Col>
           </Row>
           <Row>
-            <Input inputTitle={t("landingSection.search.tripPoints.from")} />
+            <Input
+              inputName="departureLocation"
+              inputType="text"
+              inputPlaceholder={t("landingSection.search.tripPoints.from")}
+              icon={departureIcon}
+            />
           </Row>
           <Row>
             <span>{t("landingSection.search.tripPoints.to")}</span>
           </Row>
           <Row>
-            <Input inputTitle={t("landingSection.search.tripPoints.getTo")} />
+            <Input
+              inputName="arrivalLocation"
+              inputType="text"
+              inputPlaceholder={t("landingSection.search.tripPoints.getTo")}
+              icon={arrivalIcon}
+            />
           </Row>
           <Row>
-            <Input inputTitle={t("landingSection.search.date")} />
+            <Input
+              inputName="date"
+              inputType="text"
+              inputPlaceholder={t("landingSection.search.date")}
+              icon={calendarIcon}
+            />
           </Row>
           <Row>
-            <div
-              css={css`
-                background: #569aff;
-                border: 2px solid #569aff;
-                border-radius: 16px;
-                padding: 10px;
-                height: 40px;
-                padding: 2px;
-                background-clip: content-box;
-              `}
-            >
-              <span
-                css={css`
-                  font-family: "Baloo2";
-                  font-weight: 500;
-                  color: white;
-                `}
-              >
-                {t("landingSection.search.searchButton")}
-              </span>
-            </div>
+            <Button buttonText={t("landingSection.search.searchButton")} />
           </Row>
         </div>
       </RoundedContour>

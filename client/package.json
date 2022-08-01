@@ -55,7 +55,11 @@
     "@types/react-pdf": "^5.0.9",
     "markdownlint": "^0.24.0",
     "prettier": "^2.4.1",
+    "react-error-overlay": "6.0.9",
     "react-toast-notifications": "^2.5.1",
     "ts-unused-exports": "^7.0.3"
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
   }
 }

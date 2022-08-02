@@ -5,7 +5,7 @@ import { Item } from "../Item";
 import { Title } from "../Title";
 
 type Props = {
-  status: string;
+  status?: string;
 };
 
 export const Trips: FC<Props> = ({ status }) => {
@@ -13,12 +13,16 @@ export const Trips: FC<Props> = ({ status }) => {
   return status ? (
     <section>
       <Title title={t("tripsSection.title")} />
-      <Item title={t("tripsSection.manageTrips")} color="#367FEF" />
+      <Item
+        title={t("tripsSection.manageTrips")}
+        link="/trips"
+        color="#367FEF"
+      />
     </section>
   ) : (
     <section>
       <Title title={t("tripsSection.title")} />
-      <Item title={t("tripsSection.look")} />
+      <Item title={t("tripsSection.look")} link="/search" />
     </section>
   );
 };

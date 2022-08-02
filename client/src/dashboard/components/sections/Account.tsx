@@ -10,7 +10,7 @@ import { Item } from "../Item";
 import { Title } from "../Title";
 
 type Props = {
-  status: string;
+  status?: string;
 };
 
 export const Account: FC<Props> = ({ status }) => {
@@ -24,7 +24,7 @@ export const Account: FC<Props> = ({ status }) => {
     <section>
       <ProfilePic
         src="https://randomuser.me/api/portraits/men/53.jpg"
-        rating={4}
+        rating={5}
         displayRating
         displayStars
         is_verified
@@ -40,15 +40,19 @@ export const Account: FC<Props> = ({ status }) => {
         {accountIcon() ? <img src={accountIcon()} alt="accountIcon" /> : null}
       </h2>
       <div>
-        <Item title={t("accountSection.yourAccount")} />
-        <Item title={t("accountSection.signOff")} color="#FF5656" />
+        <Item title={t("accountSection.yourAccount")} link="/profile/view" />
+        <Item
+          title={t("accountSection.signOff")}
+          link="/home" //TODO add param to logout
+          color="#FF5656"
+        />
       </div>
     </section>
   ) : (
     <section>
       <Title title={t("accountSection.title")} />
-      <Item title={t("accountSection.signIn")} />
-      <Item title={t("accountSection.signUp")} />
+      <Item title={t("accountSection.signIn")} link="/login" />
+      <Item title={t("accountSection.signUp")} link="/register" />
     </section>
   );
 };

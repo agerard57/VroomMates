@@ -5,7 +5,7 @@ import { Item } from "../Item";
 import { Title } from "../Title";
 
 type Props = {
-  status: string;
+  status?: string;
 };
 
 export const Driver: FC<Props> = ({ status }) => {
@@ -14,14 +14,14 @@ export const Driver: FC<Props> = ({ status }) => {
     return (
       <section>
         <Title title={t("driverSection.title")} />
-        <Item title={t("driverSection.becomeDriver")} />
+        <Item title={t("driverSection.becomeDriver")} link="/driver/join" />
       </section>
     );
   else if (status === "driver" || status === "admin")
     return (
       <section>
         <Title title={t("driverSection.title")} />
-        <Item title={t("driverSection.addTrip")} />
+        <Item title={t("driverSection.addTrip")} link="/driver/add" />
       </section>
     );
   else return null;

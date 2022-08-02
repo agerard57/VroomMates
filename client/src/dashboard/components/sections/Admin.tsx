@@ -5,7 +5,7 @@ import { Item } from "../Item";
 import { Title } from "../Title";
 
 type Props = {
-  status: string;
+  status?: string;
 };
 
 export const Admin: FC<Props> = ({ status }) => {
@@ -13,9 +13,12 @@ export const Admin: FC<Props> = ({ status }) => {
   return status === "admin" ? (
     <section>
       <Title title={t("adminSection.title")} />
-      <Item title={t("adminSection.stats")} />
-      <Item title={t("adminSection.driversRequests")} />
-      <Item title={t("adminSection.userList")} />
+      <Item title={t("adminSection.stats")} link="/admin/stats" />
+      <Item
+        title={t("adminSection.driversRequests")}
+        link="/admin/driver-verification"
+      />
+      <Item title={t("adminSection.userList")} link="/admin/user-list" />
     </section>
   ) : null;
 };

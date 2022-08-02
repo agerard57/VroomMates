@@ -9,7 +9,7 @@ export const Misc: FC = () => {
   return (
     <section>
       <Title title={t("miscSection.title")} />
-      <Item title={t("miscSection.conditions")} />
+      <Item title={t("miscSection.conditions")} link="/policies" />
     </section>
   );
 };

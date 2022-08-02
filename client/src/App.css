@@ -41,6 +41,9 @@
 .App>*:first-child{
     padding-top: 10vh
 }
+.App>*:last-child{
+    padding-bottom: 12vh
+}
 
 .App-link {
   color: #61dafb;

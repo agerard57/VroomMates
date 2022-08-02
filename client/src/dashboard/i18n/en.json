@@ -1,0 +1,35 @@
+{
+  "accountSection": {
+    "title": "Account",
+    "greetingMessage": "Hello {{firstName}}!",
+    "signUp": "Sign up",
+    "signIn": "Sign in",
+    "yourAccount": "Your Account",
+    "signOff": "Sign off"
+  },
+  "tripsSection": {
+    "title": "Trips",
+    "look": "Look for a trip",
+    "manageTrips": "Manage my trips"
+  },
+  "inboxSection": {
+    "title": "Inbox",
+    "messages": "Messages",
+    "notifications": "Notifications"
+  },
+  "driverSection": {
+    "title": "Driver",
+    "becomeDriver": "Become a driver",
+    "addTrip": "Add a trip"
+  },
+  "adminSection": {
+    "title": "Admin",
+    "stats": "Stats",
+    "driversRequests": "Drivers requests",
+    "userList": "User list"
+  },
+  "miscSection": {
+    "title": "Misc.",
+    "conditions": "Conditions & policies"
+  }
+}

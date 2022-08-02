@@ -18,7 +18,8 @@ export const Navbar: FC = () => {
       <div
         css={css`
           box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.40);
-          position: sticky;
+          position: fixed;
+          width: -webkit-fill-available;
           background-color: #ffffff;
           bottom: 0;
         font-family: "Baloo2";
@@ -72,7 +73,7 @@ export const Navbar: FC = () => {
           </Col>
 
           <Col>
-            <Nav.Link href="/home">
+            <Nav.Link href="/dashboard">
               <DashboardIcon />
               <br />
               <span className="notSelectedOrange">{t("navbar.dashboard")}</span>

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import { Layout } from "../core";
+import { Dashboard } from "../dashboard";
 import { LandingPage } from "../landingPage";
 
 const RouteManager: FC = () => (
@@ -15,6 +16,7 @@ const RouteManager: FC = () => (
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<LandingPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Layout>
   </Router>

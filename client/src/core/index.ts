@@ -5,5 +5,6 @@ export {
   Layout,
   RoundedContour,
   Input,
+  ProfilePic,
   Button,
 } from "./components";

@@ -1,0 +1,20 @@
+import { FC } from "react";
+import { useTranslation } from "react-i18next";
+
+import { Item } from "../Item";
+import { Title } from "../Title";
+
+type Props = {
+  status: string;
+};
+
+export const Inbox: FC<Props> = ({ status }) => {
+  const { t } = useTranslation("Dashboard");
+  return status ? (
+    <section>
+      <Title title={t("inboxSection.title")} />
+      <Item title={t("inboxSection.messages")} notifications={442} />
+      <Item title={t("inboxSection.notifications")} notifications={0} />
+    </section>
+  ) : null;
+};

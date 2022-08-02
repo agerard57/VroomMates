@@ -1,0 +1,35 @@
+{
+  "accountSection": {
+    "title": "Compte",
+    "greetingMessage": "Bonjour {{firstName}} !",
+    "signUp": "S'inscrire",
+    "signIn": "Se connecter",
+    "yourAccount": "Votre compte",
+    "signOff": "Se déconnecter"
+  },
+  "tripsSection": {
+    "title": "Voyages",
+    "look": "Rechercher un voyage",
+    "manageTrips": "Mes voyages"
+  },
+  "inboxSection": {
+    "title": "Boîte de réception",
+    "messages": "Messages",
+    "notifications": "Notifications"
+  },
+  "driverSection": {
+    "title": "Conducteur",
+    "becomeDriver": "Devenir un conducteur",
+    "addTrip": "Ajouter un voyage"
+  },
+  "adminSection": {
+    "title": "Administrateur",
+    "stats": "Statistiques",
+    "driversRequests": "Demandes de conduite",
+    "userList": "Liste des utilisateurs"
+  },
+  "miscSection": {
+    "title": "Autre",
+    "conditions": "Termes & conditions"
+  }
+}

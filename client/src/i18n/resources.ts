@@ -1,4 +1,5 @@
 import { i18n as core } from "../core";
+import { i18n as Dashboard } from "../dashboard";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
 
@@ -18,6 +19,7 @@ const normalize = (
 
 const moduleResources = normalize({
   core,
+  Dashboard,
   LoadingScreen,
   LandingPage,
 });

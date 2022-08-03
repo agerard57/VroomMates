@@ -3,33 +3,33 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 
 import VerifiedProfile from "../assets/icons/verifiedProfile.svg";
+import { Stars } from "./stars";
 
 type Props = {
   src: string;
   rating?: number;
   displayStars?: boolean;
   displayRating?: boolean;
-  is_verified?: boolean;
+  isVerified?: boolean;
 };
 export const ProfilePic: FC<Props> = ({
   src,
   rating,
   displayStars,
   displayRating,
-  is_verified,
+  isVerified,
 }) => {
   return (
     <>
       <img
         css={css`
           border-radius: 50%;
-          padding-bottom: 0.5rem;
           width: 30%;
         `}
         src={src}
         alt="profilePic"
       />
-      {is_verified ? (
+      {isVerified ? (
         <img
           css={css`
             position: absolute;
@@ -39,7 +39,8 @@ export const ProfilePic: FC<Props> = ({
           alt="verifiedProfile"
         />
       ) : null}
-      {displayRating ? (
+      {displayStars && rating ? <Stars rating={rating} isCurved /> : null}
+      {displayRating && rating ? (
         <div
           css={css`
             font-size: 1.2rem;

@@ -24,10 +24,10 @@ export const Account: FC<Props> = ({ status }) => {
     <section>
       <ProfilePic
         src="https://randomuser.me/api/portraits/men/53.jpg"
-        rating={5}
+        rating={3}
         displayRating
         displayStars
-        is_verified
+        isVerified
       />
       <h2
         css={css`

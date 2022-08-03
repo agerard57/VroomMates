@@ -57,7 +57,7 @@ export const Navbar: FC = () => {
           </Col>
 
           <Col>
-            <Nav.Link href="/home">
+            <Nav.Link href="/search">
               <SearchIcon />
               <br />
               <span className="notSelectedBlue">{t("navbar.search")}</span>

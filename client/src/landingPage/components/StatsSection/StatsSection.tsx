@@ -33,7 +33,7 @@ export const StatsSection: FC = () => {
             <StatBox
               value={stats.users.totalUsers}
               caption={t("statsSection.boxes.users")}
-              color="#FF551F"
+              color="#FF8956"
             />
           </Col>
         </Row>

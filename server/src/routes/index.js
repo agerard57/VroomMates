@@ -13,4 +13,5 @@ module.exports = function routes(app) {
   // ///////
   // Routes
   require("./landingPage.routes")(app);
+  require("./searchPage.routes")(app);
 };

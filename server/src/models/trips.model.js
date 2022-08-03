@@ -33,7 +33,7 @@ const tripsSchema = mongoose.Schema(
       },
     },
     free_seats: {
-      type: "Number",
+      type: "number",
     },
     price_per_seat: {
       km_price: {

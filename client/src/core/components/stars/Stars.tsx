@@ -1,9 +1,6 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 import { FC } from "react";
 
 import { CurvedStars } from "./CurvedStars";
-import { Star } from "./Star";
 import { StraightStars } from "./StraightStars";
 
 type Props = {

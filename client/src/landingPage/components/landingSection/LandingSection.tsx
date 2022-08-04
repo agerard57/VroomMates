@@ -32,7 +32,7 @@ export const LandingSection: FC = () => {
       </h1>
       <img
         src={HomeImage1}
-        alt="home-image-1"
+        alt="home-1"
         css={css`
           width: 80%;
         `}

@@ -17,9 +17,10 @@ import { FC } from "react";
 // maxAge?: number;
 
 type Props = {
-  inputType: "button" | "text";
+  inputType: "radio" | "text";
   inputPlaceholder?: string;
   inputName: string;
+  radioValue?: string;
   isRequired?: boolean;
   icon?: string;
 };
@@ -28,42 +29,49 @@ export const Input: FC<Props> = ({
   inputPlaceholder,
   inputType,
   inputName,
+  radioValue,
   icon,
-}) => (
-  <input
-    css={css`
-      box-sizing: border-box;
-      text-align: ${icon ? "left" : "center"};
-      padding: ${icon ? "5px 10px 6px 35px" : "5px 10px"};
-      background: #ffffff;
-      border: 2px solid #a7a7a7;
-      border-radius: 60px;
-      background: url(${icon}) no-repeat scroll 7px;
-    `}
-    type={inputType}
-    id={inputName}
-    name={inputName}
-    placeholder={inputPlaceholder}
-  />
-);
+}) => {
+  const InputStyle = css`
+    box-sizing: border-box;
+    text-align: ${icon ? "left" : "center"};
+    padding: ${icon ? "5px 10px 6px 35px" : "5px 10px"};
+    background: "#ffffff";
+    border: 2px solid #a7a7a7;
+    border-radius: 60px;
+    background: url(${icon}) no-repeat scroll 7px;
+    outline: none;
 
-/* 
-  <div
-    css={css`
-      box-sizing: border-box;
+    &:focus {
+      border-color: #00a8ff;
+    }
+  `;
+  const onClickRadio = () => {
+    const input =
+      (document.querySelector(`#${radioValue}`) as HTMLInputElement) || null;
+    if (input) {
+      input.checked = true;
+    }
+  };
 
-      background: #ffffff;
-      border: 2px solid #a7a7a7;
-      border-radius: 60px;
-    `}
-  >
-    <span
-      css={css`
-        font-family: "Baloo2";
-        font-weight: 400;
-        color: #a7a7a7;
-      `}
-    >
-      {inputTitle}
-    </span>
-  </div> */
+  return inputType === "radio" ? (
+    <label htmlFor={inputName} css={InputStyle} onClick={onClickRadio}>
+      <input
+        id={radioValue}
+        name={inputName}
+        type={inputType}
+        css={css``}
+        value={radioValue}
+      />
+      <span>{inputPlaceholder}</span>
+    </label>
+  ) : (
+    <input
+      type={inputType}
+      id={inputName}
+      name={inputName}
+      placeholder={inputPlaceholder}
+      css={InputStyle}
+    />
+  );
+};

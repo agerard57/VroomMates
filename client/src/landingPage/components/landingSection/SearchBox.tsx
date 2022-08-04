@@ -13,7 +13,8 @@ export const SearchBox: FC = () => {
   const { t } = useTranslation("LandingPage");
 
   return (
-    <div
+    <form
+      action="/search"
       css={css`
         margin: 5vw;
       `}
@@ -33,8 +34,9 @@ export const SearchBox: FC = () => {
           <Row>
             <Col>
               <Input
-                inputName="singleTrip"
-                inputType="text"
+                inputName="type"
+                inputType="radio"
+                radioValue="singleTrip"
                 inputPlaceholder={t(
                   "landingSection.search.tripType.singleTrip"
                 )}
@@ -45,8 +47,9 @@ export const SearchBox: FC = () => {
             </Col>
             <Col>
               <Input
-                inputName="frequentTrip"
-                inputType="text"
+                inputName="type"
+                inputType="radio"
+                radioValue="frequentTrip"
                 inputPlaceholder={t(
                   "landingSection.search.tripType.frequentTrip"
                 )}
@@ -85,6 +88,6 @@ export const SearchBox: FC = () => {
           </Row>
         </div>
       </RoundedContour>
-    </div>
+    </form>
   );
 };

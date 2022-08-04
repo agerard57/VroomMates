@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const Button: FC<Props> = ({ buttonText }) => (
-  <div
+  <button
     css={css`
       background: #569aff;
       border: 2px solid #569aff;
@@ -27,5 +27,5 @@ export const Button: FC<Props> = ({ buttonText }) => (
     >
       {buttonText}
     </span>
-  </div>
+  </button>
 );

@@ -36,7 +36,7 @@ export const SearchBox: FC = () => {
               <Input
                 inputName="type"
                 inputType="radio"
-                radioValue="singleTrip"
+                radioValue="single"
                 inputPlaceholder={t(
                   "landingSection.search.tripType.singleTrip"
                 )}
@@ -49,7 +49,7 @@ export const SearchBox: FC = () => {
               <Input
                 inputName="type"
                 inputType="radio"
-                radioValue="frequentTrip"
+                radioValue="frequent"
                 inputPlaceholder={t(
                   "landingSection.search.tripType.frequentTrip"
                 )}
@@ -78,7 +78,7 @@ export const SearchBox: FC = () => {
           <Row>
             <Input
               inputName="date"
-              inputType="text"
+              inputType="date"
               inputPlaceholder={t("landingSection.search.date")}
               icon={calendarIcon}
             />

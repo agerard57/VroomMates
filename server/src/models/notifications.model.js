@@ -3,14 +3,14 @@ const uniqueValidator = require("mongoose-unique-validator");
 
 const notificationsSchema = mongoose.Schema(
   {
-    user_id: {
+    user: {
       type: "ObjectId",
       ref: "Users",
       required: true,
     },
     content: [
       {
-        author_id: {
+        author: {
           type: "ObjectId",
           ref: "Users",
           required: true,

@@ -1,0 +1,32 @@
+\section{Analyse de l'existant}
+
+
+\subsection{Sites pré-existants}
+
+La recherche de l'existant est une étape qui nous est nécessaire lors de la création d'une application ou d'un site d'une telle ampleur : il permet de comparer les spécificités fonctionnelles attendues à celles déjà en place pour des entreprises concurrentes, d'analyser leurs problèmes, leurs points forts, et leurs points faibles afin de concevoir un site innovant autant techniquement que fonctionnellement parlant. Tout au long de la création de la plateforme, nous nous sommes inspirés de sites connus dans le domaine. Le marché, n'étant pas si récent, une multitude de sites et applications existent déjà sur le covoiturage, notamment: 
+\begin{itemize}
+\item \textbf{\textit{Gett}}, leader sur le marché mondial de covoiturage.
+\item \textbf{\textit{BlaBlaCar}}, une plateforme communautaire payante avec plus de 100 millions d'utilisateurs.
+\item \textbf{\textit{MobiCoop}}, une coopérative des trajets quotidiens, avec plus de 500 000 utilisateurs, présent dans 1200 communes environ.
+\end{itemize}
+ 
+\subsection{Stack technique}
+\label{Stack technique}
+
+Nous nous sommes aussi par ailleurs intéressés aux technologies utilisées par la plupart des sites proposant des services similaires, afin de mieux cerner celles dont nous aurions la nécessité:
+\begin{itemize}
+\item En termes d'outils collaboratifs, on note que BlaBlaCar et Mobicoop utilisent tous deux principalement \textbf{Trello}. 
+\item Pour stocker les données, on remarque une majorité de sites de covoiturage utilisant des bases de données "\textbf{NoSQL}" (en schémas \textbf{document}).
+\item Comme Gett, BlaBlaCar fonctionne essentiellement avec \textbf{Node.js et Express} pour la gestion des routes.
+\item Un nombre conséquent de sites se voient utiliser soit PHP avec Symfony, soit \textbf{TypeScript couplé avec ReactJS} afin de réaliser leur client (c'est le cas de BlaBlaCar et de Gett qui utilisent React).
+\item Côté DevOps, les sites utilisant les technologies en JS/TS cités plus haut utilisent \textbf{Jest} pour réaliser leurs tests ainsi que des services comme \textbf{GitHub Actions} comme système de déploiement / d'intégration continue (CI/CD).
+\end{itemize}
+
+\subsection{Interface utilisateur}
+
+En ce qui concerne l'interface utilisateur, BlaBlaCar a un style très intuitif pour la version navigateur. Leur barre de recherche disposée au centre de l'écran directement à l'accueil, des onglets bien nommés facilitant le parcours de l'utilisateur, et la colorimétrie faisant ressortir directement tous les éléments importants de la page font de BlaBlaCar un bon modèle à suivre. Cependant, plusieurs choses n'allaient pas, comme par exemple leurs zones de texte à répétition, qui ajoute un certain poids visuellement au site, leur interface bien trop blanche à notre goût. Ce sont donc des points sur lesquels nous nous sommes penchés, afin de réaliser un site économiquement meilleur.
+En ce qui concerne mobicoop, leur interface est très colorée. Selon nous, trop colorée. L'utilisateur se perd vite, de plus, la partie de recherche de trajet n'est pas bien mise en avant, il faut faire plusieurs allers et retours afin de trouver les informations recherchées. De plus, nous avons remarqué une absence de responsive design. 
+
+\subsection{Expérience utilisateur}
+
+ Grâce à cette analyse, nous avons pu observer quelques points faibles pour BlaBlaCar, par exemple : une recherche souvent soumise à des erreurs de saisie de l'utilisateur, fréquence assez élevée d'apparition de message de problème technique, etc. Ce qui est dérangeant lors du parcours de l'utilisateur, même pour nous, alors que nous sommes des habitués aux sites internet et ses erreurs. Quelqu'un de plus "novice" en informatique serait peut-être soumis à un stress et pourrait interrompre son parcours. De même pour les paiements : nous avons tous deux déjà effectué au moins un voyage via BlaBlaCar. Une fois un voyage réservé, peu importe si le conducteur accepte ou non, l'argent est bloqué sur le compte. De plus, beaucoup de conducteur refuse les demandes, on se retrouve facilement avec plus de 200 voire 300€ alloués à BlaBlaCar. Heureusement, l'argent ne quitte pas le compte, mais pendant une semaine, celui-ci ne pourra pas être utilisé. La confiance est vite perdue entre l'utilisateur et le site, d'autant plus quand il s'agit du paiement.

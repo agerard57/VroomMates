@@ -1,0 +1,32 @@
+\section{Gestion de projet}
+
+
+\subsection{Diagramme de GANTT}
+
+Afin de s'organiser au mieux pour les mois à venir, l'une des premières choses que nous avons fait est répertorier les tâches nécessaires aux deux lots (voir \ref{Définition des tâches et de leur dates}).
+Une fois cette étape effectuée, nous avons transformé ce tableau en un diagramme de GANTT (voir \ref{Diagramme de GANTT}).
+
+\subsection{Jalons}
+
+Nous avons décidés, au vu du diagramme de GANTT, de travailler par jalons (milestones). Chaque milestone sera considérée comme une feature majeure, qui permet de segmenter le travail en blocs (afin de faciliter le travail de code review et de CI/CD de façon plus générale). 
+Il y'aura une milestone :
+
+\begin{itemize}
+    \item à la fin du déploiement initial
+    \item à la création de la DB
+    \item à la création de la Back-End
+    \item à la création des routes + des composants cores
+    \item à la création de chaque page / groupe de pages
+\end{itemize}
+
+
+\subsection{Répartition des tâches}
+En ce qui concerne la répartition des tâches, nous nous sommes accordés en fonction de nos compétences personnelles (voir \ref{Contrainte technique}).
+
+Ensemble, nous allons initialiser l'environnement de développement, la base de données (sa création ainsi que le remplissage des documents de données essentielles), le front et le back end. 
+Pour le front-end, beaucoup de travail est attendu, par conséquent, nous ne pourrons qu'essayer de se répartir équitablement les pages.
+
+En ce qui concerne le back-end,
+\textbf{Alexandre} s'occupera déjà de la mise en place des buckets S3 avec AWS SDK. Il s'occupera aussi de NodeMailer, MulterJS et des requêtes mapbox avant de réaliser le premier déploiement. \textbf{Vincent} va s'occuper spécifiquement de la partie ODM (Object Document Manager) c'est à dire la création de Modèles, de Schémas. Il s'occupera aussi de la gestion des JWT.
+En ce qui concerne le front-end, la réalisation des routes ainsi que la redirection.
+

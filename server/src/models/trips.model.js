@@ -20,8 +20,8 @@ const tripsSchema = mongoose.Schema(
       ref: "Users",
     },
     day_of_week: {
-      type: ["String"],
-      enum: ["sun", "mon", "tue", "wed", "thu", "fri", "sat"],
+      type: ["number"],
+      enum: [0, 1, 2, 3, 4, 5, 6],
     },
     passengers: { type: ["ObjectId"], ref: "Users" },
     type: {
@@ -33,6 +33,7 @@ const tripsSchema = mongoose.Schema(
         required: true,
         index: "2dsphere",
       },
+      place_name: { type: "String", required: true },
       time: { type: "Date", required: true },
     },
     arrival: {
@@ -41,6 +42,7 @@ const tripsSchema = mongoose.Schema(
         required: true,
         index: "2dsphere",
       },
+      place_name: { type: "String", required: true },
       time: { type: "Date", required: true },
     },
     free_seats: {

@@ -5,12 +5,16 @@ Creates a new package.
 
 =====================================
 
+Command:
+* create_new_package.py <package_name>
+
 It supports 1 argument:
 * packageName
 
 Expected result:
 * Creates a new package with the name packageName
 create a tree as follows:
+
 ```
 📦 client
 └─ src
@@ -35,32 +39,9 @@ create a tree as follows:
       └─ index.ts
 ```
 """
-from os import makedirs, mkdir
 import sys
-
-
-""" 
-    with open("i18n/index.ts", "w") as f:
-        f.write("")
-    with open("i18n/fr.json", "w") as f:
-        f.write("")
-    with open("i18n/en.json", "w") as f:
-        f.write("")
-    with open("hooks/index.ts", "w") as f:
-        f.write("")
-    with open("hooks/usePackageName.tsx", "w") as f:
-        f.write("")
-    with open("components/index.ts", "w") as f:
-        f.write("")
-    with open("components/PackageName.tsx", "w") as f:
-        f.write("")
-    with open("index.ts", "w") as f:
-        f.write("")
-
-
- """
 import os
-import sys
+from os import makedirs, mkdir
 
 def create_git_keep_folders():
     # Add a .gitkeep file to each folder
@@ -96,7 +77,7 @@ def create_i18n_folder():
         f.write('export * as i18n from "./i18n";\n\n')
 
 def create_components_folder(component_name):
-    component_name = component_name.capitalize()
+    component_name = component_name[:1].upper() + component_name[1:]
 
     mkdir("components")
     with open("components/" + component_name + ".tsx", "w") as f:

@@ -3,14 +3,14 @@ const uniqueValidator = require("mongoose-unique-validator");
 
 const chatRoomsSchema = mongoose.Schema(
   {
-    trip_id: {
+    trip: {
       type: "ObjectId",
       ref: "Trips",
       required: true,
     },
     content: [
       {
-        author_id: {
+        author: {
           type: "ObjectId",
           ref: "Users",
           required: true,

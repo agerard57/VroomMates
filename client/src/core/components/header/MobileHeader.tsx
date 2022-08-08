@@ -11,6 +11,8 @@ export const MobileHeader: FC = () => (
     fixed="top"
     css={css`
       padding: 0;
+      display: flex;
+      justify-content: center;
       a {
         margin-right: 0;
       }

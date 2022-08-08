@@ -25,7 +25,7 @@ export const StatsSection: FC = () => {
           <Col>
             <StatBox
               value={stats.trips.totalDistance.$numberDecimal}
-              caption={t("statsSection.boxes.distance")}
+              caption={t("statsSection.boxes.distance")} //TODO Convert distance
               color="#82BBFF"
             />
           </Col>

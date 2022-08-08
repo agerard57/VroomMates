@@ -2,6 +2,7 @@ import { i18n as core } from "../core";
 import { i18n as Dashboard } from "../dashboard";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
+import { i18n as SearchPage } from "../searchPage";
 
 type Modules = Record<string, { fr: any; en: any }>;
 
@@ -20,6 +21,7 @@ const normalize = (
 const moduleResources = normalize({
   core,
   Dashboard,
+  SearchPage,
   LoadingScreen,
   LandingPage,
 });

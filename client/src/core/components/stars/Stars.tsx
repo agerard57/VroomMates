@@ -8,16 +8,12 @@ type Props = {
   isCurved?: boolean;
 };
 
-export const Stars: FC<Props> = ({ rating, isCurved }) => {
-  const roundedRating = Math.round(rating);
-  console.log(roundedRating);
-  return (
-    <div>
-      {isCurved ? (
-        <CurvedStars rating={rating} />
-      ) : (
-        <StraightStars rating={rating} />
-      )}
-    </div>
-  );
-};
+export const Stars: FC<Props> = ({ rating, isCurved }) => (
+  <div>
+    {isCurved ? (
+      <CurvedStars rating={rating} />
+    ) : (
+      <StraightStars rating={rating} />
+    )}
+  </div>
+);

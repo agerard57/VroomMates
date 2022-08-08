@@ -1,0 +1,12 @@
+{
+  "days": {
+    "monday": "Lun.",
+    "tuesday": "Mar.",
+    "wednesday": "Mer.",
+    "thursday": "Jeu.",
+    "friday": "Ven.",
+    "saturday": "Sam.",
+    "sunday": "Dim."
+  },
+  "search": { "full": "Plein" }
+}

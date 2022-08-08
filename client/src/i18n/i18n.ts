@@ -10,8 +10,11 @@ i18n
   .use(new LanguageDetector())
   .use(initReactI18next)
   .init({
-    debug: true,
-    detection: { order: ["querystring"], lookupQuerystring: "lng" },
+    debug: process.env.NODE_ENV === "development",
+    detection: {
+      order: ["querystring", "localStorage"],
+      lookupQuerystring: "lng",
+    },
     fallbackLng: "en",
     interpolation: { escapeValue: false },
     preload: lng,

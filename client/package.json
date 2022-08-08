@@ -14,8 +14,10 @@
     "@types/react-bootstrap": "^0.32.29",
     "@types/react-dom": "^17.0.11",
     "bootstrap": "^5.1.3",
+    "cashify": "^3.0.1",
     "echarts": "^5.3.3",
     "echarts-for-react": "^3.0.2",
+    "geolib": "^3.3.3",
     "i18next": "^21.5.3",
     "i18next-browser-languagedetector": "^6.1.2",
     "i18next-http-backend": "^1.3.1",
@@ -30,6 +32,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "check:prettier": "npx prettier --check .",
     "check:unused-exports": "npx ts-unused-exports ./tsconfig.json",
     "check": "npm run check:unused-exports && npm run check:prettier",

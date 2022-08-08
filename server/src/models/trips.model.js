@@ -1,14 +1,27 @@
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 
+const locationSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    enum: ["Point"],
+    required: true,
+  },
+  coordinates: {
+    type: [Number],
+    required: true,
+  },
+});
+
 const tripsSchema = mongoose.Schema(
   {
-    driver_id: {
+    driver: {
       type: "ObjectId",
       ref: "Users",
     },
     day_of_week: {
-      type: ["String"],
+      type: ["number"],
+      enum: [0, 1, 2, 3, 4, 5, 6],
     },
     passengers: { type: ["ObjectId"], ref: "Users" },
     type: {
@@ -16,24 +29,24 @@ const tripsSchema = mongoose.Schema(
     },
     departure: {
       location: {
-        type: {
-          type: "String",
-        },
-        coordinates: { type: ["number"] },
-        time: { type: "Date" },
+        type: locationSchema,
+        required: true,
+        index: "2dsphere",
       },
+      place_name: { type: "String", required: true },
+      time: { type: "Date", required: true },
     },
     arrival: {
       location: {
-        type: {
-          type: "String",
-        },
-        coordinates: { type: ["number"] },
-        time: { type: "Date" },
+        type: locationSchema,
+        required: true,
+        index: "2dsphere",
       },
+      place_name: { type: "String", required: true },
+      time: { type: "Date", required: true },
     },
     free_seats: {
-      type: "Number",
+      type: "number",
     },
     price_per_seat: {
       km_price: {
@@ -57,7 +70,7 @@ const tripsSchema = mongoose.Schema(
     status: {
       type: "String",
       enum: ["pending", "confirmed", "ongoing", "done", "cancelled"],
-    },
+    }, // TODO Include ratings...
   },
   { collection: "Trips" }
 );

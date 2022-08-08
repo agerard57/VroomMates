@@ -14,73 +14,70 @@ import { SearchIcon } from "./SearchIcon";
 export const Navbar: FC = () => {
   const { t } = useTranslation("core");
   return (
-    <>
-      <div
-        css={css`
-          box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.40);
-          position: fixed;
-          width: -webkit-fill-available;
-          background-color: #ffffff;
-          bottom: 0;
+    <div
+      css={css`
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: baseline;
+        flex-wrap: nowrap;
+        width: -webkit-fill-available;
+        background-color: #ffffff;
+        bottom: 0;
         font-family: "Baloo2";
         font-weight: 650;
-        a{
-            text-decoration: none;
-            padding-top:2%
-            padding-bottom:2%
+        padding: 5px 0;
+        a {
+          text-decoration: none;
+          padding-top: 2%;
+          padding-bottom: 2%;
         }
-          .selectedBlue {
-            color: #445588;
-          }
-          .notSelectedBlue {
-            color: #8e99b7;
-          }
-          .selectedOrange {
-            color: #ed8133;
-          }
-          .notSelectedOrange {
-            color: #f4b384;
-          }
-          
-          .col{
-            text-align: center;
+        .selectedBlue {
+          color: #445588;
         }
-        `} /* TODO: REMOVE THE CSS RULES AS WE WANT TO TO IT ANOTHER WAY */
-      >
-        <Container className="d-flex justify-content-center">
-          <Col>
-            <Nav.Link href="/home">
-              <HomeIcon />
-              <br />
-              <span className="selectedBlue">{t("navbar.home")}</span>
-            </Nav.Link>
-          </Col>
+        .notSelectedBlue {
+          color: #8e99b7;
+        }
+        .selectedOrange {
+          color: #ed8133;
+        }
+        .notSelectedOrange {
+          color: #f4b384;
+        }
 
-          <Col>
-            <Nav.Link href="/home">
-              <SearchIcon />
-              <br />
-              <span className="notSelectedBlue">{t("navbar.search")}</span>
-            </Nav.Link>
-          </Col>
+        .col {
+          text-align: center;
+        }
+        span {
+          padding: 0;
+        }
+        svg {
+          display: block;
+          margin: auto;
+        }
+      `} /* TODO: REMOVE THE CSS RULES AS WE WANT TO TO IT ANOTHER WAY */
+    >
+      <Nav.Link href="/home">
+        <HomeIcon />
+        <span className="selectedBlue">{t("navbar.home")}</span>
+      </Nav.Link>
 
-          <Col>
-            <Nav.Link href="/home">
-              <InboxIcon />
-              <br />
-              <span className="selectedOrange">{t("navbar.inbox")}</span>
-            </Nav.Link>
-          </Col>
+      <Nav.Link href="/search">
+        <SearchIcon />
+        <span className="notSelectedBlue">{t("navbar.search")}</span>
+      </Nav.Link>
 
-          <Col>
-            <Nav.Link href="/dashboard">
-              <DashboardIcon />
-              <br />
-              <span className="notSelectedOrange">{t("navbar.dashboard")}</span>
-            </Nav.Link>
-          </Col>
-        </Container>
-      </div>
-    </>
+      <Nav.Link href="/home">
+        <InboxIcon />
+        <span className="selectedOrange">{t("navbar.inbox")}</span>
+      </Nav.Link>
+
+      <Nav.Link href="/dashboard">
+        <DashboardIcon />
+        <span className="notSelectedOrange">{t("navbar.dashboard")}</span>
+      </Nav.Link>
+    </div>
   );
 };

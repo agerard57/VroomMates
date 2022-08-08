@@ -17,7 +17,7 @@ import { FC } from "react";
 // maxAge?: number;
 
 type Props = {
-  inputType: "radio" | "text";
+  inputType: "radio" | "text" | "date";
   inputPlaceholder?: string;
   inputName: string;
   radioValue?: string;

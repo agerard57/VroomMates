@@ -2,17 +2,15 @@
 import { css } from "@emotion/react";
 import { FC, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
 import { Trip, TripInitializer } from "../interfaces";
 import { getSearchResults } from "../services";
-import { TripCard } from "./TripCard";
+import { TripCard } from "./tripCard";
 
 export const SearchPage: FC = () => {
-  const { t } = useTranslation("SearchPage");
   const [searchParams] = useSearchParams();
-  const [trips, setTrips] = useState<Trip[]>([TripInitializer]);
+  const [trips, setTrips] = useState<[Trip]>([TripInitializer]);
   useEffect(() => {
     const type = searchParams.get("type");
     const departureLocation = searchParams.get("departureLocation");
@@ -27,7 +25,6 @@ export const SearchPage: FC = () => {
       setTrips(trips);
     });
   }, [searchParams]);
-  console.log(trips);
   return (
     <Container
       css={css`

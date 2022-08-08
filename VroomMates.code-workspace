@@ -5,6 +5,10 @@
       "path": "."
     },
     {
+      "name": "Scripts",
+      "path": "./scripts"
+    },
+    {
       "name": "Docs",
       "path": "./docs"
     },
@@ -25,7 +29,13 @@
     "cSpell.words": ["DBNAME", "Plein", "VroomMates"],
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "jest.disabledWorkspaceFolders": ["Root", "Docs", "Database", "Server"],
+    "jest.disabledWorkspaceFolders": [
+      "Root",
+      "Docs",
+      "Scripts",
+      "Database",
+      "Server"
+    ],
     "jest.showCoverageOnLoad": true,
     "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
     "jest.coverageFormatter": "GutterFormatter",

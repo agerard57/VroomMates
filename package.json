@@ -6,7 +6,8 @@
     "server",
     "client",
     "database",
-    "docs"
+    "docs",
+    "scripts"
   ],
   "scripts": {
     "start": "concurrently \"yarn workspace server start:dev\" \"yarn workspace client start\""

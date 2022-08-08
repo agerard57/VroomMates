@@ -22,7 +22,7 @@ export const CurvedStars: FC<Props> = ({ rating }) => {
         d={paths[i]}
         stroke={strokeColor}
         fill={fillColor}
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
     );
   });

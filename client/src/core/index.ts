@@ -8,3 +8,11 @@ export {
   ProfilePic,
   Button,
 } from "./components";
+
+export {
+  normalizeDate,
+  normalizePlaceName,
+  normalizeTimeDifference,
+  normalizeDistance,
+  normalizePrice,
+} from "./helpers";

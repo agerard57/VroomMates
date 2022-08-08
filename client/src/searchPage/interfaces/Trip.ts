@@ -1,31 +1,29 @@
 interface Location {
-  _id: string;
   type: string;
-  coordinates: number[];
+  coordinates: { $numberDecimal: string }[];
 }
 
 interface Driver {
-  name: {
-    first_name: string;
-  };
-  email: { confirmed: boolean };
+  first_name: string;
   photo_url: string;
+  confirmed_email: boolean;
+  avgRating: number;
 }
 
 export interface Trip {
   _id: string;
   departure: {
     location: Location;
+    place_name: string;
     time: Date;
   };
   arrival: {
     location: Location;
+    place_name: string;
     time: Date;
   };
-  price_per_seat: {
-    total: number;
-  };
-  day_of_week: string[];
+  price_per_seat: { total: { $numberDecimal: string } };
+  day_of_week: number[];
   type: string;
   free_seats: number;
   trip_duration: number;
@@ -37,29 +35,36 @@ export interface Trip {
 const LocationInitializer = {
   _id: "",
   type: "",
-  coordinates: [],
+  coordinates: [
+    { $numberDecimal: "0" },
+    { $numberDecimal: "0" },
+    { $numberDecimal: "0" },
+    { $numberDecimal: "0" },
+  ],
 };
 
 const DriverInitializer = {
-  name: {
-    first_name: "",
-  },
-  email: { confirmed: false },
-  photo_url: "",
+  photo_url:
+    "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png", //TODO Use own default avatar
+  avgRating: 5,
+  first_name: "",
+  confirmed_email: false,
 };
 
 export const TripInitializer = {
   _id: "",
   departure: {
     location: LocationInitializer,
+    place_name: "",
     time: new Date("2000-01-01T00:00:00Z"),
   },
   arrival: {
     location: LocationInitializer,
+    place_name: "",
     time: new Date("2000-01-01T00:00:00Z"),
   },
   price_per_seat: {
-    total: 0,
+    total: { $numberDecimal: "0" },
   },
   day_of_week: [],
   type: "",

@@ -1,0 +1,1 @@
+export { isLanguageCode } from "./isLanguageCode";

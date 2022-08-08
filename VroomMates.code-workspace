@@ -22,7 +22,7 @@
     }
   ],
   "settings": {
-    "cSpell.words": ["DBNAME", "VroomMates"],
+    "cSpell.words": ["DBNAME", "Plein", "VroomMates"],
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "jest.disabledWorkspaceFolders": ["Root", "Docs", "Database", "Server"],

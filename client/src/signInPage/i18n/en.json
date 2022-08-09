@@ -1,0 +1,16 @@
+{
+  "signUpSection": {
+    "title": "Not registered yet?",
+    "create": "Create an account!",
+    "or": "OR"
+  },
+
+  "signInSection": {
+    "title": "Go ahead and sign in!",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "passwordForgotten": "Password forgotten?",
+    "signInButton": "Sign in!"
+  }
+}

@@ -10,6 +10,7 @@ import { Layout } from "../core";
 import { Dashboard } from "../dashboard";
 import { LandingPage } from "../landingPage";
 import { SearchPage } from "../searchPage";
+import { SignInPage } from "../signInPage";
 
 const RouteManager: FC = () => (
   <Router>
@@ -19,6 +20,7 @@ const RouteManager: FC = () => (
         <Route path="/home" element={<LandingPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile/login" element={<SignInPage />} />
       </Routes>
     </Layout>
   </Router>

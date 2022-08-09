@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { DescriptionSection } from "./DescriptionSection";
-import { StatsSection } from "./statsSection";
+import { StatsSection } from "./StatsSection";
 import { LandingSection } from "./landingSection";
 
 export const LandingPage: FC = () => (
@@ -11,4 +11,3 @@ export const LandingPage: FC = () => (
     <StatsSection />
   </>
 );
-

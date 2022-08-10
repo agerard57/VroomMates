@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 import { DescriptionSection } from "./DescriptionSection";
-import { StatsSection } from "./StatsSection";
 import { LandingSection } from "./landingSection";
+import { StatsSection } from "./statsSection";
 
 export const LandingPage: FC = () => (
   <>

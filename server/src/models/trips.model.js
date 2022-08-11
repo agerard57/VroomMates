@@ -18,14 +18,22 @@ const tripsSchema = mongoose.Schema(
     driver: {
       type: "ObjectId",
       ref: "Users",
-    },
-    day_of_week: {
-      type: ["number"],
-      enum: [0, 1, 2, 3, 4, 5, 6],
+      required: true,
     },
     passengers: { type: ["ObjectId"], ref: "Users" },
     type: {
       type: "String",
+      enum: ["single", "frequent"],
+      required: true,
+    },
+    frequent_trip_options: {
+      day_of_week: {
+        type: ["number"],
+        enum: [0, 1, 2, 3, 4, 5, 6],
+        required: true,
+      },
+      start_date: { type: "Date", required: true },
+      end_date: { type: "Date", required: true },
     },
     departure: {
       location: {
@@ -51,26 +59,31 @@ const tripsSchema = mongoose.Schema(
     price_per_seat: {
       km_price: {
         type: "number",
+        required: true,
       },
       service_fee: {
         type: "number",
+        required: true,
       },
       total: {
         type: "number",
+        required: true,
+        /*         default: km_price + service_fee,*/
       },
     },
     trip_duration: {
       type: "number",
+      required: true,
+      /*       default: (new Date(arrival.time) - new Date(departure.time)) / 3600000,*/
     },
-    startDate: { type: "Date" },
-    endDate: { type: "Date" },
     distance: {
       type: "number",
+      required: true, // TODO Calculate distance between departure and arrival
     },
     status: {
       type: "String",
       enum: ["pending", "confirmed", "ongoing", "done", "cancelled"],
-    }, // TODO Include ratings...
+    },
   },
   { collection: "Trips" }
 );

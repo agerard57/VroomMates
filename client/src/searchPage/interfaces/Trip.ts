@@ -23,12 +23,8 @@ export interface Trip {
     time: Date;
   };
   price_per_seat: { total: { $numberDecimal: string } };
+  day_of_week: number[];
   type: string;
-  frequent_trip_options: {
-    day_of_week: number[];
-    start_date: Date;
-    end_date: Date;
-  };
   free_seats: number;
   trip_duration: number;
   distance: number;
@@ -39,7 +35,12 @@ export interface Trip {
 const LocationInitializer = {
   _id: "",
   type: "",
-  coordinates: [{ $numberDecimal: "0" }, { $numberDecimal: "0" }],
+  coordinates: [
+    { $numberDecimal: "0" },
+    { $numberDecimal: "0" },
+    { $numberDecimal: "0" },
+    { $numberDecimal: "0" },
+  ],
 };
 
 const DriverInitializer = {
@@ -65,11 +66,7 @@ export const TripInitializer = {
   price_per_seat: {
     total: { $numberDecimal: "0" },
   },
-  frequent_trip_options: {
-    day_of_week: [],
-    start_date: new Date("2000-01-01T00:00:00Z"),
-    end_date: new Date("2000-01-01T00:00:00Z"),
-  },
+  day_of_week: [],
   type: "",
   free_seats: 0,
   trip_duration: 0,

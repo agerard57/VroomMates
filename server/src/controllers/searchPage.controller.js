@@ -49,6 +49,8 @@ exports.getSearchResults = (req, res) => {
               passengers: 0,
               "price_per_seat.km_price": 0,
               "price_per_seat.service_fee": 0,
+              "departure.location._id": 0,
+              "arrival.location._id": 0,
             }
           )
 

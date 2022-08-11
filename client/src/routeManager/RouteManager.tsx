@@ -11,7 +11,6 @@ import { Dashboard } from "../dashboard";
 import { LandingPage } from "../landingPage";
 import { SearchPage } from "../searchPage";
 import { SignInPage } from "../signInPage";
-import { TripDetailsPage } from "../tripDetailsPage";
 
 const RouteManager: FC = () => (
   <Router>
@@ -20,7 +19,6 @@ const RouteManager: FC = () => (
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<LandingPage />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/trip/:id" element={<TripDetailsPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile/login" element={<SignInPage />} />
       </Routes>

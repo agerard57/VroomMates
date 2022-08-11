@@ -6,14 +6,5 @@
     "search": "Search",
     "inbox": "Inbox",
     "dashboard": "Dashboard"
-  },
-  "days": {
-    "sunday": "Sun.",
-    "monday": "Mon.",
-    "tuesday": "Tue.",
-    "wednesday": "Wed.",
-    "thursday": "Thu.",
-    "friday": "Fri.",
-    "saturday": "Sat."
   }
 }

@@ -24,7 +24,7 @@ export const DateSection: FC<Props> = ({ date }) => {
           word-spacing: 3px;
         `}
       >
-        {normalizeDate(date, language, "shortDate")}
+        {normalizeDate(date, language, "date")}
       </h3>
     </div>
   );

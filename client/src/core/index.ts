@@ -7,7 +7,6 @@ export {
   Input,
   ProfilePic,
   Button,
-  ColoredBackground,
 } from "./components";
 
 export {
@@ -17,5 +16,3 @@ export {
   normalizeDistance,
   normalizePrice,
 } from "./helpers";
-
-export { useDaysDisplay, useGeolocation } from "./hooks";

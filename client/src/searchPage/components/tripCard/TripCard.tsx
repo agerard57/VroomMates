@@ -29,7 +29,7 @@ export const TripCard: FC<Props> = ({ trip }) => {
     >
       <FullLayout isFull={isFull} />
       <Link
-        to={`/trip/${trip._id}`} //TODO PROTECT ROUTE IF ISFULL
+        to={`/trips/${trip._id}`} //TODO PROTECT ROUTE IF ISFULL
         css={css`
           &,
           &:hover {
@@ -70,7 +70,7 @@ export const TripCard: FC<Props> = ({ trip }) => {
           />
         </Row>
         {trip.type === "frequent" ? (
-          <DaysSection tripDays={trip.frequent_trip_options.day_of_week} />
+          <DaysSection tripDays={trip.day_of_week} />
         ) : null}
       </Link>
     </RoundedContour>

@@ -26,14 +26,7 @@
     }
   ],
   "settings": {
-    "cSpell.words": [
-      "DBNAME",
-      "Geolocated",
-      "mapbox",
-      "mapboxgl",
-      "Plein",
-      "VroomMates"
-    ],
+    "cSpell.words": ["DBNAME", "Plein", "VroomMates"],
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "jest.disabledWorkspaceFolders": [

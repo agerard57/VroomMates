@@ -1,2 +1,1 @@
-export { useDaysDisplay } from "./useDaysDisplay";
-export { useGeolocation } from "./useGeolocation";
+export { useFlags } from "./useFlags";

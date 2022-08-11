@@ -1,0 +1,20 @@
+{
+  "dateSection": {
+    "from": "De: ",
+    "until": "Jusqu'à: "
+  },
+  "tripInfosSection": {
+    "distanceFromUser": "À {{position}} de votre position",
+    "totalDistance": "Distance totale: {{distance}}"
+  },
+  "driverSection": {
+    "ratings": "{{nbRatings}} avis",
+    "contact": "Contacter",
+    "profile": "Voir le profil"
+  },
+  "passengersSection": { "title": "Passagers" },
+  "buttonsSection": {
+    "order": "Commander",
+    "copiedMessage": "Lien copié dans le presse-papier !"
+  }
+}

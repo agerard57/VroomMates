@@ -2,14 +2,14 @@
 
 EMOTION ESLINT
 ESLINT
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "eslint-config-airbnb": "^19.0.0",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
+"@typescript-eslint/eslint-plugin": "^5.4.0",
+"@typescript-eslint/parser": "^5.4.0",
+"eslint-config-airbnb": "^19.0.0",
+"eslint-config-react-app": "^7.0.1",
+"eslint-plugin-import": "^2.25.3",
+"eslint-plugin-jsx-a11y": "^6.5.1",
+"eslint-plugin-react": "^7.27.1",
+"eslint-plugin-react-hooks": "^4.3.0",
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

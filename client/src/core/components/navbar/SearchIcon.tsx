@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { FC } from "react";
 
 export const SearchIcon: FC = () => (

@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { FC } from "react";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { useTranslation } from "react-i18next";
 

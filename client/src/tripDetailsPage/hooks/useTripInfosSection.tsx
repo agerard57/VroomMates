@@ -63,6 +63,5 @@ export const useTripInfosSection: TripInfosSectionManager = ({
     departure: normalizePlaceName(departure.placeName, "near", language),
     arrival: normalizePlaceName(arrival.placeName, "near", language),
   };
-  console.log(distanceFromUser);
   return { distanceFromUser, totalDistance, time, placeName };
 };

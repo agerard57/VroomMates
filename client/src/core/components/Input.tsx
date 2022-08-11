@@ -19,6 +19,7 @@ import { FC } from "react";
 type Props = {
   inputType: "radio" | "text" | "date";
   inputPlaceholder?: string;
+  inputValue?: string;
   inputName: string;
   radioValue?: string;
   isRequired?: boolean;
@@ -28,6 +29,7 @@ type Props = {
 export const Input: FC<Props> = ({
   inputPlaceholder,
   inputType,
+  inputValue,
   inputName,
   radioValue,
   icon,
@@ -60,7 +62,9 @@ export const Input: FC<Props> = ({
         id={radioValue}
         name={inputName}
         type={inputType}
-        css={css``}
+        css={css`
+          /* visibility:hidden */
+        `}
         value={radioValue}
       />
       <span>{inputPlaceholder}</span>
@@ -71,6 +75,7 @@ export const Input: FC<Props> = ({
       id={inputName}
       name={inputName}
       placeholder={inputPlaceholder}
+      defaultValue={inputValue}
       css={InputStyle}
     />
   );

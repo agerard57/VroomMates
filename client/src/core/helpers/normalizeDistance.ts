@@ -13,7 +13,7 @@ export const normalizeDistance: NormalizeDistance = (
   departureCoordinates,
   arrivalCoordinates,
   lang,
-  accuracy = 1
+  accuracy = 10
 ) => {
   const distance = getDistance(
     {
@@ -31,7 +31,7 @@ export const normalizeDistance: NormalizeDistance = (
   const distanceInMiRound = Math.round(distanceInMi * accuracy) / accuracy;
   const distanceInKmRound = Math.round(distanceInKm * accuracy) / accuracy;
   const distanceInMRound = Math.round(distanceInM * accuracy) / accuracy;
-  // If lang === "fr", return the distance in km or in meters, otherwise return the distance in mi or meters
+
   if (lang === "fr") {
     if (distanceInKmRound < 1) {
       return `${distanceInMRound}m`;
@@ -39,10 +39,6 @@ export const normalizeDistance: NormalizeDistance = (
       return `${distanceInKmRound}km`;
     }
   } else {
-    if (distanceInMiRound < 1) {
-      return `${distanceInMRound}m`;
-    } else {
-      return `${distanceInMiRound}mi`;
-    }
+    return `${distanceInMiRound}mi`;
   }
 };

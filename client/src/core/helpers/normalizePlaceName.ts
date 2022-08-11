@@ -1,20 +1,28 @@
+import { LanguageCode } from "../../language";
+
 type NormalizePlaceName = (
   placeName: string,
-  format: "full" | "near" | "city"
+  format: "full" | "near" | "city",
+  lng?: LanguageCode
 ) => string;
 
-export const normalizePlaceName: NormalizePlaceName = (placeName, format) => {
+export const normalizePlaceName: NormalizePlaceName = (
+  placeName,
+  format,
+  lng = "en"
+) => {
   if (placeName.length > 0) {
     switch (format) {
       case "full":
         return placeName;
       case "near":
+        const near = lng === "en" ? "near" : "proche de";
         return (
-          "near" +
+          near +
           placeName
-            .split(",")
-            .shift()!
-            .substr(placeName.indexOf(" ") + 1)
+            .substring(0, placeName.lastIndexOf(","))
+            .replace(/\d/g, "")
+            .replace("  ", " ")
         );
       case "city":
         return placeName

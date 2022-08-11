@@ -11,4 +11,3 @@ export const LandingPage: FC = () => (
     <StatsSection />
   </>
 );
-

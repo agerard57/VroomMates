@@ -4,13 +4,14 @@ import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { Input, RoundedContour, Button } from "../../../core";
+import { Input, RoundedContour, Button, useGeolocation } from "../../../core";
 import arrivalIcon from "../../assets/icons/arrivalIcon.svg";
 import calendarIcon from "../../assets/icons/calendarIcon.svg";
 import departureIcon from "../../assets/icons/departureIcon.svg";
 
 export const SearchBox: FC = () => {
   const { t } = useTranslation("LandingPage");
+  const { address } = useGeolocation();
 
   return (
     <form
@@ -61,6 +62,7 @@ export const SearchBox: FC = () => {
               inputName="departureLocation"
               inputType="text"
               inputPlaceholder={t("landingSection.search.tripPoints.from")}
+              inputValue={address}
               icon={departureIcon}
             />
           </Row>
@@ -84,7 +86,9 @@ export const SearchBox: FC = () => {
             />
           </Row>
           <Row>
-            <Button buttonText={t("landingSection.search.searchButton")} />
+            <Button type="primary">
+              {t("landingSection.search.searchButton")}
+            </Button>
           </Row>
         </div>
       </RoundedContour>

@@ -15,7 +15,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "typeRoots": [".server/src/@types", "./node_modules/@types"]
+    "typeRoots": [
+      "client/src/@types",
+      "./node_modules/@types",
+      "client/node_modules/@types"
+    ]
   },
-  "include": ["."]
+  "include": ["client/src"]
 }

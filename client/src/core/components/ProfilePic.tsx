@@ -11,6 +11,8 @@ type Props = {
   displayStars?: boolean;
   displayRating?: boolean;
   isVerified?: boolean;
+  outsidePictureStyling?: any;
+  onClick?: () => void;
 };
 export const ProfilePic: FC<Props> = ({
   src,
@@ -18,6 +20,8 @@ export const ProfilePic: FC<Props> = ({
   displayStars,
   displayRating,
   isVerified,
+  outsidePictureStyling,
+  onClick,
 }) => {
   return (
     <>
@@ -25,8 +29,11 @@ export const ProfilePic: FC<Props> = ({
         css={css`
           border-radius: 50%;
           width: 30%;
+          cursor: ${onClick ? "pointer" : "default"};
+          ${outsidePictureStyling};
         `}
         src={src}
+        onClick={onClick}
         alt="profilePic"
       />
       {isVerified ? (
@@ -36,7 +43,7 @@ export const ProfilePic: FC<Props> = ({
             width: 5%;
           `}
           src={VerifiedProfile}
-          alt="verifiedProfile"
+          alt="verified profile"
         />
       ) : null}
       {displayStars && rating ? <Stars rating={rating} isCurved /> : null}

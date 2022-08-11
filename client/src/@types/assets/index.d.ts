@@ -21,3 +21,8 @@ declare module "*.json" {
   const content: string;
   export default content;
 }
+
+declare module "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions" {
+  const content: any;
+  export default content;
+}

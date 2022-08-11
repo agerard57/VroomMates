@@ -1,0 +1,1 @@
+export { TripDetailsPage } from "./TripDetailsPage";

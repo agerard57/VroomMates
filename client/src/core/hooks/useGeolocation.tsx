@@ -18,7 +18,7 @@ export const useGeolocation: GeolocationManager = () => {
 
   useEffect(() => {
     if (coordinates.length) {
-      const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${coordinates[0]},${coordinates[1]}.json?access_token=${process.env?.REACT_APP_MAPBOX_TOKEN}&limit=1`;
+      const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${coordinates[1]},${coordinates[0]}.json?access_token=${process.env?.REACT_APP_MAPBOX_TOKEN}&limit=1`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => {

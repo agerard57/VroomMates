@@ -86,7 +86,7 @@ export const SearchBox: FC = () => {
             />
           </Row>
           <Row>
-            <Button type="primary">
+            <Button type="primary" buttonType="submit">
               {t("landingSection.search.searchButton")}
             </Button>
           </Row>

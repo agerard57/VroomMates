@@ -4,6 +4,7 @@ import { FC } from "react";
 
 type Props = {
   type: "primary" | "secondary" | "hollow";
+  buttonType?: "submit" | "button";
   onClick?: () => void;
   optionalStyling?: any;
 };
@@ -11,6 +12,7 @@ type Props = {
 export const Button: FC<Props> = ({
   children,
   type,
+  buttonType = "button",
   onClick = () => {},
   optionalStyling,
 }) => {
@@ -18,7 +20,7 @@ export const Button: FC<Props> = ({
     case "primary":
       return (
         <button
-          type="button"
+          type={buttonType}
           css={css`
             background: #569aff;
             border: 2px solid #569aff;
@@ -45,7 +47,7 @@ export const Button: FC<Props> = ({
     case "secondary":
       return (
         <button
-          type="button"
+          type={buttonType}
           css={css`
             font-size: 1.6rem;
             font-weight: 500;
@@ -68,7 +70,7 @@ export const Button: FC<Props> = ({
     case "hollow":
       return (
         <button
-          type="button"
+          type={buttonType}
           css={css`
             background-color: white;
             color: #5a85ff;
@@ -89,7 +91,7 @@ export const Button: FC<Props> = ({
     default:
       return (
         <button
-          type="button"
+          type={buttonType}
           css={css`
             background: #569aff;
             border: 2px solid #569aff;

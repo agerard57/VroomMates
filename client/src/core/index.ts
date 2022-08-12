@@ -8,6 +8,7 @@ export {
   ProfilePic,
   Button,
   ColoredBackground,
+  Stars,
 } from "./components";
 
 export {

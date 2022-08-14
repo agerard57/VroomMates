@@ -5,7 +5,14 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
-import { Button, ProfilePic, RoundedContour, Stars } from "../../core";
+import {
+  Button,
+  normalizeDate,
+  ProfilePic,
+  RoundedContour,
+  Stars,
+} from "../../core";
+import { useLanguage } from "../../language";
 import BasketBallSvg from "../assets/basketBallIcon.svg";
 import BioSvg from "../assets/bioIcon.svg";
 import CarSvg from "../assets/carIcon.svg";
@@ -17,6 +24,7 @@ import { getUser } from "../services";
 
 export const ProfilePage: FC = () => {
   const { t } = useTranslation("ProfilePage");
+  const { language } = useLanguage();
   const [user, setUser] = useState<User>(UserInitializer);
   const { id } = useParams();
   useEffect(() => {
@@ -30,8 +38,6 @@ export const ProfilePage: FC = () => {
   useEffect(() => {
     document.title = t("title");
   }, [t]);
-
-  console.log(user);
   // Get age from DOB
   const dob = new Date(user.birth_date);
   const age = (new Date().getFullYear() - dob.getFullYear()).toString();
@@ -107,7 +113,7 @@ export const ProfilePage: FC = () => {
               css={css`
                 width: 75px;
                 height: 75px;
-                padding:3px;
+                padding: 3px;
                 border-radius: 50px;
                 background: linear-gradient(180deg, #4563ff 0%, #fd664d 100%);
                 border: 3px solid #ffffff;
@@ -118,6 +124,7 @@ export const ProfilePage: FC = () => {
                 flex-direction: column;
                 span {
                   font-size: 0.8rem;
+                }
               `}
             >
               {user.status === "driver" ? (
@@ -169,7 +176,7 @@ export const ProfilePage: FC = () => {
               margin: 5% 0;
             }
             h2 {
-              margin-bottom: 0;
+              margin-bottom: 0.6rem;
             }
           `}
         >
@@ -328,7 +335,7 @@ export const ProfilePage: FC = () => {
               <Col sm={8}>
                 <span
                   css={css`
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                   `}
                 >
                   Listens to music in the car
@@ -356,7 +363,7 @@ export const ProfilePage: FC = () => {
               <Col sm={8}>
                 <span
                   css={css`
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                   `}
                 >
                   Listens to music in the car
@@ -384,7 +391,7 @@ export const ProfilePage: FC = () => {
               <Col sm={8}>
                 <span
                   css={css`
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                   `}
                 >
                   Doesn’t mind pets in the car
@@ -398,16 +405,74 @@ export const ProfilePage: FC = () => {
             overflow: hidden;
             `}
           >
-            <Row>
-              <h2>Last reviews</h2>
-            </Row>
-            <Row>
+            <h2
+              css={css`
+                padding: 0.5rem 1rem;
+              `}
+            >
+              Last reviews
+            </h2>
+            <hr
+              css={css`
+                margin-top: 0;
+              `}
+            />
+            <div>
               {user.ratings.map((review) => (
-                <Row>
-                  <h3>{review.author.name.first_name}</h3>
-                </Row>
+                <>
+                  <div>
+                    <div
+                      css={css`
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: nowrap;
+                      `}
+                    >
+                      <Col
+                        css={css`
+                          display: flex;
+                          flex-wrap: wrap;
+                          align-items: center;
+                          justify-content: space-evenly;
+                        `}
+                      >
+                        <Stars rating={review.rating} />
+                        <span>
+                          by {review.author.name.first_name}{" "}
+                          {review.author.name.last_name}
+                        </span>
+                      </Col>
+                      <Col
+                        css={css`
+                          align-self: center;
+                        `}
+                      >
+                        <span>
+                          {normalizeDate(review.date, language, "numericDate")}
+                        </span>
+                      </Col>
+                    </div>
+                    <div
+                      css={css`
+                        padding: 0.5rem 1rem;
+                        overflow-wrap: break-word;
+                        text-align: justify;
+                      `}
+                    >
+                      <span>"{review.message}"</span>
+                    </div>
+                  </div>
+                  <hr
+                    css={css`
+                      margin-top: 0;
+                      :last-of-type {
+                        display: none;
+                      }
+                    `}
+                  />
+                </>
               ))}
-            </Row>
+            </div>
           </RoundedContour>
         </div>
       </Container>

@@ -1,3 +1,41 @@
 {
-  "title": "Profil - VroomMates"
+  "title": "Profil de {{name}}",
+
+  "header": {
+    "tripsDone_one": "VOYAGE FAIT",
+    "tripsDone_other": "VOYAGES FAITS",
+    "tripsCreated_one": "VOYAGE CRÉE",
+    "tripsCreated_other": "VOYAGES CRÉES",
+    "age": "{{age}} ans"
+  },
+
+  "mainButton": {
+    "back": "Retour",
+    "accountManagement": "Gestion du profil",
+    "ban": "Bannir"
+  },
+
+  "cards": { "bio": "Bio", "car": "Voiture", "hobbies": "Hobbys" },
+
+  "list": {
+    "talk": {
+      "true": "Aime parler pendant les voyages",
+      "false": "Préfère ne pas parler pendant les voyages"
+    },
+    "music": {
+      "true": "Aime écouter de la musique pendant les voyages",
+      "false": "N'écoute pas de musique pendant les voyages"
+    },
+    "pet": {
+      "true": "Accepte les animaux pendant les voyages",
+      "false": "Ne préfère pas voyager avec des animaux"
+    }
+  },
+
+  "reviews": {
+    "title_one": "Avis",
+    "title_other": "Derniers avis",
+    "review": "{{nbReviews}} avis",
+    "by": "par"
+  }
 }

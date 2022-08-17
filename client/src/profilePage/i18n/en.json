@@ -1,3 +1,40 @@
 {
-  "title": "Profile - VroomMates"
+  "title": "{{name}}'s Profile",
+
+  "header": {
+    "tripsDone": "TRIPS DONE",
+    "tripsCreated": "TRIPS MADE",
+    "age": "{{age}} y.o."
+  },
+
+  "mainButton": {
+    "back": "Back",
+    "accountManagement": "Account management",
+    "ban": "Ban"
+  },
+
+  "cards": { "bio": "Bio", "car": "Car", "hobbies": "Hobbies" },
+
+  "list": {
+    "talk": {
+      "true": "Likes to talk during trips",
+      "false": "Prefers not to talk during trips"
+    },
+    "music": {
+      "true": "Likes to listen to music during trips",
+      "false": "Doesn't listen to music during trips"
+    },
+    "pet": {
+      "true": "Likes to have pets during trips",
+      "false": "Doesn't like to have pets during trips"
+    }
+  },
+
+  "reviews": {
+    "title_one": "Review",
+    "title_other": "Last reviews",
+    "review_one": "{{nbReviews}} review",
+    "review_other": "{{nbReviews}} reviews",
+    "by": "by"
+  }
 }

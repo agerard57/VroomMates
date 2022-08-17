@@ -29,12 +29,14 @@ export const ProfilePic: FC<Props> = ({
         css={css`
           border-radius: 50%;
           width: 30%;
+          aspect-ratio: 1/1;
           cursor: ${onClick ? "pointer" : "default"};
           ${outsidePictureStyling};
         `}
         src={src}
         onClick={onClick}
         alt="profilePic"
+        key={src}
       />
       {isVerified ? (
         <img

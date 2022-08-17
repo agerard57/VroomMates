@@ -1,11 +1,12 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
+import { Status } from "../../../core";
 import { Item } from "../Item";
 import { Title } from "../Title";
 
 type Props = {
-  status?: string;
+  status?: Status;
 };
 
 export const Inbox: FC<Props> = ({ status }) => {

@@ -3,7 +3,7 @@ const uniqueValidator = require("mongoose-unique-validator");
 
 const driversSchema = mongoose.Schema(
   {
-    user_id: {
+    user: {
       type: "ObjectId",
       ref: "Users",
       required: true,

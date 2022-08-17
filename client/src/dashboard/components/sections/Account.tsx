@@ -3,31 +3,25 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { ProfilePic } from "../../../core";
-import AdminIcon from "../../assets/icons/adminIcon.svg";
-import DriverIcon from "../../assets/icons/driverIcon.svg";
+import { getStatusIcon, ProfilePic, Status } from "../../../core";
 import { Item } from "../Item";
 import { Title } from "../Title";
 
 type Props = {
-  status?: string;
+  status?: Status;
 };
 
 export const Account: FC<Props> = ({ status }) => {
   const { t } = useTranslation("Dashboard");
-  const accountIcon = () => {
-    if (status === "driver") return DriverIcon;
-    else if (status === "admin") return AdminIcon;
-    else return undefined;
-  };
+  const accountIcon = getStatusIcon(status);
   return status ? (
     <section>
       <ProfilePic
         src="https://randomuser.me/api/portraits/men/53.jpg"
-        rating={5}
+        rating={3}
         displayRating
         displayStars
-        is_verified
+        isVerified
       />
       <h2
         css={css`
@@ -37,7 +31,7 @@ export const Account: FC<Props> = ({ status }) => {
         `}
       >
         {t("accountSection.greetingMessage", { firstName: "Alexandre" })}{" "}
-        {accountIcon() ? <img src={accountIcon()} alt="accountIcon" /> : null}
+        {accountIcon ? <img src={accountIcon} alt="accountIcon" /> : null}
       </h2>
       <div>
         <Item title={t("accountSection.yourAccount")} link="/profile/view" />

@@ -1,0 +1,152 @@
+%----------------------------------------------------------------------------------------
+%	CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+12pt, 
+french, 
+singlespacing,
+headsepline,
+]{Settings}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{lscape}
+
+\usepackage{subfig}
+
+\usepackage{import}
+
+\usepackage{mathptmx}
+
+\usepackage[backend=bibtex,style=numeric,natbib=true]{biblatex}
+
+\addbibresource{bibliographie}
+
+\usepackage[autostyle=true]{csquotes}
+
+%----------------------------------------------------------------------------------------
+%	MARGE
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, 
+	inner=2.5cm, 
+	outer=3.8cm, 
+	bindingoffset=.5cm, 
+	top=1.5cm, 
+	bottom=1.5cm,
+}
+\onehalfspacing
+
+%----------------------------------------------------------------------------------------
+%	INFORMATIONS
+%----------------------------------------------------------------------------------------
+
+\thesistitle{Plateforme de covoiturage}
+\author{Alexandre \textsc{GERARD} \\ Vincent \textsc{GIANGRECO}}
+
+\subject{Chef de Projet Logiciel et Réseau}
+\university{\href{https://www.metz-numeric-school.fr/}{Metz Numeric School}}
+\group{Vroom Mates}
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle}
+\hypersetup{pdfauthor=\authorname}
+}
+
+\begin{document}
+
+\frontmatter
+
+\pagestyle{plain}
+
+%----------------------------------------------------------------------------------------
+%	TITRE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.05\textheight}
+{\scshape\LARGE \univname\par}\vspace{1.5cm}
+\textsc{\Large LOT 1}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{\huge \bfseries \ttitle\par}\vspace{0.4cm}
+\HRule \\[1.5cm]
+ 
+\begin{minipage}[t]{1\textwidth}
+\begin{center} \large
+\emph{Auteurs:}\\
+{\authorname}
+\end{center}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\end{minipage}\\[3cm]
+ 
+\vfill
+
+\large \textit{Description du contexte, des contraintes et de la méthodologie du projet de plateforme de covoiturage}\\[0.3cm]
+\vspace*{15mm}
+\includegraphics[width=20mm]{medias/mns.png}
+\hspace*{15mm}
+\includegraphics[width=20mm]{medias/VM.png}
+
+\vfill
+
+{\large \today}\\[14cm]
+
+ 
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLES DES MATIÈRES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents
+
+%----------------------------------------------------------------------------------------
+%	CONTENU
+%----------------------------------------------------------------------------------------
+
+\mainmatter
+
+\include{Contenu/Introduction/index}
+\include{Contenu/Besoin-Objectifs/index}
+\include{Contenu/Methodologie/index}
+\include{Contenu/Modelisation/index}
+\include{Contenu/Bilan/index}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	APPENDIX
+%----------------------------------------------------------------------------------------
+
+\include{Contenu/Annexe/index}
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHIE
+%----------------------------------------------------------------------------------------
+
+\printbibliography[heading=bibintoc]
+
+%----------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{flushright}
+Lot 1, par ---\\
+GERARD Alexandre: \href{https://github.com/agerard57}{https://github.com/agerard57}\\
+GIANGRECO Vincent: \href{https://github.com/clevinjuna}{https://github.com/clevinjuna}\\
+\end{flushright}
+
+
+
+\end{document}  

@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { FC } from "react";
-import * as React from "react";
-import { SVGProps } from "react";
 import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -13,6 +11,8 @@ export const MobileHeader: FC = () => (
     fixed="top"
     css={css`
       padding: 0;
+      display: flex;
+      justify-content: center;
       a {
         margin-right: 0;
       }

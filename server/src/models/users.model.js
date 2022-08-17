@@ -70,6 +70,27 @@ const userSchema = mongoose.Schema(
       enum: ["passenger", "driver", "admin", "banned"],
       required: true,
     },
+    ratings: [
+      {
+        author: {
+          type: "ObjectId",
+          ref: "Users",
+          required: true,
+        },
+        message: {
+          type: "String",
+        },
+
+        rating: {
+          type: "Number",
+          required: true,
+        },
+        date: {
+          type: "Date",
+          default: Date.now,
+        },
+      },
+    ],
   },
   { collection: "Users" }
 );

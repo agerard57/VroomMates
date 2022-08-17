@@ -27,7 +27,7 @@ export const DescriptionSection: FC = () => {
           <Col>
             <img
               src={HomeImage2}
-              alt="home-image-2"
+              alt="home-2"
               css={css`
                 width: 100%;
               `}

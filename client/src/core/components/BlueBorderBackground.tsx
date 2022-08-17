@@ -6,6 +6,8 @@ type Props = {
   backgroundColor: string;
 };
 
+// TODO REMOVE THIS COMPONENT
+
 export const BlueBorderBackground: FC<Props> = ({
   backgroundColor,
   children,

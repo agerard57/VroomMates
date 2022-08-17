@@ -1,0 +1,26 @@
+{
+  "title": "Trip",
+
+  "dateSection": {
+    "from": "From: ",
+    "until": "Until:"
+  },
+
+  "tripInfosSection": {
+    "distanceFromUser": "{{position}} from your position",
+    "totalDistance": "Total distance: {{distance}}"
+  },
+
+  "driverSection": {
+    "ratings": "{{nbRatings}} rating{{s}}",
+    "contact": "Contact",
+    "profile": "See profile"
+  },
+
+  "passengersSection": { "title": "Passengers" },
+
+  "buttonsSection": {
+    "order": "Order",
+    "copiedMessage": "Link copied in your clipboard!"
+  }
+}

@@ -20,6 +20,7 @@ i18n
     preload: lng,
     react: {
       bindI18n: "languageChanged",
+      useSuspense: true,
     },
     resources,
     returnObjects: true,

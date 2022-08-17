@@ -1,3 +1,5 @@
+import { Status } from "../../core";
+
 interface About {
   bio: string;
   chatty: boolean;
@@ -6,7 +8,7 @@ interface About {
   hobbies: string[];
 }
 
-interface Rating {
+export interface Review {
   author: {
     name: {
       first_name: string;
@@ -34,10 +36,10 @@ export interface User {
     confirmed: boolean;
   };
   birth_date: Date;
-  about: About;
+  about?: About;
   photo_url: string;
-  status: string;
-  ratings: Rating[];
+  status: Status;
+  ratings: Review[];
   car?: Car;
   avg_rating: number;
   nb_trips_created: number;
@@ -52,7 +54,7 @@ const AboutInitializer = {
   hobbies: [],
 };
 
-const RatingInitializer = {
+const ReviewInitializer = {
   author: {
     name: {
       first_name: "",
@@ -81,9 +83,10 @@ export const UserInitializer = {
   },
   birth_date: new Date("2000-01-01T00:00:00Z"),
   about: AboutInitializer,
-  photo_url: "",
-  status: "",
-  ratings: [RatingInitializer],
+  photo_url:
+    "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png", //TODO Use own default avatar
+  status: "passenger" as Status,
+  ratings: [ReviewInitializer],
   car: CarInitializer,
   avg_rating: 0,
   nb_trips_created: 0,

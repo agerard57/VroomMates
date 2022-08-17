@@ -1,4 +1,4 @@
-const url = `${process.env?.REACT_APP_API_URL}/home/stats`;
+const url = `${process.env?.REACT_APP_API_URL}/home`;
 
 export async function getStats() {
   try {

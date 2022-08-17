@@ -1,0 +1,1 @@
+export { useProfilePage } from "./useProfilePage";

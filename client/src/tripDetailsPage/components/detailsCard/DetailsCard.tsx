@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 
 import { RoundedContour } from "../../../core";
-import { useDetailsCard } from "../../hooks";
+import { Trip } from "../../interfaces";
 import { ButtonsSection } from "./ButtonsSection";
 import { DateSection } from "./DateSection";
 import { DaysSection } from "./DaysSection";
@@ -12,8 +12,11 @@ import { MapSection } from "./MapSection";
 import { PassengersSection } from "./PassengersSection";
 import { TripInfosSection } from "./TripInfosSection";
 
-export const DetailsCard: FC = () => {
-  const { trip } = useDetailsCard();
+type Props = {
+  trip: Trip;
+};
+
+export const DetailsCard: FC<Props> = ({ trip }) => {
   return (
     <RoundedContour
       outsideStyling={css`

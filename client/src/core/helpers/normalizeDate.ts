@@ -3,12 +3,16 @@ import { LanguageCode } from "../../language";
 type NormalizeDate = (
   date: Date,
   lng: LanguageCode,
-  dateFormat: "shortDate" | "longDate" | "time"
+  dateFormat: "numericDate" | "shortDate" | "longDate" | "time"
 ) => string;
 
 export const normalizeDate: NormalizeDate = (date, lng, dateFormat) => {
   const langFormat = lng === "en" ? "en-US" : "fr-FR";
   switch (dateFormat) {
+    case "numericDate":
+      //Converts ISO date into a human readable date (YYYY-MM-DD or DD-MM-YYYY).
+      const readableNumericDate = new Date(date).toLocaleDateString(langFormat);
+      return readableNumericDate;
     case "shortDate":
       //Converts ISO date into a human readable date.
       const readableShortDate = new Date(date).toLocaleDateString(langFormat, {

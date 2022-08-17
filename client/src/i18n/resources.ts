@@ -1,7 +1,8 @@
-import { i18n as core } from "../core";
+import { i18n as Core } from "../core";
 import { i18n as Dashboard } from "../dashboard";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
+import { i18n as ProfilePage } from "../profilePage";
 import { i18n as SearchPage } from "../searchPage";
 import { i18n as TripDetailsPage } from "../tripDetailsPage";
 
@@ -20,12 +21,13 @@ const normalize = (
   );
 
 const moduleResources = normalize({
-  core,
+  Core,
   Dashboard,
-  SearchPage,
-  LoadingScreen,
   LandingPage,
   TripDetailsPage,
+  LoadingScreen,
+  ProfilePage,
+  SearchPage,
 });
 
 export const resources = {

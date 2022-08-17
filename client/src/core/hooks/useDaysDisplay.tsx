@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useLanguage } from "../../language";
 
 export const useDaysDisplay = (tripDays: number[]) => {
-  const { t } = useTranslation("core");
+  const { t } = useTranslation("Core");
   const { language } = useLanguage();
 
   const displayedDays = [

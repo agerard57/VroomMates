@@ -8,6 +8,7 @@ export {
   ProfilePic,
   Button,
   ColoredBackground,
+  Stars,
 } from "./components";
 
 export {
@@ -16,6 +17,9 @@ export {
   normalizeTimeDifference,
   normalizeDistance,
   normalizePrice,
+  getStatusIcon,
 } from "./helpers";
 
-export { useDaysDisplay, useGeolocation } from "./hooks";
+export type { Status } from "./types";
+
+export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";

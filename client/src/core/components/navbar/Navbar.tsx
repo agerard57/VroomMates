@@ -10,7 +10,7 @@ import { InboxIcon } from "./InboxIcon";
 import { SearchIcon } from "./SearchIcon";
 
 export const Navbar: FC = () => {
-  const { t } = useTranslation("core");
+  const { t } = useTranslation("Core");
   return (
     <div
       css={css`

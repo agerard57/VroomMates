@@ -2,13 +2,19 @@
 import { css } from "@emotion/react";
 import { FC } from "react";
 import { Container } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
+import { Status, usePageTitle } from "../../core";
 import { Account, Admin, Driver, Inbox, Misc, Trips } from "./sections";
 
 export const Dashboard: FC = () => {
+  const { t } = useTranslation("Dashboard");
+
   const user = {
-    status: "admin",
-  };
+    status: "admin" as Status,
+  }; // TODO Please implement real user
+
+  usePageTitle(t("title"));
 
   return (
     <Container

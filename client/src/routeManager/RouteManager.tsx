@@ -13,6 +13,7 @@ import { PoliciesPages } from "../policiesPages";
 import { ProfilePage } from "../profilePage";
 import { ReviewsPages } from "../reviewsPages";
 import { SearchPage } from "../searchPage";
+import { SignInPage } from "../signInPage";
 import { TripDetailsPage } from "../tripDetailsPage";
 import { TripsPage } from "../tripsPage";
 
@@ -31,6 +32,7 @@ const RouteManager: FC = () => (
         <Route path="/trips" element={<TripsPage />} />
         <Route path="/reviews/given" element={<ReviewsPages />} />
         <Route path="/reviews/received" element={<ReviewsPages />} />
+        <Route path="/profile/login" element={<SignInPage />} />
       </Routes>
     </Layout>
   </Router>

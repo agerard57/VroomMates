@@ -1,0 +1,16 @@
+{
+  "signUpSection": {
+    "title": "Pas de compte ?",
+    "create": "Crées-en un !",
+    "or": "OU"
+  },
+
+  "signInSection": {
+    "title": "Ou connecte toi !",
+    "email": "Email",
+    "password": "Mot de passe",
+    "rememberMe": "Se souvenir de moi",
+    "passwordForgotten": "Mot de passe oublié ?",
+    "signInButton": "Connexion !"
+  }
+}

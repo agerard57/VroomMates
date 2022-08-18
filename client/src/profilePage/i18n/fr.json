@@ -1,5 +1,6 @@
 {
   "title": "Profil de {{name}}",
+  "titleOwnProfile": "Votre profil",
 
   "header": {
     "tripsDone_one": "VOYAGE FAIT",
@@ -12,6 +13,7 @@
   "mainButton": {
     "back": "Retour",
     "accountManagement": "Gestion du profil",
+    "profile": "Mon profil",
     "ban": "Bannir"
   },
 
@@ -37,5 +39,23 @@
     "title_other": "Derniers avis",
     "review": "{{nbReviews}} avis",
     "by": "par"
+  },
+
+  "accountManagementMenu": {
+    "reviews": {
+      "title": "Avis",
+      "given": "Voir les avis données",
+      "received": "Voir les avis reçus"
+    },
+    "account": {
+      "title": "Compte",
+      "balance": "Voir le solde du compte",
+      "managePayment": "Gestion des moyens de payement",
+      "driver": "Devenir un conducteur",
+      "car": "Éditer la voiture",
+      "profile": "Éditer le profil",
+      "logout": "Se déconnecter",
+      "close": "Clore mon compte"
+    }
   }
 }

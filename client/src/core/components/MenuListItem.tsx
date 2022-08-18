@@ -8,10 +8,17 @@ type Props = {
   title: string;
   link: string;
   color?: string;
+  isBold?: boolean;
   notifications?: number;
 };
 
-export const Item: FC<Props> = ({ title, link, color, notifications }) => {
+export const MenuListItem: FC<Props> = ({
+  title,
+  link,
+  color,
+  isBold = false,
+  notifications,
+}) => {
   return (
     <Link
       to={link}
@@ -24,18 +31,20 @@ export const Item: FC<Props> = ({ title, link, color, notifications }) => {
         padding-left: 0.5rem;
         text-decoration: none;
         display: grid;
+        font-weight: ${isBold ? "600;" : "500"};
       `}
     >
       <Row>
         <Col
+          xs={10}
           css={css`
             text-align: left;
-            font-weight: 500;
           `}
         >
           {title}
         </Col>
         <Col
+          xs={2}
           css={css`
             text-align: right;
             font-weight: 600;

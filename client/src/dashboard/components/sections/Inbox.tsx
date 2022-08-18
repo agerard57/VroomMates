@@ -2,8 +2,8 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Status } from "../../../core";
-import { Item } from "../Item";
-import { Title } from "../Title";
+import { MenuListItem } from "../../../core";
+import { MenuListTitle } from "../../../core";
 
 type Props = {
   status?: Status;
@@ -13,13 +13,13 @@ export const Inbox: FC<Props> = ({ status }) => {
   const { t } = useTranslation("Dashboard");
   return status ? (
     <section>
-      <Title title={t("inboxSection.title")} />
-      <Item
+      <MenuListTitle title={t("inboxSection.title")} />
+      <MenuListItem
         title={t("inboxSection.messages")}
         link="/inbox/messages"
         notifications={1}
       />
-      <Item
+      <MenuListItem
         title={t("inboxSection.notifications")}
         link="/inbox/notifications"
         notifications={7}

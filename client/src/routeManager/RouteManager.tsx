@@ -23,7 +23,6 @@ const RouteManager: FC = () => (
         <Route path="/user/:id" element={<ProfilePage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/trip/:id" element={<TripDetailsPage />} />
-        <Route path="/profile/view" element={<ProfilePage />} />
       </Routes>
     </Layout>
   </Router>

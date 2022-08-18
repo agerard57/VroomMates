@@ -1,6 +1,5 @@
 {
   "title": "{{name}}'s Profile",
-  "titleOwnProfile": "Your profile",
 
   "header": {
     "tripsDone": "TRIPS DONE",
@@ -11,7 +10,6 @@
   "mainButton": {
     "back": "Back",
     "accountManagement": "Account management",
-    "profile": "My profile",
     "ban": "Ban"
   },
 
@@ -38,23 +36,5 @@
     "review_one": "{{nbReviews}} review",
     "review_other": "{{nbReviews}} reviews",
     "by": "by"
-  },
-
-  "accountManagementMenu": {
-    "reviews": {
-      "title": "Reviews",
-      "given": "View given reviews",
-      "received": "View received reviews"
-    },
-    "account": {
-      "title": "Account",
-      "balance": "View account balance",
-      "managePayment": "Manage payment methods",
-      "driver": "Become a driver",
-      "car": "Edit car",
-      "profile": "Edit profile",
-      "logout": "Logout",
-      "close": "Close my account"
-    }
   }
 }

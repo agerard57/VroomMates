@@ -1,15 +1,15 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { MenuListItem } from "../../../core";
-import { MenuListTitle } from "../../../core";
+import { Item } from "../Item";
+import { Title } from "../Title";
 
 export const Misc: FC = () => {
   const { t } = useTranslation("Dashboard");
   return (
     <section>
-      <MenuListTitle title={t("miscSection.title")} />
-      <MenuListItem title={t("miscSection.conditions")} link="/policies" />
+      <Title title={t("miscSection.title")} />
+      <Item title={t("miscSection.conditions")} link="/policies" />
     </section>
   );
 };

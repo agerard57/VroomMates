@@ -4,8 +4,8 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { getStatusIcon, ProfilePic, Status } from "../../../core";
-import { MenuListItem } from "../../../core";
-import { MenuListTitle } from "../../../core";
+import { Item } from "../Item";
+import { Title } from "../Title";
 
 type Props = {
   status?: Status;
@@ -34,11 +34,8 @@ export const Account: FC<Props> = ({ status }) => {
         {accountIcon ? <img src={accountIcon} alt="accountIcon" /> : null}
       </h2>
       <div>
-        <MenuListItem
-          title={t("accountSection.yourAccount")}
-          link="/profile/view"
-        />
-        <MenuListItem
+        <Item title={t("accountSection.yourAccount")} link="/profile/view" />
+        <Item
           title={t("accountSection.signOff")}
           link="/home" //TODO add param to logout
           color="#FF5656"
@@ -47,9 +44,9 @@ export const Account: FC<Props> = ({ status }) => {
     </section>
   ) : (
     <section>
-      <MenuListTitle title={t("accountSection.title")} />
-      <MenuListItem title={t("accountSection.signIn")} link="/login" />
-      <MenuListItem title={t("accountSection.signUp")} link="/register" />
+      <Title title={t("accountSection.title")} />
+      <Item title={t("accountSection.signIn")} link="/login" />
+      <Item title={t("accountSection.signUp")} link="/register" />
     </section>
   );
 };

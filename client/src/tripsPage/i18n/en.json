@@ -1,0 +1,22 @@
+{
+  "title": "Manage my trips",
+
+  "tripsCreated": {
+    "title": "Trips created",
+    "noResult": "You have yet to make a trip!"
+  },
+
+  "currentTrips": {
+    "title": "Current trips",
+    "noResult": "You have yet to book a trip!"
+  },
+
+  "pastTrips": {
+    "title": "Past trips",
+    "noResult": "You have yet to book a trip!"
+  },
+
+  "trip": {
+    "organizedBy": "Organized by {{name}}"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Gérer mes voyages",
+
+  "tripsCreated": {
+    "title": "Voyages créés",
+    "noResult": "Tu n'a pas encore créé de voyage!"
+  },
+
+  "currentTrips": {
+    "title": "Voyages actuels",
+    "noResult": "Tu n'a pas encore créé !"
+  },
+
+  "pastTrips": {
+    "title": "Voyages passés",
+    "noResult": "You have yet to book a trip!"
+  },
+
+  "trip": {
+    "organizedBy": "Organized by {{name}}"
+  }
+}

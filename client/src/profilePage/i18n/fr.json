@@ -5,8 +5,8 @@
   "header": {
     "tripsDone_one": "VOYAGE FAIT",
     "tripsDone_other": "VOYAGES FAITS",
-    "tripsCreated_one": "VOYAGE CRÉE",
-    "tripsCreated_other": "VOYAGES CRÉES",
+    "tripsCreated_one": "VOYAGE CRÉÉ",
+    "tripsCreated_other": "VOYAGES CRÉÉS",
     "age": "{{age}} ans"
   },
 

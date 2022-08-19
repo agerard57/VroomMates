@@ -82,7 +82,7 @@ def create_i18n_folder(component_name):
 def create_components_folder(component_name):
     mkdir("components")
     with open("components/" + component_name + ".tsx", "w") as f:
-        f.write('/** @jsxImportSource @emotion/react */\nimport { css } from "@emotion/react";\nimport { FC } from "react";\nimport { Container } from "react-bootstrap";\nimport { useTranslation } from "react-i18next";\n\nimport { use' + component_name + ' } from "../hooks";\n\nexport const SignUpPage: FC = () => {\n  const { t } = useTranslation("SignUpPage");\n\n  use' + component_name + '();\n\n  return (\n    <Container\n      css={css`\n        padding: 5vw;\n      `}\n    >\n      <h1>SignUpPage page</h1>\n      <p>{t("title")}</p>\n    </Container>\n  );\n};\n')
+        f.write('/** @jsxImportSource @emotion/react */\nimport { css } from "@emotion/react";\nimport { FC } from "react";\nimport { Container } from "react-bootstrap";\nimport { useTranslation } from "react-i18next";\n\nimport { use' + component_name + ' } from "../hooks";\n\nexport const ' + component_name + ': FC = () => {\n  const { t } = useTranslation("' + component_name + '");\n\n  use' + component_name + '();\n\n  return (\n    <Container\n      css={css`\n        padding: 5vw;\n      `}\n    >\n      <h1>' + component_name + ' page</h1>\n      <p>{t("title")}</p>\n    </Container>\n  );\n};\n')
     with open("components/index.ts", "w") as f:
         f.write('export { ' + component_name + ' } from "./' + component_name + '";\n')
     with open("index.ts", "a") as f:

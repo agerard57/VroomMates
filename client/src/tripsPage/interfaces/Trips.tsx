@@ -9,15 +9,14 @@ export interface Trip {
     time: Date;
   };
   price_per_seat: { total: number };
-  day_of_week: number[];
   type: string;
-  frequent_trip_options: {
+  frequent_trip_options?: {
     day_of_week: number[];
     start_date: Date;
     end_date: Date;
   };
   status: string;
-  driver: string;
+  driver: { _id: string; name: { first_name: string } };
 }
 
 export interface Trips {
@@ -39,15 +38,14 @@ export const TripInitializer = {
   price_per_seat: {
     total: 0,
   },
-  day_of_week: [],
-  type: "single",
   frequent_trip_options: {
     day_of_week: [],
     start_date: new Date("2000-01-01T00:00:00Z"),
     end_date: new Date("2000-01-01T00:00:00Z"),
   },
+  type: "single",
   status: "",
-  driver: "",
+  driver: { _id: "", name: { first_name: "" } },
 };
 
 export const TripsInitializer = {

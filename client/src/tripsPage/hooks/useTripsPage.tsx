@@ -10,12 +10,14 @@ export const useTripsPage = () => {
 
   const [trips, setTrips] = useState<Trips>(TripsInitializer);
 
+  const userId = "62b118b7af7d95ee39d508eb";
   usePageTitle(t("title"));
 
   useEffect(() => {
-    getUserTrips("62b118b7af7d95ee39d508eb").then((trips) => {
+    getUserTrips(userId).then((trips) => {
       setTrips(trips);
     });
   }, []);
-  console.log(trips);
+
+  return { userId, trips };
 };

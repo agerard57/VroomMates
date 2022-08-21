@@ -17,6 +17,9 @@
   },
 
   "trip": {
-    "organizedBy": "Organized by {{name}}"
+    "from": "From: {{date}}",
+    "to": "To: {{date}}",
+    "organizedByYourself": "Organized by yourself",
+    "organizedByDriver": "Organized by {{driver}}"
   }
 }

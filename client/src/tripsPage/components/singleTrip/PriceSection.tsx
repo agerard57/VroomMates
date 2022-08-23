@@ -3,7 +3,15 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Col } from "react-bootstrap";
 
-export const PriceSection: FC = () => {
+import { normalizePrice } from "../../../core";
+import { useLanguage } from "../../../language";
+
+type Props = {
+  price: number;
+};
+
+export const PriceSection: FC<Props> = ({ price }) => {
+  const { language } = useLanguage();
   return (
     <Col
       css={css`
@@ -13,7 +21,7 @@ export const PriceSection: FC = () => {
         font-size: 1rem;
       `}
     >
-      $0 {/* TODO */}
+      {normalizePrice(price, language)}
     </Col>
   );
 };

@@ -28,6 +28,7 @@ export const DriverSection: FC<Props> = ({ driver }) => {
         color: #787878;
         font-weight: 500;
         font-size: 0.8rem;
+        white-space: nowrap;
       `}
     >
       {driverName}

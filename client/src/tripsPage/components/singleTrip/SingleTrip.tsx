@@ -17,6 +17,7 @@ type Props = {
 
 export const SingleTrip: FC<Props> = ({ trip }) => (
   <div
+    className="trip"
     css={css`
       display: flex;
       align-items: stretch;
@@ -42,9 +43,9 @@ export const SingleTrip: FC<Props> = ({ trip }) => (
         `}
       >
         <DriverSection driver={trip.driver} />
-        <PriceSection />
+        <PriceSection price={trip.price_per_seat.total} />
       </Row>
-      {trip.frequent_trip_options ? (
+      {trip.type === "frequent" && trip.frequent_trip_options ? (
         <DaysSection dayOfWeek={trip.frequent_trip_options.day_of_week} />
       ) : null}
     </Col>

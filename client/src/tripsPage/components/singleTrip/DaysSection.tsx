@@ -11,8 +11,7 @@ type Props = {
 
 export const DaysSection: FC<Props> = ({ dayOfWeek }) => {
   const { days } = useDaysDisplay(dayOfWeek);
-  // TODO CLEAN PACKAGE CODE
-  // TODO REMOVE DAY OF WEEK FROM NON-USING TRIPS
+
   return (
     <Row
       css={css`

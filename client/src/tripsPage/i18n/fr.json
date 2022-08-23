@@ -2,17 +2,20 @@
   "title": "Gérer mes voyages",
 
   "tripsCreated": {
-    "title": "Voyages créés",
+    "title_one": "Voyage créé",
+    "title_other": "Voyages créés ({{count}})",
     "noResult": "Tu n'a pas encore créé de voyage !"
   },
 
   "currentTrips": {
-    "title": "Voyages actuels",
+    "title_one": "Voyage actuel",
+    "title_other": "Voyages actuels ({{count}})",
     "noResult": "Tu n'a pas encore participé à un voyage !"
   },
 
   "pastTrips": {
-    "title": "Voyages passés",
+    "title_one": "Voyage passé",
+    "title_other": "Voyages passés ({{count}})",
     "noResult": "Tu n'a pas encore participé à un voyage !"
   },
 

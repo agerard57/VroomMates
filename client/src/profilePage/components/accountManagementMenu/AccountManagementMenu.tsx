@@ -3,12 +3,12 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Container } from "react-bootstrap";
 
-import { Status } from "../../../core";
+import { UserType } from "../../../core";
 import { AccountSection } from "./AccountSection";
 import { ReviewsSection } from "./ReviewsSection";
 
 type Props = {
-  userStatus: Status;
+  userStatus: UserType["Status"];
 };
 
 export const AccountManagementMenu: FC<Props> = ({ userStatus }) => (
@@ -19,6 +19,7 @@ export const AccountManagementMenu: FC<Props> = ({ userStatus }) => (
         margin-bottom: 1rem;
         border-bottom: 2px solid #e8e8e8;
       }
+
       a {
         padding: 3px 0;
       }

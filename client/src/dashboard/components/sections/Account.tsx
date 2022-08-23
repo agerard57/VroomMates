@@ -3,12 +3,12 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { getStatusIcon, ProfilePic, Status } from "../../../core";
+import { getStatusIcon, ProfilePic, UserType } from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
 
 type Props = {
-  status?: Status;
+  status?: UserType["Status"];
 };
 
 export const Account: FC<Props> = ({ status }) => {

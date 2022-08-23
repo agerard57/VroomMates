@@ -7,7 +7,7 @@ import { useDaysDisplay } from "../../../core";
 
 type Props = {
   type: string;
-  daysOfWeek: number[];
+  daysOfWeek?: number[];
 };
 
 export const DaysSection: FC<Props> = ({ type, daysOfWeek }) => {

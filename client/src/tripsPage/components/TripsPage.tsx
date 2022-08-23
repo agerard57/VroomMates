@@ -10,7 +10,7 @@ import { Card } from "./Card";
 
 export const TripsPage: FC = () => {
   const { t } = useTranslation("TripsPage");
-  const { trips } = useTripsPage();
+  const { trips } = useTripsPage(true);
 
   return (
     <Container
@@ -18,7 +18,14 @@ export const TripsPage: FC = () => {
         padding: 5vw;
       `}
     >
-      <h1>{t("title")}</h1>
+      <h1
+        css={css`
+          font-weight: 700;
+          padding: 0 0 3vw 0;
+        `}
+      >
+        {t("title")}
+      </h1>
       {Object.entries(trips).map(([key, value]: [string, Trip[]]) => (
         <Card key={key} cardName={key} trips={value} />
       ))}

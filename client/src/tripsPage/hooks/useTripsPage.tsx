@@ -5,19 +5,26 @@ import { usePageTitle } from "../../core";
 import { Trips, TripsInitializer } from "../interfaces";
 import { getUserTrips } from "../services";
 
-export const useTripsPage = () => {
+type TripsPageManager = (fetchData?: boolean) => {
+  userId: string;
+  trips: Trips;
+};
+
+export const useTripsPage: TripsPageManager = (fetchData = false) => {
   const { t } = useTranslation("TripsPage");
 
   const [trips, setTrips] = useState<Trips>(TripsInitializer);
 
-  const userId = "62b118b7af7d95ee39d508eb";
+  const userId = "62d7ca8e711c0dd9eced0ee2";
+
   usePageTitle(t("title"));
 
   useEffect(() => {
-    getUserTrips(userId).then((trips) => {
-      setTrips(trips);
-    });
-  }, []);
+    if (fetchData)
+      getUserTrips(userId).then((trips) => {
+        setTrips(trips);
+      });
+  }, [fetchData]);
 
   return { userId, trips };
 };

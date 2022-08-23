@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Status } from "../../../core";
+import { UserType } from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
 
 type Props = {
-  status?: Status;
+  status?: UserType["Status"];
 };
 
 export const Admin: FC<Props> = ({ status }) => {

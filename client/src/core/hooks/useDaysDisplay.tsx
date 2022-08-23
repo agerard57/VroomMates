@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { useLanguage } from "../../language";
 
-export const useDaysDisplay = (tripDays: number[]) => {
+export const useDaysDisplay = (tripDays?: number[]) => {
   const { t } = useTranslation("Core");
   const { language } = useLanguage();
 
@@ -19,25 +19,27 @@ export const useDaysDisplay = (tripDays: number[]) => {
   ];
 
   const days = displayedDays.map((day, index) => {
-    return tripDays.includes(index) ? (
-      <span
-        key={index}
-        css={css`
-          color: black;
-        `}
-      >
-        {day}
-      </span>
-    ) : (
-      <span
-        key={index}
-        css={css`
-          color: #bdbdbd;
-        `}
-      >
-        {day}
-      </span>
-    );
+    if (tripDays !== undefined)
+      return tripDays.includes(index) ? (
+        <span
+          key={index}
+          css={css`
+            color: black;
+          `}
+        >
+          {day}
+        </span>
+      ) : (
+        <span
+          key={index}
+          css={css`
+            color: #bdbdbd;
+          `}
+        >
+          {day}
+        </span>
+      );
+    else return null;
   });
   // In english, we display sunday first, this is not the case in french.
   if (language !== "en") days.push(days.splice(0, 1)[0]);

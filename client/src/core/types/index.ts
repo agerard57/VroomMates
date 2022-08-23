@@ -1,1 +1,2 @@
-export type { Status } from "./User";
+export type { UserType } from "./UserType";
+export type { TripType } from "./TripType";

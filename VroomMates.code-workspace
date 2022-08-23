@@ -81,7 +81,7 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "discord.enabled": true,
-    "conventionalCommits.scopes": ["root"]
+    "conventionalCommits.scopes": ["root", "tripsPage"]
   },
   "extensions": {
     "recommendations": [

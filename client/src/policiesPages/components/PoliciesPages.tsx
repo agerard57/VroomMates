@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { SelectInput } from "../../core";
+import { Button, SelectInput } from "../../core";
 import { usePoliciesPages } from "../hooks";
 import { CookiesPolicyPage, TermsPage, PrivacyPolicyPage } from "./pages";
 
@@ -48,8 +48,10 @@ export const PoliciesPages: FC = () => {
         {value === "termsAndConditions" && <TermsPage />}
         {value === "privacyPolicy" && <PrivacyPolicyPage />}
         {value === "cookies" && <CookiesPolicyPage />}
-        {/* TODO Add go up button */}
       </div>
+      <Button type="hollow" onClick={() => window.scroll(0, 0)}>
+        {t("back")}
+      </Button>
     </Container>
   );
 };

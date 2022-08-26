@@ -2,34 +2,16 @@
 import { css } from "@emotion/react";
 import { FC } from "react";
 
-// Props : {
-//   inputType: button | text | password;
-//   inputPlaceholder?: string;
-//   imgSrc?: string;
-//   inputOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-// minLength?: number;
-// maxLength?: number;
-// minValue?: number;
-// maxValue?: number;
-// minDate?: string;
-// maxDate?: string;
-// minAge?: number;
-// maxAge?: number;
-
 type Props = {
-  inputType: "radio" | "text" | "date";
   inputPlaceholder?: string;
-  inputValue?: string;
   inputName: string;
   radioValue?: string;
   isRequired?: boolean;
   icon?: string;
 };
 
-export const Input: FC<Props> = ({
+export const RadioInput: FC<Props> = ({
   inputPlaceholder,
-  inputType,
-  inputValue,
   inputName,
   radioValue,
   icon,
@@ -56,12 +38,12 @@ export const Input: FC<Props> = ({
     }
   };
 
-  return inputType === "radio" ? (
+  return (
     <label htmlFor={inputName} css={InputStyle} onClick={onClickRadio}>
       <input
         id={radioValue}
         name={inputName}
-        type={inputType}
+        type="radio"
         css={css`
           /* visibility:hidden */
         `}
@@ -69,14 +51,5 @@ export const Input: FC<Props> = ({
       />
       <span>{inputPlaceholder}</span>
     </label>
-  ) : (
-    <input
-      type={inputType}
-      id={inputName}
-      name={inputName}
-      placeholder={inputPlaceholder}
-      defaultValue={inputValue}
-      css={InputStyle}
-    />
   );
 };

@@ -2,6 +2,7 @@ import { i18n as Core } from "../core";
 import { i18n as Dashboard } from "../dashboard";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
+import { i18n as PoliciesPages } from "../policiesPages";
 import { i18n as ProfilePage } from "../profilePage";
 import { i18n as SearchPage } from "../searchPage";
 import { i18n as TripDetailsPage } from "../tripDetailsPage";
@@ -26,6 +27,7 @@ const moduleResources = normalize({
   Dashboard,
   LandingPage,
   LoadingScreen,
+  PoliciesPages,
   ProfilePage,
   SearchPage,
   TripDetailsPage,

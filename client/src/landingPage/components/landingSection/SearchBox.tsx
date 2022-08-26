@@ -4,7 +4,14 @@ import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { Input, RoundedContour, Button, useGeolocation } from "../../../core";
+import {
+  RoundedContour,
+  Button,
+  useGeolocation,
+  RadioInput,
+  TextInput,
+  DateInput,
+} from "../../../core";
 import arrivalIcon from "../../assets/icons/arrivalIcon.svg";
 import calendarIcon from "../../assets/icons/calendarIcon.svg";
 import departureIcon from "../../assets/icons/departureIcon.svg";
@@ -34,9 +41,8 @@ export const SearchBox: FC = () => {
           <hr />
           <Row>
             <Col>
-              <Input
+              <RadioInput
                 inputName="type"
-                inputType="radio"
                 radioValue="single"
                 inputPlaceholder={t(
                   "landingSection.search.tripType.singleTrip"
@@ -47,9 +53,8 @@ export const SearchBox: FC = () => {
               <span>{t("landingSection.search.tripType.or")}</span>
             </Col>
             <Col>
-              <Input
+              <RadioInput
                 inputName="type"
-                inputType="radio"
                 radioValue="frequent"
                 inputPlaceholder={t(
                   "landingSection.search.tripType.frequentTrip"
@@ -58,9 +63,8 @@ export const SearchBox: FC = () => {
             </Col>
           </Row>
           <Row>
-            <Input
+            <TextInput
               inputName="departureLocation"
-              inputType="text"
               inputPlaceholder={t("landingSection.search.tripPoints.from")}
               inputValue={address}
               icon={departureIcon}
@@ -70,17 +74,15 @@ export const SearchBox: FC = () => {
             <span>{t("landingSection.search.tripPoints.to")}</span>
           </Row>
           <Row>
-            <Input
+            <TextInput
               inputName="arrivalLocation"
-              inputType="text"
               inputPlaceholder={t("landingSection.search.tripPoints.getTo")}
               icon={arrivalIcon}
             />
           </Row>
           <Row>
-            <Input
+            <DateInput
               inputName="date"
-              inputType="date"
               inputPlaceholder={t("landingSection.search.date")}
               icon={calendarIcon}
             />

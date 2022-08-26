@@ -48,6 +48,7 @@ export const PoliciesPages: FC = () => {
         {value === "termsAndConditions" && <TermsPage />}
         {value === "privacyPolicy" && <PrivacyPolicyPage />}
         {value === "cookies" && <CookiesPolicyPage />}
+        {/* TODO Add go up button */}
       </div>
     </Container>
   );

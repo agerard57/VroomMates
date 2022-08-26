@@ -2,6 +2,8 @@
 import { css } from "@emotion/react";
 import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
+import FacebookLogin from "react-facebook-login";
+import GoogleLogin from "react-google-login";
 import { useTranslation } from "react-i18next";
 
 import { Input, RoundedContour, Button } from "../../core";
@@ -12,13 +14,30 @@ import passwordIcon from "../assets/icons/passwordIcon.svg";
 
 export const SignInBox: FC = () => {
   const { t } = useTranslation("SignInPage");
-
+  const responseGoogle = (response: any) => {
+    console.log(response);
+  };
   return (
     <RoundedContour
       outsideStyling={`
           padding: 1rem;
           `}
     >
+      <GoogleLogin
+        clientId="374277909154-56jflke52kogao5omqr5l29k1mpdukgc.apps.googleusercontent.com"
+        buttonText="Login"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={"single_host_origin"}
+      />
+      <FacebookLogin
+        appId="1521176028311446"
+        autoLoad={true}
+        fields="public_profile,name,email,picture"
+        onClick={responseGoogle}
+        callback={responseGoogle}
+      />
+      ,
       <Row>
         <h2
           css={css`

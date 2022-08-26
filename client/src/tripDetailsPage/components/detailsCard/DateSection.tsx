@@ -11,15 +11,28 @@ type Props = {
   type: string;
   singleTrip: Date;
   frequentTrip: {
-    startDate?: Date;
-    endDate?: Date;
+    startDate: Date;
+    endDate: Date;
   };
 };
 
 export const DateSection: FC<Props> = ({ type, singleTrip, frequentTrip }) => {
   const { t } = useTranslation("TripDetailsPage");
   const { language } = useLanguage();
-  return frequentTrip.startDate && frequentTrip.endDate ? (
+  return type === "single" ? (
+    <Row
+      css={css`
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        border-bottom: 1px solid #e6e6e6;
+      `}
+    >
+      <span>
+        <b>{normalizeDate(singleTrip, language, "longDate")}</b>
+      </span>
+    </Row>
+  ) : (
     <Row
       css={css`
         display: flex;
@@ -35,19 +48,6 @@ export const DateSection: FC<Props> = ({ type, singleTrip, frequentTrip }) => {
       <span>
         {t("dateSection.until")}
         <b>{normalizeDate(frequentTrip.endDate, language, "longDate")}</b>
-      </span>
-    </Row>
-  ) : (
-    <Row
-      css={css`
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        border-bottom: 1px solid #e6e6e6;
-      `}
-    >
-      <span>
-        <b>{normalizeDate(singleTrip, language, "longDate")}</b>
       </span>
     </Row>
   );

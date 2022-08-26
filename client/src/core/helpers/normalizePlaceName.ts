@@ -14,10 +14,7 @@ export const normalizePlaceName: NormalizePlaceName = (
   if (placeName.length > 0) {
     switch (format) {
       case "full":
-        return placeName
-          .substring(0, placeName.lastIndexOf(","))
-          .replace(/\d/g, "")
-          .replace("  ", " ");
+        return placeName;
       case "near":
         const near = lng === "en" ? "near" : "proche de";
         return (

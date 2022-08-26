@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { getStatusIcon, ProfilePic, Stars, UserType } from "../../../core";
+import { getStatusIcon, ProfilePic, Stars, Status } from "../../../core";
 
 type Props = {
   user: {
@@ -12,7 +12,7 @@ type Props = {
     lastName: string;
     avatarSrc: string;
     dateOfBirth: Date;
-    status: UserType["Status"];
+    status: Status;
   };
   stats: {
     avgRating?: number;

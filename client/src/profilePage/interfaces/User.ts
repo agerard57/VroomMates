@@ -1,4 +1,4 @@
-import { UserType } from "../../core";
+import { Status } from "../../core";
 
 interface About {
   bio: string;
@@ -38,7 +38,7 @@ export interface User {
   birth_date: Date;
   about?: About;
   photo_url: string;
-  status: UserType["Status"];
+  status: Status;
   ratings: Review[];
   car?: Car;
   avg_rating: number;
@@ -85,7 +85,7 @@ export const UserInitializer = {
   about: AboutInitializer,
   photo_url:
     "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png", //TODO Use own default avatar
-  status: "passenger" as UserType["Status"],
+  status: "passenger" as Status,
   ratings: [ReviewInitializer],
   car: CarInitializer,
   avg_rating: 0,

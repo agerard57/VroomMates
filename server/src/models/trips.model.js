@@ -31,7 +31,6 @@ const tripsSchema = mongoose.Schema(
         type: ["number"],
         enum: [0, 1, 2, 3, 4, 5, 6],
         required: true,
-        default: undefined,
       },
       start_date: { type: "Date", required: true },
       end_date: { type: "Date", required: true },

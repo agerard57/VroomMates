@@ -36,8 +36,9 @@ export interface Trip {
   };
   passengers: Passenger[];
   price_per_seat: { total: { $numberDecimal: string } };
+  day_of_week: number[];
   type: string;
-  frequent_trip_options?: {
+  frequent_trip_options: {
     day_of_week: number[];
     start_date: Date;
     end_date: Date;
@@ -90,8 +91,14 @@ export const TripInitializer = {
   price_per_seat: {
     total: { $numberDecimal: "0" },
   },
+  day_of_week: [],
   passengers: [PassengerInitializer],
   type: "single",
+  frequent_trip_options: {
+    day_of_week: [],
+    start_date: new Date("2000-01-01T00:00:00Z"),
+    end_date: new Date("2000-01-01T00:00:00Z"),
+  },
   free_seats: 0,
   trip_duration: 0,
   distance: 0,

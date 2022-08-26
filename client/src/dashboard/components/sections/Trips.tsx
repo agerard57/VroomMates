@@ -1,20 +1,20 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { UserType } from "../../../core";
-import { MenuListItem } from "../../../core";
-import { MenuListTitle } from "../../../core";
+import { Status } from "../../../core";
+import { Item } from "../Item";
+import { Title } from "../Title";
 
 type Props = {
-  status?: UserType["Status"];
+  status?: Status;
 };
 
 export const Trips: FC<Props> = ({ status }) => {
   const { t } = useTranslation("Dashboard");
   return status ? (
     <section>
-      <MenuListTitle title={t("tripsSection.title")} />
-      <MenuListItem
+      <Title title={t("tripsSection.title")} />
+      <Item
         title={t("tripsSection.manageTrips")}
         link="/trips"
         color="#367FEF"
@@ -22,8 +22,8 @@ export const Trips: FC<Props> = ({ status }) => {
     </section>
   ) : (
     <section>
-      <MenuListTitle title={t("tripsSection.title")} />
-      <MenuListItem title={t("tripsSection.look")} link="/search" />
+      <Title title={t("tripsSection.title")} />
+      <Item title={t("tripsSection.look")} link="/search" />
     </section>
   );
 };

@@ -4,14 +4,14 @@ import { FC } from "react";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { UserType, usePageTitle } from "../../core";
+import { Status, usePageTitle } from "../../core";
 import { Account, Admin, Driver, Inbox, Misc, Trips } from "./sections";
 
 export const Dashboard: FC = () => {
   const { t } = useTranslation("Dashboard");
 
   const user = {
-    status: "admin" as UserType["Status"],
+    status: "admin" as Status,
   }; // TODO Please implement real user
 
   usePageTitle(t("title"));
@@ -19,11 +19,11 @@ export const Dashboard: FC = () => {
   return (
     <Container
       css={css`
-        section:not(:last-child) {
-          padding-bottom: 1rem;
-          margin-bottom: 1rem;
-          border-bottom: 2px solid #e8e8e8;
-        }
+      section:not(:last-child) {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+          border-bottom: 2px solid #E8E8E8;
+
       `}
     >
       <Account status={user.status} />

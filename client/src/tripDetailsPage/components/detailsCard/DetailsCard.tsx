@@ -33,14 +33,14 @@ export const DetailsCard: FC<Props> = ({ trip }) => {
     >
       <DaysSection
         type={trip.type}
-        daysOfWeek={trip.frequent_trip_options?.day_of_week}
+        daysOfWeek={trip.frequent_trip_options.day_of_week}
       />
       <DateSection
         type={trip.type}
         singleTrip={trip.departure.time}
         frequentTrip={{
-          startDate: trip.frequent_trip_options?.start_date,
-          endDate: trip.frequent_trip_options?.end_date,
+          startDate: trip.frequent_trip_options.start_date,
+          endDate: trip.frequent_trip_options.end_date,
         }}
       />
       <MapSection

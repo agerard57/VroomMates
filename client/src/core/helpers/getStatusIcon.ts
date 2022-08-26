@@ -1,8 +1,8 @@
 import AdminIcon from "../assets/icons/status/adminIcon.svg";
 import DriverIcon from "../assets/icons/status/driverIcon.svg";
-import { UserType } from "../types";
+import { Status } from "../types";
 
-type GetStatusIcon = (status: UserType["Status"]) => string | undefined;
+type GetStatusIcon = (status: Status) => string | undefined;
 
 export const getStatusIcon: GetStatusIcon = (status) => {
   if (status === "driver") return DriverIcon;

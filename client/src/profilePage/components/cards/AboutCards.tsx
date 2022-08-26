@@ -1,6 +1,5 @@
 import { FC } from "react";
 
-import { UserType } from "../../../core";
 import { User } from "../../interfaces";
 import { BioCard } from "./BioCard";
 import { CarCard } from "./CarCard";
@@ -9,7 +8,7 @@ import { HobbiesCard } from "./HobbiesCard";
 type Props = {
   bio?: string;
   car?: User["car"];
-  status: UserType["Status"];
+  status: User["status"];
   hobbies?: string[];
 };
 

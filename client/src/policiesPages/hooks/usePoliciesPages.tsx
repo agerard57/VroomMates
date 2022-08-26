@@ -29,6 +29,7 @@ export const usePoliciesPages = (): PoliciesPagesManager => {
   const [value, setValue] = useState<Pages>(getInitialState);
 
   window.location.hash = value;
+  window.scroll(0, 0);
 
   const handleChange = (e: { target: { value: SetStateAction<Pages> } }) => {
     setValue(e.target.value);

@@ -12,6 +12,7 @@ export const TripsPage: FC = () => {
   const { t } = useTranslation("TripsPage");
   const { trips } = useTripsPage(true);
 
+  /* TODO Mapbox doesn't work in prod */
   return (
     <Container
       css={css`

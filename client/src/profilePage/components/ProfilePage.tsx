@@ -17,6 +17,7 @@ export const ProfilePage: FC = () => {
   const [accountManagementMenu, setAccountManagementMenu] =
     useState<boolean>(false);
 
+  /* TODO Make the header and the navbar unmovable */
   return (
     <>
       <PageBanner avatarSrc={user.photo_url} />

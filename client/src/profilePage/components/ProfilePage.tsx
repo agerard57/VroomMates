@@ -1,18 +1,23 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Container } from "react-bootstrap";
 
 import { useProfilePage } from "../hooks";
 import { MainButton } from "./MainButton";
+import { AccountManagementMenu } from "./accountManagementMenu";
 import { AboutCards } from "./cards";
 import { PageBanner, PageHeader } from "./header";
 import { AboutList } from "./list";
 import { ReviewsCard } from "./reviews";
 
 export const ProfilePage: FC = () => {
-  const { user } = useProfilePage();
+  const { user, pageType } = useProfilePage();
 
+  const [accountManagementMenu, setAccountManagementMenu] =
+    useState<boolean>(false);
+
+  /* TODO Make the header and the navbar unmovable */
   return (
     <>
       <PageBanner avatarSrc={user.photo_url} />
@@ -40,27 +45,38 @@ export const ProfilePage: FC = () => {
             nbTripsParticipated: user.nb_trips_participated,
           }}
         />
-        <MainButton />
-        <div
-          css={css`
-            & > * {
-              margin: 5% 0;
-            }
-          `}
-        >
-          <AboutCards
-            bio={user.about?.bio}
-            car={user.car}
-            hobbies={user.about?.hobbies}
-            status={user.status}
-          />
-          <AboutList
-            talk={user.about?.chatty}
-            music={user.about?.music}
-            pet={user.about?.animals_tolerated}
-          />
-          <ReviewsCard userReviews={user.ratings} />
-        </div>
+        <MainButton
+          pageType={pageType}
+          onClick={{
+            ban: () => {},
+            manage: () => setAccountManagementMenu(!accountManagementMenu),
+          }}
+          accountManagementMenu={accountManagementMenu}
+        />
+        {!accountManagementMenu ? (
+          <div
+            css={css`
+              & > * {
+                margin: 5% 0;
+              }
+            `}
+          >
+            <AboutCards
+              bio={user.about?.bio}
+              car={user.car}
+              hobbies={user.about?.hobbies}
+              status={user.status}
+            />
+            <AboutList
+              talk={user.about?.chatty}
+              music={user.about?.music}
+              pet={user.about?.animals_tolerated}
+            />
+            <ReviewsCard userReviews={user.ratings} />
+          </div>
+        ) : (
+          <AccountManagementMenu userStatus={user.status} />
+        )}
       </Container>
     </>
   );

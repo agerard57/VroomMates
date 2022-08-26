@@ -9,9 +9,11 @@ import {
 import { Layout } from "../core";
 import { Dashboard } from "../dashboard";
 import { LandingPage } from "../landingPage";
+import { PoliciesPages } from "../policiesPages";
 import { ProfilePage } from "../profilePage";
 import { SearchPage } from "../searchPage";
 import { TripDetailsPage } from "../tripDetailsPage";
+import { TripsPage } from "../tripsPage";
 
 const RouteManager: FC = () => (
   <Router>
@@ -22,7 +24,10 @@ const RouteManager: FC = () => (
         <Route path="/home" element={<LandingPage />} />
         <Route path="/user/:id" element={<ProfilePage />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/policies" element={<PoliciesPages />} />
+        <Route path="/profile/view" element={<ProfilePage />} />
         <Route path="/trip/:id" element={<TripDetailsPage />} />
+        <Route path="/trips" element={<TripsPage />} />
       </Routes>
     </Layout>
   </Router>

@@ -6,7 +6,7 @@ type Props = {
   title: string;
 };
 
-export const Title: FC<Props> = ({ title }) => {
+export const MenuListTitle: FC<Props> = ({ title }) => {
   return (
     <span
       css={css`

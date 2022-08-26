@@ -3,12 +3,12 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { getStatusIcon, ProfilePic, Status } from "../../../core";
-import { Item } from "../Item";
-import { Title } from "../Title";
+import { getStatusIcon, ProfilePic, UserType } from "../../../core";
+import { MenuListItem } from "../../../core";
+import { MenuListTitle } from "../../../core";
 
 type Props = {
-  status?: Status;
+  status?: UserType["Status"];
 };
 
 export const Account: FC<Props> = ({ status }) => {
@@ -34,8 +34,11 @@ export const Account: FC<Props> = ({ status }) => {
         {accountIcon ? <img src={accountIcon} alt="accountIcon" /> : null}
       </h2>
       <div>
-        <Item title={t("accountSection.yourAccount")} link="/profile/view" />
-        <Item
+        <MenuListItem
+          title={t("accountSection.yourAccount")}
+          link="/profile/view"
+        />
+        <MenuListItem
           title={t("accountSection.signOff")}
           link="/home" //TODO add param to logout
           color="#FF5656"
@@ -44,9 +47,9 @@ export const Account: FC<Props> = ({ status }) => {
     </section>
   ) : (
     <section>
-      <Title title={t("accountSection.title")} />
-      <Item title={t("accountSection.signIn")} link="/login" />
-      <Item title={t("accountSection.signUp")} link="/register" />
+      <MenuListTitle title={t("accountSection.title")} />
+      <MenuListItem title={t("accountSection.signIn")} link="/login" />
+      <MenuListItem title={t("accountSection.signUp")} link="/register" />
     </section>
   );
 };

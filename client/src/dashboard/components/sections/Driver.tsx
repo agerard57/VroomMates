@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Status } from "../../../core";
-import { Item } from "../Item";
-import { Title } from "../Title";
+import { UserType } from "../../../core";
+import { MenuListItem } from "../../../core";
+import { MenuListTitle } from "../../../core";
 
 type Props = {
-  status?: Status;
+  status?: UserType["Status"];
 };
 
 export const Driver: FC<Props> = ({ status }) => {
@@ -14,15 +14,18 @@ export const Driver: FC<Props> = ({ status }) => {
   if (status === "passenger")
     return (
       <section>
-        <Title title={t("driverSection.title")} />
-        <Item title={t("driverSection.becomeDriver")} link="/driver/join" />
+        <MenuListTitle title={t("driverSection.title")} />
+        <MenuListItem
+          title={t("driverSection.becomeDriver")}
+          link="/driver/join"
+        />
       </section>
     );
   else if (status === "driver" || status === "admin")
     return (
       <section>
-        <Title title={t("driverSection.title")} />
-        <Item title={t("driverSection.addTrip")} link="/driver/add" />
+        <MenuListTitle title={t("driverSection.title")} />
+        <MenuListItem title={t("driverSection.addTrip")} link="/driver/add" />
       </section>
     );
   else return null;

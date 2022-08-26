@@ -2,9 +2,11 @@ import { i18n as Core } from "../core";
 import { i18n as Dashboard } from "../dashboard";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
+import { i18n as PoliciesPages } from "../policiesPages";
 import { i18n as ProfilePage } from "../profilePage";
 import { i18n as SearchPage } from "../searchPage";
 import { i18n as TripDetailsPage } from "../tripDetailsPage";
+import { i18n as TripsPage } from "../tripsPage";
 
 type Modules = Record<string, { fr: any; en: any }>;
 
@@ -24,10 +26,12 @@ const moduleResources = normalize({
   Core,
   Dashboard,
   LandingPage,
-  TripDetailsPage,
   LoadingScreen,
+  PoliciesPages,
   ProfilePage,
   SearchPage,
+  TripDetailsPage,
+  TripsPage,
 });
 
 export const resources = {

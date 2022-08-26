@@ -79,7 +79,9 @@
     },
     "[markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "discord.enabled": true,
+    "conventionalCommits.scopes": ["root", "tripsPage", "policiesPages"]
   },
   "extensions": {
     "recommendations": [
@@ -88,7 +90,8 @@
       "esbenp.prettier-vscode",
       "wayou.vscode-todo-highlight",
       "streetsidesoftware.code-spell-checker",
-      "Orta.vscode-jest"
+      "Orta.vscode-jest",
+      "vivaxy.vscode-conventional-commits"
     ]
   }
 }

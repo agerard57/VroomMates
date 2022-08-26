@@ -1,0 +1,1 @@
+export { SingleTrip } from "./SingleTrip";

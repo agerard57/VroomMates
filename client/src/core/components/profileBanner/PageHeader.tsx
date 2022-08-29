@@ -23,6 +23,7 @@ type Props = {
 
 export const PageHeader: FC<Props> = ({ user, stats }) => {
   const { t } = useTranslation("ProfilePage");
+  // TODO PUT IN CORE
   // Get age from DOB
   const dob = new Date(user.dateOfBirth);
   const age = (new Date().getFullYear() - dob.getFullYear()).toString();

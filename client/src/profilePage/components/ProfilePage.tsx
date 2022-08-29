@@ -3,11 +3,11 @@ import { css } from "@emotion/react";
 import { FC, useState } from "react";
 import { Container } from "react-bootstrap";
 
+import { PageBanner, PageHeader } from "../../core/components/profileBanner";
 import { useProfilePage } from "../hooks";
 import { MainButton } from "./MainButton";
 import { AccountManagementMenu } from "./accountManagementMenu";
 import { AboutCards } from "./cards";
-import { PageBanner, PageHeader } from "./header";
 import { AboutList } from "./list";
 import { ReviewsCard } from "./reviews";
 

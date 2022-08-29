@@ -9,7 +9,7 @@ node_modules
 *.swp
 
 # testing
-/coverage
+coverage
 
 # production
 /build

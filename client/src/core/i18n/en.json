@@ -1,12 +1,15 @@
 {
-  "confirmationMessage": "The website's language has been sucessfully set to English!",
+  "confirmationMessage": "The website's language has been successfully set to English!",
+
   "deniedMessage": "The website's language was already set to English.",
+
   "navbar": {
     "home": "Home",
     "search": "Search",
     "inbox": "Inbox",
     "dashboard": "Dashboard"
   },
+
   "days": {
     "sunday": "Sun.",
     "monday": "Mon.",
@@ -15,5 +18,13 @@
     "thursday": "Thu.",
     "friday": "Fri.",
     "saturday": "Sat."
+  },
+
+  "reviews": {
+    "title_one": "Review",
+    "title_other": "Last reviews",
+    "review_one": "{{nbReviews}} review",
+    "review_other": "{{nbReviews}} reviews",
+    "by": "by"
   }
 }

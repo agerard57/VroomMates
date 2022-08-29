@@ -1,3 +1,6 @@
 {
-  "title": "ReviewsPages"
+  "givenReviewsTitle": "Avis données",
+  "receivedReviewsTitle": "Avis reçus",
+
+  "back": "Retour"
 }

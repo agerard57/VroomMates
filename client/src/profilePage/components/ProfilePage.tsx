@@ -3,13 +3,12 @@ import { css } from "@emotion/react";
 import { FC, useState } from "react";
 import { Container } from "react-bootstrap";
 
-import { PageBanner, PageHeader } from "../../core/components/profileBanner";
+import { PageBanner, PageHeader, ReviewsCard } from "../../core";
 import { useProfilePage } from "../hooks";
 import { MainButton } from "./MainButton";
 import { AccountManagementMenu } from "./accountManagementMenu";
 import { AboutCards } from "./cards";
 import { AboutList } from "./list";
-import { ReviewsCard } from "./reviews";
 
 export const ProfilePage: FC = () => {
   const { user, pageType } = useProfilePage();

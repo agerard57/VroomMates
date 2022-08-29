@@ -8,18 +8,6 @@ interface About {
   hobbies: string[];
 }
 
-export interface Review {
-  author: {
-    name: {
-      first_name: string;
-      last_name: string;
-    };
-  };
-  message: string;
-  rating: number;
-  date: Date;
-}
-
 interface Car {
   brand: string;
   model: string;
@@ -39,7 +27,7 @@ export interface User {
   about?: About;
   photo_url: string;
   status: UserType["Status"];
-  ratings: Review[];
+  ratings: UserType["Review"][];
   car?: Car;
   avg_rating: number;
   nb_trips_created: number;

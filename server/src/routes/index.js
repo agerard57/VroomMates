@@ -16,5 +16,6 @@ module.exports = function routes(app) {
   require("./searchPage.routes")(app);
   require("./tripDetailsPage.routes")(app);
   require("./profilePage.routes")(app);
+  require("./reviewsPages.routes")(app);
   require("./tripsPage.routes")(app);
 };

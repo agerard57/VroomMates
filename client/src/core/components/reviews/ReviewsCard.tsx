@@ -3,16 +3,16 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { RoundedContour } from "../../../core";
-import { Review } from "../../interfaces";
+import { RoundedContour } from "../..";
+import { UserType } from "../../types/UserType";
 import { ReviewElement } from "./ReviewElement";
 
 type Props = {
-  userReviews?: Review[];
+  userReviews?: UserType["Review"][];
 };
 
 export const ReviewsCard: FC<Props> = ({ userReviews }) => {
-  const { t } = useTranslation("ProfilePage");
+  const { t } = useTranslation("Core");
 
   return userReviews ? (
     <RoundedContour

@@ -13,3 +13,5 @@ export { ColoredBackground } from "./ColoredBackground";
 export { Stars } from "./stars";
 export { MenuListTitle } from "./MenuListTitle";
 export { MenuListItem } from "./MenuListItem";
+export { ReviewsCard } from "./reviews";
+export { PageHeader, PageBanner } from "./profileBanner";

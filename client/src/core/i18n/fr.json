@@ -1,12 +1,15 @@
 {
   "confirmationMessage": "La langue du site a bien été changée en Francais !",
+
   "deniedMessage": "La langue du site est déjà en Francais.",
+
   "navbar": {
     "home": "Accueil",
     "search": "Recherche",
     "inbox": "Réception",
     "dashboard": "Menu"
   },
+
   "days": {
     "monday": "Lun.",
     "tuesday": "Mar.",
@@ -15,5 +18,12 @@
     "friday": "Ven.",
     "saturday": "Sam.",
     "sunday": "Dim."
+  },
+
+  "reviews": {
+    "title_one": "Avis",
+    "title_other": "Derniers avis",
+    "review": "{{nbReviews}} avis",
+    "by": "par"
   }
 }

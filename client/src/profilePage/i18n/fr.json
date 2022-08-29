@@ -34,13 +34,6 @@
     }
   },
 
-  "reviews": {
-    "title_one": "Avis",
-    "title_other": "Derniers avis",
-    "review": "{{nbReviews}} avis",
-    "by": "par"
-  },
-
   "accountManagementMenu": {
     "reviews": {
       "title": "Avis",

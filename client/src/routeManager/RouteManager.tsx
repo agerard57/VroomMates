@@ -24,6 +24,7 @@ const RouteManager: FC = () => (
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/home" element={<LandingPage />} />
         <Route path="/user/:id" element={<ProfilePage />} />
+        {/* TODO BREAKS THE API */}
         <Route path="/search" element={<SearchPage />} />
         <Route path="/policies" element={<PoliciesPages />} />
         <Route path="/profile/view" element={<ProfilePage />} />

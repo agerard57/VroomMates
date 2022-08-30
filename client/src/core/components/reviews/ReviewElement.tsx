@@ -4,17 +4,23 @@ import { FC } from "react";
 import { Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { normalizeDate, Stars } from "../../../core";
+import { normalizeDate, Stars } from "../..";
 import { useLanguage } from "../../../language";
-import { Review } from "../../interfaces";
+import { UserType } from "../../types/UserType";
 
 type Props = {
-  review: Review;
+  review: UserType["Review"];
 };
 
 export const ReviewElement: FC<Props> = ({ review }) => {
-  const { t } = useTranslation("ProfilePage");
+  const { t } = useTranslation("Core");
   const { language } = useLanguage();
+
+  const nameDisplayed = review.author.name
+    ? `${t("reviews.by")} ${review.author.name.first_name} ${
+        review.author.name.last_name
+      }`
+    : "";
 
   return (
     <>
@@ -35,10 +41,7 @@ export const ReviewElement: FC<Props> = ({ review }) => {
             `}
           >
             <Stars rating={review.rating} />
-            <span>
-              {t("reviews.by")} {review.author.name.first_name}{" "}
-              {review.author.name.last_name}
-            </span>
+            <span>{nameDisplayed}</span>
           </Col>
           <Col
             css={css`

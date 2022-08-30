@@ -11,6 +11,7 @@ import { Dashboard } from "../dashboard";
 import { LandingPage } from "../landingPage";
 import { PoliciesPages } from "../policiesPages";
 import { ProfilePage } from "../profilePage";
+import { ReviewsPages } from "../reviewsPages";
 import { SearchPage } from "../searchPage";
 import { TripDetailsPage } from "../tripDetailsPage";
 import { TripsPage } from "../tripsPage";
@@ -28,6 +29,8 @@ const RouteManager: FC = () => (
         <Route path="/profile/view" element={<ProfilePage />} />
         <Route path="/trip/:id" element={<TripDetailsPage />} />
         <Route path="/trips" element={<TripsPage />} />
+        <Route path="/reviews/given" element={<ReviewsPages />} />
+        <Route path="/reviews/received" element={<ReviewsPages />} />
       </Routes>
     </Layout>
   </Router>

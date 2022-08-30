@@ -1,0 +1,1 @@
+export { useReviewsPages } from "./useReviewsPages";

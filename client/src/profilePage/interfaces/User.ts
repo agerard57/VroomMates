@@ -8,18 +8,6 @@ interface About {
   hobbies: string[];
 }
 
-export interface Review {
-  author: {
-    name: {
-      first_name: string;
-      last_name: string;
-    };
-  };
-  message: string;
-  rating: number;
-  date: Date;
-}
-
 interface Car {
   brand: string;
   model: string;
@@ -39,11 +27,8 @@ export interface User {
   about?: About;
   photo_url: string;
   status: UserType["Status"];
-  ratings: Review[];
+  ratings: UserType["Review"][];
   car?: Car;
-  avg_rating: number;
-  nb_trips_created: number;
-  nb_trips_participated: number;
 }
 
 const AboutInitializer = {
@@ -88,7 +73,4 @@ export const UserInitializer = {
   status: "passenger" as UserType["Status"],
   ratings: [ReviewInitializer],
   car: CarInitializer,
-  avg_rating: 0,
-  nb_trips_created: 0,
-  nb_trips_participated: 0,
 };

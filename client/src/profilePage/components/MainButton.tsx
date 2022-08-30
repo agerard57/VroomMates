@@ -16,7 +16,6 @@ export const MainButton: FC<Props> = ({
   accountManagementMenu = false,
 }) => {
   const { t } = useTranslation("ProfilePage");
-  console.log(pageType);
   const backButton = (
     <Button
       type="hollow"

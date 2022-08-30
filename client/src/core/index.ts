@@ -7,6 +7,9 @@ export {
   ProfilePic,
   Button,
   DateInput,
+  ReviewsCard,
+  ProfileHeader,
+  ProfileBanner,
   TextInput,
   SelectInput,
   RadioInput,
@@ -28,3 +31,6 @@ export {
 export type { UserType, TripType } from "./types";
 
 export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";
+
+export type { User } from "./interfaces";
+export { UserInitializer } from "./interfaces";

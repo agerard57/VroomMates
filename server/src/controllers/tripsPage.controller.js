@@ -1,4 +1,5 @@
 const TripsModel = require("../models/trips.model");
+
 exports.getUserTrips = (req, res) => {
   const userId = req.params.id;
 

@@ -19,7 +19,8 @@ export const ProfilePage: FC = () => {
   const [accountManagementMenu, setAccountManagementMenu] =
     useState<boolean>(false);
 
-  /* TODO Make the header and the navbar unmovable */
+  window.scroll(0, 0);
+
   return (
     <>
       <ProfileBanner id={user._id} />

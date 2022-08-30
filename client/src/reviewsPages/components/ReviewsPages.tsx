@@ -37,6 +37,7 @@ export const ReviewsPages: FC = () => {
         <ReviewsCard
           userReviews={reviews}
           title={t(`reviews.${currentPage}.title`, { count: reviews.length })}
+          displayStats={currentPage === "received" ? true : false}
         />
       </Container>
     </>

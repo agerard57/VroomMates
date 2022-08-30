@@ -6,14 +6,23 @@ import { useTranslation } from "react-i18next";
 import { RoundedContour } from "../..";
 import { UserType } from "../../types/UserType";
 import { ReviewElement } from "./ReviewElement";
+import { StatsSection } from "./StatsSection";
 
 type Props = {
   userReviews?: UserType["Review"][];
   title: string;
+  displayStats?: boolean;
 };
 
-export const ReviewsCard: FC<Props> = ({ userReviews, title }) => {
+export const ReviewsCard: FC<Props> = ({
+  userReviews,
+  title,
+  displayStats = false,
+}) => {
   const { t } = useTranslation("Core");
+
+  const nbReviews = (star: number, userReviews: UserType["Review"][]) =>
+    userReviews.filter((review) => review.rating === star).length;
 
   return userReviews ? (
     <RoundedContour
@@ -49,6 +58,22 @@ export const ReviewsCard: FC<Props> = ({ userReviews, title }) => {
         `}
       />
       <div>
+        {/* For each of the 5 stars, count how many are there*/}
+        {displayStats ? (
+          <>
+            <div>
+              {[1, 2, 3, 4, 5].map((star) => {
+                return (
+                  <StatsSection
+                    title={t(`reviews.stars.${star}`)}
+                    number={nbReviews(star, userReviews)}
+                  />
+                );
+              })}
+            </div>
+            <hr />
+          </>
+        ) : null}
         {userReviews.map((review, index) => (
           <ReviewElement review={review} key={index} />
         ))}

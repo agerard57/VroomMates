@@ -23,6 +23,13 @@
   "reviews": {
     "review_one": "{{nbReviews}} review",
     "review_other": "{{nbReviews}} reviews",
-    "by": "by"
+    "by": "by",
+    "stars": {
+      "1": "Very disappointing",
+      "2": "Not good",
+      "3": "Average",
+      "4": "Good",
+      "5": "Excellent"
+    }
   }
 }

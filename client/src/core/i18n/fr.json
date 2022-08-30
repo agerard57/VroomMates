@@ -1,12 +1,15 @@
 {
   "confirmationMessage": "La langue du site a bien été changée en Francais !",
+
   "deniedMessage": "La langue du site est déjà en Francais.",
+
   "navbar": {
     "home": "Accueil",
     "search": "Recherche",
     "inbox": "Réception",
     "dashboard": "Menu"
   },
+
   "days": {
     "monday": "Lun.",
     "tuesday": "Mar.",
@@ -15,5 +18,17 @@
     "friday": "Ven.",
     "saturday": "Sam.",
     "sunday": "Dim."
+  },
+
+  "reviews": {
+    "review": "{{nbReviews}} avis",
+    "by": "par",
+    "stars": {
+      "1": "Très décevant",
+      "2": "Pas très bon",
+      "3": "Moyen",
+      "4": "Bon",
+      "5": "Excellent"
+    }
   }
 }

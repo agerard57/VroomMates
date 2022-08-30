@@ -17,6 +17,7 @@ export const ElementTemplate: FC<Props> = ({ icon, content }) => (
       justify-content: center;
       display: flex;
       align-items: center;
+      width: auto;
     `}
   >
     <Col

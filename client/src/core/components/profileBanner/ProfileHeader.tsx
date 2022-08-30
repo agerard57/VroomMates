@@ -4,30 +4,18 @@ import { FC } from "react";
 import { Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { getStatusIcon, ProfilePic, Stars, UserType } from "../../../core";
+import { ProfilePic, Stars } from "../../../core";
+import { useProfileHeader } from "../../hooks";
 
 type Props = {
-  user: {
-    firstName: string;
-    lastName: string;
-    avatarSrc: string;
-    dateOfBirth: Date;
-    status: UserType["Status"];
-  };
-  stats: {
-    avgRating?: number;
-    nbTripsCreated: number;
-    nbTripsParticipated: number;
-  };
+  id: string;
 };
 
-export const PageHeader: FC<Props> = ({ user, stats }) => {
+export const ProfileHeader: FC<Props> = ({ id }) => {
   const { t } = useTranslation("ProfilePage");
-  // Get age from DOB
-  const dob = new Date(user.dateOfBirth);
-  const age = (new Date().getFullYear() - dob.getFullYear()).toString();
-  const accountIcon = getStatusIcon(user.status);
-  const rating = stats.avgRating ? stats.avgRating : 0;
+
+  const { user, stats, age, accountIcon, rating } = useProfileHeader(id);
+
   return (
     <>
       <Row
@@ -57,7 +45,7 @@ export const PageHeader: FC<Props> = ({ user, stats }) => {
         </Col>
         <Col>
           <ProfilePic
-            src={user.avatarSrc}
+            src={user.profilePicSrc}
             outsidePictureStyling={`
                 width: 7rem;
                 height: 7rem;

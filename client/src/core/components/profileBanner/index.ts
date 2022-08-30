@@ -1,2 +1,2 @@
-export { PageBanner } from "./PageBanner";
-export { PageHeader } from "./PageHeader";
+export { ProfileBanner } from "./ProfileBanner";
+export { ProfileHeader } from "./ProfileHeader";

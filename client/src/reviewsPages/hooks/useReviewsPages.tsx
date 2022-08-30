@@ -9,6 +9,7 @@ import {
 
 export const useReviewsPages = () => {
   const { t } = useTranslation("ReviewsPages");
+
   const [reviews, setReviews] = useState<UserType["Review"][]>([
     UserInitializer["review"],
   ]);
@@ -20,9 +21,7 @@ export const useReviewsPages = () => {
     ? "received"
     : "given";
 
-  usePageTitle(
-    t(currentPage === "given" ? "givenReviewsTitle" : "receivedReviewsTitle")
-  );
+  usePageTitle(t(`reviews.${currentPage}.title`, { count: reviews.length }));
 
   useEffect(() => {
     currentPage === "given"
@@ -32,5 +31,5 @@ export const useReviewsPages = () => {
         );
   }, [currentPage]);
 
-  return { reviews };
+  return { reviews, currentPage, userId };
 };

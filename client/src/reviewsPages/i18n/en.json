@@ -1,6 +1,14 @@
 {
-  "givenReviewsTitle": "Given reviews",
-  "receivedReviewsTitle": "Received reviews",
+  "back": "Back",
 
-  "back": "Back"
+  "reviews": {
+    "given": {
+      "title_one": "Given review",
+      "title_other": "Given reviews"
+    },
+    "received": {
+      "title_one": "Received review",
+      "title_other": "Received reviews"
+    }
+  }
 }

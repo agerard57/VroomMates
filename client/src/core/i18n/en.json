@@ -21,8 +21,6 @@
   },
 
   "reviews": {
-    "title_one": "Review",
-    "title_other": "Last reviews",
     "review_one": "{{nbReviews}} review",
     "review_other": "{{nbReviews}} reviews",
     "by": "by"

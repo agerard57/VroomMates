@@ -50,5 +50,10 @@
       "logout": "Se déconnecter",
       "close": "Clore mon compte"
     }
+  },
+
+  "reviews": {
+    "title_one": "Avis",
+    "title_other": "Derniers avis"
   }
 }

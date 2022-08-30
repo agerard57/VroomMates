@@ -2,8 +2,9 @@
 import { css } from "@emotion/react";
 import { FC, useState } from "react";
 import { Container } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
-import { PageBanner, PageHeader, ReviewsCard } from "../../core";
+import { ProfileBanner, ProfileHeader, ReviewsCard } from "../../core";
 import { useProfilePage } from "../hooks";
 import { MainButton } from "./MainButton";
 import { AccountManagementMenu } from "./accountManagementMenu";
@@ -11,6 +12,8 @@ import { AboutCards } from "./cards";
 import { AboutList } from "./list";
 
 export const ProfilePage: FC = () => {
+  const { t } = useTranslation("ProfilePage");
+
   const { user, pageType } = useProfilePage();
 
   const [accountManagementMenu, setAccountManagementMenu] =
@@ -19,7 +22,7 @@ export const ProfilePage: FC = () => {
   /* TODO Make the header and the navbar unmovable */
   return (
     <>
-      <PageBanner avatarSrc={user.photo_url} />
+      <ProfileBanner id={user._id} />
       <Container
         css={css`
           position: absolute;
@@ -30,20 +33,7 @@ export const ProfilePage: FC = () => {
           }
         `}
       >
-        <PageHeader
-          user={{
-            firstName: user.name.first_name,
-            lastName: user.name.last_name,
-            avatarSrc: user.photo_url,
-            dateOfBirth: user.birth_date,
-            status: user.status,
-          }}
-          stats={{
-            avgRating: user.avg_rating,
-            nbTripsCreated: user.nb_trips_created,
-            nbTripsParticipated: user.nb_trips_participated,
-          }}
-        />
+        <ProfileHeader id={user._id} />
         <MainButton
           pageType={pageType}
           onClick={{
@@ -71,7 +61,10 @@ export const ProfilePage: FC = () => {
               music={user.about?.music}
               pet={user.about?.animals_tolerated}
             />
-            <ReviewsCard userReviews={user.ratings} />
+            <ReviewsCard
+              userReviews={user.ratings}
+              title={t("reviews.title", { count: user.ratings.length })}
+            />
           </div>
         ) : (
           <AccountManagementMenu userStatus={user.status} />

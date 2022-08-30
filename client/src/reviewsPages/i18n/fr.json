@@ -1,6 +1,14 @@
 {
-  "givenReviewsTitle": "Avis données",
-  "receivedReviewsTitle": "Avis reçus",
+  "back": "Retour",
 
-  "back": "Retour"
+  "reviews": {
+    "given": {
+      "title_one": "Avis donné",
+      "title_other": "Avis donnés"
+    },
+    "received": {
+      "title_one": "Avis reçu",
+      "title_other": "Avis reçus"
+    }
+  }
 }

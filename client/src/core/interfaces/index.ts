@@ -1,2 +1,3 @@
-export type { User } from "./User";
-export { UserInitializer } from "./User";
+export * from "./User";
+
+export * from "./ProfileHeader";

@@ -48,5 +48,10 @@
       "logout": "Logout",
       "close": "Close my account"
     }
+  },
+
+  "reviews": {
+    "title_one": "Review",
+    "title_other": "Last reviews"
   }
 }

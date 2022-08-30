@@ -29,9 +29,6 @@ export interface User {
   status: UserType["Status"];
   ratings: UserType["Review"][];
   car?: Car;
-  avg_rating: number;
-  nb_trips_created: number;
-  nb_trips_participated: number;
 }
 
 const AboutInitializer = {
@@ -76,7 +73,4 @@ export const UserInitializer = {
   status: "passenger" as UserType["Status"],
   ratings: [ReviewInitializer],
   car: CarInitializer,
-  avg_rating: 0,
-  nb_trips_created: 0,
-  nb_trips_participated: 0,
 };

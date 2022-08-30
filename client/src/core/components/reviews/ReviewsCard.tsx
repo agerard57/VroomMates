@@ -9,9 +9,10 @@ import { ReviewElement } from "./ReviewElement";
 
 type Props = {
   userReviews?: UserType["Review"][];
+  title: string;
 };
 
-export const ReviewsCard: FC<Props> = ({ userReviews }) => {
+export const ReviewsCard: FC<Props> = ({ userReviews, title }) => {
   const { t } = useTranslation("Core");
 
   return userReviews ? (
@@ -33,7 +34,7 @@ export const ReviewsCard: FC<Props> = ({ userReviews }) => {
             margin-bottom: 0;
           `}
         >
-          {t("reviews.title", { count: userReviews.length })}
+          {title}
         </h2>
         <span>
           {t("reviews.review", {

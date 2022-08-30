@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
@@ -19,7 +19,7 @@ import departureIcon from "../../assets/icons/departureIcon.svg";
 export const SearchBox: FC = () => {
   const { t } = useTranslation("LandingPage");
   const { address } = useGeolocation();
-
+  const [activeRadio, setActiveRadio] = useState<string>("single");
   return (
     <form
       action="/search"
@@ -28,7 +28,13 @@ export const SearchBox: FC = () => {
       `}
     >
       <RoundedContour>
-        <div>
+        <div
+          css={css`
+            .row {
+              margin-bottom: 10px;
+            }
+          `}
+        >
           <h2
             css={css`
               font-family: "Baloo2";
@@ -39,7 +45,13 @@ export const SearchBox: FC = () => {
             {t("landingSection.search.title")}
           </h2>
           <hr />
-          <Row>
+          <Row
+            css={css`
+              align-items: center;
+              flex-direction: row;
+              flex-wrap: nowrap;
+            `}
+          >
             <Col>
               <RadioInput
                 inputName="type"
@@ -47,10 +59,11 @@ export const SearchBox: FC = () => {
                 inputPlaceholder={t(
                   "landingSection.search.tripType.singleTrip"
                 )}
+                activeRadio={activeRadio}
+                onClickRadio={() => {
+                  setActiveRadio("single");
+                }}
               />
-            </Col>
-            <Col>
-              <span>{t("landingSection.search.tripType.or")}</span>
             </Col>
             <Col>
               <RadioInput
@@ -59,6 +72,10 @@ export const SearchBox: FC = () => {
                 inputPlaceholder={t(
                   "landingSection.search.tripType.frequentTrip"
                 )}
+                activeRadio={activeRadio}
+                onClickRadio={() => {
+                  setActiveRadio("frequent");
+                }}
               />
             </Col>
           </Row>
@@ -71,16 +88,17 @@ export const SearchBox: FC = () => {
             />
           </Row>
           <Row>
-            <span>{t("landingSection.search.tripPoints.to")}</span>
-          </Row>
-          <Row>
             <TextInput
               inputName="arrivalLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.getTo")}
               icon={arrivalIcon}
             />
           </Row>
-          <Row>
+          <Row
+            css={css`
+              margin: 20px 0 0 0;
+            `}
+          >
             <DateInput
               inputName="date"
               inputPlaceholder={t("landingSection.search.date")}
@@ -88,7 +106,11 @@ export const SearchBox: FC = () => {
             />
           </Row>
           <Row>
-            <Button type="primary" buttonType="submit">
+            <Button
+              type="primary"
+              buttonType="submit"
+              optionalStyling={`margin-top:10px`}
+            >
               {t("landingSection.search.searchButton")}
             </Button>
           </Row>

@@ -12,6 +12,7 @@ module.exports = function routes(app) {
 
   // ///////
   // Routes
+  require("./auth.routes")(app);
   require("./landingPage.routes")(app);
   require("./profileBanner.routes")(app);
   require("./searchPage.routes")(app);

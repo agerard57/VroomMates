@@ -4,5 +4,8 @@ const authJwt = require("../middlewares/authJwt");
 module.exports = function (app) {
   app
     .route("/trips/:id([0-9a-f]{24})")
-    .get([authJwt.isSameUser], tripsPageController.getUserTrips);
+    .get(
+      [authJwt.isUserLogged, authJwt.isSameUser],
+      tripsPageController.getUserTrips
+    );
 };

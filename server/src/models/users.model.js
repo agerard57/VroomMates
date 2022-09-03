@@ -69,7 +69,12 @@ const userSchema = mongoose.Schema(
         default: undefined,
       },
     },
-    photo_url: "String",
+    photo_url: {
+      type: "String",
+      default:
+        "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
+      //TODO USE S3 PHOTO URL
+    },
     stripe_id: "String",
     registered_since: {
       type: "Date",
@@ -104,6 +109,11 @@ const userSchema = mongoose.Schema(
         },
       },
     ],
+    refreshTokens: {
+      type: [String],
+      default: undefined,
+      required: false,
+    },
   },
   { collection: "Users" }
 );

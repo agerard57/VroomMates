@@ -41,6 +41,7 @@
     }
   ],
   "registered_since": "date",
-  "role_status": "string"
+  "status": "string",
+  "refreshTokens": "sting[]"
 }
 ```

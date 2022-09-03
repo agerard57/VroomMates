@@ -1,5 +1,13 @@
-export { Button } from "./Button";
-export { DateInput } from "./DateInput";
-export { TextInput } from "./TextInput";
-export { RadioInput } from "./RadioInput";
-export { SelectInput } from "./SelectInput";
+import { Button } from "./Button";
+import { DateInput } from "./DateInput";
+import { RadioInput } from "./RadioInput";
+import { SelectInput } from "./SelectInput";
+import { TextInput } from "./TextInput";
+
+export const Inputs = {
+  Button,
+  DateInput,
+  TextInput,
+  RadioInput,
+  SelectInput,
+};

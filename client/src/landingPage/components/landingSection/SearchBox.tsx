@@ -4,14 +4,7 @@ import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import {
-  RoundedContour,
-  Button,
-  useGeolocation,
-  RadioInput,
-  TextInput,
-  DateInput,
-} from "../../../core";
+import { RoundedContour, useGeolocation, Inputs } from "../../../core";
 import arrivalIcon from "../../assets/icons/arrivalIcon.svg";
 import calendarIcon from "../../assets/icons/calendarIcon.svg";
 import departureIcon from "../../assets/icons/departureIcon.svg";
@@ -41,7 +34,7 @@ export const SearchBox: FC = () => {
           <hr />
           <Row>
             <Col>
-              <RadioInput
+              <Inputs.RadioInput
                 inputName="type"
                 radioValue="single"
                 inputPlaceholder={t(
@@ -53,7 +46,7 @@ export const SearchBox: FC = () => {
               <span>{t("landingSection.search.tripType.or")}</span>
             </Col>
             <Col>
-              <RadioInput
+              <Inputs.RadioInput
                 inputName="type"
                 radioValue="frequent"
                 inputPlaceholder={t(
@@ -63,7 +56,7 @@ export const SearchBox: FC = () => {
             </Col>
           </Row>
           <Row>
-            <TextInput
+            <Inputs.TextInput
               inputName="departureLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.from")}
               inputValue={address}
@@ -74,23 +67,23 @@ export const SearchBox: FC = () => {
             <span>{t("landingSection.search.tripPoints.to")}</span>
           </Row>
           <Row>
-            <TextInput
+            <Inputs.TextInput
               inputName="arrivalLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.getTo")}
               icon={arrivalIcon}
             />
           </Row>
           <Row>
-            <DateInput
+            <Inputs.DateInput
               inputName="date"
               inputPlaceholder={t("landingSection.search.date")}
               icon={calendarIcon}
             />
           </Row>
           <Row>
-            <Button type="primary" buttonType="submit">
+            <Inputs.Button type="primary" buttonType="submit">
               {t("landingSection.search.searchButton")}
-            </Button>
+            </Inputs.Button>
           </Row>
         </div>
       </RoundedContour>

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Button } from "../../core";
+import { Inputs } from "../../core";
 import { PageType } from "../types";
 
 type Props = {
@@ -17,7 +17,7 @@ export const MainButton: FC<Props> = ({
 }) => {
   const { t } = useTranslation("ProfilePage");
   const backButton = (
-    <Button
+    <Inputs.Button
       type="hollow"
       buttonType="button"
       onClick={() => {
@@ -26,7 +26,7 @@ export const MainButton: FC<Props> = ({
       optionalStyling={`padding:0 15px; margin: 5%;`}
     >
       {t("mainButton.back")}
-    </Button>
+    </Inputs.Button>
   );
 
   return pageType === "u2u" || pageType === "a2a" ? (
@@ -34,20 +34,20 @@ export const MainButton: FC<Props> = ({
   ) : pageType === "a2u" ? (
     <div>
       {backButton}
-      <Button
+      <Inputs.Button
         type="danger"
         buttonType="button"
         onClick={onClick.ban} // TODO Implement ban feature
         optionalStyling={`padding:0 15px; margin: 5%;`}
       >
         {t("mainButton.ban")}
-      </Button>
+      </Inputs.Button>
     </div>
   ) : (
     // Case "up":
     <div>
       {backButton}
-      <Button
+      <Inputs.Button
         type="hollow"
         buttonType="button"
         onClick={onClick.manage}
@@ -56,7 +56,7 @@ export const MainButton: FC<Props> = ({
         {accountManagementMenu
           ? t("mainButton.profile")
           : t("mainButton.accountManagement")}
-      </Button>
+      </Inputs.Button>
     </div>
   );
 };

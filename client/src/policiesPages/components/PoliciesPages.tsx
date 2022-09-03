@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { Button, SelectInput } from "../../core";
+import { Inputs } from "../../core";
 import { usePoliciesPages } from "../hooks";
 import { CookiesPolicyPage, TermsPage, PrivacyPolicyPage } from "./pages";
 
@@ -31,7 +31,7 @@ export const PoliciesPages: FC = () => {
           }
         `}
       >
-        <SelectInput onChange={handleChange} title="pageSelection">
+        <Inputs.SelectInput onChange={handleChange} title="pageSelection">
           <option
             value="termsAndConditions"
             selected={"termsAndConditions" === value}
@@ -44,14 +44,14 @@ export const PoliciesPages: FC = () => {
           <option value="cookies" selected={"cookies" === value}>
             {t("cookies.title")}
           </option>
-        </SelectInput>
+        </Inputs.SelectInput>
         {value === "termsAndConditions" && <TermsPage />}
         {value === "privacyPolicy" && <PrivacyPolicyPage />}
         {value === "cookies" && <CookiesPolicyPage />}
       </div>
-      <Button type="hollow" onClick={() => window.scroll(0, 0)}>
+      <Inputs.Button type="hollow" onClick={() => window.scroll(0, 0)}>
         {t("back")}
-      </Button>
+      </Inputs.Button>
     </Container>
   );
 };

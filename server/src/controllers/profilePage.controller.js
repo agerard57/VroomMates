@@ -9,6 +9,7 @@ exports.getUserById = (req, res) => {
     address: 0,
     stripe_id: 0,
     registered_since: 0,
+    refreshTokens: 0,
   })
     .populate({
       path: "ratings.author",

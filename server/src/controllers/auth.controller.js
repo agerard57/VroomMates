@@ -85,7 +85,8 @@ exports.refresh = (req, res) => {
         message: err.message,
       });
     }
-    if (user && user.refreshTokens.length > 0) {
+    console.log(user)
+    if (user && user.refreshTokens) {
       // Check if at least one of the refresh token is valid
       const validRefreshToken = user.refreshTokens.find((refreshToken) => {
         try {

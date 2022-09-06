@@ -11,7 +11,7 @@ type Props = {
   icon?: string;
 };
 
-export const TextInput: FC<Props> = ({
+export const PasswordInput: FC<Props> = ({
   inputPlaceholder,
   inputValue,
   inputName,
@@ -20,7 +20,7 @@ export const TextInput: FC<Props> = ({
   const InputStyle = css`
     box-sizing: border-box;
     text-align: ${icon ? "left" : "center"};
-    padding: ${icon ? "5px 10px 5px 35px" : "5px 10px"};
+    padding: ${icon ? "5px 10px 6px 35px" : "5px 10px"};
     background: "#ffffff";
     border: 2px solid #a7a7a7;
     border-radius: 60px;
@@ -34,7 +34,7 @@ export const TextInput: FC<Props> = ({
 
   return (
     <input
-      type="text"
+      type="password"
       id={inputName}
       name={inputName}
       placeholder={inputPlaceholder}

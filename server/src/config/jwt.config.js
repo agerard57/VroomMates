@@ -1,9 +1,10 @@
-const authPayload = (user) => ({
+const authPayload = (user, rememberMe) => ({
   id: user._id,
   name: user.name,
   confirmedEmail: user.email.confirmed,
   photoUrl: user.photo_url,
   role: user.status,
+  rememberMe: rememberMe,
 });
 
 const refreshPayload = (user) => ({
@@ -29,7 +30,7 @@ const refreshOptions = (remember) => ({
 
 const jwtConfig = {
   authJwt: {
-    payload: (user) => authPayload(user),
+    payload: (user, rememberMe) => authPayload(user, rememberMe),
     key: process.env.JWT_AUTH_KEY,
     options: authOptions,
   },

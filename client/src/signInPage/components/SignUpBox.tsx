@@ -21,10 +21,11 @@ export const SignUpBox: FC = () => {
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            ratio: 1/1;
+            
             span{
                 padding: 5px;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 color: black;
             }
         `}

@@ -17,7 +17,7 @@ export const SignInPage: FC = () => {
     <ColoredBackground>
       <Container
         css={css`
-          padding: 0 7vw;
+          padding: 0 10vw;
         `}
       >
         <Row
@@ -45,7 +45,7 @@ export const SignInPage: FC = () => {
                 font-weight: 1000;
                 color: white;
                 text-align: center;
-                font-size: 4rem;
+                font-size: 3rem;
               `}
             >
               {t("signUpSection.or")}

@@ -1,32 +1,30 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { FC } from "react";
-import { Col, Row } from "react-bootstrap";
-import FacebookLogin from "react-facebook-login";
-import GoogleLogin from "react-google-login";
+import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { Inputs, RoundedContour } from "../../core";
-import facebookIcon from "../assets/icons/facebookIcon.svg";
-import googleIcon from "../assets/icons/googleIcon.svg";
 import mailIcon from "../assets/icons/mailIcon.svg";
 import passwordIcon from "../assets/icons/passwordIcon.svg";
+import { useSignInBox } from "../hooks";
 
 export const SignInBox: FC = () => {
   const { t } = useTranslation("SignInPage");
-  const responseGoogle = (response: any) => {
-    console.log(response);
-  };
+
+  const { handleSubmit } = useSignInBox();
+
   return (
     <RoundedContour
       outsideStyling={`
-          padding: 1rem;
+          padding: 1rem 2rem;
+          
+          input {
+            margin: 0.3rem 0;
+          }
           `}
     >
-      <form
-        action={`${process.env.REACT_APP_API_URL}/profile/login`}
-        method="post"
-      >
+      <form onSubmit={handleSubmit}>
         <Row>
           <h2
             css={css`
@@ -41,41 +39,38 @@ export const SignInBox: FC = () => {
         </Row>
         <hr />
         <Row>
-          <Col>
-            <GoogleLogin
-              clientId="374277909154-56jflke52kogao5omqr5l29k1mpdukgc.apps.googleusercontent.com"
-              buttonText="Login"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy={"single_host_origin"}
-            />
-          </Col>
-          <Col>
-            <FacebookLogin
-              appId="1521176028311446"
-              autoLoad={true}
-              fields="public_profile,name,email,picture"
-              onClick={responseGoogle}
-              callback={responseGoogle}
-            />
-          </Col>
-        </Row>
-        <Row>
-          <Inputs.TextInput
+          <Inputs.Text
             inputName="email"
             inputPlaceholder={t("signInSection.email")}
             icon={mailIcon}
           />
         </Row>
         <Row>
-          <Inputs.TextInput
+          <Inputs.Password
             inputName="password"
             inputPlaceholder={t("signInSection.password")}
             icon={passwordIcon}
           />
         </Row>
+        <Row
+          css={css`
+            padding-top: 1rem;
+          `}
+        >
+          <Inputs.Checkbox
+            inputName="rememberMe"
+            labelText={t("signInSection.rememberMe")}
+          />
+          {/* TODO Add Password forgotten feature */}
+        </Row>
         <Row>
-          <Inputs.Button type="primary" buttonType="submit">
+          <Inputs.Button
+            type="primary"
+            buttonType="submit"
+            optionalStyling={`
+              margin: 1rem 0;
+            `}
+          >
             {t("signInSection.signInButton")}
           </Inputs.Button>
         </Row>

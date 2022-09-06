@@ -31,7 +31,7 @@ export const PoliciesPages: FC = () => {
           }
         `}
       >
-        <Inputs.SelectInput onChange={handleChange} title="pageSelection">
+        <Inputs.Select onChange={handleChange} title="pageSelection">
           <option
             value="termsAndConditions"
             selected={"termsAndConditions" === value}
@@ -44,7 +44,7 @@ export const PoliciesPages: FC = () => {
           <option value="cookies" selected={"cookies" === value}>
             {t("cookies.title")}
           </option>
-        </Inputs.SelectInput>
+        </Inputs.Select>
         {value === "termsAndConditions" && <TermsPage />}
         {value === "privacyPolicy" && <PrivacyPolicyPage />}
         {value === "cookies" && <CookiesPolicyPage />}

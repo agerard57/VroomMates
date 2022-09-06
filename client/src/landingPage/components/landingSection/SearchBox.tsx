@@ -34,7 +34,7 @@ export const SearchBox: FC = () => {
           <hr />
           <Row>
             <Col>
-              <Inputs.RadioInput
+              <Inputs.Radio
                 inputName="type"
                 radioValue="single"
                 inputPlaceholder={t(
@@ -46,7 +46,7 @@ export const SearchBox: FC = () => {
               <span>{t("landingSection.search.tripType.or")}</span>
             </Col>
             <Col>
-              <Inputs.RadioInput
+              <Inputs.Radio
                 inputName="type"
                 radioValue="frequent"
                 inputPlaceholder={t(
@@ -56,7 +56,7 @@ export const SearchBox: FC = () => {
             </Col>
           </Row>
           <Row>
-            <Inputs.TextInput
+            <Inputs.Text
               inputName="departureLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.from")}
               inputValue={address}
@@ -67,14 +67,14 @@ export const SearchBox: FC = () => {
             <span>{t("landingSection.search.tripPoints.to")}</span>
           </Row>
           <Row>
-            <Inputs.TextInput
+            <Inputs.Text
               inputName="arrivalLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.getTo")}
               icon={arrivalIcon}
             />
           </Row>
           <Row>
-            <Inputs.DateInput
+            <Inputs.Date
               inputName="date"
               inputPlaceholder={t("landingSection.search.date")}
               icon={calendarIcon}

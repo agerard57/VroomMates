@@ -24,7 +24,7 @@ exports.register = (req, res) => {
 };
 
 exports.login = (req, res) => {
-  const remember = req.body.remember === "remember-me" ? true : false;
+  const rememberMe = req.body.rememberMe;
 
   UsersModel.findOne({
     "email.email_address": req.body.email,
@@ -34,12 +34,12 @@ exports.login = (req, res) => {
       return;
     }
 
-    const authToken = generateJwt(user, "auth", remember);
-    const refreshToken = generateJwt(user, "refresh", remember);
+    const authToken = generateJwt(user, "auth", rememberMe);
+    const refreshToken = generateJwt(user, "refresh", rememberMe);
     const date = new Date();
-    const expirationDate = remember
-      ? date.setMonth(date.getMonth() + 1)
-      : date.setDate(date.setDate() + 1);
+    const expirationDate = rememberMe
+      ? new Date(date.setMonth(date.getMonth() + 1))
+      : new Date(date.setDate(date.getDate() + 1));
 
     // Save the refresh token in the database
     UsersModel.findOneAndUpdate(
@@ -51,7 +51,7 @@ exports.login = (req, res) => {
           return;
         }
         // Schedule the deletion of the refresh token
-        schedule.scheduleJob(new Date(expirationDate), () => {
+        schedule.scheduleJob(expirationDate, () => {
           UsersModel.findOneAndUpdate(
             { _id: user._id },
             { $pull: { refreshTokens: refreshToken } },
@@ -64,8 +64,9 @@ exports.login = (req, res) => {
           );
         });
         res.status(200).json({
-          message: "User successfully logged",
+          message: "messages.success",
           authToken,
+          rememberMe,
         });
       }
     );
@@ -73,7 +74,7 @@ exports.login = (req, res) => {
 };
 
 exports.refresh = (req, res) => {
-  const token = req.headers["x-access-token"];
+  const token = req.body.authToken;
   const payload = jwt.verify(token, jwtConfig.authJwt.key, {
     ignoreExpiration: true,
   });
@@ -103,7 +104,7 @@ exports.refresh = (req, res) => {
         );
         return res.status(200).send({
           message: "Token refreshed successfully",
-          token: authToken,
+          authToken: authToken,
         });
       } else {
         return res.status(401).send({

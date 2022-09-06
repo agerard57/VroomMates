@@ -41,15 +41,20 @@ export const SignInBox: FC = () => {
         <Row>
           <Inputs.Text
             inputName="email"
+            inputType="email"
             inputPlaceholder={t("signInSection.email")}
             icon={mailIcon}
+            isRequired
           />
         </Row>
         <Row>
-          <Inputs.Password
+          <Inputs.Text
             inputName="password"
+            inputType="password"
             inputPlaceholder={t("signInSection.password")}
             icon={passwordIcon}
+            length={{ min: 8, max: 128 }}
+            isRequired
           />
         </Row>
         <Row

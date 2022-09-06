@@ -26,10 +26,10 @@ const checkEmail = (req, res, next) => {
 
 const checkPassword = (req, res, next) => {
   const pwd = req.body.password1;
-  /* Basically test if (!/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,124}$/.test(pwd)) */
+  /* Basically test if (!/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,128}$/.test(pwd)) */
 
-  // Test if password is between 8 and 124 characters long
-  if (pwd.length < 8 || pwd.length > 124) {
+  // Test if password is between 8 and 128 characters long
+  if (pwd.length < 8 || pwd.length > 128) {
     return res
       .status(400)
       .json({ message: "Password must be between 8 and 20 characters long" });

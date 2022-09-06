@@ -15,8 +15,8 @@ const checkPasswordSyntax = (req, res, next) => {
   const pwd = req.body.password;
   if (pwd === "")
     return res.status(204).json({ message: "messages.error.password.empty" });
-  // Test if password is between 8 and 124 characters long
-  if (pwd.length < 8 || pwd.length > 124) {
+  // Test if password is between 8 and 128 characters long
+  if (pwd.length < 8 || pwd.length > 128) {
     return res.status(400).json({ message: "messages.error.password.length" });
   }
   // Test if password contains at least one digit

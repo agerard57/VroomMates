@@ -26,5 +26,5 @@ module.exports = function (app) {
       authController.login
     );
 
-  app.route("/profile/refresh").get(authController.refresh);
+  app.route("/profile/refresh").post(authController.refresh);
 };

@@ -3,38 +3,36 @@ const bcrypt = require("bcryptjs");
 
 const checkEmail = (req, res, next) => {
   const email = req.body.email;
-  if (email === "") return res.status(204).json({ message: "Email is empty" });
+  if (email === "")
+    return res.status(204).json({ message: "messages.error.email.empty" });
   if (!email.includes("@")) {
-    return res.status(400).json({ message: "Email is invalid" });
+    return res.status(400).json({ message: "messages.error.email.invalid" });
   }
   next();
 };
 
 const checkPasswordSyntax = (req, res, next) => {
   const pwd = req.body.password;
+  if (pwd === "")
+    return res.status(204).json({ message: "messages.error.password.empty" });
   // Test if password is between 8 and 124 characters long
   if (pwd.length < 8 || pwd.length > 124) {
-    return res
-      .status(400)
-      .json({ message: "Password must be between 8 and 20 characters long" });
+    return res.status(400).json({ message: "messages.error.password.length" });
   }
   // Test if password contains at least one digit
   if (!pwd.match(/\d/)) {
-    return res
-      .status(400)
-      .json({ message: "Password must contain at least one digit" });
+    return res.status(400).json({ message: "messages.error.password.digit" });
   }
   // Test if password contains at least one lowercase or uppercase letter
   if (!pwd.match(/(?=.*[a-z])(?=.*[A-Z])/)) {
     return res.status(400).json({
-      message:
-        "Password must contain at least one lowercase and uppercase letter",
+      message: "messages.error.password.lowerAndUpper",
     });
   }
   // Test if password contains at least one special character
   if (!pwd.match(/[!@#$%^&*]/)) {
     return res.status(400).json({
-      message: "Password must contain at least one special character",
+      message: "messages.error.password.special",
     });
   }
   next();
@@ -50,7 +48,7 @@ const checkUserExistsAndValidPassword = (req, res, next) => {
       return res.status(500).json({ message: err.message });
     }
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "messages.error.user.notFound" });
     }
     if (user) {
       const passwordIsValid = bcrypt.compareSync(
@@ -58,7 +56,9 @@ const checkUserExistsAndValidPassword = (req, res, next) => {
         user.password
       );
       if (!passwordIsValid)
-        return res.status(401).json({ message: "Password invalid." });
+        return res
+          .status(401)
+          .json({ message: "messages.error.user.password" });
       next();
     }
   });

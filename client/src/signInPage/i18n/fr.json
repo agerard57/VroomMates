@@ -1,4 +1,6 @@
 {
+  "title": "Connexion",
+
   "signUpSection": {
     "title": "Pas de compte ?",
     "create": "Crées-en un !",
@@ -6,11 +8,29 @@
   },
 
   "signInSection": {
-    "title": "Ou connecte toi !",
+    "title": "Connecte toi !",
     "email": "Email",
     "password": "Mot de passe",
     "rememberMe": "Se souvenir de moi",
     "passwordForgotten": "Mot de passe oublié ?",
     "signInButton": "Connexion !"
+  },
+
+  "messages": {
+    "success": "Vous êtes connecté !",
+    "error": {
+      "email": { "empty": "Email requis", "invalid": "Email invalide" },
+      "password": {
+        "empty": "Mot de passe requis",
+        "length": "Le mot de passe doit être entre 8 et 20 caractères",
+        "digit": "Le mot de passe doit contenir au moins un chiffre",
+        "lowerAndUpper": "Le mot de passe doit contenir au moins une minuscule et une majuscule",
+        "special": "Le mot de passe doit contenir au moins un caractère spécial"
+      },
+      "user": {
+        "notFound": "Utilisateur non trouvé",
+        "password": "Mot de passe incorrect"
+      }
+    }
   }
 }

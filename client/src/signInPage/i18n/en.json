@@ -1,4 +1,6 @@
 {
+  "title": "Sign in",
+
   "signUpSection": {
     "title": "Not registered yet?",
     "create": "Create an account!",
@@ -12,5 +14,23 @@
     "rememberMe": "Remember me",
     "passwordForgotten": "Password forgotten?",
     "signInButton": "Sign in!"
+  },
+
+  "messages": {
+    "success": "You are now logged in!",
+    "error": {
+      "email": { "empty": "Email is required", "invalid": "Email is invalid" },
+      "password": {
+        "empty": "Password is required",
+        "length": "Password must be between 8 and 20 characters long",
+        "digit": "Password must contain at least one digit",
+        "lowerAndUpper": "Password must contain at least one lowercase and uppercase letter",
+        "special": "Password must contain at least one special character"
+      },
+      "user": {
+        "notFound": "User not found",
+        "password": "Password is incorrect"
+      }
+    }
   }
 }

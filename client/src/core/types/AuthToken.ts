@@ -1,3 +1,5 @@
+import { UserType } from "./UserType";
+
 type AuthTokenData = {
   id: string;
   name: {
@@ -6,7 +8,8 @@ type AuthTokenData = {
   };
   confirmedEmail: boolean;
   photoUrl: string;
-  role: string;
+  avgRating: number;
+  role: UserType["Status"];
 };
 
 type AuthTokenMeta = {

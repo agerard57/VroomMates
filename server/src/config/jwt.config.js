@@ -1,10 +1,11 @@
-const authPayload = (user, rememberMe) => ({
+const authPayload = (user, remember_me) => ({
   id: user._id,
   name: user.name,
   confirmedEmail: user.email.confirmed,
   photoUrl: user.photo_url,
   role: user.status,
-  rememberMe: rememberMe,
+  rememberMe: remember_me,
+  avgRating: user.avg_rating,
 });
 
 const refreshPayload = (user) => ({

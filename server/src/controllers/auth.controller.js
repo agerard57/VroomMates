@@ -4,6 +4,7 @@ const generateJwt = require("../utils/generateJwt");
 const schedule = require("node-schedule");
 const jwt = require("jsonwebtoken");
 const jwtConfig = require("../config/jwt.config");
+const getAvgRating = require("../utils/getAvgRating");
 
 exports.register = (req, res) => {
   const user = new UsersModel({
@@ -40,6 +41,8 @@ exports.login = (req, res) => {
     const expirationDate = rememberMe
       ? new Date(date.setMonth(date.getMonth() + 1))
       : new Date(date.setDate(date.getDate() + 1));
+
+    user.avg_rating = getAvgRating(user.ratings);
 
     // Save the refresh token in the database
     UsersModel.findOneAndUpdate(
@@ -85,7 +88,7 @@ exports.refresh = (req, res) => {
         message: err.message,
       });
     }
-    console.log(user)
+    console.log(user);
     if (user && user.refreshTokens) {
       // Check if at least one of the refresh token is valid
       const validRefreshToken = user.refreshTokens.find((refreshToken) => {

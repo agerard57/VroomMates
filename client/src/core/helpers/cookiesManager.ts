@@ -15,7 +15,12 @@ const getCookie = (key: string) => {
   return cookies.get(key);
 };
 
+const deleteCookie = (key: string) => {
+  cookies.remove(key);
+};
+
 export const cookiesManager = {
   setCookie,
   getCookie,
+  deleteCookie
 };

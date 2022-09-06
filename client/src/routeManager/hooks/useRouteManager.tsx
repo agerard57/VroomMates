@@ -32,6 +32,11 @@ export const useRouteManager = (): RouteManagerManager => {
             setIsUserLoggedIn(true);
             setIsLoading(false);
           }
+          else if (response.status === 401) {
+            cookiesManager.deleteCookie("authToken");
+            setIsUserLoggedIn(false);
+            setIsLoading(false);
+          }
         });
       } else {
         setLoggedUserData(decodedToken);

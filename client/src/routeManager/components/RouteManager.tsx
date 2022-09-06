@@ -30,7 +30,7 @@ const RouteManager: FC = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard loggedUserData={loggedUserData} />} />
           <Route path="/home" element={<LandingPage />} />
           <Route path="/user/:id" element={<ProfilePage />} />
           <Route path="/search" element={<SearchPage />} />

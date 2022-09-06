@@ -4,15 +4,15 @@ import { FC } from "react";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { UserType, usePageTitle } from "../../core";
+import { usePageTitle, AuthToken } from "../../core";
 import { Account, Admin, Driver, Inbox, Misc, Trips } from "./sections";
 
-export const Dashboard: FC = () => {
-  const { t } = useTranslation("Dashboard");
+type Props = { loggedUserData: AuthToken["data"] | null };
 
-  const user = {
-    status: "admin" as UserType["Status"],
-  }; // TODO Please implement real user
+export const Dashboard: FC<Props> = ({ loggedUserData }) => {
+  const { t } = useTranslation("Dashboard");
+  
+  const status = loggedUserData?.role ? loggedUserData.role : undefined;
 
   usePageTitle(t("title"));
 
@@ -26,11 +26,11 @@ export const Dashboard: FC = () => {
         }
       `}
     >
-      <Account status={user.status} />
-      <Trips status={user.status} />
-      <Inbox status={user.status} />
-      <Driver status={user.status} />
-      <Admin status={user.status} />
+      <Account loggedUserData={loggedUserData} />
+      <Trips status={status} />
+      <Inbox status={status} />
+      <Driver status={status} />
+      <Admin status={status} />
       <Misc />
     </Container>
   );

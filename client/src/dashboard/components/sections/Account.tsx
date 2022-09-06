@@ -3,25 +3,25 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { getStatusIcon, ProfilePic, UserType } from "../../../core";
+import { AuthToken, getStatusIcon, ProfilePic } from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
 
 type Props = {
-  status?: UserType["Status"];
+  loggedUserData?: AuthToken["data"] | null;
 };
 
-export const Account: FC<Props> = ({ status }) => {
+export const Account: FC<Props> = ({ loggedUserData }) => {
   const { t } = useTranslation("Dashboard");
-  const accountIcon = getStatusIcon(status);
-  return status ? (
+  const accountIcon = getStatusIcon(loggedUserData?.role);
+  return loggedUserData ? (
     <section>
       <ProfilePic
-        src="https://randomuser.me/api/portraits/men/53.jpg"
-        rating={3}
+        src={loggedUserData.photoUrl}
+        rating={loggedUserData.avgRating}
         displayRating
         displayStars
-        isVerified
+        isVerified={loggedUserData.confirmedEmail}
       />
       <h2
         css={css`
@@ -30,7 +30,9 @@ export const Account: FC<Props> = ({ status }) => {
           font-size: 1.7rem;
         `}
       >
-        {t("accountSection.greetingMessage", { firstName: "Alexandre" })}{" "}
+        {t("accountSection.greetingMessage", {
+          firstName: loggedUserData.name.first_name,
+        })}{" "}
         {accountIcon ? <img src={accountIcon} alt="accountIcon" /> : null}
       </h2>
       <div>

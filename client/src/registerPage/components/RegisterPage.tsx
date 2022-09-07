@@ -1,15 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { FC } from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { ColoredBackground } from "../../core";
 import { SignInBox } from "./SignInBox";
 import { SignUpBox } from "./SignUpBox";
 
-export const SignInPage: FC = () => {
-  const { t } = useTranslation("SignInPage");
+export const RegisterPage: FC = () => {
+  const { t } = useTranslation("RegisterPage");
 
   return (
     <ColoredBackground>
@@ -25,16 +25,18 @@ export const SignInPage: FC = () => {
             }
           `}
         >
-          <Col xs={8}>
-            <SignUpBox />
+          <Col
+            xs={8}
+            css={css`
+              place-content: center;
+            `}
+          >
+            <SignInBox />
           </Col>
           <Col
             xs={4}
             css={css`
-              display: flex;
-              text-align: center;
-              align-items: center;
-              justify-content: center;
+              align-self: center;
             `}
           >
             <h2
@@ -46,12 +48,12 @@ export const SignInPage: FC = () => {
                 font-size: 3rem;
               `}
             >
-              {t("signUpSection.or")}
+              {t("signIn.or")}
             </h2>
           </Col>
         </Row>
         <Row>
-          <SignInBox />
+          <SignUpBox />
         </Row>
       </Container>
     </ColoredBackground>

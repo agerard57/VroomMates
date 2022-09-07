@@ -1,6 +1,6 @@
 import { cookiesManager } from "../helpers";
 
-export async function getProfilePicSrc(id: string) {
+export const getProfilePicSrc = async (id: string) => {
   const url = (id: string) =>
     `${process.env?.REACT_APP_API_URL}/banner/photo/${id}`;
   try {
@@ -16,9 +16,9 @@ export async function getProfilePicSrc(id: string) {
   } catch (error) {
     return [];
   }
-}
+};
 
-export async function getUserData(id: string) {
+export const getUserData = async (id: string) => {
   const url = (id: string) =>
     `${process.env?.REACT_APP_API_URL}/banner/user/${id}`;
   try {
@@ -34,4 +34,4 @@ export async function getUserData(id: string) {
   } catch (error) {
     return [];
   }
-}
+};

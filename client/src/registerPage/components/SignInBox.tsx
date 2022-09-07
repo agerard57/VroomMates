@@ -4,14 +4,14 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { RoundedContour } from "../../core";
-import LogImageSrc from "../assets/images/log-image.jpg";
+import RegisterImageSrc from "../assets/images/register-image.jpg";
 
-export const SignUpBox: FC = () => {
-  const { t } = useTranslation("SignInPage");
+export const SignInBox: FC = () => {
+  const { t } = useTranslation("RegisterPage");
 
   return (
     <a
-      href="/profile/register"
+      href="/profile/login"
       css={css`
         text-decoration: none;
       `}
@@ -35,14 +35,14 @@ export const SignUpBox: FC = () => {
             text-align: center;
           `}
         >
-          {t("signUpSection.title")}
+          {t("signIn.1")}
         </span>
         <img
           css={css`
             width: 50%;
             height: 50%;
           `}
-          src={LogImageSrc}
+          src={RegisterImageSrc}
           alt="log"
         />
         <span
@@ -52,7 +52,7 @@ export const SignUpBox: FC = () => {
             text-decoration: underline;
           `}
         >
-          {t("signUpSection.create")}
+          {t("signIn.2")}
         </span>
       </RoundedContour>
     </a>

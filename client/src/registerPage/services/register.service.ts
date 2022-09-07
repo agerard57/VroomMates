@@ -1,18 +1,17 @@
-const url = `${process.env?.REACT_APP_API_URL}/profile/login`;
+import { PostRegisterProps } from "../types";
 
-export const postLogin = async (
-  email: FormDataEntryValue | null,
-  password: FormDataEntryValue | null,
-  rememberMe: boolean
-) => {
+const url = `${process.env?.REACT_APP_API_URL}/profile/register`;
+
+export const postRegister = async (formData: PostRegisterProps) => {
   try {
     const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password, rememberMe }),
+      body: JSON.stringify(formData),
     });
+
     const data = await response.json();
     data.status = response.status;
     return data;

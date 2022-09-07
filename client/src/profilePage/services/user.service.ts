@@ -2,7 +2,7 @@ import { cookiesManager } from "../../core";
 
 const url = (id: string) => `${process.env?.REACT_APP_API_URL}/user/${id}`;
 
-export async function getUser(id: string) {
+export const getUser = async (id: string) => {
   try {
     const response = await fetch(url(id), {
       method: "GET",
@@ -16,4 +16,4 @@ export async function getUser(id: string) {
   } catch (error) {
     return [];
   }
-}
+};

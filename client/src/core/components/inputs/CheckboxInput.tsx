@@ -4,10 +4,10 @@ import { FC } from "react";
 
 type Props = {
   inputName: string;
-  labelText: string;
+  labelContent: React.ReactNode | string;
 };
 
-export const CheckboxInput: FC<Props> = ({ inputName, labelText }) => {
+export const CheckboxInput: FC<Props> = ({ inputName, labelContent }) => {
   return (
     <div
       css={css`
@@ -29,7 +29,7 @@ export const CheckboxInput: FC<Props> = ({ inputName, labelText }) => {
           margin-left: 5px;
         `}
       >
-        {labelText}
+        {labelContent}
       </label>
     </div>
   );

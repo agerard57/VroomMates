@@ -1,0 +1,72 @@
+{
+  "title": "Register",
+
+  "signIn": {
+    "1": "Already a member?",
+    "2": "Sign in here!",
+    "or": "OR"
+  },
+
+  "registerBox": {
+    "title": "Create an account:",
+    "fields": {
+      "name": {
+        "firstName": "First name",
+        "lastName": "Last name"
+      },
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "address": {
+        "houseNumber": "Nb",
+        "streetName": "Street name",
+        "city": "City",
+        "state": "State",
+        "zip": "ZIP",
+        "country": "Country"
+      },
+      "birthDate": "Birth date"
+    },
+    "terms": "I agree to the",
+    "termsLink": "terms & conditions",
+    "button": "Register!"
+  },
+
+  "messages": {
+    "success": "You are now registered!",
+    "error": {
+      "last_name": {
+        "required": "Last name is required"
+      },
+      "first_name": {
+        "required": "First name is required"
+      },
+      "email": { "empty": "Email is required", "invalid": "Email is invalid" },
+      "password1": {
+        "empty": "Password is required",
+        "length": "Password must be between 8 and 20 characters long",
+        "digit": "Password must contain at least one digit",
+        "lowerAndUpper": "Password must contain at least one lowercase and uppercase letter",
+        "special": "Password must contain at least one special character",
+        "notMatch": "Passwords do not match"
+      },
+      "house_number": { "empty": "House number is required" },
+      "street_name": { "empty": "Street name is required" },
+      "city": { "empty": "City is required" },
+      "state": { "empty": "State is required" },
+      "country": { "empty": "is required" },
+      "zip": { "empty": "is required" },
+      "birth_date": {
+        "empty": "Birth date is required",
+        "invalid": "Birth date is invalid",
+        "18yearsOld": "You must be at least 18 years old to register"
+      },
+      "user": {
+        "alreadyExists": "User already exists"
+      },
+      "terms_and_conditions": {
+        "notAccepted": "You must accept the terms & conditions to register"
+      }
+    }
+  }
+}

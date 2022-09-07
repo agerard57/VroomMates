@@ -64,7 +64,7 @@ export const SignInBox: FC = () => {
         >
           <Inputs.Checkbox
             inputName="rememberMe"
-            labelText={t("signInSection.rememberMe")}
+            labelContent={t("signInSection.rememberMe")}
           />
           {/* TODO Add Password forgotten feature */}
         </Row>

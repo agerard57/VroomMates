@@ -1,0 +1,82 @@
+{
+  "title": "Inscription",
+
+  "signIn": {
+    "1": "Déjà membre ?",
+    "2": "Connecte-toi ici !",
+    "or": "OU"
+  },
+
+  "registerBox": {
+    "title": "Crée un compte:",
+    "fields": {
+      "name": {
+        "firstName": "Prénom",
+        "lastName": "Nom"
+      },
+      "email": "Email",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirme le mot de passe",
+      "address": {
+        "houseNumber": "Nb",
+        "streetName": "Nom de la rue",
+        "city": "Ville",
+        "state": "Département",
+        "zip": "ZIP",
+        "country": "Pays"
+      },
+      "birthDate": "Date de naissance"
+    },
+    "terms": "J'accepte les",
+    "termsLink": "termes et conditions",
+    "button": "S'inscrire !"
+  },
+
+  "messages": {
+    "success": "Tu est désormais inscrit !",
+    "error": {
+      "last_name": {
+        "required": "Le nom est requis"
+      },
+      "first_name": {
+        "required": "Le prénom est requis"
+      },
+      "email": {
+        "empty": "L'email est requis",
+        "invalid": "L'email est invalide"
+      },
+      "password1": {
+        "empty": "Mot de passe requis",
+        "length": "Le mot de passe doit être entre 8 et 20 caractères",
+        "digit": "Le mot de passe doit contenir au moins un chiffre",
+        "lowerAndUpper": "Le mot de passe doit contenir au moins une minuscule et une majuscule",
+        "special": "Le mot de passe doit contenir au moins un caractère spécial",
+        "notMatch": "Les mots de passe ne correspondent pas"
+      },
+      "password2": {
+        "empty": "Second mot de passe requis",
+        "length": "Le second mot de passe doit être entre 8 et 20 caractères",
+        "digit": "Le second mot de passe doit contenir au moins un chiffre",
+        "lowerAndUpper": "Le second mot de passe doit contenir au moins une minuscule et une majuscule",
+        "special": "Le second mot de passe doit contenir au moins un caractère spécial"
+      },
+      "house_number": { "empty": "Le numéro de rue est requis" },
+      "street_name": { "empty": "Le nom de rue est requis" },
+      "city": { "empty": "La ville est requise" },
+      "state": { "empty": "L'état est requis" },
+      "country": { "empty": "Le pays est requis" },
+      "zip": { "empty": "Le ZIP est requis" },
+      "birth_date": {
+        "empty": "La date de naissance est requise",
+        "invalid": "La date de naissance est invalide",
+        "18yearsOld": "Tu dois avoir au moins 18 ans pour t'inscrire"
+      },
+      "user": {
+        "alreadyExists": "L'utilisateur existe déjà"
+      },
+      "terms_and_conditions": {
+        "notAccepted": "Les termes et conditions doivent être acceptés"
+      }
+    }
+  }
+}

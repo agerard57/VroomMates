@@ -1,4 +1,4 @@
-async function refreshAuthToken(authToken: string) {
+const refreshAuthToken = async (authToken: string) => {
   const url = `${process.env?.REACT_APP_API_URL}/profile/refresh`;
 
   try {
@@ -17,9 +17,9 @@ async function refreshAuthToken(authToken: string) {
   } catch (error) {
     return [];
   }
-}
+};
 
-async function deleteRefreshToken(authToken: string) {
+const deleteRefreshToken = async (authToken: string) => {
   const url = `${process.env?.REACT_APP_API_URL}/profile/signout`;
 
   try {
@@ -38,7 +38,7 @@ async function deleteRefreshToken(authToken: string) {
   } catch (error) {
     return [];
   }
-}
+};
 
 export const tokenService = {
   refreshAuthToken,

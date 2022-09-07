@@ -7,10 +7,13 @@ module.exports = function (app) {
     .route("/profile/register")
     .post(
       [
+        checkRegister.checkFields,
         checkRegister.checkDuplicateUser,
         checkRegister.checkEmail,
         checkRegister.checkPassword,
         checkRegister.checkDifferentPasswords,
+        checkRegister.checkBirthDate,
+        checkRegister.checkTermsChecked,
       ],
       authController.register
     );

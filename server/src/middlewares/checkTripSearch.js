@@ -1,6 +1,6 @@
 const hasEveryFieldBeenFilled = (req, res, next) => {
   const { type, departureLocation, arrivalLocation, date } = req.query;
-  console.log(req.query);
+
   if (
     type !== "null" &&
     departureLocation !== "null" &&

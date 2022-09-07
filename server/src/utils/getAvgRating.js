@@ -1,7 +1,9 @@
 const getAvgRating = (ratings) => {
   if (ratings && ratings.length > 0) {
-    const ratings = ratings.map((rating) => parseInt(rating.rating));
-    return ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length;
+    const ratingsMark = ratings.map((rating) => parseInt(rating.rating));
+    return (
+      ratingsMark.reduce((acc, curr) => acc + curr, 0) / ratingsMark.length
+    );
   }
   return null;
 };

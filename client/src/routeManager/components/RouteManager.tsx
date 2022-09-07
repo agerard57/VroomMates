@@ -12,6 +12,7 @@ import { LandingPage } from "../../landingPage";
 import { LoadingScreen } from "../../loadingScreen";
 import { PoliciesPages } from "../../policiesPages";
 import { ProfilePage } from "../../profilePage";
+import { RegisterPage } from "../../registerPage";
 import { ReviewsPages } from "../../reviewsPages";
 import { SearchPage } from "../../searchPage";
 import { SignInPage } from "../../signInPage";
@@ -62,6 +63,7 @@ const RouteManager: FC = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="/profile/register" element={<RegisterPage />} />
           <Route
             path="/reviews/given"
             element={

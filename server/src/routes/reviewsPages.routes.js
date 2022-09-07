@@ -5,14 +5,14 @@ module.exports = function (app) {
   app
     .route("/reviews/given/:id([0-9a-f]{24})")
     .get(
-      [authJwt.isUserLogged],
+      [authJwt.isUserLogged, authJwt.isSameUser],
       reviewsPagesController.getGivenReviewsByUserId
     );
 
   app
     .route("/reviews/received/:id([0-9a-f]{24})")
     .get(
-      [authJwt.isUserLogged],
+      [authJwt.isUserLogged, authJwt.isSameUser],
       reviewsPagesController.getReceivedReviewsByUserId
     );
 };

@@ -4,18 +4,18 @@ import { FC } from "react";
 
 type Props = {
   inputPlaceholder?: string;
-  inputType?: "text" | "email" | "password";
+  inputType?: "text" | "email" | "password" | "number";
   inputValue?: string;
   inputName: string;
   radioValue?: string;
   isRequired?: boolean;
-  length?: {min?: number, max?: number};
+  length?: { min?: number; max?: number };
   icon?: string;
 };
 
 export const TextInput: FC<Props> = ({
   inputPlaceholder,
-  inputType="text",
+  inputType = "text",
   isRequired,
   inputValue,
   inputName,

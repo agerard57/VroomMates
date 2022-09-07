@@ -1,11 +1,11 @@
 import { QueriesProps } from "../types";
 
-export async function getSearchResults({
+export const getSearchResults = async ({
   type,
   departureLocation,
   arrivalLocation,
   date,
-}: QueriesProps) {
+}: QueriesProps) => {
   const url = ({
     type,
     departureLocation,
@@ -21,4 +21,4 @@ export async function getSearchResults({
   } catch (error) {
     return [];
   }
-}
+};

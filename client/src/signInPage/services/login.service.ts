@@ -1,10 +1,10 @@
 const url = `${process.env?.REACT_APP_API_URL}/profile/login`;
 
-export async function postLogin(
+export const postLogin = async (
   email: FormDataEntryValue | null,
   password: FormDataEntryValue | null,
   rememberMe: boolean
-) {
+) => {
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -19,4 +19,4 @@ export async function postLogin(
   } catch (error) {
     return [];
   }
-}
+};

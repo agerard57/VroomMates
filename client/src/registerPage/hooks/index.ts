@@ -1,0 +1,1 @@
+export { useRegisterPage } from "./useRegisterPage";

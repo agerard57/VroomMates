@@ -4,20 +4,18 @@ import { FC } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { ColoredBackground, usePageTitle } from "../../core";
+import { ColoredBackground } from "../../core";
 import { SignInBox } from "./SignInBox";
 import { SignUpBox } from "./SignUpBox";
 
 export const SignInPage: FC = () => {
   const { t } = useTranslation("SignInPage");
 
-  usePageTitle("Sign up");
-
   return (
     <ColoredBackground>
       <Container
         css={css`
-          padding: 0 10vw;
+          padding: 0 8vw;
         `}
       >
         <Row

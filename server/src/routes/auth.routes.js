@@ -27,4 +27,6 @@ module.exports = function (app) {
     );
 
   app.route("/profile/refresh").post(authController.refresh);
+
+  app.route("/profile/signout").post(authController.signOut);
 };

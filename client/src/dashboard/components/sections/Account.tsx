@@ -3,17 +3,25 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { AuthToken, getStatusIcon, ProfilePic } from "../../../core";
+import {
+  cookiesManager,
+  getStatusIcon,
+  LoggedUserDataProps,
+  ProfilePic,
+  tokenService,
+} from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
 
-type Props = {
-  loggedUserData?: AuthToken["data"] | null;
-};
-
-export const Account: FC<Props> = ({ loggedUserData }) => {
+export const Account: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   const { t } = useTranslation("Dashboard");
   const accountIcon = getStatusIcon(loggedUserData?.role);
+  const signOff = () => {
+    tokenService.deleteRefreshToken(cookiesManager.getCookie("authToken"));
+    cookiesManager.deleteCookie("authToken");
+    window.location.href = "/";
+  };
+
   return loggedUserData ? (
     <section>
       <ProfilePic
@@ -42,7 +50,7 @@ export const Account: FC<Props> = ({ loggedUserData }) => {
         />
         <MenuListItem
           title={t("accountSection.signOff")}
-          link="/home" //TODO add param to logout
+          onClick={signOff}
           color="#FF5656"
         />
       </div>
@@ -50,8 +58,11 @@ export const Account: FC<Props> = ({ loggedUserData }) => {
   ) : (
     <section>
       <MenuListTitle title={t("accountSection.title")} />
-      <MenuListItem title={t("accountSection.signIn")} link="/login" />
-      <MenuListItem title={t("accountSection.signUp")} link="/register" />
+      <MenuListItem title={t("accountSection.signIn")} link="/profile/login" />
+      <MenuListItem
+        title={t("accountSection.signUp")}
+        link="/profile/register"
+      />
     </section>
   );
 };

@@ -4,23 +4,28 @@ import { FC } from "react";
 
 type Props = {
   inputPlaceholder?: string;
+  inputType?: "text" | "email" | "password";
   inputValue?: string;
   inputName: string;
   radioValue?: string;
   isRequired?: boolean;
+  length?: {min?: number, max?: number};
   icon?: string;
 };
 
 export const TextInput: FC<Props> = ({
   inputPlaceholder,
+  inputType="text",
+  isRequired,
   inputValue,
   inputName,
+  length,
   icon,
 }) => {
   const InputStyle = css`
     box-sizing: border-box;
     text-align: ${icon ? "left" : "center"};
-    padding: ${icon ? "5px 10px 6px 35px" : "5px 10px"};
+    padding: ${icon ? "5px 10px 5px 35px" : "5px 10px"};
     background: "#ffffff";
     border: 2px solid #a7a7a7;
     border-radius: 60px;
@@ -34,11 +39,14 @@ export const TextInput: FC<Props> = ({
 
   return (
     <input
-      type="text"
+      type={inputType}
       id={inputName}
       name={inputName}
       placeholder={inputPlaceholder}
       defaultValue={inputValue}
+      minLength={length?.min}
+      maxLength={length?.max}
+      required={isRequired}
       css={InputStyle}
     />
   );

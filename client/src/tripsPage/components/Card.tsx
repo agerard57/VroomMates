@@ -11,10 +11,11 @@ import { SingleTrip } from "./singleTrip";
 
 type Props = {
   cardName: string;
+  userId: string | null;
   trips: Trip[];
 };
 
-export const Card: FC<Props> = ({ cardName, trips }) => {
+export const Card: FC<Props> = ({ cardName, userId, trips }) => {
   const { t } = useTranslation("TripsPage");
 
   return (
@@ -68,7 +69,7 @@ export const Card: FC<Props> = ({ cardName, trips }) => {
         {trips.length > 0 ? (
           trips.map((trip: Trip) => (
             <>
-              <SingleTrip key={trip._id} trip={trip} />
+              <SingleTrip key={trip._id} trip={trip} userId={userId} />
               <hr
                 css={css`
                   width: 80%;

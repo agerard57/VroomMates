@@ -4,17 +4,16 @@ import { FC } from "react";
 import { Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { useTripsPage } from "../../hooks";
 import { Trip } from "../../interfaces";
 
 type Props = {
+  userId: string | null;
   driver: Trip["driver"];
 };
 
-export const DriverSection: FC<Props> = ({ driver }) => {
+export const DriverSection: FC<Props> = ({ userId, driver }) => {
   const { t } = useTranslation("TripsPage");
 
-  const { userId } = useTripsPage();
   const driverName =
     driver._id === userId
       ? t("trip.organizedByYourself")

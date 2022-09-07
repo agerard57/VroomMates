@@ -5,14 +5,10 @@ export {
   Layout,
   RoundedContour,
   ProfilePic,
-  Button,
-  DateInput,
   ReviewsCard,
   ProfileHeader,
   ProfileBanner,
-  TextInput,
-  SelectInput,
-  RadioInput,
+  Inputs,
   ColoredBackground,
   Stars,
   MenuListTitle,
@@ -20,6 +16,7 @@ export {
 } from "./components";
 
 export {
+  cookiesManager,
   normalizeDate,
   normalizePlaceName,
   normalizeTimeDifference,
@@ -28,9 +25,16 @@ export {
   getStatusIcon,
 } from "./helpers";
 
-export type { UserType, TripType } from "./types";
+export type {
+  UserType,
+  TripType,
+  AuthToken,
+  LoggedUserDataProps,
+} from "./types";
 
 export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";
+
+export { tokenService } from "./services";
 
 export type { User } from "./interfaces";
 export { UserInitializer } from "./interfaces";

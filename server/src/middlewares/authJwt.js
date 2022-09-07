@@ -55,8 +55,8 @@ const isAdmin = (_req, res, next) => {
   }
 };
 
-const isSameUser = (_req, res, next) => {
-  if (res.locals.user.id === _req.params.id) {
+const isSameUser = (req, res, next) => {
+  if (res.locals.user.id === req.params.id) {
     next();
   } else {
     return res.status(403).send({

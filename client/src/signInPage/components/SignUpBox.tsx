@@ -21,7 +21,6 @@ export const SignUpBox: FC = () => {
             display: flex;
             flex-direction: column;
             align-items: center;
-            ratio: 1/1;
             
             span{
                 padding: 5px;

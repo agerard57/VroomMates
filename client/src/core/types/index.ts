@@ -1,3 +1,3 @@
 export type { UserType } from "./UserType";
 export type { TripType } from "./TripType";
-export type { AuthToken } from "./AuthToken";
+export type { AuthToken, LoggedUserDataProps } from "./AuthToken";

@@ -1,20 +1,24 @@
 import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
 
-import { AuthToken, cookiesManager, tokenService } from "../../core";
+import {
+  AuthToken,
+  cookiesManager,
+  LoggedUserDataProps,
+  tokenService,
+} from "../../core";
 
 type RouteManagerManager = {
   isUserLoggedIn: boolean;
-  loggedUserData: AuthToken["data"] | null;
+  loggedUserData: LoggedUserDataProps["loggedUserData"];
   isLoading: boolean;
 };
 
 export const useRouteManager = (): RouteManagerManager => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false);
-  const [loggedUserData, setLoggedUserData] = useState<
-    AuthToken["data"] | null
-  >(null);
+  const [loggedUserData, setLoggedUserData] =
+    useState<LoggedUserDataProps["loggedUserData"]>(null);
 
   useEffect(() => {
     const cookie = cookiesManager.getCookie("authToken");
@@ -31,8 +35,7 @@ export const useRouteManager = (): RouteManagerManager => {
             setLoggedUserData(response.data);
             setIsUserLoggedIn(true);
             setIsLoading(false);
-          }
-          else if (response.status === 401) {
+          } else if (response.status === 401) {
             cookiesManager.deleteCookie("authToken");
             setIsUserLoggedIn(false);
             setIsLoading(false);

@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 
 type Props = {
   title: string;
-  link: string;
+  link?: string;
+  onClick?: () => void;
   color?: string;
   isBold?: boolean;
   notifications?: number;
@@ -14,7 +15,8 @@ type Props = {
 
 export const MenuListItem: FC<Props> = ({
   title,
-  link,
+  link = "/home",
+  onClick,
   color,
   isBold = false,
   notifications,
@@ -22,6 +24,7 @@ export const MenuListItem: FC<Props> = ({
   return (
     <Link
       to={link}
+      onClick={onClick}
       css={css`
         /* If the color if defined, use it, 
           else if there is a notification, use orange, 

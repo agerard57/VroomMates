@@ -4,14 +4,12 @@ import { FC } from "react";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { usePageTitle, AuthToken } from "../../core";
+import { usePageTitle, LoggedUserDataProps } from "../../core";
 import { Account, Admin, Driver, Inbox, Misc, Trips } from "./sections";
 
-type Props = { loggedUserData: AuthToken["data"] | null };
-
-export const Dashboard: FC<Props> = ({ loggedUserData }) => {
+export const Dashboard: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   const { t } = useTranslation("Dashboard");
-  
+
   const status = loggedUserData?.role ? loggedUserData.role : undefined;
 
   usePageTitle(t("title"));

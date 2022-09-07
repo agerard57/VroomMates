@@ -22,6 +22,10 @@ type AuthTokenMeta = {
 };
 
 export interface AuthToken {
-  data: AuthTokenData;
+  data: AuthTokenData | null;
   meta: AuthTokenMeta;
 }
+
+export type LoggedUserDataProps = {
+  loggedUserData: AuthTokenData | null;
+};

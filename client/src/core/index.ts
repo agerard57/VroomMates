@@ -25,7 +25,12 @@ export {
   getStatusIcon,
 } from "./helpers";
 
-export type { UserType, TripType, AuthToken } from "./types";
+export type {
+  UserType,
+  TripType,
+  AuthToken,
+  LoggedUserDataProps,
+} from "./types";
 
 export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";
 

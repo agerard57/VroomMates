@@ -8,11 +8,18 @@ const getAvgRating = require("../utils/getAvgRating");
 
 exports.register = (req, res) => {
   const user = new UsersModel({
-    name: req.body.name,
+    name: { last_name: req.body.last_name, first_name: req.body.first_name },
     "email.email_address": req.body.email,
     password: bcrypt.hashSync(req.body.password1, 8),
-    address: req.body.address,
-    birth_date: req.body.birthDate,
+    address: {
+      house_number: req.body.house_number,
+      street_name: req.body.street_name,
+      city: req.body.city,
+      zip: req.body.zip,
+      state: req.body.state,
+      country: req.body.country,
+    },
+    birth_date: req.body.birth_date,
   });
 
   user.save((err, _user) => {

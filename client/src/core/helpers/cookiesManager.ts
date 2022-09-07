@@ -1,5 +1,11 @@
 import Cookies from "universal-cookie";
 
+type cookiesManagerManager = {
+  setCookie: (key: string, value: string, rememberMe: boolean) => void;
+  getCookie: (key: string) => string;
+  deleteCookie: (key: string) => void;
+};
+
 const cookies = new Cookies();
 
 const setCookie = (key: string, value: string, rememberMe: boolean) => {
@@ -19,8 +25,8 @@ const deleteCookie = (key: string) => {
   cookies.remove(key);
 };
 
-export const cookiesManager = {
+export const cookiesManager: cookiesManagerManager = {
   setCookie,
   getCookie,
-  deleteCookie
+  deleteCookie,
 };

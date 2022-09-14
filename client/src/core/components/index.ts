@@ -9,3 +9,4 @@ export { MenuListTitle } from "./MenuListTitle";
 export { MenuListItem } from "./MenuListItem";
 export { ReviewsCard } from "./reviews";
 export { ProfileHeader, ProfileBanner } from "./profileBanner";
+export { Toaster } from "./Toaster";

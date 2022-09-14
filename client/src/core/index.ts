@@ -13,6 +13,7 @@ export {
   Stars,
   MenuListTitle,
   MenuListItem,
+  Toaster,
 } from "./components";
 
 export {

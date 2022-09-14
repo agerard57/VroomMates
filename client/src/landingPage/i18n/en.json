@@ -7,12 +7,10 @@
       "title": "Let’s find you a ride then!",
       "tripType": {
         "singleTrip": "Single trip",
-        "or": "or",
         "frequentTrip": "Frequent trip"
       },
       "tripPoints": {
         "from": "Leaving from…",
-        "to": "to",
         "getTo": "Get to…"
       },
       "date": "When?",

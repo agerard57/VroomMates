@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 
 type Props = {
-  type: "primary" | "secondary" | "hollow" | "danger";
+  type: "primary" | "secondary" | "hollow" | "danger" | "small";
   buttonType?: "submit" | "button";
   onClick?: () => void;
   optionalStyling?: any;
@@ -22,11 +22,10 @@ export const Button: FC<Props> = ({
         <button
           type={buttonType}
           css={css`
-            background: #569aff;
-            border: 2px solid #569aff;
-            border-radius: 16px;
-            padding: 10px;
-            height: 40px;
+            background: #408cff;
+            border: 2px solid #408cff;
+            border-radius: 18px;
+            height: 50px;
             padding: 2px;
             background-clip: content-box;
             ${optionalStyling};
@@ -37,6 +36,7 @@ export const Button: FC<Props> = ({
             css={css`
               font-family: "Baloo2";
               font-weight: 500;
+              font-size: 1.2rem;
               color: white;
             `}
           >
@@ -102,6 +102,27 @@ export const Button: FC<Props> = ({
             &:active {
               background-color: #ff9b9b;
               color: white;
+            }
+          `}
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      );
+    case "small":
+      return (
+        <button
+          type={buttonType}
+          css={css`
+            background-color: white;
+            color: #3d3d3d;
+            font-weight: 600;
+            border-radius: 10px;
+            border: none;
+            text-decoration: underline;
+            ${optionalStyling};
+            &:hover {
+              color: black;
             }
           `}
           onClick={onClick}

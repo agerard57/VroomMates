@@ -1,0 +1,58 @@
+{
+  "page": [
+    {
+      "title": "Complète ton compte !",
+      "body": "Ton compte s'est créé avec succès, ces prochaines pages vont t'aider à remplir des informations manquantes comme ta photo de profil, ta bio ou tes préférences (tu peut aussi faire ça dans ta page profil)",
+      "nextButtonText": "Commencer",
+      "previousButtonText": "Plus tard..."
+    },
+    {
+      "title": "Ajoute une photo de profil",
+      "body": "Ta prochaine mission:\n\najouter une super photo !",
+      "message": "Nous ne revenderons pas ta photo, promis !",
+      "nextButtonText": "Suivant",
+      "previousButtonText": "Retour..."
+    },
+    {
+      "title": "Partage ta personnalité",
+      "body": "Montre au monde qui tu est !",
+      "bio": {
+        "title": "Ta bio",
+        "placeholder": "Dis-nous en plus sur toi..."
+      },
+      "q&a": {
+        "title": "Questions / Réponses",
+        "talk": {
+          "true": "Aime parler en route",
+          "false": "Préfère ne pas parler en route"
+        },
+        "music": {
+          "true": "Aime écouter de la musique en route",
+          "false": "N'écoute pas de musique en route"
+        },
+        "pet": {
+          "true": "Accepte les animaux en route",
+          "false": "Ne préfère pas voyager avec des animaux"
+        }
+      },
+      "hobbies": {
+        "title": "Tes hobbys",
+        "placeholder": "Ajoute tes hobbies...",
+        "empty": "Aucun hobby",
+        "errors": {
+          "length": "Ton hobby ne doit pas dépasser 20 caractères",
+          "alreadyExists": "Ce hobby existe déjà",
+          "empty": "Le champ ne peut pas être vide",
+          "max": "Tu ne peux pas ajouter plus de 5 hobbies"
+        }
+      },
+      "nextButtonText": "Mettre à jour ton compte!",
+      "previousButtonText": "Retour..."
+    },
+    {
+      "title": "Tout est parfait !",
+      "body": "Merci d'avoir entré ces informations, ton compte est fin prêt 😁\n\nAppuie sur le bouton ci-dessous pour aller à la page de connexion",
+      "nextButtonText": "Retour à la page de connexion"
+    }
+  ]
+}

@@ -1,54 +1,42 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC, RefObject } from "react";
+import { FC } from "react";
 
 type Props = {
   inputPlaceholder?: string;
-  inputType?: "text" | "email" | "password" | "number";
   inputValue?: string;
   inputName: string;
   isRequired?: boolean;
-  length?: { min?: number; max?: number };
-  icon?: string;
-  outsideStyling?: any;
-  align?: "left" | "center";
   onChange?: (e: { target: { value: string } }) => void;
-  value?: string;
+  length?: { min?: number; max?: number };
+  size?: { rows: number; cols: number };
 };
 
-export const TextInput: FC<Props> = ({
+export const TextAreaInput: FC<Props> = ({
   inputPlaceholder,
-  inputType = "text",
   isRequired,
+  onChange,
   inputValue,
   inputName,
   length,
-  icon,
-  outsideStyling,
-  align = "center",
-  onChange,
-  value,
+  size = { rows: 3, cols: 50 },
 }) => {
   const InputStyle = css`
     box-sizing: border-box;
-    text-align: ${align || icon ? "left" : "center"};
-    padding: ${icon ? "5px 10px 5px 35px" : "5px 10px"};
+    text-align: left;
+    padding: 5px 10px;
     background: #ffffff;
     border: 2px solid #a7a7a7;
-    border-radius: 60px;
-    background: url(${icon}) no-repeat scroll 7px;
+    border-radius: 10px;
     outline: none;
 
     &:focus {
       border-color: #00a8ff;
     }
-
-    ${outsideStyling}
   `;
 
   return (
-    <input
-      type={inputType}
+    <textarea
       id={inputName}
       name={inputName}
       placeholder={inputPlaceholder}
@@ -58,7 +46,8 @@ export const TextInput: FC<Props> = ({
       required={isRequired}
       css={InputStyle}
       onChange={onChange}
-      value={value}
+      rows={size.rows}
+      cols={size.cols}
     />
   );
 };

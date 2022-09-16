@@ -18,6 +18,7 @@ export const Buttons: FC<Props> = ({ slide, previous, next }) => (
         padding-bottom: 0.5rem;
         text-align: center;
         color: #888888;
+        font-size: 0.78rem;
       `}
     >
       {slide.message && slide.message}
@@ -25,7 +26,7 @@ export const Buttons: FC<Props> = ({ slide, previous, next }) => (
     <Inputs.Button type="primary" onClick={next}>
       {slide.nextButtonText}
     </Inputs.Button>
-    {slide.backButtonText && (
+    {slide.previousButtonText && (
       <Inputs.Button
         type="small"
         onClick={previous}
@@ -33,7 +34,7 @@ export const Buttons: FC<Props> = ({ slide, previous, next }) => (
           padding-top: 0.5rem;
         `}
       >
-        {slide.backButtonText}
+        {slide.previousButtonText}
       </Inputs.Button>
     )}
   </>

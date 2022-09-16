@@ -1,9 +1,12 @@
 import { useState } from "react";
 
+import { EmptyModal } from "../components";
 import { SlideSpec, UseModalManager } from "../types";
 
 export const useModalManager = (): UseModalManager => {
-  const emptySlideSpec = [{ content: <></>, nextButtonText: "" }];
+  const emptySlideSpec: SlideSpec[] = [
+    { content: <EmptyModal />, nextButtonText: "" },
+  ];
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [slideSpecs, setSlideSpecs] = useState<SlideSpec[]>(emptySlideSpec);

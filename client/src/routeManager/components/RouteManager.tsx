@@ -68,7 +68,7 @@ const RouteManager: FC = () => {
             path="/reviews/given"
             element={
               <ProtectedRoute isAllowed={isUserLoggedIn}>
-                <ReviewsPages />
+                <ReviewsPages loggedUserData={loggedUserData} />
               </ProtectedRoute>
             }
           />
@@ -76,7 +76,7 @@ const RouteManager: FC = () => {
             path="/reviews/received"
             element={
               <ProtectedRoute isAllowed={isUserLoggedIn}>
-                <ReviewsPages />
+                <ReviewsPages loggedUserData={loggedUserData} />
               </ProtectedRoute>
             }
           />

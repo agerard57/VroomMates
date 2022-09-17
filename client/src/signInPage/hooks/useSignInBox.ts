@@ -3,6 +3,8 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
 import { cookiesManager, usePageTitle } from "../../core";
+import { useModal } from "../../modal";
+import { RegisterCompleteModalBuilder } from "../../registerCompleteModal";
 import { postLogin } from "../services";
 
 type SignInBoxManager = {
@@ -11,6 +13,9 @@ type SignInBoxManager = {
 
 export const useSignInBox = (): SignInBoxManager => {
   const { t } = useTranslation("SignInPage");
+
+  const { openModal } = useModal();
+  const screens = RegisterCompleteModalBuilder();
 
   usePageTitle(t("title"));
 
@@ -26,7 +31,7 @@ export const useSignInBox = (): SignInBoxManager => {
         if (response.status === 200) {
           cookiesManager.setCookie("authToken", response.authToken, rememberMe);
           toast.success(t(response.message));
-          window.location.href = "/";
+          openModal(screens);
         } else {
           toast.error(t(response.message));
         }

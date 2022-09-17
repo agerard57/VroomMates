@@ -3,8 +3,6 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
 import { usePageTitle } from "../../core";
-import { useModal } from "../../modal";
-import { RegisterCompleteModalBuilder } from "../../registerCompleteModal";
 import { postRegister } from "../services";
 import { PostRegisterProps } from "../types";
 
@@ -14,8 +12,7 @@ type RegisterPageManager = {
 
 export const useRegisterPage = (): RegisterPageManager => {
   const { t } = useTranslation("RegisterPage");
-  const { openModal } = useModal();
-  const screens = RegisterCompleteModalBuilder();
+
   usePageTitle(t("title"));
 
   const formBeautifier = (formData: FormData) => {
@@ -42,17 +39,19 @@ export const useRegisterPage = (): RegisterPageManager => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    openModal(screens);
-    /* 
+
     const data = new FormData(event.target as HTMLFormElement);
 
     postRegister(formBeautifier(data)).then((response) => {
       if (response.status === 200) {
         toast.success(t(response.message));
+        setTimeout(() => {
+          window.location.href = "/profile/login";
+        }, 2000);
       } else {
         toast.error(t(response.message));
       }
-    }); */
+    });
   };
 
   return {

@@ -5,9 +5,12 @@ import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import PlusButtonSrc from "../../assets/icons/plusButton.svg";
+import { useSecondPageProfilePic } from "../../hooks";
 
 export const SecondProfilePic: FC = () => {
   const { t } = useTranslation("RegisterCompleteModal");
+  const { profilePic, inputClickHandler, inputFile } =
+    useSecondPageProfilePic();
 
   return (
     <Container
@@ -19,14 +22,19 @@ export const SecondProfilePic: FC = () => {
     >
       <Row>
         <img
-          src="https://cdn.discordapp.com/attachments/999245209974079538/1020143119704010812/unknown.png"
+          src={profilePic}
           alt="profile pic"
           css={css`
             width: 50vw;
+            height: 50vw;
+            padding: 0;
             margin-left: auto;
             margin-right: auto;
+            border-radius: 50%;
+            border: 3px solid #609ffe;
+            padding: 3px;
             display: block;
-            padding-bottom: 2rem;
+            margin-bottom: 2rem;
           `}
         />
         <h1
@@ -66,6 +74,19 @@ export const SecondProfilePic: FC = () => {
             height: 10rem;
             width: auto;
           `}
+          onClick={() => {
+            inputFile.current?.click();
+          }}
+        />
+        <input
+          type="file"
+          id="file"
+          accept="image/png, image/gif, image/jpeg"
+          ref={inputFile}
+          css={css`
+            display: none;
+          `}
+          onChange={(e) => inputClickHandler(e)}
         />
       </Row>
     </Container>

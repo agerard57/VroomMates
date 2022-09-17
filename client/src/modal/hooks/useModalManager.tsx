@@ -18,11 +18,15 @@ export const useModalManager = (): UseModalManager => {
     setIsOpen(true);
   };
 
-  const previous = () =>
+  const previous = () => {
+    slideSpecs[slideNumber].previousButtonAction?.();
     slideNumber === 0 ? closeModal() : setSlideNumber(slideNumber - 1);
+  };
   const last = slideSpecs.length - 1;
-  const next = () =>
+  const next = () => {
+    slideSpecs[slideNumber].nextButtonAction?.();
     slideNumber === last ? closeModal() : setSlideNumber(slideNumber + 1);
+  };
 
   const closeModal = () => {
     setIsOpen(false);

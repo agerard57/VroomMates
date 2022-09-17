@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-import { SlideSpec } from "../../modal";
+import { cookiesManager, tokenService } from "../../core";
+import { SlideSpec, useModal } from "../../modal";
 import {
   FirstMessagePage,
   SecondProfilePic,
@@ -10,12 +11,14 @@ import {
 
 export const RegisterCompleteModalBuilder = (): SlideSpec[] => {
   const { t } = useTranslation("RegisterCompleteModal");
+  const { closeModal } = useModal();
 
   const screens = [
     {
       content: <FirstMessagePage />,
       nextButtonText: t("page.0.nextButtonText"),
       previousButtonText: t("page.0.previousButtonText"),
+      previousButtonAction: () => (window.location.href = "/"),
     },
     {
       content: <SecondProfilePic />,
@@ -26,11 +29,21 @@ export const RegisterCompleteModalBuilder = (): SlideSpec[] => {
     {
       content: <ThirdAbout />,
       nextButtonText: t("page.2.nextButtonText"),
-      previousButtonText: t("page.2.previousButtonText"),
     },
     {
       content: <FourthAllSet />,
       nextButtonText: t("page.3.nextButtonText"),
+      nextButtonAction: () => {
+        tokenService
+          .refreshAuthToken(cookiesManager.getCookie("authToken"))
+          .then((response) => {
+            if (response.status === 200) {
+              cookiesManager.setCookie("authToken", response.authToken, true);
+            }
+            closeModal();
+            window.location.href = "/";
+          });
+      },
     },
   ];
 

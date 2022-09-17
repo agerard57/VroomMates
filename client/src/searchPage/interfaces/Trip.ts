@@ -1,3 +1,5 @@
+import { s3UrlBuilder } from "../../core";
+
 interface Location {
   type: string;
   coordinates: { $numberDecimal: string }[];
@@ -43,8 +45,7 @@ const LocationInitializer = {
 };
 
 const DriverInitializer = {
-  photo_url:
-    "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png", //TODO Use own default avatar
+  photo_url: s3UrlBuilder("e6f5576639004a105dc76a6d0bbfb0d0"),
   avgRating: 5,
   first_name: "",
   confirmed_email: false,

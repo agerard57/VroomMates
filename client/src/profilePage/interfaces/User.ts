@@ -1,4 +1,4 @@
-import { UserType } from "../../core";
+import { s3UrlBuilder, UserType } from "../../core";
 
 interface About {
   bio: string;
@@ -68,8 +68,7 @@ export const UserInitializer = {
   },
   birth_date: new Date("2000-01-01T00:00:00Z"),
   about: AboutInitializer,
-  photo_url:
-    "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png", //TODO Use own default avatar
+  photo_url: s3UrlBuilder("e6f5576639004a105dc76a6d0bbfb0d0"),
   status: "passenger" as UserType["Status"],
   ratings: [ReviewInitializer],
   car: CarInitializer,

@@ -46,13 +46,18 @@
           "max": "Tu ne peux pas ajouter plus de 5 hobbies"
         }
       },
-      "nextButtonText": "Mettre à jour ton compte!",
-      "previousButtonText": "Retour..."
+      "nextButtonText": "Mettre à jour ton compte!"
     },
     {
       "title": "Tout est parfait !",
       "body": "Merci d'avoir entré ces informations, ton compte est fin prêt 😁\n\nAppuie sur le bouton ci-dessous pour aller à la page de connexion",
       "nextButtonText": "Retour à la page de connexion"
     }
-  ]
+  ],
+  "messages": {
+    "profilePic": {
+      "uploaded": "Votre photo est mise à jour !",
+      "error": "Une erreur est survenue, veuillez réessayer"
+    }
+  }
 }

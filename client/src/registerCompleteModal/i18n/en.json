@@ -46,13 +46,18 @@
           "max": "You can only add 5 hobbies"
         }
       },
-      "nextButtonText": "Update your account!",
-      "previousButtonText": "Go back..."
+      "nextButtonText": "Update your account!"
     },
     {
       "title": "You're all set!",
       "body": "Thank you for entering all of these information, your account is now complete 😁\n\nPress the button to go back to the home page.",
       "nextButtonText": "Return to the login page!"
     }
-  ]
+  ],
+  "messages": {
+    "profilePic": {
+      "uploaded": "Your profile picture has been uploaded!",
+      "error": "An error occurred while uploading your profile picture"
+    }
+  }
 }

@@ -24,7 +24,7 @@ export const ReviewsCard: FC<Props> = ({
   const nbReviews = (star: number, userReviews: UserType["Review"][]) =>
     userReviews.filter((review) => review.rating === star).length;
 
-  return userReviews ? (
+  return userReviews && userReviews?.length ? (
     <RoundedContour
       outsideStyling={`
             padding:0;

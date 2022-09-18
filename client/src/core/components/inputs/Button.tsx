@@ -7,6 +7,7 @@ type Props = {
   buttonType?: "submit" | "button";
   onClick?: () => void;
   optionalStyling?: any;
+  disabled?: boolean;
 };
 
 export const Button: FC<Props> = ({
@@ -15,6 +16,7 @@ export const Button: FC<Props> = ({
   buttonType = "button",
   onClick = () => {},
   optionalStyling,
+  disabled,
 }) => {
   switch (type) {
     case "primary":
@@ -22,8 +24,8 @@ export const Button: FC<Props> = ({
         <button
           type={buttonType}
           css={css`
-            background: #408cff;
-            border: 2px solid #408cff;
+            background: ${disabled ? "8d8d8d" : "#408cff"};
+            border: 2px solid ${disabled ? "8d8d8d" : "#408cff"};
             border-radius: 18px;
             height: 50px;
             padding: 2px;
@@ -31,13 +33,14 @@ export const Button: FC<Props> = ({
             ${optionalStyling};
           `}
           onClick={onClick}
+          disabled={disabled}
         >
           <span
             css={css`
               font-family: "Baloo2";
               font-weight: 500;
               font-size: 1.2rem;
-              color: white;
+              color: ${disabled ? "8d8d8d" : "white"};
             `}
           >
             {children}
@@ -54,7 +57,7 @@ export const Button: FC<Props> = ({
             width: 12rem;
             background-color: #fa7043;
             padding: 4px;
-            color: white;
+            color: ${disabled ? "8d8d8d" : "white"};
             border: none;
             border-radius: 13px;
             ${optionalStyling};
@@ -63,6 +66,7 @@ export const Button: FC<Props> = ({
             }
           `}
           onClick={onClick}
+          disabled={disabled}
         >
           {children}
         </button>
@@ -80,10 +84,11 @@ export const Button: FC<Props> = ({
             ${optionalStyling};
             &:active {
               background-color: #cddafe;
-              color: white;
+              color: ${disabled ? "8d8d8d" : "white"};
             }
           `}
           onClick={onClick}
+          disabled={disabled}
         >
           {children}
         </button>
@@ -101,10 +106,11 @@ export const Button: FC<Props> = ({
             ${optionalStyling};
             &:active {
               background-color: #ff9b9b;
-              color: white;
+              color: ${disabled ? "8d8d8d" : "white"};
             }
           `}
           onClick={onClick}
+          disabled={disabled}
         >
           {children}
         </button>
@@ -126,6 +132,7 @@ export const Button: FC<Props> = ({
             }
           `}
           onClick={onClick}
+          disabled={disabled}
         >
           {children}
         </button>
@@ -145,12 +152,13 @@ export const Button: FC<Props> = ({
             ${optionalStyling};
           `}
           onClick={onClick}
+          disabled={disabled}
         >
           <span
             css={css`
               font-family: "Baloo2";
               font-weight: 500;
-              color: white;
+              color: ${disabled ? "8d8d8d" : "white"};
             `}
           >
             {children}

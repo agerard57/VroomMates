@@ -24,7 +24,6 @@ export const RegisterCompleteModalBuilder = (): SlideSpec[] => {
       content: <SecondProfilePic />,
       message: t("page.1.message"),
       nextButtonText: t("page.1.nextButtonText"),
-      previousButtonText: t("page.1.previousButtonText"),
     },
     {
       content: <ThirdAbout />,

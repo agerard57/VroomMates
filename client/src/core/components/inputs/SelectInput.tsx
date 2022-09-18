@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC, SetStateAction } from "react";
+import { ChangeEvent, FC } from "react";
 
 type Props = {
-  onChange: (e: { target: { value: SetStateAction<any> } }) => void;
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
   title: string;
   align?: "left" | "center";
 };
@@ -17,6 +17,7 @@ export const SelectInput: FC<Props> = ({
   <select
     onChange={onChange}
     aria-label={title}
+    name={title}
     css={css`
       width: -webkit-fill-available;
       text-align: ${align === "center" ? "center" : "left"};

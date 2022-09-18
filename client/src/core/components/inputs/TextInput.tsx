@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC, RefObject } from "react";
+import { ChangeEvent, FC } from "react";
 
 type Props = {
   inputPlaceholder?: string;
@@ -12,7 +12,7 @@ type Props = {
   icon?: string;
   outsideStyling?: any;
   align?: "left" | "center";
-  onChange?: (e: { target: { value: string } }) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string;
 };
 

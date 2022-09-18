@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 
 type Props = {
   inputPlaceholder?: string;
   inputValue?: string;
   inputName: string;
   isRequired?: boolean;
-  onChange?: (e: { target: { value: string } }) => void;
+  onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   length?: { min?: number; max?: number };
   size?: { rows: number; cols: number };
 };

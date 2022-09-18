@@ -20,7 +20,7 @@ export const ProfileHeaderInitializer: ProfileHeader = {
   user: {
     firstName: "",
     lastName: "",
-    profilePicSrc: s3UrlBuilder("e6f5576639004a105dc76a6d0bbfb0d0"),
+    profilePicSrc: s3UrlBuilder(),
     dateOfBirth: new Date("2000-01-01T00:00:00Z"),
     status: "passenger" as UserType["Status"],
   },

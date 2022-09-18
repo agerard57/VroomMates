@@ -68,7 +68,7 @@ export const UserInitializer = {
   },
   birth_date: new Date("2000-01-01T00:00:00Z"),
   about: AboutInitializer,
-  photo_url: s3UrlBuilder("e6f5576639004a105dc76a6d0bbfb0d0"),
+  photo_url: s3UrlBuilder(),
   status: "passenger" as UserType["Status"],
   ratings: [ReviewInitializer],
   car: CarInitializer,

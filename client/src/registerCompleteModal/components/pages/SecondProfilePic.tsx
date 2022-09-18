@@ -5,12 +5,11 @@ import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import PlusButtonSrc from "../../assets/icons/plusButton.svg";
-import { useSecondPageProfilePic } from "../../hooks";
+import { useSecondProfilePic } from "../../hooks";
 
 export const SecondProfilePic: FC = () => {
   const { t } = useTranslation("RegisterCompleteModal");
-  const { profilePic, inputClickHandler, inputFile } =
-    useSecondPageProfilePic();
+  const { profilePic, inputClickHandler, inputFile } = useSecondProfilePic();
 
   return (
     <Container

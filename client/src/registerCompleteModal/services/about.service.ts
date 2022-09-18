@@ -1,17 +1,17 @@
 import { cookiesManager } from "../../core";
+import { AboutInputs } from "../types";
 
-const url = `${process.env?.REACT_APP_API_URL}/photo/upload`;
+const url = `${process.env?.REACT_APP_API_URL}/profile/edit/about`;
 
-export const postProfilePic = async (file: File) => {
-  const formData = new FormData();
-  formData.append("file", file);
+export const postAbout = async (inputs: AboutInputs) => {
   try {
     const response = await fetch(url, {
-      method: "POST",
+      method: "PUT",
       headers: {
+        "Content-Type": "application/json",
         "x-access-token": cookiesManager.getCookie("authToken"),
       },
-      body: formData,
+      body: JSON.stringify(inputs),
     });
     const data = await response.json();
     data.status = response.status;

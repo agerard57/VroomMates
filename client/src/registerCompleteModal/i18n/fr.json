@@ -10,8 +10,7 @@
       "title": "Ajoute une photo de profil",
       "body": "Ta prochaine mission:\n\najouter une super photo !",
       "message": "Nous ne revenderons pas ta photo, promis !",
-      "nextButtonText": "Suivant",
-      "previousButtonText": "Retour..."
+      "nextButtonText": "Suivant"
     },
     {
       "title": "Partage ta personnalité",
@@ -57,6 +56,11 @@
   "messages": {
     "profilePic": {
       "uploaded": "Votre photo est mise à jour !",
+      "max": "Tu ne peut pas ajouter une photo plus grande que 3MB",
+      "error": "Une erreur est survenue, veuillez réessayer"
+    },
+    "about": {
+      "updated": "Votre bio est mise à jour !",
       "error": "Une erreur est survenue, veuillez réessayer"
     }
   }

@@ -10,8 +10,7 @@
       "title": "Add a profile picture",
       "body": "Your next mission:\n\nupload an awesome profile picture!",
       "message": "We don't resell your photos to third parties, we promise!",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back..."
+      "nextButtonText": "Next"
     },
     {
       "title": "Share your personality",
@@ -57,7 +56,12 @@
   "messages": {
     "profilePic": {
       "uploaded": "Your profile picture has been uploaded!",
+      "max": "Maximum file size is 3MB",
       "error": "An error occurred while uploading your profile picture"
+    },
+    "about": {
+      "updated": "Your bio has been updated!",
+      "error": "An error occurred while updating your bio"
     }
   }
 }

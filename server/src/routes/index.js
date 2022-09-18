@@ -12,9 +12,9 @@ module.exports = function routes(app) {
 
   // ///////
   // Routes
-  require("./auth.routes")(app);
   require("./landingPage.routes")(app);
   require("./profileBanner.routes")(app);
+  require("./profile.routes")(app);
   require("./s3.routes")(app);
   require("./searchPage.routes")(app);
   require("./tripDetailsPage.routes")(app);

@@ -1,6 +1,7 @@
-const authController = require("../controllers/auth.controller");
+const profileController = require("../controllers/profile.controller");
 const checkRegister = require("../middlewares/checkRegister");
 const checkLogin = require("../middlewares/checkLogin");
+const authJwt = require("../middlewares/authJwt");
 
 module.exports = function (app) {
   app
@@ -15,7 +16,7 @@ module.exports = function (app) {
         checkRegister.checkBirthDate,
         checkRegister.checkTermsChecked,
       ],
-      authController.register
+      profileController.register
     );
 
   app
@@ -26,10 +27,14 @@ module.exports = function (app) {
         checkLogin.checkPasswordSyntax,
         checkLogin.checkUserExistsAndValidPassword,
       ],
-      authController.login
+      profileController.login
     );
 
-  app.route("/profile/refresh").post(authController.refresh);
+  app
+    .route("/profile/edit/about")
+    .put([authJwt.isUserLogged], profileController.editAbout);
 
-  app.route("/profile/signout").post(authController.signOut);
+  app.route("/profile/refresh").post(profileController.refresh);
+
+  app.route("/profile/signout").post(profileController.signOut);
 };

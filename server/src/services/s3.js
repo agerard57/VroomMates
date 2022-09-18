@@ -9,7 +9,7 @@ const s3 = new S3({
   signatureVersion: "v4",
 });
 
-const uploadFile = (file) => {
+exports.uploadFile = (file) => {
   const fileStream = fs.createReadStream(file.path);
 
   const uploadParams = {
@@ -22,9 +22,7 @@ const uploadFile = (file) => {
   return s3.upload(uploadParams).promise();
 };
 
-exports.uploadFile = uploadFile;
-
-function getFileStream(fileKey) {
+exports.getFileStream = (fileKey) => {
   const downloadParams = {
     Bucket: awsConfig.BUCKET,
     Key: fileKey,
@@ -32,10 +30,9 @@ function getFileStream(fileKey) {
   };
 
   return s3.getObject(downloadParams).createReadStream();
-}
-exports.getFileStream = getFileStream;
+};
 
-const deleteFile = (fileKey) => {
+exports.deleteFile = (fileKey) => {
   const deleteParams = {
     Bucket: awsConfig.BUCKET,
     Key: fileKey,
@@ -43,5 +40,3 @@ const deleteFile = (fileKey) => {
 
   return s3.deleteObject(deleteParams).promise();
 };
-
-exports.deleteFile = deleteFile;

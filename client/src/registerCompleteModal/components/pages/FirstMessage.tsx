@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import RegisterImageSrc from "../../../core/assets/images/registerImage.jpg";
 
-export const FirstMessagePage: FC = () => {
+export const FirstMessage: FC = () => {
   const { t } = useTranslation("RegisterCompleteModal");
 
   return (

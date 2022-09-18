@@ -1,5 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { useState, useRef, ChangeEvent, useEffect } from "react";
+import {
+  useState,
+  useRef,
+  ChangeEvent,
+  useEffect,
+  MutableRefObject,
+} from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
@@ -9,7 +15,7 @@ import { postProfilePic } from "../services";
 type SecondProfilePicManager = () => {
   profilePic: string;
   inputClickHandler: (e: ChangeEvent<HTMLInputElement>) => void;
-  inputFile: React.MutableRefObject<HTMLInputElement | null>;
+  inputFile: MutableRefObject<HTMLInputElement | null>;
 };
 
 export const useSecondProfilePic: SecondProfilePicManager = () => {

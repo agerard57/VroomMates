@@ -1,4 +1,4 @@
-import { FormEventHandler } from "react";
+import { FormEvent, FormEventHandler } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
@@ -37,7 +37,7 @@ export const useRegisterPage = (): RegisterPageManager => {
     return beautifiedData;
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const data = new FormData(event.target as HTMLFormElement);

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { usePageTitle } from "../../core";
@@ -6,7 +6,7 @@ import { Pages } from "../types";
 
 type PoliciesPagesManager = {
   value: Pages;
-  handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 export const usePoliciesPages = (): PoliciesPagesManager => {
@@ -27,7 +27,7 @@ export const usePoliciesPages = (): PoliciesPagesManager => {
   window.location.hash = value;
   window.scroll(0, 0);
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setValue(e.target.value as Pages);
   };
 

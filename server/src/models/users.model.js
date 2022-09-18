@@ -59,10 +59,13 @@ const userSchema = mongoose.Schema(
         type: "String",
       },
       chatty: {
-        type: "String",
+        type: "Boolean",
       },
       music: {
-        type: "String",
+        type: "Boolean",
+      },
+      animals_tolerated: {
+        type: "Boolean",
       },
       hobbies: {
         type: ["String"],

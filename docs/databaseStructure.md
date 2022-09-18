@@ -28,6 +28,7 @@
     "bio": "string",
     "chatty": "boolean",
     "music": "boolean",
+    "animals_tolerated": "boolean",
     "hobbies": "string[]"
   },
   "photo_url": "string",

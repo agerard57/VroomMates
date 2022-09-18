@@ -1,7 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
+document.addEventListener(
+  "DOMContentLoaded",
+  () => (document.body.className = "")
+);
 export const modalStyles = (isOpen: boolean) => {
+  // That's because on each render, the modal slides down
+  let display = false;
+  setTimeout(() => {
+    display = true;
+  }, 400);
+
   const animation = isOpen
     ? css`animation: slide-up 0.3s ease-in forwards;
       @keyframes slide-up {
@@ -14,6 +24,7 @@ export const modalStyles = (isOpen: boolean) => {
       }
     }`
     : css`
+        ${display ? "" : "display: none;"}
         animation: slide-down 0.3s ease-out forwards;
         @keyframes slide-down {
           0% {

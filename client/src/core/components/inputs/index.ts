@@ -3,6 +3,7 @@ import { CheckboxInput } from "./CheckboxInput";
 import { DateInput } from "./DateInput";
 import { RadioInput } from "./RadioInput";
 import { SelectInput } from "./SelectInput";
+import { TextAreaInput } from "./TextAreaInput";
 import { TextInput } from "./TextInput";
 
 export const Inputs = {
@@ -12,4 +13,5 @@ export const Inputs = {
   Text: TextInput,
   Radio: RadioInput,
   Select: SelectInput,
+  TextArea: TextAreaInput,
 };

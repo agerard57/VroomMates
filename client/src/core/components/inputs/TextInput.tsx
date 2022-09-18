@@ -1,16 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 
 type Props = {
   inputPlaceholder?: string;
   inputType?: "text" | "email" | "password" | "number";
   inputValue?: string;
   inputName: string;
-  radioValue?: string;
   isRequired?: boolean;
   length?: { min?: number; max?: number };
   icon?: string;
+  outsideStyling?: any;
+  align?: "left" | "center";
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
 };
 
 export const TextInput: FC<Props> = ({
@@ -21,12 +24,16 @@ export const TextInput: FC<Props> = ({
   inputName,
   length,
   icon,
+  outsideStyling,
+  align = "center",
+  onChange,
+  value,
 }) => {
   const InputStyle = css`
     box-sizing: border-box;
-    text-align: ${icon ? "left" : "center"};
+    text-align: ${align || icon ? "left" : "center"};
     padding: ${icon ? "5px 10px 5px 35px" : "5px 10px"};
-    background: "#ffffff";
+    background: #ffffff;
     border: 2px solid #a7a7a7;
     border-radius: 60px;
     background: url(${icon}) no-repeat scroll 7px;
@@ -35,6 +42,8 @@ export const TextInput: FC<Props> = ({
     &:focus {
       border-color: #00a8ff;
     }
+
+    ${outsideStyling}
   `;
 
   return (
@@ -48,6 +57,8 @@ export const TextInput: FC<Props> = ({
       maxLength={length?.max}
       required={isRequired}
       css={InputStyle}
+      onChange={onChange}
+      value={value}
     />
   );
 };

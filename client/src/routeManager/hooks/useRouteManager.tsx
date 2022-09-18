@@ -47,6 +47,7 @@ export const useRouteManager = (): RouteManagerManager => {
         setIsLoading(false);
       }
     }
+
     setIsLoading(false);
   }, []);
 

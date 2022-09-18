@@ -1,3 +1,4 @@
+import { s3UrlBuilder } from "../helpers";
 import { UserType } from "../types";
 
 export interface ProfileHeader {
@@ -19,8 +20,7 @@ export const ProfileHeaderInitializer: ProfileHeader = {
   user: {
     firstName: "",
     lastName: "",
-    profilePicSrc:
-      "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png", //TODO Use own default avatar",
+    profilePicSrc: s3UrlBuilder(),
     dateOfBirth: new Date("2000-01-01T00:00:00Z"),
     status: "passenger" as UserType["Status"],
   },

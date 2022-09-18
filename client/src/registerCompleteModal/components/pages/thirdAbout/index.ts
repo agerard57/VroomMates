@@ -1,0 +1,1 @@
+export { ThirdAbout } from "./ThirdAbout";

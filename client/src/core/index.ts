@@ -24,6 +24,7 @@ export {
   normalizeDistance,
   normalizePrice,
   getStatusIcon,
+  s3UrlBuilder,
 } from "./helpers";
 
 export type {

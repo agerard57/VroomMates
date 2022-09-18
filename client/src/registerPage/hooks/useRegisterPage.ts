@@ -45,7 +45,9 @@ export const useRegisterPage = (): RegisterPageManager => {
     postRegister(formBeautifier(data)).then((response) => {
       if (response.status === 200) {
         toast.success(t(response.message));
-        window.location.href = "/profile/login";
+        setTimeout(() => {
+          window.location.href = "/profile/login";
+        }, 2000);
       } else {
         toast.error(t(response.message));
       }

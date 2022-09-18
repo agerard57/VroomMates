@@ -4,6 +4,7 @@ import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
 import { i18n as PoliciesPages } from "../policiesPages";
 import { i18n as ProfilePage } from "../profilePage";
+import { i18n as RegisterCompleteModal } from "../registerCompleteModal";
 import { i18n as RegisterPage } from "../registerPage";
 import { i18n as ReviewsPages } from "../reviewsPages";
 import { i18n as SearchPage } from "../searchPage";
@@ -32,6 +33,7 @@ const moduleResources = normalize({
   LoadingScreen,
   PoliciesPages,
   ProfilePage,
+  RegisterCompleteModal,
   RegisterPage,
   ReviewsPages,
   SearchPage,

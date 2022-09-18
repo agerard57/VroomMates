@@ -1,21 +1,27 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { usePageTitle, UserInitializer, UserType } from "../../core";
+import {
+  LoggedUserDataProps,
+  usePageTitle,
+  UserInitializer,
+  UserType,
+} from "../../core";
 import {
   getGivenReviewsByUserId,
   getReceivedReviewsByUserId,
 } from "../services";
 
-export const useReviewsPages = () => {
+export const useReviewsPages = (
+  loggedUserData: LoggedUserDataProps["loggedUserData"]
+) => {
   const { t } = useTranslation("ReviewsPages");
+
+  const userId = loggedUserData!.id;
 
   const [reviews, setReviews] = useState<UserType["Review"][]>([
     UserInitializer["review"],
   ]);
-
-  // TODO Implement real user
-  const userId = "62b118b7af7d95ee39d508eb";
 
   const currentPage = window.location.pathname.includes("received")
     ? "received"
@@ -29,7 +35,7 @@ export const useReviewsPages = () => {
       : getReceivedReviewsByUserId(userId).then((reviews) =>
           setReviews(reviews)
         );
-  }, [currentPage]);
+  }, [currentPage, userId]);
 
   return { reviews, currentPage, userId };
 };

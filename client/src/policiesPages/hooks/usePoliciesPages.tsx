@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { usePageTitle } from "../../core";
@@ -6,11 +6,7 @@ import { Pages } from "../types";
 
 type PoliciesPagesManager = {
   value: Pages;
-  handleChange: (e: {
-    target: {
-      value: SetStateAction<Pages>;
-    };
-  }) => void;
+  handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
 export const usePoliciesPages = (): PoliciesPagesManager => {
@@ -31,8 +27,8 @@ export const usePoliciesPages = (): PoliciesPagesManager => {
   window.location.hash = value;
   window.scroll(0, 0);
 
-  const handleChange = (e: { target: { value: SetStateAction<Pages> } }) => {
-    setValue(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setValue(e.target.value as Pages);
   };
 
   usePageTitle(t(`${value}.title`));

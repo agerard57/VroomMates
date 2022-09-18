@@ -4,13 +4,19 @@ import { FC } from "react";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { ProfileBanner, ProfileHeader, ReviewsCard, Inputs } from "../../core";
+import {
+  ProfileBanner,
+  ProfileHeader,
+  ReviewsCard,
+  Inputs,
+  LoggedUserDataProps,
+} from "../../core";
 import { useReviewsPages } from "../hooks";
 
-export const ReviewsPages: FC = () => {
+export const ReviewsPages: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   const { t } = useTranslation("ReviewsPages");
 
-  const { reviews, currentPage, userId } = useReviewsPages();
+  const { reviews, currentPage, userId } = useReviewsPages(loggedUserData);
 
   return (
     <>

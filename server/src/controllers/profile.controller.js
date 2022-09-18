@@ -53,6 +53,17 @@ exports.login = (req, res) => {
         ? new Date(date.setMonth(date.getMonth() + 1))
         : new Date(date.setDate(date.getDate() + 1));
 
+      // How many minutes since registration
+      const minutesSinceRegistration = Math.floor(
+        (new Date() - user.registered_since) / 60000
+      );
+
+      console.log("minutesSinceRegistration", minutesSinceRegistration);
+      const isFirstLogin =
+        user.photo_url === "e6f5576639004a105dc76a6d0bbfb0d0" &&
+        !user.about &&
+        minutesSinceRegistration < 5;
+
       // Save the refresh token in the database
       UsersModel.findOneAndUpdate(
         { _id: user._id },
@@ -79,9 +90,36 @@ exports.login = (req, res) => {
             message: "messages.success",
             authToken,
             rememberMe,
+            isFirstLogin,
           });
         }
       );
+    });
+};
+
+exports.editAbout = (req, res) => {
+  const { bio, chatty, music, animals_tolerated, hobbies } = req.body;
+
+  UsersModel.findOneAndUpdate(
+    { _id: res.locals.user.id },
+    {
+      $set: {
+        about: {
+          bio,
+          chatty,
+          music,
+          animals_tolerated,
+          hobbies,
+        },
+      },
+    }
+  )
+    .then((_user) => {
+      res.status(200).json({ message: "messages.about.updated" });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ message: "message.about.error" });
     });
 };
 

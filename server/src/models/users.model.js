@@ -59,10 +59,13 @@ const userSchema = mongoose.Schema(
         type: "String",
       },
       chatty: {
-        type: "String",
+        type: "Boolean",
       },
       music: {
-        type: "String",
+        type: "Boolean",
+      },
+      animals_tolerated: {
+        type: "Boolean",
       },
       hobbies: {
         type: ["String"],
@@ -71,9 +74,7 @@ const userSchema = mongoose.Schema(
     },
     photo_url: {
       type: "String",
-      default:
-        "https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
-      //TODO USE S3 PHOTO URL
+      default: "e6f5576639004a105dc76a6d0bbfb0d0",
     },
     stripe_id: "String",
     registered_since: {

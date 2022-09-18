@@ -29,3 +29,5 @@ yarn-error.log*
 cert.pem
 key.pem
 keytmp.pem
+
+uploads/

@@ -1,9 +1,12 @@
 import { useState } from "react";
 
+import { EmptyModal } from "../components";
 import { SlideSpec, UseModalManager } from "../types";
 
 export const useModalManager = (): UseModalManager => {
-  const emptySlideSpec = [{ content: <></>, nextButtonText: "" }];
+  const emptySlideSpec: SlideSpec[] = [
+    { content: <EmptyModal />, nextButtonText: "" },
+  ];
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [slideSpecs, setSlideSpecs] = useState<SlideSpec[]>(emptySlideSpec);
@@ -15,11 +18,15 @@ export const useModalManager = (): UseModalManager => {
     setIsOpen(true);
   };
 
-  const previous = () =>
+  const previous = () => {
+    slideSpecs[slideNumber].previousButtonAction?.();
     slideNumber === 0 ? closeModal() : setSlideNumber(slideNumber - 1);
+  };
   const last = slideSpecs.length - 1;
-  const next = () =>
+  const next = () => {
+    slideSpecs[slideNumber].nextButtonAction?.();
     slideNumber === last ? closeModal() : setSlideNumber(slideNumber + 1);
+  };
 
   const closeModal = () => {
     setIsOpen(false);

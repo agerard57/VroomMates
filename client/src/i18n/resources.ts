@@ -1,3 +1,4 @@
+import { i18n as BecomeDriverModal } from "../becomeDriverModal";
 import { i18n as Core } from "../core";
 import { i18n as Dashboard } from "../dashboard";
 import { i18n as LandingPage } from "../landingPage";
@@ -27,6 +28,7 @@ const normalize = (
   );
 
 const moduleResources = normalize({
+  BecomeDriverModal,
   Core,
   Dashboard,
   LandingPage,

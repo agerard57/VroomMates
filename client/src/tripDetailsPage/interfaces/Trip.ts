@@ -59,7 +59,7 @@ const LocationInitializer = {
 
 const DriverInitializer = {
   id: "",
-  photo_url: s3UrlBuilder("e6f5576639004a105dc76a6d0bbfb0d0"),
+  photo_url: s3UrlBuilder(),
   avgRating: 5,
   nbRatings: 0,
   first_name: "",

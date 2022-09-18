@@ -45,7 +45,7 @@ const LocationInitializer = {
 };
 
 const DriverInitializer = {
-  photo_url: s3UrlBuilder("e6f5576639004a105dc76a6d0bbfb0d0"),
+  photo_url: s3UrlBuilder(),
   avgRating: 5,
   first_name: "",
   confirmed_email: false,

@@ -31,7 +31,9 @@ export const useSignInBox = (): SignInBoxManager => {
         if (response.status === 200) {
           cookiesManager.setCookie("authToken", response.authToken, rememberMe);
           toast.success(t(response.message));
-          openModal(screens);
+          response.isFirstLogin
+            ? openModal(screens)
+            : (window.location.href = "/");
         } else {
           toast.error(t(response.message));
         }

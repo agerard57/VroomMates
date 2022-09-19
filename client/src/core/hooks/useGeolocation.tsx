@@ -26,7 +26,7 @@ export const useGeolocation: GeolocationManager = () => {
           setAddress(place_name);
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err);
         });
     }
   }, [coordinates]);

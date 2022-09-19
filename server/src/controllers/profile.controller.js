@@ -58,7 +58,6 @@ exports.login = (req, res) => {
         (new Date() - user.registered_since) / 60000
       );
 
-      console.log("minutesSinceRegistration", minutesSinceRegistration);
       const isFirstLogin =
         user.photo_url === "e6f5576639004a105dc76a6d0bbfb0d0" &&
         !user.about &&
@@ -80,7 +79,7 @@ exports.login = (req, res) => {
               { $pull: { refreshTokens: refreshToken } },
               (err, _user) => {
                 if (err) {
-                  console.log(err.message);
+                  console.error(err.message);
                   return;
                 }
               }
@@ -118,7 +117,6 @@ exports.editAbout = (req, res) => {
       res.status(200).json({ message: "messages.about.updated" });
     })
     .catch((err) => {
-      console.log(err);
       res.status(500).json({ message: "message.about.error" });
     });
 };

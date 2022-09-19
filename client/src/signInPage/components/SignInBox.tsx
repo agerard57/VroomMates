@@ -15,13 +15,13 @@ export const SignInBox: FC = () => {
 
   return (
     <RoundedContour
-      outsideStyling={`
-          padding: 1rem 2rem;
-          
-          input {
-            margin: 0.3rem 0;
-          }
-          `}
+      outsideStyling={css`
+        padding: 1rem 2rem;
+
+        input {
+          margin: 0.3rem 0;
+        }
+      `}
     >
       <form onSubmit={handleSubmit}>
         <Row>

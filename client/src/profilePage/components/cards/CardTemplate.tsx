@@ -13,16 +13,16 @@ type Props = {
 
 export const CardTemplate: FC<Props> = ({ icon, title, content }) => (
   <RoundedContour
-    outsideStyling={`
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          padding: 0;
-          overflow: hidden;
-          & > *{
-            padding: 5%
-            }
-            `}
+    outsideStyling={css`
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      overflow: hidden;
+      & > * {
+        padding: 5%;
+      }
+    `}
   >
     <Col sm={4}>
       <img src={icon.src} alt={icon.alt} />

@@ -4,12 +4,12 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { RoundedContour } from "../..";
-import { UserType } from "../../types/UserType";
+import { UserTypes } from "../../types";
 import { ReviewElement } from "./ReviewElement";
 import { StatsSection } from "./StatsSection";
 
 type Props = {
-  userReviews?: UserType["Review"][];
+  userReviews?: UserTypes["Review"][];
   title: string;
   displayStats?: boolean;
 };
@@ -21,15 +21,15 @@ export const ReviewsCard: FC<Props> = ({
 }) => {
   const { t } = useTranslation("Core");
 
-  const nbReviews = (star: number, userReviews: UserType["Review"][]) =>
+  const nbReviews = (star: number, userReviews: UserTypes["Review"][]) =>
     userReviews.filter((review) => review.rating === star).length;
 
   return userReviews && userReviews?.length ? (
     <RoundedContour
-      outsideStyling={`
-            padding:0;
-            overflow: hidden;
-            `}
+      outsideStyling={css`
+        padding: 0;
+        overflow: hidden;
+      `}
     >
       <div
         css={css`

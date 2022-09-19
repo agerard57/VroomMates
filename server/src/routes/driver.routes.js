@@ -16,4 +16,8 @@ module.exports = function (app) {
       upload.single("file"),
       driverController.postDriverLicense
     );
+
+  app
+    .route("/driver/requested")
+    .get([authJwt.isUserLogged], driverController.getHasUserRequestedAlready);
 };

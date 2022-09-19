@@ -29,3 +29,16 @@ exports.putCar = async (req, res) => {
     res.status(400).send({ message: "messages.car.error" });
   }
 };
+
+exports.getHasUserRequestedAlready = async (req, res) => {
+  try {
+    const driver = await DriversModel.findOne({ user: res.locals.user.id });
+    if (driver) {
+      res.status(200).send(true);
+    } else {
+      res.status(200).send(false);
+    }
+  } catch (err) {
+    res.status(400).send(err);
+  }
+};

@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import { FC } from "react";
 
-import VerifiedProfile from "../assets/icons/verifiedProfile.svg";
+import { VerifiedProfile } from "../assets";
 import { s3UrlBuilder } from "../helpers";
 import { Stars } from "./stars";
 

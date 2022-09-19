@@ -1,1 +1,1 @@
-export * from "./Trip";
+export type { Trip } from "./Trip";

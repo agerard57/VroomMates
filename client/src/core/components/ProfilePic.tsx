@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { FC } from "react";
 
 import { VerifiedProfile } from "../assets";
@@ -12,7 +12,7 @@ type Props = {
   displayStars?: boolean;
   displayRating?: boolean;
   isVerified?: boolean;
-  outsidePictureStyling?: any;
+  outsidePictureStyling?: SerializedStyles;
   onClick?: () => void;
 };
 export const ProfilePic: FC<Props> = ({

@@ -30,5 +30,19 @@
       "4": "Bon",
       "5": "Excellent"
     }
+  },
+
+  "searchBox": {
+    "title": "Il est grand temps de se trouver un VroomMate !",
+    "tripType": {
+      "singleTrip": "Voyage unique",
+      "frequentTrip": "Voyage fréquent"
+    },
+    "tripPoints": {
+      "from": "Partir de…",
+      "getTo": "Arriver à…"
+    },
+    "date": "Quand?",
+    "searchButton": "Lancer la recherche !"
   }
 }

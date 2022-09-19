@@ -5,7 +5,7 @@ import {
   LoggedUserDataProps,
   usePageTitle,
   UserInitializer,
-  UserType,
+  UserTypes,
 } from "../../core";
 import {
   getGivenReviewsByUserId,
@@ -19,7 +19,7 @@ export const useReviewsPages = (
 
   const userId = loggedUserData!.id;
 
-  const [reviews, setReviews] = useState<UserType["Review"][]>([
+  const [reviews, setReviews] = useState<UserTypes["Review"][]>([
     UserInitializer["review"],
   ]);
 

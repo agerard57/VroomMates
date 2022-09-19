@@ -1,4 +1,4 @@
-import { s3UrlBuilder, UserType } from "../../core";
+import { s3UrlBuilder, UserTypes } from "../../core";
 
 interface About {
   bio: string;
@@ -26,8 +26,8 @@ export interface User {
   birth_date: Date;
   about?: About;
   photo_url: string;
-  status: UserType["Status"];
-  ratings: UserType["Review"][];
+  status: UserTypes["Status"];
+  ratings: UserTypes["Review"][];
   car?: Car;
 }
 
@@ -69,7 +69,7 @@ export const UserInitializer = {
   birth_date: new Date("2000-01-01T00:00:00Z"),
   about: AboutInitializer,
   photo_url: s3UrlBuilder(),
-  status: "passenger" as UserType["Status"],
+  status: "passenger" as UserTypes["Status"],
   ratings: [ReviewInitializer],
   car: CarInitializer,
 };

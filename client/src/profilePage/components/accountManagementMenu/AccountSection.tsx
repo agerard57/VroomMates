@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { MenuListItem, MenuListTitle, UserType } from "../../../core";
+import { MenuListItem, MenuListTitle, UserTypes } from "../../../core";
 
 type Props = {
-  userStatus: UserType["Status"];
+  userStatus: UserTypes["Status"];
 };
 
 export const AccountSection: FC<Props> = ({ userStatus }) => {

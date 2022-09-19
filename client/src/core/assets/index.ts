@@ -7,4 +7,4 @@ export {
   PetIcon,
   TalkIcon,
 } from "./icons";
-export { AllSetImage, RegisterImage } from "./images";
+export { AllSetImage, RegisterImage, NotFoundImage } from "./images";

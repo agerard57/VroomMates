@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { UserType } from "../../../core";
+import { UserTypes } from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
 
 type Props = {
-  status?: UserType["Status"];
+  status?: UserTypes["Status"];
 };
 
 export const Trips: FC<Props> = ({ status }) => {

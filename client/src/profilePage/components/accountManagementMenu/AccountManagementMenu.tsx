@@ -3,12 +3,12 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Container } from "react-bootstrap";
 
-import { UserType } from "../../../core";
+import { UserTypes } from "../../../core";
 import { AccountSection } from "./AccountSection";
 import { ReviewsSection } from "./ReviewsSection";
 
 type Props = {
-  userStatus: UserType["Status"];
+  userStatus: UserTypes["Status"];
 };
 
 export const AccountManagementMenu: FC<Props> = ({ userStatus }) => (

@@ -31,5 +31,19 @@
       "4": "Good",
       "5": "Excellent"
     }
+  },
+
+  "searchBox": {
+    "title": "Let’s find you a ride then!",
+    "tripType": {
+      "singleTrip": "Single trip",
+      "frequentTrip": "Frequent trip"
+    },
+    "tripPoints": {
+      "from": "Leaving from…",
+      "getTo": "Get to…"
+    },
+    "date": "When?",
+    "searchButton": "Find me a VroomMate!"
   }
 }

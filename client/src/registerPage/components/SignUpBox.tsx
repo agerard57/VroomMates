@@ -18,25 +18,28 @@ export const SignUpBox: FC = () => {
 
   return (
     <RoundedContour
-      outsideStyling={`
-          padding: 1rem 2rem;
-          
-          .col, .col-4, .col-8, .col-6 {
-            padding: 0;
-          }
-          
-          input:not([type="checkbox"]) {
-            width: -webkit-fill-available;
-          }
+      outsideStyling={css`
+        padding: 1rem 2rem;
 
-          .row > div:first-of-type > input {
-            margin: 0.3rem 10px 0.3rem 0;
-          }
+        .col,
+        .col-4,
+        .col-8,
+        .col-6 {
+          padding: 0;
+        }
 
-          input {
-            margin: 0.3rem 0;
-          }
-          `}
+        input:not([type="checkbox"]) {
+          width: -webkit-fill-available;
+        }
+
+        .row > div:first-of-type > input {
+          margin: 0.3rem 10px 0.3rem 0;
+        }
+
+        input {
+          margin: 0.3rem 0;
+        }
+      `}
     >
       <form onSubmit={handleSubmit}>
         <Row>

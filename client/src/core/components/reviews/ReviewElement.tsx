@@ -6,10 +6,10 @@ import { useTranslation } from "react-i18next";
 
 import { normalizeDate, Stars } from "../..";
 import { useLanguage } from "../../../language";
-import { UserType } from "../../types/UserType";
+import { UserTypes } from "../../types";
 
 type Props = {
-  review: UserType["Review"];
+  review: UserTypes["Review"];
 };
 
 export const ReviewElement: FC<Props> = ({ review }) => {

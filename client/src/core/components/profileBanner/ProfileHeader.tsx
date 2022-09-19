@@ -46,13 +46,13 @@ export const ProfileHeader: FC<Props> = ({ id }) => {
         <Col>
           <ProfilePic
             src={user.profilePicSrc}
-            outsidePictureStyling={`
-                width: 7rem;
-                height: 7rem;
-                border:white 5px solid;
-                align-items: center;
-                display: block;
-                `}
+            outsidePictureStyling={css`
+              width: 7rem;
+              height: 7rem;
+              border: white 5px solid;
+              align-items: center;
+              display: block;
+            `}
           />
         </Col>
         <Col>

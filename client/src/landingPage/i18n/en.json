@@ -2,20 +2,7 @@
   "title": "Home",
 
   "landingSection": {
-    "title": "Ready to go on a trip?",
-    "search": {
-      "title": "Let’s find you a ride then!",
-      "tripType": {
-        "singleTrip": "Single trip",
-        "frequentTrip": "Frequent trip"
-      },
-      "tripPoints": {
-        "from": "Leaving from…",
-        "getTo": "Get to…"
-      },
-      "date": "When?",
-      "searchButton": "Find me a VroomMate!"
-    }
+    "title": "Ready to go on a trip?"
   },
 
   "descriptionSection": {

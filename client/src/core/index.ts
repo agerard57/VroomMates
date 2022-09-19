@@ -23,6 +23,7 @@ export {
   MenuListTitle,
   MenuListItem,
   Toaster,
+  SearchBox,
 } from "./components";
 
 export {

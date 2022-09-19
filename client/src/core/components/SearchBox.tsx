@@ -4,11 +4,15 @@ import { FC, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { RoundedContour, useGeolocation, Inputs } from "../../../core";
-import { ArrivalIcon, CalendarIcon, DepartureIcon } from "../../assets";
+import { RoundedContour, useGeolocation, Inputs } from "..";
+import {
+  ArrivalIcon,
+  CalendarIcon,
+  DepartureIcon,
+} from "../../landingPage/assets";
 
 export const SearchBox: FC = () => {
-  const { t } = useTranslation("LandingPage");
+  const { t } = useTranslation("Core");
   const { address } = useGeolocation();
 
   const [activeRadio, setActiveRadio] = useState<string>("single");
@@ -34,7 +38,7 @@ export const SearchBox: FC = () => {
               text-align: center;
             `}
           >
-            {t("landingSection.search.title")}
+            {t("searchBox.title")}
           </h2>
           <hr />
           <Row
@@ -48,9 +52,7 @@ export const SearchBox: FC = () => {
               <Inputs.Radio
                 inputName="type"
                 radioValue="single"
-                inputPlaceholder={t(
-                  "landingSection.search.tripType.singleTrip"
-                )}
+                inputPlaceholder={t("searchBox.tripType.singleTrip")}
                 activeRadio={activeRadio}
                 onClickRadio={() => {
                   setActiveRadio("single");
@@ -61,9 +63,7 @@ export const SearchBox: FC = () => {
               <Inputs.Radio
                 inputName="type"
                 radioValue="frequent"
-                inputPlaceholder={t(
-                  "landingSection.search.tripType.frequentTrip"
-                )}
+                inputPlaceholder={t("searchBox.tripType.frequentTrip")}
                 activeRadio={activeRadio}
                 onClickRadio={() => {
                   setActiveRadio("frequent");
@@ -74,7 +74,7 @@ export const SearchBox: FC = () => {
           <Row>
             <Inputs.Text
               inputName="departureLocation"
-              inputPlaceholder={t("landingSection.search.tripPoints.from")}
+              inputPlaceholder={t("searchBox.tripPoints.from")}
               inputValue={address}
               icon={DepartureIcon}
             />
@@ -82,14 +82,14 @@ export const SearchBox: FC = () => {
           <Row>
             <Inputs.Text
               inputName="arrivalLocation"
-              inputPlaceholder={t("landingSection.search.tripPoints.getTo")}
+              inputPlaceholder={t("searchBox.tripPoints.getTo")}
               icon={ArrivalIcon}
             />
           </Row>
           <Row>
             <Inputs.Date
               inputName="date"
-              inputPlaceholder={t("landingSection.search.date")}
+              inputPlaceholder={t("searchBox.date")}
               icon={CalendarIcon}
             />
           </Row>
@@ -99,7 +99,7 @@ export const SearchBox: FC = () => {
               buttonType="submit"
               optionalStyling={`margin-top:10px`}
             >
-              {t("landingSection.search.searchButton")}
+              {t("searchBox.searchButton")}
             </Inputs.Button>
           </Row>
         </div>

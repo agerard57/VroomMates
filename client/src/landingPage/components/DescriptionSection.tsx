@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import HomeImage2 from "../assets/images/home-image-2.png";
+import { HomeImage2 } from "../assets";
 
 export const DescriptionSection: FC = () => {
   const { t } = useTranslation("LandingPage");

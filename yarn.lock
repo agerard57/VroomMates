@@ -10658,6 +10658,13 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-animate-height@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-animate-height/-/react-animate-height-3.0.4.tgz#80c9cc25e8569709ad1c626b968dbe5108d0ce46"
+  integrity sha512-k+mBS8yCzpFp+7BdrHsL5bXd6CO/2bYO2SvRGKfxK+Ss3nzplAJLlgnd6Zhcxe/avdpy/CgcziicFj7pIHgG5g==
+  dependencies:
+    classnames "^2.3.1"
+
 react-app-polyfill@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-2.0.0.tgz#a0bea50f078b8a082970a9d853dc34b6dcc6a3cf"

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import { SlideSpec, useModal } from "../../modal";
+import { SlideSpec } from "../../modal";
+import { useBecomeDriverModalBuilder } from "../hooks";
 import {
   FirstMessage,
   FourthAllSet,
@@ -12,16 +13,21 @@ import {
 export const BecomeDriverModalBuilder = (): SlideSpec[] => {
   const { t } = useTranslation("BecomeDriverModal");
 
-  const { setIsDisabled, iterator } = useModal();
-  const { slideNumber } = iterator;
+  const {
+    slideNumber,
+    setIsDisabled,
+    driverLicenseFilled,
+    setDriverLicenseFilled,
+    carInputsFilled,
+    setCarInputsFilled,
+  } = useBecomeDriverModalBuilder();
 
-  const [driverLicenseFilled, setDriverLicenseFilled] = useState(false);
-  const [carInputsFilled, setCarInputsFilled] = useState(false);
-
-  setIsDisabled(
-    (slideNumber === 1 && !driverLicenseFilled) ||
-      (slideNumber === 2 && !carInputsFilled)
-  );
+  useEffect(() => {
+    setIsDisabled(
+      (slideNumber === 1 && !driverLicenseFilled) ||
+        (slideNumber === 2 && !carInputsFilled)
+    );
+  }, [slideNumber, driverLicenseFilled, carInputsFilled, setIsDisabled]);
 
   const screens: SlideSpec[] = [
     {

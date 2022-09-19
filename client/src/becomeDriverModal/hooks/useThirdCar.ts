@@ -41,11 +41,10 @@ export const useThirdCar: UseThirdCarManager = (
   useEffect(() => {
     return () => {
       if (componentWillUnmount.current)
-        if (carInputFilled)
-          postCar(inputs).then((res) => {
-            if (res.status === 200) toast.success(t(res.message));
-            else toast.error(t(res.message));
-          });
+        postCar(inputs).then((res) => {
+          if (res.status === 200) toast.success(t(res.message));
+          else toast.error(t(res.message));
+        });
     };
   }, [carInputFilled, inputs, t]);
 

@@ -52,12 +52,13 @@ export const useSecondDriverLicense: UseSecondDriverLicenseManager = (
 
   useEffect(() => {
     return () => {
-      if (componentWillUnmount.current)
-        if (driverLicenseFilled && picObj !== null)
+      if (componentWillUnmount.current) {
+        if (picObj !== null)
           postDriversLicense(picObj).then((res) => {
-            if (res.status === 200) toast.success(t(res.message));
+            if (res.status === 201) toast.success(t(res.message));
             else toast.error(t(res.message));
           });
+      }
     };
   }, [defaultDriverLicenseSrc, picObj, driverLicense, t, driverLicenseFilled]);
 

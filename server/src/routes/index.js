@@ -12,6 +12,7 @@ module.exports = function routes(app) {
 
   // ///////
   // Routes
+  require("./driver.routes")(app);
   require("./landingPage.routes")(app);
   require("./profileBanner.routes")(app);
   require("./profile.routes")(app);

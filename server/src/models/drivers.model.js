@@ -23,8 +23,13 @@ const driversSchema = mongoose.Schema(
         type: "String",
       },
     },
-    licence_card_photo_url: {
+    license_card_filename: {
       type: "String",
+      required: true,
+    },
+    request_date: {
+      type: "Date",
+      default: Date.now,
       required: true,
     },
   },

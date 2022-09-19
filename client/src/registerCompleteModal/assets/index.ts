@@ -1,1 +1,4 @@
-export { AddButton, MusicIcon, PetIcon, RemoveButton, TalkIcon } from "./icons";
+import AddButton from "./addButton.svg";
+import RemoveButton from "./removeButton.svg";
+
+export { AddButton, RemoveButton };

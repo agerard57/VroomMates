@@ -12,7 +12,7 @@ type Review = {
   date: Date;
 };
 
-export interface UserType {
+export interface UserTypes {
   Status: Status;
   Review: Review;
 }

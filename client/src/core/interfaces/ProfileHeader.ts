@@ -1,5 +1,5 @@
 import { s3UrlBuilder } from "../helpers";
-import { UserType } from "../types";
+import { UserTypes } from "../types";
 
 export interface ProfileHeader {
   user: {
@@ -7,7 +7,7 @@ export interface ProfileHeader {
     lastName: string;
     profilePicSrc: string;
     dateOfBirth: Date;
-    status: UserType["Status"];
+    status: UserTypes["Status"];
   };
   stats: {
     avgRating?: number;
@@ -22,7 +22,7 @@ export const ProfileHeaderInitializer: ProfileHeader = {
     lastName: "",
     profilePicSrc: s3UrlBuilder(),
     dateOfBirth: new Date("2000-01-01T00:00:00Z"),
-    status: "passenger" as UserType["Status"],
+    status: "passenger" as UserTypes["Status"],
   },
   stats: {
     avgRating: 0,

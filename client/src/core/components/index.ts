@@ -10,4 +10,4 @@ export { MenuListItem } from "./MenuListItem";
 export { ReviewsCard } from "./reviews";
 export { ProfileHeader, ProfileBanner } from "./profileBanner";
 export { Toaster } from "./Toaster";
-export { SearchBox } from "./SearchBox";
+export { SearchBox } from "./searchBox";

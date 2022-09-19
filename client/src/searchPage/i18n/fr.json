@@ -1,5 +1,9 @@
 {
   "title": "Recherches",
 
-  "search": { "full": "Plein" }
+  "search": { "full": "Plein" },
+
+  "start": "Fais une recherche pour te trouver un VroomMate !",
+
+  "empty": "Désolé, il n'y a aucun résultat pour votre recherche 🥲"
 }

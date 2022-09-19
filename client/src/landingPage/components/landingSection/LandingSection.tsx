@@ -37,7 +37,12 @@ export const LandingSection: FC = () => {
           width: 80%;
         `}
       />
-      <SearchBox />
+      <SearchBox
+        canClose={false}
+        outsideStyling={css`
+          margin: 5vw;
+        `}
+      />
     </section>
   );
 };

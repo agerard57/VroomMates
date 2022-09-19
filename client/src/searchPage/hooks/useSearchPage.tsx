@@ -3,14 +3,14 @@ import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
 import { usePageTitle } from "../../core";
-import { Trip, TripInitializer } from "../interfaces";
+import { Trip } from "../interfaces";
 import { getSearchResults } from "../services";
 
-export const useSearchPage = (): { trips: [Trip] } => {
+export const useSearchPage = (): { trips: [Trip] | [] } => {
   const { t } = useTranslation("SearchPage");
 
   const [searchParams] = useSearchParams();
-  const [trips, setTrips] = useState<[Trip]>([TripInitializer]);
+  const [trips, setTrips] = useState<[Trip] | []>([]);
 
   usePageTitle(t("title"));
 

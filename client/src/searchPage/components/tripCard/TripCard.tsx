@@ -23,6 +23,7 @@ export const TripCard: FC<Props> = ({ trip }) => {
       outsideStyling={css`
         display: flow-root;
         padding: 0;
+        margin: 1rem 0;
         overflow: hidden;
         position: relative;
       `}

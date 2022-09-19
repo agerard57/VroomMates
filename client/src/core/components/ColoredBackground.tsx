@@ -1,8 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { FC } from "react";
 
-export const ColoredBackground: FC = ({ children }) => (
+type Props = {
+  outsideStyling?: SerializedStyles;
+};
+
+export const ColoredBackground: FC<Props> = ({ children, outsideStyling }) => (
   <div
     css={css`
       display: flex;
@@ -34,6 +38,7 @@ export const ColoredBackground: FC = ({ children }) => (
           background-position: 0% 50%;
         }
       }
+      ${outsideStyling}
     `}
   >
     {children}

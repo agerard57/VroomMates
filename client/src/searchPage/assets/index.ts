@@ -1,3 +1,2 @@
-import { ReactComponent as TripArrow } from "./tripArrow.svg";
-
-export { TripArrow };
+export { TripArrow } from "./icons";
+export { StartLookingImage } from "./images";

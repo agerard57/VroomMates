@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { ChangeEvent, FC } from "react";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
   isRequired?: boolean;
   length?: { min?: number; max?: number };
   icon?: string;
-  outsideStyling?: any;
+  outsideStyling?: SerializedStyles;
   align?: "left" | "center";
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string;

@@ -56,25 +56,31 @@ exports.getSearchResults = (req, res) => {
           .lean()
           // Format the driver object / Get average rating
           .exec((_err, trips) => {
-            trips.forEach((trip) => {
-              const ratings = trip.driver.ratings.map((rating) =>
-                parseInt(rating.rating)
-              );
+            if (trips.length > 0) {
+              const tripsArray = [];
+              trips.forEach((trip) => {
+                const ratings = trip.driver.ratings.map((rating) =>
+                  parseInt(rating.rating)
+                );
 
-              trip.driver = {
-                photo_url: trip.driver.photo_url,
-                avgRating:
-                  ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length,
-                first_name: trip.driver.name.first_name,
-                confirmed_email: trip.driver.email.confirmed,
-              };
-
-              res.status(200).json(trips);
-            });
+                trip.driver = {
+                  photo_url: trip.driver.photo_url,
+                  avgRating:
+                    ratings.reduce((acc, curr) => acc + curr, 0) /
+                    ratings.length,
+                  first_name: trip.driver.name.first_name,
+                  confirmed_email: trip.driver.email.confirmed,
+                };
+                tripsArray.push(trip);
+              });
+              res.status(200).json(tripsArray);
+            } else {
+              res.status(204).json(trips);
+            }
           });
       });
     })
     .catch((err) => {
-      res.status(500).json(err);
+      res.status(400).send(err);
     });
 };

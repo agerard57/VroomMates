@@ -1,5 +1,9 @@
 {
   "title": "Search",
 
-  "search": { "full": "Full" }
+  "search": { "full": "Full" },
+
+  "start": "Search for a trip and find yourself a VroomMate!",
+
+  "empty": "Sorry, there are no matches for your search 🥲"
 }

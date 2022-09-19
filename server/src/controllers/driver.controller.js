@@ -30,7 +30,7 @@ exports.putCar = async (req, res) => {
   }
 };
 
-exports.getHasUserRequestedAlready = async (req, res) => {
+exports.getHasUserRequestedAlready = async (_req, res) => {
   try {
     const driver = await DriversModel.findOne({ user: res.locals.user.id });
     if (driver) {

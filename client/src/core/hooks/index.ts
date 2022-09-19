@@ -3,3 +3,4 @@ export { useGeolocation } from "./useGeolocation";
 export { usePageTitle } from "./usePageTitle";
 export { useProfileBanner } from "./useProfileBanner";
 export { useProfileHeader } from "./useProfileHeader";
+export { useSearchBox } from "./useSearchBox";

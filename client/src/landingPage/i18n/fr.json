@@ -2,20 +2,7 @@
   "title": "Accueil",
 
   "landingSection": {
-    "title": "Prêt à partir en voyage ?",
-    "search": {
-      "title": "Il est grand temps de se trouver un VroomMate !",
-      "tripType": {
-        "singleTrip": "Voyage unique",
-        "frequentTrip": "Voyage fréquent"
-      },
-      "tripPoints": {
-        "from": "Partir de…",
-        "getTo": "Arriver à…"
-      },
-      "date": "Quand?",
-      "searchButton": "Lancer la recherche !"
-    }
+    "title": "Prêt à partir en voyage ?"
   },
 
   "descriptionSection": {

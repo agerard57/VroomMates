@@ -18,16 +18,16 @@ export const CarCard: FC<Props> = ({ brand, model, color }) => {
 
   return (
     <RoundedContour
-      outsideStyling={`
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          padding: 0;
-          overflow: hidden;
-          & > *{
-            padding: 5%
-            }
-            `}
+      outsideStyling={css`
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        overflow: hidden;
+        & > * {
+          padding: 5%;
+        }
+      `}
     >
       <Col sm={4}>
         <img src={CarIcon} alt="car icon" />

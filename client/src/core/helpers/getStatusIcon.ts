@@ -1,7 +1,7 @@
 import { AdminIcon, DriverIcon } from "../assets";
-import { UserType } from "../types";
+import { UserTypes } from "../types";
 
-type GetStatusIcon = (status: UserType["Status"]) => string | undefined;
+type GetStatusIcon = (status: UserTypes["Status"]) => string | undefined;
 
 export const getStatusIcon: GetStatusIcon = (status) => {
   if (status === "driver") return DriverIcon;

@@ -3,8 +3,8 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
+import { SearchBox } from "../../../core";
 import { HomeImage1 } from "../../assets";
-import { SearchBox } from "./SearchBox";
 
 export const LandingSection: FC = () => {
   const { t } = useTranslation("LandingPage");
@@ -37,7 +37,12 @@ export const LandingSection: FC = () => {
           width: 80%;
         `}
       />
-      <SearchBox />
+      <SearchBox
+        canClose={false}
+        outsideStyling={css`
+          margin: 5vw;
+        `}
+      />
     </section>
   );
 };

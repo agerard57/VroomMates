@@ -16,16 +16,16 @@ export const SignUpBox: FC = () => {
       `}
     >
       <RoundedContour
-        outsideStyling={`
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-            span{
-                padding: 5px;
-                font-size: 1.3rem;
-                color: black;
-            }
+        outsideStyling={css`
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          span {
+            padding: 5px;
+            font-size: 1.3rem;
+            color: black;
+          }
         `}
       >
         <span

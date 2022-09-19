@@ -2,13 +2,13 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { BecomeDriverModalBuilder } from "../../../becomeDriverModal";
-import { UserType } from "../../../core";
+import { UserTypes } from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
 import { useModal } from "../../../modal";
 
 type Props = {
-  status?: UserType["Status"];
+  status?: UserTypes["Status"];
 };
 
 export const Driver: FC<Props> = ({ status }) => {

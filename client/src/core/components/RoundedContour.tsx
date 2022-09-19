@@ -1,13 +1,19 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { FC } from "react";
 
 type Props = {
-  outsideStyling?: any;
+  onClick?: () => void;
+  outsideStyling?: SerializedStyles;
 };
 
-export const RoundedContour: FC<Props> = ({ children, outsideStyling }) => (
+export const RoundedContour: FC<Props> = ({
+  children,
+  onClick = () => {},
+  outsideStyling,
+}) => (
   <div
+    onClick={onClick}
     css={css`
       background: #ffffff;
       box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.45);

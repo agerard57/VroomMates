@@ -1,12 +1,13 @@
 import { LanguageCode } from "../../language";
 
 type NormalizeDate = (
-  date: Date,
+  date: Date | string,
   lng: LanguageCode,
   dateFormat: "numericDate" | "shortDate" | "longDate" | "time"
 ) => string;
 
 export const normalizeDate: NormalizeDate = (date, lng, dateFormat) => {
+  typeof date === "string" && (date = new Date(date));
   const langFormat = lng === "en" ? "en-US" : "fr-FR";
   switch (dateFormat) {
     case "numericDate":

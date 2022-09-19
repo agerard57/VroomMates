@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import PetIcon from "../../assets/petIcon.svg";
+import { PetIcon } from "../../../core";
 import { ElementTemplate } from "./ElementTemplate";
 
 type Props = {

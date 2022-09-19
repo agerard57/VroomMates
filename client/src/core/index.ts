@@ -1,6 +1,13 @@
 export * as i18n from "./i18n";
 
-export { PlusIcon, AllSetImage, RegisterImage } from "./assets";
+export {
+  MusicIcon,
+  PlusButton,
+  PetIcon,
+  TalkIcon,
+  AllSetImage,
+  RegisterImage,
+} from "./assets";
 
 export {
   BlueBorderBackground,

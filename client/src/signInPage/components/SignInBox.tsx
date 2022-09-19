@@ -5,8 +5,7 @@ import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { Inputs, RoundedContour } from "../../core";
-import mailIcon from "../assets/icons/mailIcon.svg";
-import passwordIcon from "../assets/icons/passwordIcon.svg";
+import { MailIcon, PasswordIcon } from "../assets";
 import { useSignInBox } from "../hooks";
 
 export const SignInBox: FC = () => {
@@ -43,7 +42,7 @@ export const SignInBox: FC = () => {
             inputName="email"
             inputType="email"
             inputPlaceholder={t("signInSection.email")}
-            icon={mailIcon}
+            icon={MailIcon}
             isRequired
           />
         </Row>
@@ -52,7 +51,7 @@ export const SignInBox: FC = () => {
             inputName="password"
             inputType="password"
             inputPlaceholder={t("signInSection.password")}
-            icon={passwordIcon}
+            icon={PasswordIcon}
             length={{ min: 8, max: 128 }}
             isRequired
           />

@@ -3,8 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { RoundedContour } from "../../core";
-import RegisterImageSrc from "../../core/assets/images/registerImage.jpg";
+import { RoundedContour, RegisterImage } from "../../core";
 
 export const SignUpBox: FC = () => {
   const { t } = useTranslation("SignInPage");
@@ -42,7 +41,7 @@ export const SignUpBox: FC = () => {
             width: 50%;
             height: 50%;
           `}
-          src={RegisterImageSrc}
+          src={RegisterImage}
           alt="log"
         />
         <span

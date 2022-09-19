@@ -1,3 +1,7 @@
-import PlusIconSrc from "./plusButton.svg";
+import PlusButton from "./plusButton.svg";
+import VerifiedProfile from "./verifiedProfile.svg";
 
-export const PlusIcon = PlusIconSrc;
+export { MusicIcon, PetIcon, TalkIcon } from "./about";
+export { AdminIcon, DriverIcon } from "./status";
+
+export { PlusButton, VerifiedProfile };

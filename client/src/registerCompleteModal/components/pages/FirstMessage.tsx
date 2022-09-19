@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import RegisterImageSrc from "../../../core/assets/images/registerImage.jpg";
+import { RegisterImage } from "../../../core";
 
 export const FirstMessage: FC = () => {
   const { t } = useTranslation("RegisterCompleteModal");
@@ -19,7 +19,7 @@ export const FirstMessage: FC = () => {
     >
       <Row>
         <img
-          src={RegisterImageSrc}
+          src={RegisterImage}
           alt="register pic"
           css={css`
             width: 60vw;

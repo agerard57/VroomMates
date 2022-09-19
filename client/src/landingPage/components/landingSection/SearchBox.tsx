@@ -5,9 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { RoundedContour, useGeolocation, Inputs } from "../../../core";
-import arrivalIcon from "../../assets/icons/arrivalIcon.svg";
-import calendarIcon from "../../assets/icons/calendarIcon.svg";
-import departureIcon from "../../assets/icons/departureIcon.svg";
+import { ArrivalIcon, CalendarIcon, DepartureIcon } from "../../assets";
 
 export const SearchBox: FC = () => {
   const { t } = useTranslation("LandingPage");
@@ -78,21 +76,21 @@ export const SearchBox: FC = () => {
               inputName="departureLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.from")}
               inputValue={address}
-              icon={departureIcon}
+              icon={DepartureIcon}
             />
           </Row>
           <Row>
             <Inputs.Text
               inputName="arrivalLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.getTo")}
-              icon={arrivalIcon}
+              icon={ArrivalIcon}
             />
           </Row>
           <Row>
             <Inputs.Date
               inputName="date"
               inputPlaceholder={t("landingSection.search.date")}
-              icon={calendarIcon}
+              icon={CalendarIcon}
             />
           </Row>
           <Row>

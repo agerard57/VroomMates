@@ -5,7 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { RoundedContour } from "../../../core";
-import BasketBallSvg from "../../assets/basketBallIcon.svg";
+import { BasketBallIcon } from "../../assets";
 
 type Props = {
   hobbies: string[];
@@ -28,7 +28,7 @@ export const HobbiesCard: FC<Props> = ({ hobbies }) => {
           `}
     >
       <Col sm={4}>
-        <img src={BasketBallSvg} alt="hobbies icon" />
+        <img src={BasketBallIcon} alt="hobbies icon" />
       </Col>
       <Col
         sm={8}

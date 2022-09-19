@@ -4,8 +4,7 @@ import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { Inputs } from "../../../../core";
-import { TalkIcon, MusicIcon, PetIcon } from "../../../assets";
+import { TalkIcon, MusicIcon, PetIcon, Inputs } from "../../../../core";
 import { useThirdAbout } from "../../../hooks";
 
 export const QAndASection: FC = () => {

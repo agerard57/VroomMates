@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import MusicIcon from "../../assets/musicIcon.svg";
+import { MusicIcon } from "../../../core";
 import { ElementTemplate } from "./ElementTemplate";
 
 type Props = {

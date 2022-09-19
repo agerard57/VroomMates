@@ -5,7 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { RoundedContour } from "../../../core";
-import BioSvg from "../../assets/bioIcon.svg";
+import { BioIcon } from "../../assets";
 
 type Props = {
   bio: string;
@@ -28,7 +28,7 @@ export const BioCard: FC<Props> = ({ bio }) => {
             `}
     >
       <Col sm={4}>
-        <img src={BioSvg} alt="bio icon" />
+        <img src={BioIcon} alt="bio icon" />
       </Col>
       <Col
         sm={8}

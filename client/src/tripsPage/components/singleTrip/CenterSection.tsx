@@ -5,7 +5,7 @@ import { Col, Row } from "react-bootstrap";
 
 import { normalizeDate, normalizePlaceName } from "../../../core";
 import { useLanguage } from "../../../language";
-import TripArrowSrc from "../../assets/tripArrow.svg";
+import { TripArrow } from "../../assets";
 import { Trip } from "../../interfaces";
 
 type Props = {
@@ -41,7 +41,7 @@ export const CenterSection: FC<Props> = ({ departure, arrival }) => {
           align-items: center;
         `}
       >
-        <img src={TripArrowSrc} alt={"arrow"} />
+        <img src={TripArrow} alt={"arrow"} />
       </Col>
       <Col
         xs={7}

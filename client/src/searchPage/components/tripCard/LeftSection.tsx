@@ -10,7 +10,7 @@ import {
   normalizeDistance,
 } from "../../../core";
 import { useLanguage } from "../../../language";
-import { ReactComponent as TripArrowSvg } from "../../assets/tripArrow.svg";
+import { TripArrow } from "../../assets";
 
 type PointProps = {
   time: Date;
@@ -61,7 +61,7 @@ export const LeftSection: FC<Props> = ({ departure, arrival }) => {
           <p>{normalizeDate(arrival.time, language, "time")}</p>
         </Col>
         <Col>
-          <TripArrowSvg />
+          <TripArrow />
         </Col>
         <Col
           css={css`

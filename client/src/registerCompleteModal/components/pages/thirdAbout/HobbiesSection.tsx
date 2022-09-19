@@ -6,13 +6,24 @@ import { useTranslation } from "react-i18next";
 
 import { Inputs } from "../../../../core";
 import { AddButton, RemoveButton } from "../../../assets";
-import { useThirdAbout } from "../../../hooks";
+import { ThirdAboutProps } from "../../../types";
 
-export const HobbiesSection: FC = () => {
+type Props = {
+  inputs: ThirdAboutProps["inputs"];
+  setInputs: ThirdAboutProps["setInputs"];
+  hobbyValue: ThirdAboutProps["hobbyValue"];
+  setHobbyValue: ThirdAboutProps["setHobbyValue"];
+  handleAddHobby: ThirdAboutProps["handleAddHobby"];
+};
+
+export const HobbiesSection: FC<Props> = ({
+  inputs,
+  setInputs,
+  hobbyValue,
+  setHobbyValue,
+  handleAddHobby,
+}) => {
   const { t } = useTranslation("RegisterCompleteModal");
-
-  const { inputs, setInputs, hobbyValue, setHobbyValue, handleAddHobby } =
-    useThirdAbout();
 
   return (
     <Row>

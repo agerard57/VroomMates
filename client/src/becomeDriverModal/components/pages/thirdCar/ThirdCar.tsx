@@ -9,19 +9,12 @@ import { useThirdCar } from "../../../hooks";
 import { Input } from "./Input";
 
 type Props = {
-  carInputsFilled: boolean;
   setCarInputsFilled: Dispatch<SetStateAction<boolean>>;
 };
 
-export const ThirdCar: FC<Props> = ({
-  carInputsFilled,
-  setCarInputsFilled,
-}) => {
+export const ThirdCar: FC<Props> = ({ setCarInputsFilled }) => {
   const { t } = useTranslation("BecomeDriverModal");
-  const { handleInputChange } = useThirdCar(
-    carInputsFilled,
-    setCarInputsFilled
-  );
+  const { handleInputChange } = useThirdCar(setCarInputsFilled);
 
   return (
     <Container

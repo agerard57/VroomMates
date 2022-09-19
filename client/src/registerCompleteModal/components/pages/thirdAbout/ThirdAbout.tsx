@@ -1,15 +1,29 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
+import { useThirdAbout } from "../../../hooks";
 import { BioSection } from "./BioSection";
 import { HobbiesSection } from "./HobbiesSection";
 import { QAndASection } from "./QAndASection";
 
-export const ThirdAbout: FC = () => {
+type Props = {
+  setAboutInputsFilled: Dispatch<SetStateAction<boolean>>;
+};
+
+export const ThirdAbout: FC<Props> = ({ setAboutInputsFilled }) => {
   const { t } = useTranslation("RegisterCompleteModal");
+
+  const {
+    inputs,
+    setInputs,
+    handleInputChange,
+    hobbyValue,
+    setHobbyValue,
+    handleAddHobby,
+  } = useThirdAbout(setAboutInputsFilled);
 
   return (
     <Container
@@ -53,9 +67,15 @@ export const ThirdAbout: FC = () => {
             }
           `}
         >
-          <BioSection />
-          <QAndASection />
-          <HobbiesSection />
+          <BioSection inputs={inputs} handleInputChange={handleInputChange} />
+          <QAndASection inputs={inputs} handleInputChange={handleInputChange} />
+          <HobbiesSection
+            inputs={inputs}
+            setInputs={setInputs}
+            hobbyValue={hobbyValue}
+            setHobbyValue={setHobbyValue}
+            handleAddHobby={handleAddHobby}
+          />
         </form>
       </Row>
     </Container>

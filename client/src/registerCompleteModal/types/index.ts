@@ -1,5 +1,10 @@
 export type {
   AboutInputs,
   MakeshiftBoolean,
-  UseThirdAboutManager,
+  ThirdAboutProps,
 } from "./ThirdAbout";
+
+export type { UseSecondProfilePicManager } from "./UseSecondProfilePicManager";
+export type { UseThirdAboutManager } from "./UseThirdAboutManager";
+
+export type { UseRegisterCompleteModalBuilderManager } from "./UseRegisterCompleteModalBuilderManager";

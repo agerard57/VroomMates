@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { postAbout } from "../services";
 import { AboutInputs, MakeshiftBoolean, UseThirdAboutManager } from "../types";
 
-export const useThirdAbout: UseThirdAboutManager = () => {
+export const useThirdAbout: UseThirdAboutManager = (setAboutInputsFilled) => {
   const { t } = useTranslation("RegisterCompleteModal");
 
   const componentWillUnmount = useRef<boolean>(false);
@@ -52,6 +52,16 @@ export const useThirdAbout: UseThirdAboutManager = () => {
   };
 
   useEffect(() => {
+    setAboutInputsFilled(inputs.hobbies.length > 0);
+  }, [setAboutInputsFilled, inputs.hobbies.length]);
+
+  useEffect(() => {
+    return () => {
+      componentWillUnmount.current = true;
+    };
+  }, []);
+
+  useEffect(() => {
     return () => {
       componentWillUnmount.current = true;
     };
@@ -60,11 +70,10 @@ export const useThirdAbout: UseThirdAboutManager = () => {
   useEffect(() => {
     return () => {
       if (componentWillUnmount.current)
-        if (inputs.hobbies.length > 0)
-          postAbout(inputs).then((res) => {
-            if (res.status === 200) toast.success(t(res.message));
-            else toast.error(t(res.message));
-          });
+        postAbout(inputs).then((res) => {
+          if (res.status === 200) toast.success(t(res.message));
+          else toast.error(t(res.message));
+        });
     };
   }, [inputs, t]);
 

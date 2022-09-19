@@ -1,15 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { PlusButton } from "../../../core";
 import { useSecondProfilePic } from "../../hooks";
 
-export const SecondProfilePic: FC = () => {
+type Props = {
+  setProfilePicFilled: Dispatch<SetStateAction<boolean>>;
+};
+
+export const SecondProfilePic: FC<Props> = ({ setProfilePicFilled }) => {
   const { t } = useTranslation("RegisterCompleteModal");
-  const { profilePic, inputClickHandler, inputFile } = useSecondProfilePic();
+  const { profilePic, inputClickHandler, inputFile } =
+    useSecondProfilePic(setProfilePicFilled);
 
   return (
     <Container

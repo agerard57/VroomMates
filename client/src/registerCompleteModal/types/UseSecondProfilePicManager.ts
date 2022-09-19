@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, ChangeEvent, MutableRefObject } from "react";
 
-export type UseSecondDriverLicenseManager = (
-  setDriverLicenseFilled: Dispatch<SetStateAction<boolean>>
+export type UseSecondProfilePicManager = (
+  setProfilePicFilled: Dispatch<SetStateAction<boolean>>
 ) => {
-  driverLicense: string;
+  profilePic: string;
   inputClickHandler: (e: ChangeEvent<HTMLInputElement>) => void;
   inputFile: MutableRefObject<HTMLInputElement | null>;
 };

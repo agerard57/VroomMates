@@ -5,12 +5,15 @@ import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { Inputs } from "../../../../core";
-import { useThirdAbout } from "../../../hooks";
+import { ThirdAboutProps } from "../../../types";
 
-export const BioSection: FC = () => {
+type Props = {
+  inputs: ThirdAboutProps["inputs"];
+  handleInputChange: ThirdAboutProps["handleInputChange"];
+};
+
+export const BioSection: FC<Props> = ({ inputs, handleInputChange }) => {
   const { t } = useTranslation("RegisterCompleteModal");
-
-  const { inputs, handleInputChange } = useThirdAbout();
 
   return (
     <Row>

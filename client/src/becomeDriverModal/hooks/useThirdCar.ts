@@ -5,10 +5,7 @@ import { useTranslation } from "react-i18next";
 import { postCar } from "../services";
 import { CarInputs, UseThirdCarManager } from "../types";
 
-export const useThirdCar: UseThirdCarManager = (
-  carInputFilled,
-  setCarInputsFilled
-) => {
+export const useThirdCar: UseThirdCarManager = (setCarInputsFilled) => {
   const { t } = useTranslation("BecomeDriverModal");
 
   const componentWillUnmount = useRef<boolean>(false);
@@ -46,7 +43,7 @@ export const useThirdCar: UseThirdCarManager = (
           else toast.error(t(res.message));
         });
     };
-  }, [carInputFilled, inputs, t]);
+  }, [inputs, t]);
 
   return {
     handleInputChange,

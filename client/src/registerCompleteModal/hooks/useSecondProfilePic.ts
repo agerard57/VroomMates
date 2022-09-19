@@ -1,24 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import {
-  useState,
-  useRef,
-  ChangeEvent,
-  useEffect,
-  MutableRefObject,
-} from "react";
+import { useState, useRef, ChangeEvent, useEffect } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
 import { s3UrlBuilder } from "../../core";
 import { postProfilePic } from "../services";
+import { UseSecondProfilePicManager } from "../types";
 
-type SecondProfilePicManager = () => {
-  profilePic: string;
-  inputClickHandler: (e: ChangeEvent<HTMLInputElement>) => void;
-  inputFile: MutableRefObject<HTMLInputElement | null>;
-};
-
-export const useSecondProfilePic: SecondProfilePicManager = () => {
+export const useSecondProfilePic: UseSecondProfilePicManager = (
+  setProfilePicFilled
+) => {
   const { t } = useTranslation("RegisterCompleteModal");
 
   const defaultProfilePicSrc = s3UrlBuilder();
@@ -38,6 +29,7 @@ export const useSecondProfilePic: SecondProfilePicManager = () => {
         const reader = new FileReader();
 
         setPicObj(fileObj);
+        setProfilePicFilled(true);
         reader.onloadend = () => {
           setProfilePic(URL.createObjectURL(fileObj));
         };
@@ -45,6 +37,10 @@ export const useSecondProfilePic: SecondProfilePicManager = () => {
       }
     }
   };
+
+  useEffect(() => {
+    setProfilePicFilled(picObj !== null);
+  }, [setProfilePicFilled, picObj]);
 
   useEffect(() => {
     return () => {

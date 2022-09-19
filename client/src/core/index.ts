@@ -7,6 +7,7 @@ export {
   TalkIcon,
   AllSetImage,
   RegisterImage,
+  NotFoundImage,
 } from "./assets";
 
 export {
@@ -37,12 +38,7 @@ export {
   s3UrlBuilder,
 } from "./helpers";
 
-export type {
-  UserType,
-  TripType,
-  AuthToken,
-  LoggedUserDataProps,
-} from "./types";
+export type { UserTypes, AuthToken, LoggedUserDataProps } from "./types";
 
 export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";
 

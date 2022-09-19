@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, ChangeEvent } from "react";
 
 export type AboutInputs = {
   bio: string;
@@ -10,7 +10,7 @@ export type AboutInputs = {
 
 export type MakeshiftBoolean = "true" | "false";
 
-export type UseThirdAboutManager = () => {
+export type ThirdAboutProps = {
   inputs: AboutInputs;
   setInputs: Dispatch<SetStateAction<AboutInputs>>;
   handleInputChange: (

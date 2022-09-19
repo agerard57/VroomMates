@@ -1,8 +1,11 @@
-import { Dispatch, FormEvent, SetStateAction } from "react";
+import { Dispatch, FormEvent, RefObject, SetStateAction } from "react";
 
 import { SearchBoxInterfaces } from "../interfaces";
 
 type SearchBoxProps = {
+  ref: RefObject<HTMLFormElement>;
+  height: number;
+  setHeight: Dispatch<SetStateAction<number>>;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   searchInputs: SearchBoxInterfaces["SearchInputs"];
@@ -12,9 +15,7 @@ type SearchBoxProps = {
   handleSearchSubmit: (e: FormEvent<HTMLFormElement>) => void;
 };
 
-type UseSearchBoxManager = (
-  setIsLoading?: Dispatch<SetStateAction<boolean>>
-) => SearchBoxProps;
+type UseSearchBoxManager = () => SearchBoxProps;
 
 type OpenedSearchBox = {
   canClose: boolean;

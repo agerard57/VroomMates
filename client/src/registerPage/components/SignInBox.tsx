@@ -4,7 +4,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { RoundedContour } from "../../core";
-import SignInImageSrc from "../assets/images/signInImage.jpg";
+import { SignInImage } from "../assets";
 
 export const SignInBox: FC = () => {
   const { t } = useTranslation("RegisterPage");
@@ -42,7 +42,7 @@ export const SignInBox: FC = () => {
             width: 50%;
             height: 50%;
           `}
-          src={SignInImageSrc}
+          src={SignInImage}
           alt="log"
         />
         <span

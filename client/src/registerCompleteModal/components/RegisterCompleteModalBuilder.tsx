@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-import { cookiesManager, tokenService } from "../../core";
-import { SlideSpec, useModal } from "../../modal";
+import { SlideSpec } from "../../modal";
+import { useRegisterCompleteModalBuilder } from "../hooks";
 import {
   FirstMessage,
   SecondProfilePic,
@@ -11,7 +11,9 @@ import {
 
 export const RegisterCompleteModalBuilder = (): SlideSpec[] => {
   const { t } = useTranslation("RegisterCompleteModal");
-  const { closeModal } = useModal();
+
+  const { setProfilePicFilled, setAboutInputsFilled, finalPageAction } =
+    useRegisterCompleteModalBuilder();
 
   const screens: SlideSpec[] = [
     {
@@ -21,28 +23,18 @@ export const RegisterCompleteModalBuilder = (): SlideSpec[] => {
       previousButtonAction: () => (window.location.href = "/"),
     },
     {
-      content: <SecondProfilePic />,
+      content: <SecondProfilePic setProfilePicFilled={setProfilePicFilled} />,
       message: t("page.1.message"),
       nextButtonText: t("page.1.nextButtonText"),
     },
     {
-      content: <ThirdAbout />,
+      content: <ThirdAbout setAboutInputsFilled={setAboutInputsFilled} />,
       nextButtonText: t("page.2.nextButtonText"),
     },
     {
       content: <FourthAllSet />,
       nextButtonText: t("page.3.nextButtonText"),
-      nextButtonAction: () => {
-        tokenService
-          .refreshAuthToken(cookiesManager.getCookie("authToken"))
-          .then((response) => {
-            if (response.status === 200) {
-              cookiesManager.setCookie("authToken", response.authToken, true);
-            }
-            closeModal();
-            window.location.href = "/";
-          });
-      },
+      nextButtonAction: finalPageAction,
     },
   ];
 

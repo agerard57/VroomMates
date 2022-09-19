@@ -4,7 +4,7 @@ import { Dispatch, FC, SetStateAction } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { PlusIcon } from "../../../core";
+import { PlusButton } from "../../../core";
 import { useSecondDriverLicense } from "../../hooks";
 
 type Props = {
@@ -67,7 +67,7 @@ export const SecondDriverLicense: FC<Props> = ({
           {t("page.1.body")}
         </p>
         <img
-          src={PlusIcon}
+          src={PlusButton}
           alt="plus button"
           css={css`
             padding: 2rem;

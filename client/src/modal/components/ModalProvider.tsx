@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import { ModalContext } from "../contexts";
 import { useModalManager } from "../hooks";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const ModalProvider: FC<Props> = ({ children }) => {

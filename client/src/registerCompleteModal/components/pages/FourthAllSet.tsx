@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import AllSetImageSrc from "../../assets/images/allSetImage.jpg";
+import { AllSetImage } from "../../../core";
 
 export const FourthAllSet: FC = () => {
   const { t } = useTranslation("RegisterCompleteModal");
@@ -19,7 +19,7 @@ export const FourthAllSet: FC = () => {
     >
       <Row>
         <img
-          src={AllSetImageSrc}
+          src={AllSetImage}
           alt="register pic"
           css={css`
             width: 60vw;

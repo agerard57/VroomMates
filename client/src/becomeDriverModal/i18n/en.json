@@ -1,0 +1,49 @@
+{
+  "page": [
+    {
+      "title": "Become a Driver",
+      "body": "You don't seem to find a good trip?\nYou want to go somewhere at a reduced cost?\n\nDon't worry, we got you covered!\nBecome a driver and plan your next trips!",
+      "nextButtonText": "Get started",
+      "previousButtonText": "Nope, maybe later..."
+    },
+    {
+      "title": "Send us your driver's license",
+      "body": "To become a driver, we first need proof you can legally drive. Send us your driving license and our team will get back at you in 1-2 days.",
+      "message": "We only keep your documents in our server while making the verification process.",
+      "nextButtonText": "Upload and continue"
+    },
+    {
+      "title": "What's your car?",
+      "body": "Tell us more about your ride!",
+      "brand": {
+        "title": "Brand",
+        "placeholder": "What's the brand of your car?"
+      },
+      "model": {
+        "title": "Model",
+        "placeholder": "What about the model"
+      },
+      "color": {
+        "title": "Color",
+        "placeholder": "Finally, what's the color?"
+      },
+      "nextButtonText": "Send and continue"
+    },
+    {
+      "title": "You're all set!",
+      "body": "Thank you for entering all of these information.\nRest assured, you will be notified soon enough about your request!\n\nPress the button to close this page.",
+      "nextButtonText": "Close me!"
+    }
+  ],
+  "messages": {
+    "driversLicense": {
+      "uploaded": "Your driver's license has been uploaded!",
+      "max": "Please upload a file smaller than 5MB.",
+      "error": "An error occurred while uploading your file. Please try again later."
+    },
+    "car": {
+      "updated": "We have received your car's information!",
+      "error": "An error occurred while updating your information. Please try again later."
+    }
+  }
+}

@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 type Props = {
   inputName: string;
-  labelContent: React.ReactNode | string;
+  labelContent: ReactNode | string;
 };
 
 export const CheckboxInput: FC<Props> = ({ inputName, labelContent }) => {

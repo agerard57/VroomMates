@@ -9,7 +9,7 @@ import { Buttons } from "./Buttons";
 import { ProgressBar } from "./ProgressBar";
 
 export const Modal: FC = () => {
-  const { isOpen, slideSpecs, iterator } = useModal();
+  const { isOpen, slideSpecs, iterator, isDisabled } = useModal();
   const { previous, slideNumber, next } = iterator;
   const slide = slideSpecs[slideNumber];
 
@@ -49,8 +49,17 @@ export const Modal: FC = () => {
             background: #ffffff;
           `}
         >
-          <Buttons slide={slide} previous={previous} next={next} />
-          <ProgressBar slideNumber={slideNumber} slideSpecs={slideSpecs} />
+          <Buttons
+            slide={slide}
+            previous={previous}
+            next={next}
+            isDisabled={isDisabled}
+          />
+          <ProgressBar
+            slideNumber={slideNumber}
+            slideSpecs={slideSpecs}
+            isDisabled={isDisabled}
+          />
         </Row>
       </Container>
     </div>

@@ -1,5 +1,5 @@
 import { TFunction } from "i18next";
-import React from "react";
+import { useState } from "react";
 
 import { i18n } from "../../i18n";
 import { isLanguageCode } from "../helpers";
@@ -12,7 +12,7 @@ export function useLanguage(): {
   if (!isLanguageCode(i18n.language))
     throw new Error(`Unknown language code: ${i18n.language}`);
 
-  const [language, setLang] = React.useState<LanguageCode>(i18n.language);
+  const [language, setLang] = useState<LanguageCode>(i18n.language);
   const change = () => i18n.changeLanguage(language === "fr" ? "en" : "fr");
 
   i18n.on("languageChanged", (newLanguage: string) => {

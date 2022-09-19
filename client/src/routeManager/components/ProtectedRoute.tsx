@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 type Props = {
   isAllowed: boolean;
   redirectPath?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const ProtectedRoute: FC<Props> = ({

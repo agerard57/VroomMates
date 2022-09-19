@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { cookiesManager, tokenService } from "../../core";
 import { SlideSpec, useModal } from "../../modal";
 import {
-  FirstMessagePage,
+  FirstMessage,
   SecondProfilePic,
   ThirdAbout,
   FourthAllSet,
@@ -13,9 +13,9 @@ export const RegisterCompleteModalBuilder = (): SlideSpec[] => {
   const { t } = useTranslation("RegisterCompleteModal");
   const { closeModal } = useModal();
 
-  const screens = [
+  const screens: SlideSpec[] = [
     {
-      content: <FirstMessagePage />,
+      content: <FirstMessage />,
       nextButtonText: t("page.0.nextButtonText"),
       previousButtonText: t("page.0.previousButtonText"),
       previousButtonAction: () => (window.location.href = "/"),

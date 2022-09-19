@@ -31,7 +31,7 @@ mongoose.set("debug", true);
  */
 server.then(() => {
   app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
+    console.info(`Server started on port ${port}`);
   });
 });
 

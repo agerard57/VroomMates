@@ -9,9 +9,10 @@ type Props = {
   slide: SlideSpec;
   previous: () => void;
   next: () => void;
+  isDisabled: boolean;
 };
 
-export const Buttons: FC<Props> = ({ slide, previous, next }) => (
+export const Buttons: FC<Props> = ({ slide, previous, next, isDisabled }) => (
   <>
     <span
       css={css`
@@ -23,7 +24,7 @@ export const Buttons: FC<Props> = ({ slide, previous, next }) => (
     >
       {slide.message && slide.message}
     </span>
-    <Inputs.Button type="primary" onClick={next}>
+    <Inputs.Button type="primary" onClick={next} disabled={isDisabled}>
       {slide.nextButtonText}
     </Inputs.Button>
     {slide.previousButtonText && (
@@ -32,7 +33,9 @@ export const Buttons: FC<Props> = ({ slide, previous, next }) => (
         onClick={previous}
         optionalStyling={css`
           padding-top: 0.5rem;
+          background: transparent;
         `}
+        disabled={isDisabled}
       >
         {slide.previousButtonText}
       </Inputs.Button>

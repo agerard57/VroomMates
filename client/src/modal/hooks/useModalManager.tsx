@@ -10,12 +10,14 @@ export const useModalManager = (): UseModalManager => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [slideSpecs, setSlideSpecs] = useState<SlideSpec[]>(emptySlideSpec);
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const [slideNumber, setSlideNumber] = useState<number>(0);
 
   const openModal = (slideSpecs: SlideSpec[]) => {
     setSlideNumber(0);
     setSlideSpecs(slideSpecs);
     setIsOpen(true);
+    setIsDisabled(false);
   };
 
   const previous = () => {
@@ -32,6 +34,7 @@ export const useModalManager = (): UseModalManager => {
     setIsOpen(false);
     setSlideSpecs(emptySlideSpec);
     setSlideNumber(0);
+    setIsDisabled(false);
   };
 
   return {
@@ -40,5 +43,7 @@ export const useModalManager = (): UseModalManager => {
     openModal,
     closeModal,
     iterator: { previous, slideNumber, next },
+    isDisabled,
+    setIsDisabled,
   };
 };

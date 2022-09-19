@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React from "react";
+import React, { lazy } from "react";
 import { FC, Suspense } from "react";
 import { I18nextProvider } from "react-i18next";
 
@@ -8,7 +8,7 @@ import { i18n } from "./i18n";
 import { LoadingScreen } from "./loadingScreen";
 import { ModalProvider } from "./modal";
 
-const RouteManager = React.lazy(() => import("./routeManager"));
+const RouteManager = lazy(() => import("./routeManager"));
 
 export const App: FC = () => {
   return (

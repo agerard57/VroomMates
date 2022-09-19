@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 export type AboutInputs = {
   bio: string;
@@ -12,11 +12,11 @@ export type MakeshiftBoolean = "true" | "false";
 
 export type UseThirdAboutManager = () => {
   inputs: AboutInputs;
-  setInputs: React.Dispatch<React.SetStateAction<AboutInputs>>;
+  setInputs: Dispatch<SetStateAction<AboutInputs>>;
   handleInputChange: (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => void;
   hobbyValue: string;
-  setHobbyValue: React.Dispatch<React.SetStateAction<string>>;
+  setHobbyValue: Dispatch<SetStateAction<string>>;
   handleAddHobby: () => void;
 };

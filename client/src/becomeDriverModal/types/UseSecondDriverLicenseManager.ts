@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction, ChangeEvent, MutableRefObject } from "react";
 
 export type UseSecondDriverLicenseManager = (
-  driverLicenseFilled: boolean,
   setDriverLicenseFilled: Dispatch<SetStateAction<boolean>>
 ) => {
   driverLicense: string;

@@ -7,7 +7,6 @@ import { postDriversLicense } from "../services";
 import { UseSecondDriverLicenseManager } from "../types";
 
 export const useSecondDriverLicense: UseSecondDriverLicenseManager = (
-  driverLicenseFilled,
   setDriverLicenseFilled
 ) => {
   const { t } = useTranslation("BecomeDriverModal");
@@ -60,7 +59,7 @@ export const useSecondDriverLicense: UseSecondDriverLicenseManager = (
           });
       }
     };
-  }, [defaultDriverLicenseSrc, picObj, driverLicense, t, driverLicenseFilled]);
+  }, [defaultDriverLicenseSrc, picObj, driverLicense, t]);
 
   return {
     driverLicense,

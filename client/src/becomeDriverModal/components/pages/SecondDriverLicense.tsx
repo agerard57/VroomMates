@@ -8,17 +8,13 @@ import { PlusButton } from "../../../core";
 import { useSecondDriverLicense } from "../../hooks";
 
 type Props = {
-  driverLicenseFilled: boolean;
   setDriverLicenseFilled: Dispatch<SetStateAction<boolean>>;
 };
 
-export const SecondDriverLicense: FC<Props> = ({
-  driverLicenseFilled,
-  setDriverLicenseFilled,
-}) => {
+export const SecondDriverLicense: FC<Props> = ({ setDriverLicenseFilled }) => {
   const { t } = useTranslation("BecomeDriverModal");
   const { driverLicense, inputClickHandler, inputFile } =
-    useSecondDriverLicense(driverLicenseFilled, setDriverLicenseFilled);
+    useSecondDriverLicense(setDriverLicenseFilled);
 
   return (
     <Container

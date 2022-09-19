@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 
 type Props = {
   inputPlaceholder?: string;
@@ -9,6 +9,8 @@ type Props = {
   radioValue?: string;
   isRequired?: boolean;
   icon?: string;
+  value?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const DateInput: FC<Props> = ({
@@ -16,6 +18,8 @@ export const DateInput: FC<Props> = ({
   inputValue,
   inputName,
   icon,
+  value,
+  onChange,
 }) => {
   const InputStyle = css`
     box-sizing: border-box;
@@ -40,6 +44,8 @@ export const DateInput: FC<Props> = ({
       placeholder={inputPlaceholder}
       defaultValue={inputValue}
       css={InputStyle}
+      value={value}
+      onChange={onChange}
     />
   );
 };

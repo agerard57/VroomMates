@@ -7,8 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { Inputs } from "../../../core";
-import BackArrowSvg from "../../assets/backArrow.svg";
-import CopyUrlSvg from "../../assets/copyUrl.svg";
+import { BackArrowIcon, CopyUrlIcon } from "../../assets";
 
 export const ButtonsSection: FC = () => {
   const { t } = useTranslation("TripDetailsPage");
@@ -36,7 +35,7 @@ export const ButtonsSection: FC = () => {
           `}
         >
           <img
-            src={BackArrowSvg}
+            src={BackArrowIcon}
             alt="back arrow"
             css={css`
               padding: 0;
@@ -69,8 +68,8 @@ export const ButtonsSection: FC = () => {
           `}
         >
           <img
-            src={CopyUrlSvg}
-            alt="copy url icon"
+            src={CopyUrlIcon}
+            alt="copy url"
             css={css`
               padding: 0;
               width: 1rem;

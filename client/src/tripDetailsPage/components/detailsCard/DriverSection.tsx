@@ -5,7 +5,7 @@ import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { Inputs, ProfilePic } from "../../../core";
-import CarSvg from "../../assets/car.svg";
+import { CarIcon } from "../../assets";
 import { Driver } from "../../interfaces";
 
 type Props = {
@@ -63,7 +63,7 @@ export const DriverSection: FC<Props> = ({ tripId, driver, car }) => {
             `}
           >
             <img
-              src={CarSvg}
+              src={CarIcon}
               alt="car icon"
               css={css`
                 padding: 0;

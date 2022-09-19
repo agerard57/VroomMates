@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 
-import { ReactComponent as TripArrowSvg } from "../../assets/tripArrow.svg";
+import { TripArrow } from "../../assets";
 import { useTripInfosSection } from "../../hooks";
 import { TripInfosProps } from "../../types";
 
@@ -47,7 +47,7 @@ export const TripInfosSection: FC<TripInfosProps> = ({
           margin: -1.6rem;
         `}
       >
-        <TripArrowSvg />
+        <TripArrow />
       </Col>
       <Col
         css={css`

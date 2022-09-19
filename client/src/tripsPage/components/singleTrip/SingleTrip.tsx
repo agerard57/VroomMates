@@ -12,10 +12,11 @@ import { PriceSection } from "./PriceSection";
 import { SideArrow } from "./SideArrow";
 
 type Props = {
+  userId: string | null;
   trip: Trip;
 };
 
-export const SingleTrip: FC<Props> = ({ trip }) => (
+export const SingleTrip: FC<Props> = ({ userId, trip }) => (
   <div
     className="trip"
     css={css`
@@ -42,7 +43,7 @@ export const SingleTrip: FC<Props> = ({ trip }) => (
           align-items: center;
         `}
       >
-        <DriverSection driver={trip.driver} />
+        <DriverSection driver={trip.driver} userId={userId} />
         <PriceSection price={trip.price_per_seat.total} />
       </Row>
       {trip.type === "frequent" && trip.frequent_trip_options ? (

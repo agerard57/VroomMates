@@ -2,7 +2,8 @@
 import { css } from "@emotion/react";
 import { FC } from "react";
 
-import VerifiedProfile from "../assets/icons/verifiedProfile.svg";
+import { VerifiedProfile } from "../assets";
+import { s3UrlBuilder } from "../helpers";
 import { Stars } from "./stars";
 
 type Props = {
@@ -33,7 +34,7 @@ export const ProfilePic: FC<Props> = ({
           cursor: ${onClick ? "pointer" : "default"};
           ${outsidePictureStyling};
         `}
-        src={src}
+        src={s3UrlBuilder(src)}
         onClick={onClick}
         alt="profilePic"
         key={src}

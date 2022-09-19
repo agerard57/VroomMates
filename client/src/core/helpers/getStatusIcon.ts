@@ -1,5 +1,4 @@
-import AdminIcon from "../assets/icons/status/adminIcon.svg";
-import DriverIcon from "../assets/icons/status/driverIcon.svg";
+import { AdminIcon, DriverIcon } from "../assets";
 import { UserType } from "../types";
 
 type GetStatusIcon = (status: UserType["Status"]) => string | undefined;

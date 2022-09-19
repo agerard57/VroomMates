@@ -6,9 +6,8 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { Button } from "../../../core";
-import BackArrowSvg from "../../assets/backArrow.svg";
-import CopyUrlSvg from "../../assets/copyUrl.svg";
+import { Inputs } from "../../../core";
+import { BackArrowIcon, CopyUrlIcon } from "../../assets";
 
 export const ButtonsSection: FC = () => {
   const { t } = useTranslation("TripDetailsPage");
@@ -27,7 +26,7 @@ export const ButtonsSection: FC = () => {
           flex-flow: nowrap;
         `}
       >
-        <Button
+        <Inputs.Button
           type="hollow"
           onClick={() => navigate(-1)}
           optionalStyling={css`
@@ -36,7 +35,7 @@ export const ButtonsSection: FC = () => {
           `}
         >
           <img
-            src={BackArrowSvg}
+            src={BackArrowIcon}
             alt="back arrow"
             css={css`
               padding: 0;
@@ -45,17 +44,19 @@ export const ButtonsSection: FC = () => {
               height: 1rem;
             `}
           />
-        </Button>
+        </Inputs.Button>
       </Col>
       <Col
         css={css`
           padding: 0;
         `}
       >
-        <Button type="secondary">{t("buttonsSection.order")}</Button>
+        <Inputs.Button type="secondary">
+          {t("buttonsSection.order")}
+        </Inputs.Button>
       </Col>
       <Col>
-        <Button
+        <Inputs.Button
           type="hollow"
           onClick={() => {
             navigator.clipboard.writeText(window.location.href);
@@ -67,8 +68,8 @@ export const ButtonsSection: FC = () => {
           `}
         >
           <img
-            src={CopyUrlSvg}
-            alt="copy url icon"
+            src={CopyUrlIcon}
+            alt="copy url"
             css={css`
               padding: 0;
               width: 1rem;
@@ -76,7 +77,7 @@ export const ButtonsSection: FC = () => {
               height: 1rem;
             `}
           />
-        </Button>
+        </Inputs.Button>
       </Col>
     </Row>
   );

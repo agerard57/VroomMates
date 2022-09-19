@@ -1,0 +1,49 @@
+{
+  "page": [
+    {
+      "title": "Devenir conducteur",
+      "body": "Tu ne trouves pas de trajet qui te correspond ? Tu souhaites te rendre à un endroit précis sans pour pas cher ?\n\nDans ce cas, pas de soucis, on a la solution ! Deviens conducteur et planifies tes propres trajets",
+      "nextButtonText": "Commencer",
+      "previousButtonText": "Plus tard, peut-être..."
+    },
+    {
+      "title": "Envoi nous ton premis de conduire",
+      "body": "Pour devenir conducteur, nous avons d'abord besoin d'une preuve que tu puisse légalement conduire. Envoie-nous ton permis de conduire et notre équipe répondra à ta demande sous 1-2 jours.",
+      "message": "Nous gardons uniquement vos documents sur notre server le temps de la vérification.",
+      "nextButtonText": "Envoyer et continuer"
+    },
+    {
+      "title": "Avec quoi tu roules ?",
+      "body": "Parle-nous de ta voiture !",
+      "brand": {
+        "title": "Marque",
+        "placeholder": "Quel est la marque de la voiture ?"
+      },
+      "model": {
+        "title": "Modèle",
+        "placeholder": "Et le modèle ?"
+      },
+      "color": {
+        "title": "Couleur",
+        "placeholder": "Pour finir, la couleur ?"
+      },
+      "nextButtonText": "Envoyer et continuer"
+    },
+    {
+      "title": "Tout est bon!",
+      "body": "Merci d'avoir entré toutes ces informations. Pas d'inquiétudes, tu sera notifié le plus rapidement possible !\n\nAppuie sur le bouton pour clore cette fenêtre.",
+      "nextButtonText": "Close me!"
+    }
+  ],
+  "messages": {
+    "driversLicense": {
+      "uploaded": "Ton permis de conduire a été envoyé avec succès !",
+      "max": "Merci de ne pas envoyer une photo de plus de 5MB.",
+      "error": "Une erreur s'est produite lors de l'envoi de ton permis de conduire. Veuillez réessayer plus tard"
+    },
+    "car": {
+      "updated": "On a bien reçu les informations sur ta voiture !",
+      "error": "Une erreur s'est produite lors de l'envoi de tes informations. Veuillez réessayer plus tard"
+    }
+  }
+}

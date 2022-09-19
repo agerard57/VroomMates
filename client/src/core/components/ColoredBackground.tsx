@@ -5,6 +5,8 @@ import { FC } from "react";
 export const ColoredBackground: FC = ({ children }) => (
   <div
     css={css`
+      display: flex;
+      align-items: center;
       background-image: linear-gradient(
         140deg,
         hsl(219deg 100% 59%) 0%,

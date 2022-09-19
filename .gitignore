@@ -25,3 +25,10 @@ coverage
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+cert.pem
+key.pem
+keytmp.pem
+
+uploads/
+driversLicenses/

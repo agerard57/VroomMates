@@ -1,0 +1,67 @@
+{
+  "page": [
+    {
+      "title": "Let's complete your account!",
+      "body": "You successfully made an account, these next pages will help you fill out missing information such as your profile picture, your bio or your preferences (you can always do this later)",
+      "nextButtonText": "Get started",
+      "previousButtonText": "Not now..."
+    },
+    {
+      "title": "Add a profile picture",
+      "body": "Your next mission:\n\nupload an awesome profile picture!",
+      "message": "We don't resell your photos to third parties, we promise!",
+      "nextButtonText": "Next"
+    },
+    {
+      "title": "Share your personality",
+      "body": "Let's show the world who you are!",
+      "bio": {
+        "title": "Your bio",
+        "placeholder": "Tell us more about yourself..."
+      },
+      "q&a": {
+        "title": "Q&A",
+        "talk": {
+          "true": "Likes to talk during trips",
+          "false": "Prefers not to talk during trips"
+        },
+        "music": {
+          "true": "Likes to listen to music during trips",
+          "false": "Doesn't listen to music during trips"
+        },
+        "pet": {
+          "true": "Likes to have pets during trips",
+          "false": "Doesn't like to have pets during trips"
+        }
+      },
+      "hobbies": {
+        "title": "Your Hobbies",
+        "placeholder": "Add your hobbies...",
+        "empty": "No hobbies added yet",
+        "errors": {
+          "length": "Your hobby can't be longer than 20 characters",
+          "alreadyExists": "This hobby already exists",
+          "empty": "Your hobby can't be empty",
+          "max": "You can only add 5 hobbies"
+        }
+      },
+      "nextButtonText": "Update your account!"
+    },
+    {
+      "title": "You're all set!",
+      "body": "Thank you for entering all of these information, your account is now complete 😁\n\nPress the button to go back to the home page.",
+      "nextButtonText": "Return to the login page!"
+    }
+  ],
+  "messages": {
+    "profilePic": {
+      "uploaded": "Your profile picture has been uploaded!",
+      "max": "Maximum file size is 3MB",
+      "error": "An error occurred while uploading your profile picture"
+    },
+    "about": {
+      "updated": "Your bio has been updated!",
+      "error": "An error occurred while updating your bio"
+    }
+  }
+}

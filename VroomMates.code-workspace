@@ -33,6 +33,7 @@
       "mapboxgl",
       "Middlewares",
       "Plein",
+      "Signin",
       "VroomMates"
     ],
     "editor.formatOnPaste": true,

@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import HomeImage1 from "../../assets/images/home-image-1.png";
+import { HomeImage1 } from "../../assets";
 import { SearchBox } from "./SearchBox";
 
 export const LandingSection: FC = () => {

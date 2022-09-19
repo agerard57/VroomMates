@@ -28,6 +28,7 @@
     "bio": "string",
     "chatty": "boolean",
     "music": "boolean",
+    "animals_tolerated": "boolean",
     "hobbies": "string[]"
   },
   "photo_url": "string",
@@ -41,6 +42,7 @@
     }
   ],
   "registered_since": "date",
-  "role_status": "string"
+  "status": "string",
+  "refreshTokens": "sting[]"
 }
 ```

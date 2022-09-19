@@ -1,59 +1,56 @@
 {
-    "_id": {
-      "$oid": "62c0d4a56ef4e92913d5cc5d"
-    },
-    "name": {
-      "first_name": "GERARD",
-      "last_name": "Alexandre"
-    },
-    "email": {
-      "confirmed": true,
-      "email_address": "vroommates@agerard.dev"
-    },
-    "password": "3630",
-    "phone_number":"0652648832",  
-    "address": {
-      "house_number": 1,
-      "street_name": "rue du père potot",
-      "city": "Metz",
-      "state": "Grand-Est",
-      "zip": 57000,
-      "country": "France"
-    },
-    "birth_date": {
-      "$date": {
-        "$numberLong": "987984000000"
-      }
-    },
-    "about": {
-      "bio": "Yo ! C'est moi...",
-      "chatty": true,
-      "music": true,
-      "hobbies": [
-        "deez",
-        "nuts"
-      ]
-    },
-    "photo_url": "NONE",
-    "stripe_id": "NONE",
-    "ratings": [
-      {
-        "rating": 5,
-        "content": "Good driver",
-        "author_id": {
-          "$oid": "62c0d4a56ef4e92913d5cc5d"
-        },
-        "date": {
-          "$date": {
-            "$numberLong": "1587600000000"
-          }
+  "_id": {
+    "$oid": "62c0d4a56ef4e92913d5cc5d"
+  },
+  "name": {
+    "first_name": "GERARD",
+    "last_name": "Alexandre"
+  },
+  "email": {
+    "confirmed": true,
+    "email_address": "vroommates@agerard.dev"
+  },
+  "password": "3630",
+  "phone_number": "0652648832",
+  "address": {
+    "house_number": 1,
+    "street_name": "rue du père potot",
+    "city": "Metz",
+    "state": "Grand-Est",
+    "zip": 57000,
+    "country": "France"
+  },
+  "birth_date": {
+    "$date": {
+      "$numberLong": "987984000000"
+    }
+  },
+  "about": {
+    "bio": "Yo ! C'est moi...",
+    "chatty": true,
+    "music": true,
+    "hobbies": ["deez", "nuts"]
+  },
+  "photo_url": "NONE",
+  "stripe_id": "NONE",
+  "ratings": [
+    {
+      "rating": 5,
+      "content": "Good driver",
+      "author_id": {
+        "$oid": "62c0d4a56ef4e92913d5cc5d"
+      },
+      "date": {
+        "$date": {
+          "$numberLong": "1587600000000"
         }
       }
-    ],
-    "registered_since": {
-      "$date": {
-        "$numberLong": "1655769600000"
-      }
-    },
-    "role_status": "admin"
-  }
+    }
+  ],
+  "registered_since": {
+    "$date": {
+      "$numberLong": "1655769600000"
+    }
+  },
+  "status": "admin"
+}

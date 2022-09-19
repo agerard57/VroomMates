@@ -4,17 +4,22 @@ import { FC, useState } from "react";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { ProfileBanner, ProfileHeader, ReviewsCard } from "../../core";
+import {
+  LoggedUserDataProps,
+  ProfileBanner,
+  ProfileHeader,
+  ReviewsCard,
+} from "../../core";
 import { useProfilePage } from "../hooks";
 import { MainButton } from "./MainButton";
 import { AccountManagementMenu } from "./accountManagementMenu";
 import { AboutCards } from "./cards";
 import { AboutList } from "./list";
 
-export const ProfilePage: FC = () => {
+export const ProfilePage: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   const { t } = useTranslation("ProfilePage");
 
-  const { user, pageType } = useProfilePage();
+  const { user, pageType } = useProfilePage(loggedUserData);
 
   const [accountManagementMenu, setAccountManagementMenu] =
     useState<boolean>(false);

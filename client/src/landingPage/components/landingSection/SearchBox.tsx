@@ -1,25 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import {
-  RoundedContour,
-  Button,
-  useGeolocation,
-  RadioInput,
-  TextInput,
-  DateInput,
-} from "../../../core";
-import arrivalIcon from "../../assets/icons/arrivalIcon.svg";
-import calendarIcon from "../../assets/icons/calendarIcon.svg";
-import departureIcon from "../../assets/icons/departureIcon.svg";
+import { RoundedContour, useGeolocation, Inputs } from "../../../core";
+import { ArrivalIcon, CalendarIcon, DepartureIcon } from "../../assets";
 
 export const SearchBox: FC = () => {
   const { t } = useTranslation("LandingPage");
   const { address } = useGeolocation();
 
+  const [activeRadio, setActiveRadio] = useState<string>("single");
   return (
     <form
       action="/search"
@@ -28,7 +20,13 @@ export const SearchBox: FC = () => {
       `}
     >
       <RoundedContour>
-        <div>
+        <div
+          css={css`
+            .row {
+              margin-bottom: 10px;
+            }
+          `}
+        >
           <h2
             css={css`
               font-family: "Baloo2";
@@ -39,58 +37,70 @@ export const SearchBox: FC = () => {
             {t("landingSection.search.title")}
           </h2>
           <hr />
-          <Row>
+          <Row
+            css={css`
+              align-items: center;
+              flex-direction: row;
+              flex-wrap: nowrap;
+            `}
+          >
             <Col>
-              <RadioInput
+              <Inputs.Radio
                 inputName="type"
                 radioValue="single"
                 inputPlaceholder={t(
                   "landingSection.search.tripType.singleTrip"
                 )}
+                activeRadio={activeRadio}
+                onClickRadio={() => {
+                  setActiveRadio("single");
+                }}
               />
             </Col>
             <Col>
-              <span>{t("landingSection.search.tripType.or")}</span>
-            </Col>
-            <Col>
-              <RadioInput
+              <Inputs.Radio
                 inputName="type"
                 radioValue="frequent"
                 inputPlaceholder={t(
                   "landingSection.search.tripType.frequentTrip"
                 )}
+                activeRadio={activeRadio}
+                onClickRadio={() => {
+                  setActiveRadio("frequent");
+                }}
               />
             </Col>
           </Row>
           <Row>
-            <TextInput
+            <Inputs.Text
               inputName="departureLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.from")}
               inputValue={address}
-              icon={departureIcon}
+              icon={DepartureIcon}
             />
           </Row>
           <Row>
-            <span>{t("landingSection.search.tripPoints.to")}</span>
-          </Row>
-          <Row>
-            <TextInput
+            <Inputs.Text
               inputName="arrivalLocation"
               inputPlaceholder={t("landingSection.search.tripPoints.getTo")}
-              icon={arrivalIcon}
+              icon={ArrivalIcon}
             />
           </Row>
           <Row>
-            <DateInput
+            <Inputs.Date
               inputName="date"
               inputPlaceholder={t("landingSection.search.date")}
-              icon={calendarIcon}
+              icon={CalendarIcon}
             />
           </Row>
           <Row>
-            <Button type="primary" buttonType="submit">
+            <Inputs.Button
+              type="primary"
+              buttonType="submit"
+              optionalStyling={`margin-top:10px`}
+            >
               {t("landingSection.search.searchButton")}
-            </Button>
+            </Inputs.Button>
           </Row>
         </div>
       </RoundedContour>

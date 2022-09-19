@@ -3,25 +3,33 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { getStatusIcon, ProfilePic, UserType } from "../../../core";
+import {
+  cookiesManager,
+  getStatusIcon,
+  LoggedUserDataProps,
+  ProfilePic,
+  tokenService,
+} from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
 
-type Props = {
-  status?: UserType["Status"];
-};
-
-export const Account: FC<Props> = ({ status }) => {
+export const Account: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   const { t } = useTranslation("Dashboard");
-  const accountIcon = getStatusIcon(status);
-  return status ? (
+  const accountIcon = getStatusIcon(loggedUserData?.role);
+  const signOff = () => {
+    tokenService.deleteRefreshToken(cookiesManager.getCookie("authToken"));
+    cookiesManager.deleteCookie("authToken");
+    window.location.href = "/";
+  };
+
+  return loggedUserData ? (
     <section>
       <ProfilePic
-        src="https://randomuser.me/api/portraits/men/53.jpg"
-        rating={3}
+        src={loggedUserData.photoUrl}
+        rating={loggedUserData.avgRating}
         displayRating
         displayStars
-        isVerified
+        isVerified={loggedUserData.confirmedEmail}
       />
       <h2
         css={css`
@@ -30,7 +38,9 @@ export const Account: FC<Props> = ({ status }) => {
           font-size: 1.7rem;
         `}
       >
-        {t("accountSection.greetingMessage", { firstName: "Alexandre" })}{" "}
+        {t("accountSection.greetingMessage", {
+          firstName: loggedUserData.name.first_name,
+        })}{" "}
         {accountIcon ? <img src={accountIcon} alt="accountIcon" /> : null}
       </h2>
       <div>
@@ -40,7 +50,7 @@ export const Account: FC<Props> = ({ status }) => {
         />
         <MenuListItem
           title={t("accountSection.signOff")}
-          link="/home" //TODO add param to logout
+          onClick={signOff}
           color="#FF5656"
         />
       </div>
@@ -48,8 +58,11 @@ export const Account: FC<Props> = ({ status }) => {
   ) : (
     <section>
       <MenuListTitle title={t("accountSection.title")} />
-      <MenuListItem title={t("accountSection.signIn")} link="/login" />
-      <MenuListItem title={t("accountSection.signUp")} link="/register" />
+      <MenuListItem title={t("accountSection.signIn")} link="/profile/login" />
+      <MenuListItem
+        title={t("accountSection.signUp")}
+        link="/profile/register"
+      />
     </section>
   );
 };

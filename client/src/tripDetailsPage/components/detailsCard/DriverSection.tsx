@@ -4,8 +4,8 @@ import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { Button, ProfilePic } from "../../../core";
-import CarSvg from "../../assets/car.svg";
+import { Inputs, ProfilePic } from "../../../core";
+import { CarIcon } from "../../assets";
 import { Driver } from "../../interfaces";
 
 type Props = {
@@ -63,7 +63,7 @@ export const DriverSection: FC<Props> = ({ tripId, driver, car }) => {
             `}
           >
             <img
-              src={CarSvg}
+              src={CarIcon}
               alt="car icon"
               css={css`
                 padding: 0;
@@ -94,14 +94,14 @@ export const DriverSection: FC<Props> = ({ tripId, driver, car }) => {
             </Col>
           </Row>
           <Row>
-            <Button
+            <Inputs.Button
               type="hollow"
               onClick={() => {
                 window.location.href = `/messages?chat=${tripId}`;
               }}
             >
               {t("driverSection.contact")}
-            </Button>
+            </Inputs.Button>
           </Row>
         </Col>
         <Col
@@ -127,14 +127,14 @@ export const DriverSection: FC<Props> = ({ tripId, driver, car }) => {
           padding: 0 20px !important;
         `}
       >
-        <Button
+        <Inputs.Button
           type="hollow"
           onClick={() => {
             window.location.href = `/user/${driver.id}`;
           }}
         >
           {t("driverSection.profile")}
-        </Button>
+        </Inputs.Button>
       </Row>
     </Row>
   );

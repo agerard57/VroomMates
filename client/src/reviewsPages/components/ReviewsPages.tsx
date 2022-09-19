@@ -4,13 +4,19 @@ import { FC } from "react";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { ProfileBanner, ProfileHeader, ReviewsCard, Button } from "../../core";
+import {
+  ProfileBanner,
+  ProfileHeader,
+  ReviewsCard,
+  Inputs,
+  LoggedUserDataProps,
+} from "../../core";
 import { useReviewsPages } from "../hooks";
 
-export const ReviewsPages: FC = () => {
+export const ReviewsPages: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   const { t } = useTranslation("ReviewsPages");
 
-  const { reviews, currentPage, userId } = useReviewsPages();
+  const { reviews, currentPage, userId } = useReviewsPages(loggedUserData);
 
   return (
     <>
@@ -22,7 +28,7 @@ export const ReviewsPages: FC = () => {
         `}
       >
         <ProfileHeader id={userId} />
-        <Button
+        <Inputs.Button
           type="hollow"
           onClick={() => {
             window.history.back();
@@ -33,7 +39,7 @@ export const ReviewsPages: FC = () => {
           `}
         >
           {t("back")}
-        </Button>
+        </Inputs.Button>
         <ReviewsCard
           userReviews={reviews}
           title={t(`reviews.${currentPage}.title`, { count: reviews.length })}

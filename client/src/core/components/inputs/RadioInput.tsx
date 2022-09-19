@@ -7,36 +7,36 @@ type Props = {
   inputName: string;
   radioValue?: string;
   isRequired?: boolean;
-  icon?: string;
+  activeRadio: string;
+  onClickRadio: () => void;
 };
 
 export const RadioInput: FC<Props> = ({
   inputPlaceholder,
   inputName,
   radioValue,
-  icon,
+  activeRadio,
+  onClickRadio,
 }) => {
+  const isActive = activeRadio === radioValue;
+
   const InputStyle = css`
     box-sizing: border-box;
-    text-align: ${icon ? "left" : "center"};
-    padding: ${icon ? "5px 10px 6px 35px" : "5px 10px"};
-    background: "#ffffff";
+    text-align: center;
+    padding: 5px 0;
+    margin: 0 0 10px 0;
+    background: #ffffff;
     border: 2px solid #a7a7a7;
+    width: inherit;
     border-radius: 60px;
-    background: url(${icon}) no-repeat scroll 7px;
     outline: none;
+    white-space: nowrap;
 
-    &:focus {
-      border-color: #00a8ff;
+    &:hover {
+      cursor: pointer;
     }
+    ${isActive ? "border-color: #00a8ff;" : ""}
   `;
-  const onClickRadio = () => {
-    const input =
-      (document.querySelector(`#${radioValue}`) as HTMLInputElement) || null;
-    if (input) {
-      input.checked = true;
-    }
-  };
 
   return (
     <label htmlFor={inputName} css={InputStyle} onClick={onClickRadio}>
@@ -45,9 +45,11 @@ export const RadioInput: FC<Props> = ({
         name={inputName}
         type="radio"
         css={css`
-          /* visibility:hidden */
+          display: none;
         `}
         value={radioValue}
+        checked={isActive}
+        onClick={onClickRadio}
       />
       <span>{inputPlaceholder}</span>
     </label>

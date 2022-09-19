@@ -7,12 +7,10 @@
       "title": "Il est grand temps de se trouver un VroomMate !",
       "tripType": {
         "singleTrip": "Voyage unique",
-        "or": "ou",
         "frequentTrip": "Voyage fréquent"
       },
       "tripPoints": {
         "from": "Partir de…",
-        "to": "pour",
         "getTo": "Arriver à…"
       },
       "date": "Quand?",

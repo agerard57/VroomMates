@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import TalkIcon from "../../assets/talkIcon.svg";
+import { TalkIcon } from "../../../core";
 import { ElementTemplate } from "./ElementTemplate";
 
 type Props = {

@@ -1,0 +1,21 @@
+{
+  "page": [
+    {
+      "title": "Clore mon compte",
+      "body": "Hey là, est-tu sûr de vouloir clôturer ton compte ?",
+      "message": "Cette décision est définitive.",
+      "nextButtonText": "Oui, clore mon compte",
+      "previousButtonText": "Non ! Je veux rester !"
+    },
+    {
+      "title": "Ok, on y va !",
+      "body": "C'était fun de te connaître, reviens quand tu veux :)",
+      "nextButtonText": "Fermer"
+    }
+  ],
+
+  "message": {
+    "success": "Ton compte à été supprimé",
+    "error": "Quelque-chose ne s'est pas passé comme prévu, réesaye plus tard"
+  }
+}

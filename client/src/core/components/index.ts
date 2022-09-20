@@ -1,5 +1,4 @@
 export { Layout } from "./Layout";
-export { BlueBorderBackground } from "./BlueBorderBackground";
 export { RoundedContour } from "./RoundedContour";
 export { Inputs } from "./inputs";
 export { ProfilePic } from "./ProfilePic";

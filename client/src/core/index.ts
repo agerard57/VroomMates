@@ -11,7 +11,6 @@ export {
 } from "./assets";
 
 export {
-  BlueBorderBackground,
   Layout,
   RoundedContour,
   ProfilePic,

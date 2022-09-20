@@ -1,7 +1,9 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { MenuListItem, MenuListTitle, UserTypes } from "../../../core";
+import { CloseAccountModalBuilder } from "../../../closeAccountModal";
+import { logout, MenuListItem, MenuListTitle, UserTypes } from "../../../core";
+import { useModal } from "../../../modal";
 
 type Props = {
   userStatus: UserTypes["Status"];
@@ -9,7 +11,8 @@ type Props = {
 
 export const AccountSection: FC<Props> = ({ userStatus }) => {
   const { t } = useTranslation("ProfilePage");
-
+  const { openModal } = useModal();
+  const screens = CloseAccountModalBuilder();
   return (
     <section>
       <MenuListTitle title={t("accountManagementMenu.account.title")} />
@@ -40,12 +43,12 @@ export const AccountSection: FC<Props> = ({ userStatus }) => {
       />
       <MenuListItem
         title={t("accountManagementMenu.account.logout")}
-        link="/" // TODO Implement logout feature
+        onClick={logout}
         color="#ff5656"
       />
       <MenuListItem
         title={t("accountManagementMenu.account.close")}
-        link="/" // TODO Implement close account feature
+        onClick={() => openModal(screens)}
         color="#ff5656"
         isBold
       />

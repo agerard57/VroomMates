@@ -36,7 +36,7 @@ const driversSchema = mongoose.Schema(
   { collection: "Drivers" }
 );
 
-driversSchema.index({ id: 1 }, { unique: true });
+driversSchema.index({ user: 1 }, { unique: true });
 
 driversSchema.plugin(uniqueValidator);
 

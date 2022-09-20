@@ -1,0 +1,10 @@
+{
+  "title": "Erreur !",
+
+  "page": {
+    "title": "Mince alors !",
+    "description": "Quelque-chose ne va pas...\nRéessayer plus tard ?",
+    "link": "Retourner à la page d'accueil",
+    "link2": "Ou réessaye"
+  }
+}

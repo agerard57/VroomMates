@@ -1,0 +1,10 @@
+{
+  "title": "Error !",
+
+  "page": {
+    "title": "Oh snap!",
+    "description": "Something went wrong...\nPlease try again later?",
+    "link": "Go back to home page",
+    "link2": "Or try again"
+  }
+}

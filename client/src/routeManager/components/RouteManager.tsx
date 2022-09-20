@@ -9,7 +9,7 @@ import {
 
 import { Layout } from "../../core";
 import { Dashboard } from "../../dashboard";
-import { ErrorPage } from "../../errorPage";
+import { ErrorScreen } from "../../errorScreen";
 import { LandingPage } from "../../landingPage";
 import { LoadingScreen } from "../../loadingScreen";
 import { PoliciesPages } from "../../policiesPages";
@@ -31,7 +31,7 @@ const RouteManager: FC = () => {
   return (
     <Router>
       <Layout>
-        <ErrorBoundary FallbackComponent={ErrorPage}>
+        <ErrorBoundary FallbackComponent={ErrorScreen}>
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
             <Route

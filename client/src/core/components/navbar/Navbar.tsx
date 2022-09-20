@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { FC } from "react";
-import Nav from "react-bootstrap/Nav";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import { DashboardIcon } from "./DashboardIcon";
 import { HomeIcon } from "./HomeIcon";
@@ -57,25 +57,25 @@ export const Navbar: FC = () => {
         }
       `} /* TODO: REMOVE THE CSS RULES AS WE WANT TO TO IT ANOTHER WAY */
     >
-      <Nav.Link href="/home">
+      <Link to="/home">
         <HomeIcon />
         <span className="selectedBlue">{t("navbar.home")}</span>
-      </Nav.Link>
+      </Link>
 
-      <Nav.Link href="/search">
+      <Link to="/search">
         <SearchIcon />
         <span className="notSelectedBlue">{t("navbar.search")}</span>
-      </Nav.Link>
+      </Link>
 
-      <Nav.Link href="/home">
+      <Link to="/home">
         <InboxIcon />
         <span className="selectedOrange">{t("navbar.inbox")}</span>
-      </Nav.Link>
+      </Link>
 
-      <Nav.Link href="/dashboard">
+      <Link to="/dashboard">
         <DashboardIcon />
         <span className="notSelectedOrange">{t("navbar.dashboard")}</span>
-      </Nav.Link>
+      </Link>
     </div>
   );
 };

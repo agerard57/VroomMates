@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 import { usePageTitle, Inputs, NotFoundImage } from "../../core";
 
-export const ErrorPage = ({ error, resetErrorBoundary }: FallbackProps) => {
-  const { t } = useTranslation("ErrorPage");
+export const ErrorScreen = ({ error, resetErrorBoundary }: FallbackProps) => {
+  const { t } = useTranslation("ErrorScreen");
 
   usePageTitle(t("title"));
 

@@ -1,0 +1,1 @@
+export { useSecondGoodbye } from "./useSecondGoodbye";

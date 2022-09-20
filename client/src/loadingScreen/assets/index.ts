@@ -1,3 +1,3 @@
-import { ReactComponent as Spinner } from "./spinner.svg";
+import LoadingImage from "./loadingImage.gif";
 
-export { Spinner };
+export { LoadingImage };

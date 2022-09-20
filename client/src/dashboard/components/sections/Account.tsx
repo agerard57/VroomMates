@@ -4,11 +4,10 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
-  cookiesManager,
   getStatusIcon,
   LoggedUserDataProps,
+  logout,
   ProfilePic,
-  tokenService,
 } from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
@@ -16,11 +15,6 @@ import { MenuListTitle } from "../../../core";
 export const Account: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   const { t } = useTranslation("Dashboard");
   const accountIcon = getStatusIcon(loggedUserData?.role);
-  const signOff = () => {
-    tokenService.deleteRefreshToken(cookiesManager.getCookie("authToken"));
-    cookiesManager.deleteCookie("authToken");
-    window.location.href = "/";
-  };
 
   return loggedUserData ? (
     <section>
@@ -50,7 +44,7 @@ export const Account: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
         />
         <MenuListItem
           title={t("accountSection.signOff")}
-          onClick={signOff}
+          onClick={logout}
           color="#FF5656"
         />
       </div>

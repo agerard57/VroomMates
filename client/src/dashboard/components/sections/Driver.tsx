@@ -24,7 +24,6 @@ export const Driver: FC<Props> = ({ status }) => {
         <MenuListItem
           title={t("driverSection.becomeDriver")}
           onClick={() => openModal(screens)}
-          link="/dashboard"
         />
       </section>
     );

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
+import { BecomeDriverModalBuilder } from "../../../becomeDriverModal";
 import { CloseAccountModalBuilder } from "../../../closeAccountModal";
 import { logout, MenuListItem, MenuListTitle, UserTypes } from "../../../core";
 import { useModal } from "../../../modal";
@@ -12,7 +13,9 @@ type Props = {
 export const AccountSection: FC<Props> = ({ userStatus }) => {
   const { t } = useTranslation("ProfilePage");
   const { openModal } = useModal();
-  const screens = CloseAccountModalBuilder();
+  const BecomeDriverScreens = BecomeDriverModalBuilder();
+  const closeAccountScreens = CloseAccountModalBuilder();
+
   return (
     <section>
       <MenuListTitle title={t("accountManagementMenu.account.title")} />
@@ -27,7 +30,7 @@ export const AccountSection: FC<Props> = ({ userStatus }) => {
       {userStatus === "passenger" ? (
         <MenuListItem
           title={t("accountManagementMenu.account.driver")}
-          link="/driver/join"
+          onClick={() => openModal(BecomeDriverScreens)}
         />
       ) : null}
       {userStatus === "driver" || userStatus === "admin" ? (
@@ -48,7 +51,7 @@ export const AccountSection: FC<Props> = ({ userStatus }) => {
       />
       <MenuListItem
         title={t("accountManagementMenu.account.close")}
-        onClick={() => openModal(screens)}
+        onClick={() => openModal(closeAccountScreens)}
         color="#ff5656"
         isBold
       />

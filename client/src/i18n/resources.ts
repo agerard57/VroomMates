@@ -1,7 +1,7 @@
 import { i18n as BecomeDriverModal } from "../becomeDriverModal";
 import { i18n as Core } from "../core";
 import { i18n as Dashboard } from "../dashboard";
-import { i18n as ErrorPage } from "../errorPage";
+import { i18n as ErrorScreen } from "../errorScreen";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
 import { i18n as PoliciesPages } from "../policiesPages";
@@ -32,7 +32,7 @@ const moduleResources = normalize({
   BecomeDriverModal,
   Core,
   Dashboard,
-  ErrorPage,
+  ErrorScreen,
   LandingPage,
   LoadingScreen,
   PoliciesPages,

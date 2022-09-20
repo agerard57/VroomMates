@@ -6,7 +6,7 @@ import { UseRegisterCompleteModalBuilderManager } from "../types";
 
 export const useRegisterCompleteModalBuilder: UseRegisterCompleteModalBuilderManager =
   () => {
-    const { setIsDisabled, iterator, closeModal } = useModal();
+    const { setIsDisabled, iterator } = useModal();
     const { slideNumber } = iterator;
 
     const [profilePicFilled, setProfilePicFilled] = useState(false);
@@ -19,7 +19,6 @@ export const useRegisterCompleteModalBuilder: UseRegisterCompleteModalBuilderMan
           if (response.status === 200) {
             cookiesManager.setCookie("authToken", response.authToken, true);
           }
-          closeModal();
           window.location.href = "/";
         });
     };

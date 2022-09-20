@@ -3,7 +3,7 @@ const authJwt = require("../middlewares/authJwt");
 const multer = require("multer");
 const upload = multer({
   dest: "./driversLicenses",
-  limits: { fileSize: 1000000 },
+  limits: { fileSize: 5000000 },
 });
 
 module.exports = function (app) {

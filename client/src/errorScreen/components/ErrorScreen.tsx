@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Nav, Row } from "react-bootstrap";
 import { FallbackProps } from "react-error-boundary";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 import { usePageTitle, Inputs, NotFoundImage } from "../../core";
 
@@ -71,14 +70,14 @@ export const ErrorScreen = ({ error, resetErrorBoundary }: FallbackProps) => {
           flex-direction: column;
         `}
       >
-        <Link
-          to="/"
+        <Nav.Link
+          href="/"
           css={css`
             color: #3d3d3d;
           `}
         >
           {t("page.link")}
-        </Link>
+        </Nav.Link>
         <Inputs.Button type="small" onClick={resetErrorBoundary}>
           {t("page.link2")}
         </Inputs.Button>

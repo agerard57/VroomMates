@@ -1,0 +1,21 @@
+{
+  "page": [
+    {
+      "title": "Close my account",
+      "body": "Hey there, are you sure you want to close your account ?",
+      "message": "This decision is definitive.",
+      "nextButtonText": "Yes, close my account",
+      "previousButtonText": "No! Take me back!"
+    },
+    {
+      "title": "Okay! Nice meeting you",
+      "body": "This has been a fun ride, come back anytime :)",
+      "nextButtonText": "Close"
+    }
+  ],
+
+  "message": {
+    "success": "Your account has been deleted",
+    "error": "Something went wrong, please try again later"
+  }
+}

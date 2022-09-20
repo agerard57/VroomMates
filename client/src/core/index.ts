@@ -35,6 +35,7 @@ export {
   normalizePrice,
   getStatusIcon,
   s3UrlBuilder,
+  logout,
 } from "./helpers";
 
 export type { UserTypes, AuthToken, LoggedUserDataProps } from "./types";

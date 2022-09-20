@@ -37,4 +37,8 @@ module.exports = function (app) {
   app.route("/profile/refresh").post(profileController.refresh);
 
   app.route("/profile/signout").post(profileController.signOut);
+
+  app
+    .route("/profile/close")
+    .delete([authJwt.isUserLogged], profileController.closeAccount);
 };

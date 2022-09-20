@@ -6,3 +6,4 @@ export { normalizePrice } from "./normalizePrice";
 export { getStatusIcon } from "./getStatusIcon";
 export { cookiesManager } from "./cookiesManager";
 export { s3UrlBuilder } from "./s3UrlBuilder";
+export { logout } from "./logout";

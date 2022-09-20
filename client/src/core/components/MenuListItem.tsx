@@ -15,7 +15,7 @@ type Props = {
 
 export const MenuListItem: FC<Props> = ({
   title,
-  link = "/home",
+  link,
   onClick,
   color,
   isBold = false,
@@ -23,7 +23,7 @@ export const MenuListItem: FC<Props> = ({
 }) => {
   return (
     <Link
-      to={link}
+      to={link || "#"}
       onClick={onClick}
       css={css`
         /* If the color if defined, use it, 

@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const DaysSection: FC<Props> = ({ type, daysOfWeek }) => {
-  const { days } = useDaysDisplay(daysOfWeek);
+  const { displayDays } = useDaysDisplay(daysOfWeek);
   return type === "frequent" ? (
     <Row
       css={css`
@@ -33,7 +33,7 @@ export const DaysSection: FC<Props> = ({ type, daysOfWeek }) => {
           }
         `}
       >
-        {days}
+        {displayDays}
       </div>
     </Row>
   ) : null;

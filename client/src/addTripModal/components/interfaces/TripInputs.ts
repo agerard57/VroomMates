@@ -25,7 +25,7 @@ export interface TripInputs {
   };
   frequent_trip_options: FrequentTrips;
   price_per_seat: {
-    price_per_mile: number;
+    driver_fee: number;
     service_fee: number;
     total: number;
   };
@@ -85,7 +85,7 @@ export const tripInputsInitializer: TripInputs = {
     end_date: "",
   },
   price_per_seat: {
-    price_per_mile: 0,
+    driver_fee: 0,
     service_fee: 0,
     total: 0,
   },

@@ -42,7 +42,7 @@ exports.getSearchResults = (req, res) => {
           {
             // Don't display the following fields
             passengers: 0,
-            "price_per_seat.km_price": 0,
+            "price_per_seat.driver_fee": 0,
             "price_per_seat.service_fee": 0,
           }
         )

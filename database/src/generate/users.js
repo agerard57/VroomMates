@@ -8,7 +8,6 @@ db.createCollection("Users", {
         "name",
         "email",
         "password",
-        "phone_number",
         "address",
         "birth_date",
         "registered_since",

@@ -58,7 +58,7 @@ const tripsSchema = mongoose.Schema(
       type: "number",
     },
     price_per_seat: {
-      km_price: {
+      driver_fee: {
         type: "number",
         required: true,
       },
@@ -69,7 +69,7 @@ const tripsSchema = mongoose.Schema(
       total: {
         type: "number",
         required: true,
-        /*         default: km_price + service_fee,*/
+        /*         default: driver_fee + service_fee,*/
       },
     },
     trip_duration: {
@@ -89,7 +89,7 @@ const tripsSchema = mongoose.Schema(
   { collection: "Trips" }
 );
 
-tripsSchema.index({ id: 1 }, { unique: true });
+tripsSchema.index({ _id_: 1 }, { unique: true });
 
 tripsSchema.plugin(uniqueValidator);
 

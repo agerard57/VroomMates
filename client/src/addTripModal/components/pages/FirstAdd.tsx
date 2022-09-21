@@ -2,14 +2,12 @@
 import { css } from "@emotion/react";
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import mapboxgl from "mapbox-gl";
-import { ZoomControl } from "mapbox-gl-controls";
 import { Dispatch, FC, SetStateAction, useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { CalendarIcon, Inputs, TripTypes, useDaysDisplay } from "../../../core";
 import { useLanguage } from "../../../language";
-import { en } from "../../../tripsPage/i18n";
 import { MapboxData, TripInputs, mapboxDataInitializer } from "../interfaces";
 
 type Props = {
@@ -139,21 +137,21 @@ export const FirstAdd: FC<Props> = ({ inputs, setInputs }) => {
     // Passenger pays $0.40 and driver earns $0.36 per mile if distance is less than 20 miles
     if (distanceInMi < 20) {
       return {
-        price_per_mile: price(0.36),
+        driver_fee: price(0.36),
         service_fee: price(0.04),
         total: price(0.4),
       };
       // Passenger pays $0.30 and driver earns $0.27 per mile if distance is between 20 and 50 miles
     } else if (distanceInMi >= 20 && distanceInMi <= 50) {
       return {
-        price_per_mile: price(0.27),
+        driver_fee: price(0.27),
         service_fee: price(0.03),
         total: price(0.3),
       };
       // Passenger pays $0.20 and driver earns $0.18 per mile if distance is > 50 miles
     } else {
       return {
-        price_per_mile: price(0.18),
+        driver_fee: price(0.18),
         service_fee: price(0.02),
         total: price(0.2),
       };

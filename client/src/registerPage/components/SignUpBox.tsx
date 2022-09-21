@@ -172,7 +172,7 @@ export const SignUpBox: FC = () => {
           />
         </Row>
         <Row css={sectionStyle}>
-          <Inputs.Checkbox
+          <Inputs.CheckboxInput
             inputName="termsAndConditions"
             labelContent={
               <>

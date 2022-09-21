@@ -1,25 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState } from "react";
 import { FC } from "react";
 
 type Props = {
   inputPlaceholder?: string;
   inputName: string;
-  radioValue?: string;
   isRequired?: boolean;
-  activeRadio: string;
-  onClickRadio: () => void;
+  onClickCheckbox(): void;
 };
 
-export const RadioInput: FC<Props> = ({
+export const CheckboxButton: FC<Props> = ({
   inputPlaceholder,
   inputName,
-  radioValue,
-  activeRadio,
-  onClickRadio,
+  onClickCheckbox,
 }) => {
-  const isActive = activeRadio === radioValue;
-
+  const [selected, setSelected] = useState<boolean>(false);
   const InputStyle = css`
     box-sizing: border-box;
     text-align: center;
@@ -35,21 +31,24 @@ export const RadioInput: FC<Props> = ({
     &:hover {
       cursor: pointer;
     }
-    ${isActive ? "border-color: #00a8ff;" : ""}
+    ${selected ? "border-color: #00a8ff;" : ""}
   `;
 
   return (
-    <label htmlFor={inputName} css={InputStyle} onClick={onClickRadio}>
+    <label htmlFor={inputName} css={InputStyle}>
       <input
-        id={radioValue}
+        id={inputName}
         name={inputName}
-        type="radio"
+        type="checkbox"
         css={css`
           display: none;
         `}
-        value={radioValue}
-        checked={isActive}
-        onClick={onClickRadio}
+        value={inputName}
+        checked={selected}
+        onClick={() => {
+          onClickCheckbox();
+          setSelected(!selected);
+        }}
         onChange={() => {}}
       />
       <span>{inputPlaceholder}</span>

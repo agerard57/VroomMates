@@ -1,6 +1,6 @@
-import { TripTypes } from "../../../core";
+import { TripTypes } from "../../core";
 
-interface Location {
+export interface Location {
   type: "Point";
   coordinates: [number, number];
 }
@@ -32,39 +32,9 @@ export interface TripInputs {
   free_seats: number;
 }
 
-export interface MapboxData {
-  origin: {
-    place_name: string;
-    location: Location;
-  };
-  destination: {
-    place_name: string;
-    location: Location;
-  };
-  route: {
-    distance: number;
-    duration: number;
-  };
-}
-
-const locationInitializer = {
+export const locationInitializer = {
   type: "Point" as "Point",
   coordinates: [0, 0] as [number, number],
-};
-
-export const mapboxDataInitializer = {
-  origin: {
-    place_name: "",
-    location: locationInitializer,
-  },
-  destination: {
-    place_name: "",
-    location: locationInitializer,
-  },
-  route: {
-    distance: 0,
-    duration: 0,
-  },
 };
 
 export const tripInputsInitializer: TripInputs = {

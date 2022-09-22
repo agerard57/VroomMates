@@ -1,18 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { SlideSpec } from "../../modal";
-import { TripInputs, tripInputsInitializer } from "./interfaces";
+import { TripInputs, tripInputsInitializer } from "../interfaces";
 import { FirstAdd, SecondRecap } from "./pages";
 
 export const AddTripModalBuilder = (): SlideSpec[] => {
   const { t } = useTranslation("AddTripModal");
 
   const [inputs, setInputs] = useState<TripInputs>(tripInputsInitializer);
-
-  useEffect(() => {
-    console.log(inputs);
-  }, [inputs]);
 
   const screens: SlideSpec[] = [
     {

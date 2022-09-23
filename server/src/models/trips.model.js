@@ -30,11 +30,10 @@ const tripsSchema = mongoose.Schema(
       day_of_week: {
         type: ["number"],
         enum: [0, 1, 2, 3, 4, 5, 6],
-        required: true,
         default: undefined,
       },
-      start_date: { type: "Date", required: true },
-      end_date: { type: "Date", required: true },
+      start_date: "Date",
+      end_date: "Date",
     },
     departure: {
       location: {
@@ -88,8 +87,6 @@ const tripsSchema = mongoose.Schema(
   },
   { collection: "Trips" }
 );
-
-tripsSchema.index({ _id_: 1 }, { unique: true });
 
 tripsSchema.plugin(uniqueValidator);
 

@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { usePageTitle } from "../../core";
+import { Footer } from "../../core";
 import { DescriptionSection } from "./DescriptionSection";
 import { LandingSection } from "./landingSection";
 import { StatsSection } from "./statsSection";
@@ -16,6 +17,7 @@ export const LandingPage: FC = () => {
       <LandingSection />
       <DescriptionSection />
       <StatsSection />
+      <Footer />
     </>
   );
 };

@@ -3,23 +3,21 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 
 import { RoundedContour } from "../../../core";
+import { useProcessDistance } from "../../hooks";
 
 type Props = {
-  value: number | string;
+  value: number;
   caption: string;
   color: string;
+  isDistance?: boolean;
 };
 
-// If it is an integer, we want to convert it as a string.
-// If it is a string, that means it is a float, so we want to round it.
-const processedValue = (value: number | string): string => {
-  if (typeof value === "number") {
-    return value.toString();
-  }
-  return parseFloat(value).toPrecision(2);
-};
-
-export const StatBox: FC<Props> = ({ value, caption, color }) => (
+export const StatBox: FC<Props> = ({
+  value,
+  caption,
+  color,
+  isDistance = false,
+}) => (
   <RoundedContour>
     <div>
       <div
@@ -46,14 +44,14 @@ export const StatBox: FC<Props> = ({ value, caption, color }) => (
             color: ${color};
           `}
         >
-          {processedValue(value)}
+          {useProcessDistance(value, isDistance)}
         </span>
       </div>
       <hr />
       <span
         css={css`
           font-family: "Baloo2";
-          font-size: large;
+          font-size: 1rem;
           font-weight: 500;
           color: ${color};
         `}

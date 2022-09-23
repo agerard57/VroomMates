@@ -15,7 +15,7 @@ export const StatsSection: FC = () => {
 
   const { language } = useLanguage();
   const { stats, options } = useStatsSection();
-  console.log(stats.trips.totalDistance);
+
   return (
     <section>
       <Container fluid>

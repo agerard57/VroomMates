@@ -38,8 +38,7 @@
         "singlePrice": "Seat price",
         "frequentPrice": "Seat price per trip"
       },
-      "nextButtonText": "Add the trip",
-      "previousButtonText": "Go back"
+      "nextButtonText": "Close the page"
     }
   ],
   "message": {

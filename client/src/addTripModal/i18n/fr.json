@@ -38,8 +38,7 @@
         "singlePrice": "Prix de la place",
         "frequentPrice": "Prix de la place par voyage"
       },
-      "nextButtonText": "Ajouter le trajet",
-      "previousButtonText": "Retour"
+      "nextButtonText": "Fermer"
     }
   ],
   "message": {

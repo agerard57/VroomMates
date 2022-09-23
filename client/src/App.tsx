@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import pMinDelay from "p-min-delay";
-import React, { lazy } from "react";
+import { lazy } from "react";
 import { FC, Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import { I18nextProvider } from "react-i18next";

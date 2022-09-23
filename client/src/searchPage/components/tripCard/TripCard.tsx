@@ -51,13 +51,13 @@ export const TripCard: FC<Props> = ({ trip }) => {
             departure={{
               time: trip.departure.time,
               placeName: trip.departure.place_name,
-              coordinates: trip.departure.location.coordinates,
             }}
             arrival={{
               time: trip.arrival.time,
               placeName: trip.arrival.place_name,
-              coordinates: trip.arrival.location.coordinates,
             }}
+            tripDuration={trip.trip_duration}
+            distance={trip.distance}
           />
           <RightSection
             driver={{

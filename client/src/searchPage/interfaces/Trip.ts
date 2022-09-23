@@ -1,6 +1,6 @@
 interface Location {
   type: string;
-  coordinates: { $numberDecimal: string }[];
+  coordinates: [number, number];
 }
 
 interface Driver {
@@ -22,7 +22,7 @@ export interface Trip {
     place_name: string;
     time: Date;
   };
-  price_per_seat: { total: { $numberDecimal: string } };
+  price_per_seat: { total: number };
   type: string;
   frequent_trip_options: {
     day_of_week: number[];

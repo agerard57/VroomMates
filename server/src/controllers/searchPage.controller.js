@@ -23,13 +23,13 @@ exports.getSearchResults = (req, res) => {
             // Filter by departure location
             "departure.location": {
               $geoWithin: {
-                $centerSphere: [departureCoordinates.reverse(), 33.7 / 6371],
+                $centerSphere: [departureCoordinates, 33.7 / 6371],
               },
             },
             // Filter by arrival location
             "arrival.location": {
               $geoWithin: {
-                $centerSphere: [arrivalCoordinates.reverse(), 33.7 / 6371],
+                $centerSphere: [arrivalCoordinates, 33.7 / 6371],
               },
             },
             // Filter by date

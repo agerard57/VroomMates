@@ -8,7 +8,6 @@ import { normalizeDate } from "../../../core";
 import { useLanguage } from "../../../language";
 
 type Props = {
-  type: string;
   singleTrip: Date;
   frequentTrip: {
     startDate?: Date;
@@ -16,7 +15,7 @@ type Props = {
   };
 };
 
-export const DateSection: FC<Props> = ({ type, singleTrip, frequentTrip }) => {
+export const DateSection: FC<Props> = ({ singleTrip, frequentTrip }) => {
   const { t } = useTranslation("TripDetailsPage");
   const { language } = useLanguage();
   return frequentTrip.startDate && frequentTrip.endDate ? (

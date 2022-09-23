@@ -36,7 +36,6 @@ export const DetailsCard: FC<Props> = ({ trip }) => {
         daysOfWeek={trip.frequent_trip_options?.day_of_week}
       />
       <DateSection
-        type={trip.type}
         singleTrip={trip.departure.time}
         frequentTrip={{
           startDate: trip.frequent_trip_options?.start_date,
@@ -45,33 +44,22 @@ export const DetailsCard: FC<Props> = ({ trip }) => {
       />
       <MapSection
         tripCoordinates={{
-          departure: [
-            parseFloat(trip.departure.location.coordinates[1].$numberDecimal),
-            parseFloat(trip.departure.location.coordinates[0].$numberDecimal),
-          ],
-          arrival: [
-            parseFloat(trip.arrival.location.coordinates[1].$numberDecimal),
-            parseFloat(trip.arrival.location.coordinates[0].$numberDecimal),
-          ],
+          departure: trip.departure.location.coordinates,
+          arrival: trip.arrival.location.coordinates,
         }}
       />
       <TripInfosSection
         departure={{
           time: trip.departure.time,
           placeName: trip.departure.place_name,
-          coordinates: [
-            trip.departure.location.coordinates[1].$numberDecimal,
-            trip.departure.location.coordinates[0].$numberDecimal,
-          ],
+          coordinates: trip.departure.location.coordinates,
         }}
         arrival={{
           time: trip.arrival.time,
           placeName: trip.arrival.place_name,
-          coordinates: [
-            trip.arrival.location.coordinates[1].$numberDecimal,
-            trip.arrival.location.coordinates[0].$numberDecimal,
-          ],
+          coordinates: trip.arrival.location.coordinates,
         }}
+        distance={trip.distance}
       />
       <DriverSection
         tripId={trip._id}

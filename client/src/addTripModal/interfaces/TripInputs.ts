@@ -6,7 +6,7 @@ export interface Location {
 }
 
 interface FrequentTrips {
-  day_of_week?: number[];
+  day_of_week: number[];
   start_date: string;
   end_date: string;
 }
@@ -30,6 +30,8 @@ export interface TripInputs {
     total: number;
   };
   free_seats: number;
+  distance: number;
+  trip_duration: number;
 }
 
 export const locationInitializer = {
@@ -60,4 +62,6 @@ export const tripInputsInitializer: TripInputs = {
     total: 0,
   },
   free_seats: 1,
+  distance: 0,
+  trip_duration: 0,
 };

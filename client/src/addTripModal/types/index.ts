@@ -1,1 +1,7 @@
-export type { FirstAddProps, UseFirstAddManager } from "./FirstAddTypes";
+export type {
+  FirstAddProps,
+  SetInputProp,
+  UseFirstAddManager,
+  CoordinatesProps,
+  UseSecondMapSectionManager,
+} from "./FirstAddTypes";

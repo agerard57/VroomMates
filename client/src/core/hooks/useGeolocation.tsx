@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useGeolocated } from "react-geolocated";
 
 type GeolocationManager = () => {
-  coordinates: number[];
+  coordinates: [number, number] | [];
   address: string;
 };
 
@@ -32,7 +32,7 @@ export const useGeolocation: GeolocationManager = () => {
   }, [coordinates]);
 
   return {
-    coordinates: coordinates,
+    coordinates: coordinates as [number, number],
     address,
   };
 };

@@ -30,11 +30,10 @@ const tripsSchema = mongoose.Schema(
       day_of_week: {
         type: ["number"],
         enum: [0, 1, 2, 3, 4, 5, 6],
-        required: true,
         default: undefined,
       },
-      start_date: { type: "Date", required: true },
-      end_date: { type: "Date", required: true },
+      start_date: "Date",
+      end_date: "Date",
     },
     departure: {
       location: {
@@ -58,7 +57,7 @@ const tripsSchema = mongoose.Schema(
       type: "number",
     },
     price_per_seat: {
-      km_price: {
+      driver_fee: {
         type: "number",
         required: true,
       },
@@ -69,7 +68,7 @@ const tripsSchema = mongoose.Schema(
       total: {
         type: "number",
         required: true,
-        /*         default: km_price + service_fee,*/
+        /*         default: driver_fee + service_fee,*/
       },
     },
     trip_duration: {
@@ -88,8 +87,6 @@ const tripsSchema = mongoose.Schema(
   },
   { collection: "Trips" }
 );
-
-tripsSchema.index({ id: 1 }, { unique: true });
 
 tripsSchema.plugin(uniqueValidator);
 

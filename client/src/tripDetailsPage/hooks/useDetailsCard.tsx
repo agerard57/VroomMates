@@ -7,7 +7,7 @@ import { Trip, TripInitializer } from "../interfaces";
 import { getTrip } from "../services";
 
 export const useDetailsCard = (): { trip: Trip } => {
-  const { t } = useTranslation("DetailsCard");
+  const { t } = useTranslation("TripDetailsPage");
 
   const [trip, setTrip] = useState<Trip>(TripInitializer);
   const { id } = useParams();

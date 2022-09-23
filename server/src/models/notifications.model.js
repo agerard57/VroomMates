@@ -34,8 +34,6 @@ const notificationsSchema = mongoose.Schema(
   { collection: "Notifications" }
 );
 
-notificationsSchema.index({ id: 1 }, { unique: true });
-
 notificationsSchema.plugin(uniqueValidator);
 
 const notificationModel = mongoose.model("Notifications", notificationsSchema);

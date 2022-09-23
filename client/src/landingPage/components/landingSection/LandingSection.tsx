@@ -18,7 +18,7 @@ export const LandingSection: FC = () => {
           #86b6ff 82.15%,
           rgba(136, 183, 255, 0) 100%
         );
-        height: 100vh;
+        height: 120vh;
       `}
     >
       <h1

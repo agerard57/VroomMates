@@ -8,7 +8,7 @@ export const useDaysDisplay = (tripDays?: number[]) => {
   const { t } = useTranslation("Core");
   const { language } = useLanguage();
 
-  const displayedDays = [
+  const daysArray = [
     t("days.sunday"), // 0
     t("days.monday"), // 1
     t("days.tuesday"), // 2
@@ -18,30 +18,30 @@ export const useDaysDisplay = (tripDays?: number[]) => {
     t("days.saturday"), // 6
   ];
 
-  const days = displayedDays.map((day, index) => {
-    if (tripDays !== undefined)
-      return tripDays.includes(index) ? (
-        <span
-          key={index}
-          css={css`
-            color: black;
-          `}
-        >
-          {day}
-        </span>
-      ) : (
-        <span
-          key={index}
-          css={css`
-            color: #bdbdbd;
-          `}
-        >
-          {day}
-        </span>
-      );
-    else return null;
-  });
+  const displayDays = daysArray.map((day, index) =>
+    tripDays && tripDays.includes(index) ? (
+      <span
+        key={index}
+        css={css`
+          color: black;
+        `}
+      >
+        {day}
+      </span>
+    ) : (
+      <span
+        key={index}
+        css={css`
+          color: #bdbdbd;
+        `}
+      >
+        {day}
+      </span>
+    )
+  );
+
   // In english, we display sunday first, this is not the case in french.
-  if (language !== "en") days.push(days.splice(0, 1)[0]);
-  return { days };
+  if (language !== "en") displayDays.push(displayDays.splice(0, 1)[0]);
+
+  return { daysArray, displayDays };
 };

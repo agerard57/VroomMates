@@ -63,12 +63,6 @@ export const useThirdAbout: UseThirdAboutManager = (setAboutInputsFilled) => {
 
   useEffect(() => {
     return () => {
-      componentWillUnmount.current = true;
-    };
-  }, []);
-
-  useEffect(() => {
-    return () => {
       if (componentWillUnmount.current)
         postAbout(inputs).then((res) => {
           if (res.status === 200) toast.success(t(res.message));

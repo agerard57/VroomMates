@@ -119,8 +119,6 @@ const userSchema = mongoose.Schema(
   { collection: "Users" }
 );
 
-userSchema.index({ id: 1 }, { unique: true });
-
 userSchema.plugin(uniqueValidator);
 
 const UsersModel = mongoose.model("Users", userSchema);

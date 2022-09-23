@@ -36,8 +36,6 @@ const driversSchema = mongoose.Schema(
   { collection: "Drivers" }
 );
 
-driversSchema.index({ user: 1 }, { unique: true });
-
 driversSchema.plugin(uniqueValidator);
 
 const driversModel = mongoose.model("Drivers", driversSchema);

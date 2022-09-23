@@ -13,16 +13,23 @@ export const DescriptionSection: FC = () => {
     <section>
       <Container
         css={css`
-          padding: 5vw;
+          padding: 2rem;
         `}
       >
         <Row
           css={css`
-            padding: 5vw 0;
+            padding-bottom: 2rem;
           `}
         >
           <Col>
-            <h3>{t("descriptionSection.title")}</h3>
+            <h3
+              css={css`
+                white-space: pre-wrap;
+                font-size: 1.2rem;
+              `}
+            >
+              {t("descriptionSection.title")}
+            </h3>
           </Col>
           <Col>
             <img

@@ -5,11 +5,8 @@ import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { useGeolocation, Inputs } from "../..";
-import {
-  ArrivalIcon,
-  CalendarIcon,
-  DepartureIcon,
-} from "../../../landingPage/assets";
+import { CalendarIcon } from "../../../core";
+import { ArrivalIcon, DepartureIcon } from "../../../landingPage/assets";
 import { SearchBoxTypes } from "../../types";
 
 export const OpenedSearchBox: FC<SearchBoxTypes["OpenedSearchBox"]> = ({

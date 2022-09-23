@@ -8,6 +8,7 @@ export {
   AllSetImage,
   RegisterImage,
   NotFoundImage,
+  CalendarIcon,
 } from "./assets";
 
 export {
@@ -38,7 +39,12 @@ export {
   logout,
 } from "./helpers";
 
-export type { UserTypes, AuthToken, LoggedUserDataProps } from "./types";
+export type {
+  UserTypes,
+  AuthToken,
+  LoggedUserDataProps,
+  TripTypes,
+} from "./types";
 
 export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";
 

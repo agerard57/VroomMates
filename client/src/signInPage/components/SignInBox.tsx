@@ -61,7 +61,7 @@ export const SignInBox: FC = () => {
             padding-top: 1rem;
           `}
         >
-          <Inputs.Checkbox
+          <Inputs.CheckboxInput
             inputName="rememberMe"
             labelContent={t("signInSection.rememberMe")}
           />

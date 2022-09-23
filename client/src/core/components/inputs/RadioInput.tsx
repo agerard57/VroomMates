@@ -50,6 +50,7 @@ export const RadioInput: FC<Props> = ({
         value={radioValue}
         checked={isActive}
         onClick={onClickRadio}
+        onChange={() => {}}
       />
       <span>{inputPlaceholder}</span>
     </label>

@@ -15,10 +15,7 @@ export const useMapSection: StatsSectionOptions = (tripCoordinates) => {
   const { language } = useLanguage();
 
   useEffect(() => {
-    if (
-      tripCoordinates.departure !== [0, 0] &&
-      tripCoordinates.arrival !== [0, 0]
-    ) {
+    if (tripCoordinates.departure && tripCoordinates.arrival) {
       const llb = new mapboxgl.LngLatBounds(
         tripCoordinates.departure,
         tripCoordinates.arrival

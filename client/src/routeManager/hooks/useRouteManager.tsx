@@ -29,14 +29,12 @@ export const useRouteManager = (): RouteManagerManager => {
         jwt_decode(cookie);
 
       if (decodedToken.exp * 1000 < currentDate.getTime()) {
-        tokenService.refreshAuthToken(cookie).then((response) => {
+        tokenService.refreshAuthToken().then((response) => {
           if (response.status === 200) {
-            cookiesManager.setCookie("authToken", response.authToken, true);
             setLoggedUserData(response.data);
             setIsUserLoggedIn(true);
             setIsLoading(false);
           } else if (response.status === 401) {
-            cookiesManager.deleteCookie("authToken");
             setIsUserLoggedIn(false);
             setIsLoading(false);
           }

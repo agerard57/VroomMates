@@ -35,8 +35,7 @@
         "to": "to",
         "seatAvailableTitle_one": "Seat available",
         "seatAvailableTitle_other": "Seats available",
-        "singlePrice": "Seat price",
-        "frequentPrice": "Seat price per trip"
+        "price": "Seat price"
       },
       "nextButtonText": "Close the page"
     }

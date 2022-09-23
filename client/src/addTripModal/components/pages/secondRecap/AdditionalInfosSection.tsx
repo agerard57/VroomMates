@@ -53,7 +53,7 @@ export const AdditionalInfosSection: FC<Props> = ({
       </Row>
       <Row>
         <Col>
-          <span>{t("page.1.body.frequentPrice")}</span>
+          <span>{t("page.1.body.price")}</span>
         </Col>
         <Col>
           <span>{normalizePrice(totalPricePerSeat, language)}</span>

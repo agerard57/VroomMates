@@ -7,13 +7,13 @@ import { LanguageCode } from "../types";
 
 export function useLanguage(): {
   language: LanguageCode;
-  change: () => Promise<TFunction>;
+  change: (lang: LanguageCode) => Promise<TFunction>;
 } {
   if (!isLanguageCode(i18n.language))
     throw new Error(`Unknown language code: ${i18n.language}`);
 
   const [language, setLang] = useState<LanguageCode>(i18n.language);
-  const change = () => i18n.changeLanguage(language === "fr" ? "en" : "fr");
+  const change = (lang: LanguageCode) => i18n.changeLanguage(lang);
 
   i18n.on("languageChanged", (newLanguage: string) => {
     if (!isLanguageCode(newLanguage))

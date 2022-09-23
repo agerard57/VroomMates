@@ -13,14 +13,12 @@ export const useRegisterCompleteModalBuilder: UseRegisterCompleteModalBuilderMan
     const [aboutInputsFilled, setAboutInputsFilled] = useState(false);
 
     const finalPageAction = () => {
-      tokenService
-        .refreshAuthToken(cookiesManager.getCookie("authToken"))
-        .then((response) => {
-          if (response.status === 200) {
-            cookiesManager.setCookie("authToken", response.authToken, true);
-          }
-          window.location.href = "/";
-        });
+      tokenService.refreshAuthToken().then((response) => {
+        if (response.status === 200) {
+          cookiesManager.setCookie("authToken", response.authToken, true);
+        }
+        window.location.href = "/";
+      });
     };
 
     useEffect(() => {

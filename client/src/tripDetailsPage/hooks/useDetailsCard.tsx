@@ -23,7 +23,7 @@ export const useDetailsCard = (): { trip: Trip } => {
           }
         })
         .catch((_err) => {
-          window.location.href = "/error?code=404";
+          window.location.href = "/";
         });
     }
   }, [id]);

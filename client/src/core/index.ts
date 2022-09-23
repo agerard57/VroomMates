@@ -25,6 +25,7 @@ export {
   MenuListItem,
   Toaster,
   SearchBox,
+  Footer,
 } from "./components";
 
 export {

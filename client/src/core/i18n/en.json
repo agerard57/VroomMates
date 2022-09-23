@@ -45,5 +45,28 @@
     },
     "date": "When?",
     "searchButton": "Find me a VroomMate!"
+  },
+
+  "footer": {
+    "language": "Language:",
+    "about": {
+      "title": "About us:",
+      "text": "We are a platform made as a project by two students at Metz Numeric School. We poured months of our lives as well as our <3 into this project and we hope you'll like it :) "
+    },
+    "contact": {
+      "title": "Contact us:",
+      "me": "GERARD Alexandre",
+      "email": "vroommates@agerard.dev"
+    },
+    "t&c": {
+      "title": "Terms & Conditions:",
+      "privacyPolicy": "Privacy policy",
+      "cookiesPolicy": "Cookies policy"
+    },
+    "button": "Go back up",
+    "bottom": {
+      "left": "©2022 VroomMates",
+      "right": "All rights reserved."
+    }
   }
 }

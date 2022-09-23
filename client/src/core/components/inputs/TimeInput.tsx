@@ -31,6 +31,9 @@ export const TimeInput: FC<Props> = ({ inputName, onChange, isRequired }) => {
       css={InputStyle}
       onChange={onChange}
       required={isRequired}
+      // values are plausible
+      min="00:00"
+      max="23:59"
     />
   );
 };

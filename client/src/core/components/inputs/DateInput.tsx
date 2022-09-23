@@ -48,6 +48,9 @@ export const DateInput: FC<Props> = ({
       value={value}
       onChange={onChange}
       required={isRequired}
+      // values are plausible
+      min="1900-01-01"
+      max="2040-12-31"
     />
   );
 };

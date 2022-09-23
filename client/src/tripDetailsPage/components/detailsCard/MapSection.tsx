@@ -31,7 +31,9 @@ export const MapSection: FC<Props> = ({ tripCoordinates }) => {
           height: 200px;
           border-radius: 10px;
         `}
-      />
+      >
+        <span>WebGL not supported</span>
+      </div>
     </Row>
   );
 };

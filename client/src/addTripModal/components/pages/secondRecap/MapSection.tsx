@@ -30,7 +30,9 @@ export const MapSection: FC<CoordinatesProps> = ({
           border-radius: 10px;
           margin-bottom: 1rem;
         `}
-      />
+      >
+        <span>WebGL not supported</span>
+      </div>
     </Row>
   );
 };

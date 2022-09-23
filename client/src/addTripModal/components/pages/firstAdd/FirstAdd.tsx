@@ -5,30 +5,22 @@ import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { useFirstAdd } from "../../../hooks";
-import { TripInputs } from "../../../interfaces";
 import { DaysSection } from "./DaysSection";
 import { FrequentEndDateSection } from "./FrequentEndDateSection";
 import { FrequentStartDateSection } from "./FrequentStartDateSection";
 import { MapSection } from "./MapSection";
 import { SeatsSection } from "./SeatsSection";
+import { SingleStartDateSection } from "./SingleStartDateSection";
 import { TypeSection } from "./TypeSection";
 
 type Props = {
-  inputs: TripInputs;
-  setInputs: Dispatch<SetStateAction<TripInputs>>;
+  setTripInputsFilled: Dispatch<SetStateAction<boolean>>;
 };
 
-export const FirstAdd: FC<Props> = ({ inputs, setInputs }) => {
+export const FirstAdd: FC<Props> = ({ setTripInputsFilled }) => {
   const { t } = useTranslation("AddTripModal");
 
-  const {
-    typeSectionProps,
-    startFrequentDateSectionProps,
-    endFrequentDateSectionProps,
-    daysSectionProps,
-    mapSectionProps,
-    seatsSectionProps,
-  } = useFirstAdd(inputs, setInputs);
+  const { inputs, setInputs } = useFirstAdd(setTripInputsFilled);
 
   return (
     <Container
@@ -59,16 +51,18 @@ export const FirstAdd: FC<Props> = ({ inputs, setInputs }) => {
       </Row>
       <Row>
         <form>
-          <TypeSection typeSectionProps={typeSectionProps} />
-          <FrequentStartDateSection
-            startFrequentDateSectionProps={startFrequentDateSectionProps}
-          />
-          <FrequentEndDateSection
-            endFrequentDateSectionProps={endFrequentDateSectionProps}
-          />
-          <DaysSection daysSectionProps={daysSectionProps} />
-          <MapSection mapSectionProps={mapSectionProps} />
-          <SeatsSection seatsSectionProps={seatsSectionProps} />
+          <TypeSection inputs={inputs} setInputs={setInputs} />
+          {inputs.type === "single" ? (
+            <SingleStartDateSection setInputs={setInputs} />
+          ) : (
+            <>
+              <FrequentStartDateSection setInputs={setInputs} />
+              <FrequentEndDateSection setInputs={setInputs} />
+              <DaysSection setInputs={setInputs} />
+            </>
+          )}
+          <MapSection setInputs={setInputs} />
+          <SeatsSection inputs={inputs} setInputs={setInputs} />
         </form>
       </Row>
     </Container>

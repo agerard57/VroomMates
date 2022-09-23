@@ -5,16 +5,12 @@ import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { useDaysDisplay, Inputs } from "../../../../core";
-import { FirstAddProps } from "../../../types";
+import { SetInputProp } from "../../../types";
 
-type Props = { daysSectionProps: FirstAddProps["daysSectionProps"] };
-
-export const DaysSection: FC<Props> = ({ daysSectionProps }) => {
+export const DaysSection: FC<SetInputProp> = ({ setInputs }) => {
   const { t } = useTranslation("AddTripModal");
 
   const { daysArray } = useDaysDisplay();
-
-  const { days, setDays } = daysSectionProps;
 
   return (
     <Row>
@@ -53,11 +49,18 @@ export const DaysSection: FC<Props> = ({ daysSectionProps }) => {
               inputName={day}
               inputPlaceholder={day}
               onClickCheckbox={() => {
-                if (days?.includes(index)) {
-                  setDays(days.filter((day) => day !== index));
-                } else {
-                  setDays([...(days || []), index]);
-                }
+                setInputs((prev) => ({
+                  ...prev,
+                  frequent_trip_options: {
+                    ...prev.frequent_trip_options,
+                    day_of_week:
+                      prev.frequent_trip_options.day_of_week.includes(index)
+                        ? prev.frequent_trip_options.day_of_week.filter(
+                            (item) => item !== index
+                          )
+                        : [...prev.frequent_trip_options.day_of_week, index],
+                  },
+                }));
               }}
             />
           </span>

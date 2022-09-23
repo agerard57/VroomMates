@@ -6,12 +6,8 @@ import { useTranslation } from "react-i18next";
 import { Inputs } from "../../../../core";
 import { FirstAddProps } from "../../../types";
 
-type Props = { typeSectionProps: FirstAddProps["typeSectionProps"] };
-
-export const TypeSection: FC<Props> = ({ typeSectionProps }) => {
+export const TypeSection: FC<FirstAddProps> = ({ inputs, setInputs }) => {
   const { t } = useTranslation("AddTripModal");
-
-  const { typeChecked, setTypeChecked } = typeSectionProps;
 
   return (
     <Row>
@@ -20,8 +16,10 @@ export const TypeSection: FC<Props> = ({ typeSectionProps }) => {
           inputName="type"
           radioValue="single"
           inputPlaceholder={t("page.0.body.type.single")}
-          activeRadio={typeChecked}
-          onClickRadio={() => setTypeChecked("single")}
+          activeRadio={inputs.type}
+          onClickRadio={() =>
+            setInputs((prev) => ({ ...prev, type: "single" }))
+          }
         />
       </Col>
       <Col>
@@ -29,8 +27,10 @@ export const TypeSection: FC<Props> = ({ typeSectionProps }) => {
           inputName="type"
           radioValue="frequent"
           inputPlaceholder={t("page.0.body.type.frequent")}
-          activeRadio={typeChecked}
-          onClickRadio={() => setTypeChecked("frequent")}
+          activeRadio={inputs.type}
+          onClickRadio={() =>
+            setInputs((prev) => ({ ...prev, type: "frequent" }))
+          }
         />
       </Col>
     </Row>

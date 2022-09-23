@@ -4,17 +4,13 @@ import { FC } from "react";
 import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { useMapSection } from "../../../hooks";
-import { FirstAddProps } from "../../../types";
+import { useFirstMapSection } from "../../../hooks";
+import { SetInputProp } from "../../../types";
 
-type Props = { mapSectionProps: FirstAddProps["mapSectionProps"] };
-
-export const MapSection: FC<Props> = ({ mapSectionProps }) => {
+export const MapSection: FC<SetInputProp> = ({ setInputs }) => {
   const { t } = useTranslation("AddTripModal");
 
-  const { setMapboxData } = mapSectionProps;
-
-  useMapSection(setMapboxData);
+  useFirstMapSection(setInputs);
 
   return (
     <Row
@@ -41,8 +37,8 @@ export const MapSection: FC<Props> = ({ mapSectionProps }) => {
         `}
       >
         <div
-          className="mapWrapper"
-          id="map"
+          className="mapOneWrapper"
+          id="mapOne"
           css={css`
             height: 40vh;
             overflow-x: scroll;

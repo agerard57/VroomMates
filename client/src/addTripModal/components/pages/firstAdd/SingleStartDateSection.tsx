@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { CalendarIcon, Inputs } from "../../../../core";
 import { SetInputProp } from "../../../types";
 
-export const FrequentStartDateSection: FC<SetInputProp> = ({ setInputs }) => {
+export const SingleStartDateSection: FC<SetInputProp> = ({ setInputs }) => {
   const { t } = useTranslation("AddTripModal");
 
   const [date, setDate] = useState<string>("");
@@ -41,7 +41,7 @@ export const FrequentStartDateSection: FC<SetInputProp> = ({ setInputs }) => {
             margin-bottom: 0.5rem;
           `}
         >
-          {t("page.0.body.date.frequentStartTitle")}
+          {t("page.0.body.date.singleStartTitle")}
         </p>
         <Inputs.Date
           inputName="departureDate"

@@ -7,12 +7,8 @@ import { useTranslation } from "react-i18next";
 import { Inputs } from "../../../../core";
 import { FirstAddProps } from "../../../types";
 
-type Props = { seatsSectionProps: FirstAddProps["seatsSectionProps"] };
-
-export const SeatsSection: FC<Props> = ({ seatsSectionProps }) => {
+export const SeatsSection: FC<FirstAddProps> = ({ inputs, setInputs }) => {
   const { t } = useTranslation("AddTripModal");
-
-  const { seatsAvailable, setSeatsAvailable } = seatsSectionProps;
 
   return (
     <Row>
@@ -28,15 +24,17 @@ export const SeatsSection: FC<Props> = ({ seatsSectionProps }) => {
         {t("page.0.body.seats.title")}
       </p>
       {[1, 2, 3, 4].map((seats) => (
-        <Col>
+        <Col key={seats}>
           <Inputs.Radio
             inputName="seats"
             radioValue={seats.toString()}
-            key={seats}
             inputPlaceholder={seats.toString()}
-            activeRadio={seatsAvailable.toString()}
+            activeRadio={inputs.free_seats.toString()}
             onClickRadio={() => {
-              setSeatsAvailable(seats);
+              setInputs({
+                ...inputs,
+                free_seats: seats,
+              });
             }}
           />
         </Col>

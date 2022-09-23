@@ -5,18 +5,10 @@ import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { CalendarIcon, Inputs } from "../../../../core";
-import { FirstAddProps } from "../../../types";
+import { SetInputProp } from "../../../types";
 
-type Props = {
-  endFrequentDateSectionProps: FirstAddProps["endFrequentDateSectionProps"];
-};
-
-export const FrequentEndDateSection: FC<Props> = ({
-  endFrequentDateSectionProps,
-}) => {
+export const FrequentEndDateSection: FC<SetInputProp> = ({ setInputs }) => {
   const { t } = useTranslation("AddTripModal");
-
-  const { setFrequentEndDate } = endFrequentDateSectionProps;
 
   return (
     <Row>
@@ -35,7 +27,13 @@ export const FrequentEndDateSection: FC<Props> = ({
         inputName="frequentEnd"
         icon={CalendarIcon}
         onChange={(e) => {
-          setFrequentEndDate(e.target.value);
+          setInputs((prev) => ({
+            ...prev,
+            frequent_trip_options: {
+              ...prev.frequent_trip_options,
+              end_date: e.target.value,
+            },
+          }));
         }}
         isRequired
       />

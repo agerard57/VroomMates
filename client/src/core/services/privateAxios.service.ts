@@ -9,7 +9,7 @@ axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 axios.interceptors.request.use(
   async (config) => {
-    if (authToken)
+    if (authToken && config.headers && !config.headers["x-access-token"])
       config.headers = {
         ...config.headers,
         "x-access-token": authToken,
@@ -23,18 +23,12 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   (response) => response,
   async (error) => {
-    const config = error?.config;
-
+    const config = error.config;
     if (error?.response?.status === 401 && !config?.sent) {
       config.sent = true;
-
       const result = await tokenService.refreshAuthToken();
-
-      if (result?.accessToken)
-        config.headers = {
-          ...config.headers,
-          "x-access-token": authToken,
-        };
+      if (result.status === 200)
+        config.headers["x-access-token"] = result.authToken;
 
       return axios(config);
     }

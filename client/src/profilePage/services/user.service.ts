@@ -1,4 +1,4 @@
-import { cookiesManager, privateAxios } from "../../core";
+import { privateAxios } from "../../core";
 
 const url = (id: string) => `${process.env?.REACT_APP_API_URL}/user/${id}`;
 

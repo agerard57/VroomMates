@@ -178,17 +178,19 @@ exports.signOut = (req, res) => {
     ignoreExpiration: true,
   });
 
-  UsersModel.findOneAndUpdate(
-    { _id: payload.id },
-    { $set: { refreshTokens: [] } },
-    (err, _user) => {
-      if (err) {
-        res.status(500).json({ message: err.message });
-        return;
+  if (token)
+    UsersModel.findOneAndUpdate(
+      { _id: payload.id },
+      { $set: { refreshTokens: [] } },
+      (err, _user) => {
+        if (err) {
+          res.status(500).json({ message: err.message });
+          return;
+        }
+        res.status(200).json({ message: "signOut.success" });
       }
-      res.status(200).json({ message: "signOut.success" });
-    }
-  );
+    );
+  else res.status(401).json({ message: "signOut.success" });
 };
 
 exports.closeAccount = (_req, res) => {

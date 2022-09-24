@@ -1,4 +1,3 @@
-import { cookiesManager } from "../helpers";
 import { privateAxios } from "./privateAxios.service";
 
 export const getProfilePicSrc = async (id: string) => {

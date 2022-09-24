@@ -1,21 +1,14 @@
 import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
 
-import {
-  AuthToken,
-  cookiesManager,
-  LoggedUserDataProps,
-  tokenService,
-} from "../../core";
+import { AuthToken, cookiesManager, LoggedUserDataProps } from "../../core";
 
 type RouteManagerManager = {
   isUserLoggedIn: boolean;
   loggedUserData: LoggedUserDataProps["loggedUserData"];
-  isLoading: boolean;
 };
 
 export const useRouteManager = (): RouteManagerManager => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false);
   const [loggedUserData, setLoggedUserData] =
     useState<LoggedUserDataProps["loggedUserData"]>(null);
@@ -24,30 +17,13 @@ export const useRouteManager = (): RouteManagerManager => {
     const cookie = cookiesManager.getCookie("authToken");
 
     if (cookie) {
-      const currentDate = new Date();
       const decodedToken: AuthToken["data"] & AuthToken["meta"] =
         jwt_decode(cookie);
 
-      if (decodedToken.exp * 1000 < currentDate.getTime())
-        tokenService.refreshAuthToken().then((response) => {
-          if (response.status === 200) {
-            setLoggedUserData(response.data);
-            setIsUserLoggedIn(true);
-            setIsLoading(false);
-          } else if (response.status === 401) {
-            setIsUserLoggedIn(false);
-            setIsLoading(false);
-          }
-        });
-      else {
-        setLoggedUserData(decodedToken);
-        setIsUserLoggedIn(true);
-        setIsLoading(false);
-      }
+      setLoggedUserData(decodedToken);
+      setIsUserLoggedIn(true);
     }
+  }, [cookiesManager.getCookie("authToken")]);
 
-    setIsLoading(false);
-  }, []);
-
-  return { isUserLoggedIn, loggedUserData, isLoading };
+  return { isUserLoggedIn, loggedUserData };
 };

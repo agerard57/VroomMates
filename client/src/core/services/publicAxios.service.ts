@@ -5,4 +5,6 @@ export const publicAxios = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  // Configures error handling for axios
+  validateStatus: (status) => status >= 200 && status < 500,
 });

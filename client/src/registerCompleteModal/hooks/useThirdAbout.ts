@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
@@ -55,21 +56,23 @@ export const useThirdAbout: UseThirdAboutManager = (setAboutInputsFilled) => {
     setAboutInputsFilled(inputs.hobbies.length > 0);
   }, [setAboutInputsFilled, inputs.hobbies.length]);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       componentWillUnmount.current = true;
-    };
-  }, []);
+    },
+    []
+  );
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (componentWillUnmount.current)
         postAbout(inputs).then((res) => {
           if (res.status === 200) toast.success(t(res.message));
           else toast.error(t(res.message));
         });
-    };
-  }, [inputs, t]);
+    },
+    [inputs, t]
+  );
 
   return {
     inputs,

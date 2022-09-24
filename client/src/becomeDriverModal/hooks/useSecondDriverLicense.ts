@@ -22,7 +22,7 @@ export const useSecondDriverLicense: UseSecondDriverLicenseManager = (
   const inputClickHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const fileObj = e.target.files && e.target.files[0];
 
-    if (fileObj && fileObj !== null) {
+    if (fileObj && fileObj !== null)
       if (fileObj.size > 5237880) {
         toast.error(t("messages.driverLicense.max"));
         return;
@@ -36,30 +36,30 @@ export const useSecondDriverLicense: UseSecondDriverLicenseManager = (
         };
         reader.readAsDataURL(fileObj);
       }
-    }
   };
 
   useEffect(() => {
     setDriverLicenseFilled(picObj !== null);
   }, [setDriverLicenseFilled, picObj]);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       componentWillUnmount.current = true;
-    };
-  }, []);
+    },
+    []
+  );
 
-  useEffect(() => {
-    return () => {
-      if (componentWillUnmount.current) {
+  useEffect(
+    () => () => {
+      if (componentWillUnmount.current)
         if (picObj !== null)
           postDriversLicense(picObj).then((res) => {
             if (res.status === 201) toast.success(t(res.message));
             else toast.error(t(res.message));
           });
-      }
-    };
-  }, [defaultDriverLicenseSrc, picObj, driverLicense, t]);
+    },
+    [defaultDriverLicenseSrc, picObj, driverLicense, t]
+  );
 
   return {
     driverLicense,

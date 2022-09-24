@@ -13,9 +13,7 @@ export const useSecondGoodbye = () => {
       if (response.status === 204) {
         cookiesManager.deleteCookie("authToken");
         toast.success(t(response.message));
-      } else {
-        toast.error(t(response.message));
-      }
+      } else toast.error(t(response.message));
     });
   }, [t]);
 };

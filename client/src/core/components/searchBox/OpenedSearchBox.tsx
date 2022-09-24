@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { Inputs } from "../..";
 import { CalendarIcon } from "../../../core";
-import { ArrivalIcon, DepartureIcon } from "../../../landingPage/assets";
+import { ArrivalIcon, DepartureIcon } from "../../assets";
 import { SearchBoxTypes } from "../../types";
 
 export const OpenedSearchBox: FC<SearchBoxTypes["OpenedSearchBox"]> = ({
@@ -120,7 +120,9 @@ export const OpenedSearchBox: FC<SearchBoxTypes["OpenedSearchBox"]> = ({
         <Inputs.Button
           type="primary"
           buttonType="submit"
-          optionalStyling={`margin-top:10px`}
+          optionalStyling={css`
+            margin-top: 10px;
+          `}
           disabled={
             searchInputs.type === "" ||
             !searchInputs.departureLocation ||

@@ -188,7 +188,7 @@ export const SignUpBox: FC = () => {
           <Inputs.Button
             type="primary"
             buttonType="submit"
-            optionalStyling={`
+            optionalStyling={css`
               margin: 1rem 0;
             `}
           >

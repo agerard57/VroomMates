@@ -62,14 +62,13 @@ export const ReviewsCard: FC<Props> = ({
         {displayStats ? (
           <>
             <div>
-              {[1, 2, 3, 4, 5].map((star) => {
-                return (
-                  <StatsSection
-                    title={t(`reviews.stars.${star}`)}
-                    number={nbReviews(star, userReviews)}
-                  />
-                );
-              })}
+              {[1, 2, 3, 4, 5].map((star) => (
+                <StatsSection
+                  title={t(`reviews.stars.${star}`)}
+                  number={nbReviews(star, userReviews)}
+                  key={star}
+                />
+              ))}
             </div>
             <hr />
           </>

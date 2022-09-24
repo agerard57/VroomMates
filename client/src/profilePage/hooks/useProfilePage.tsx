@@ -37,15 +37,14 @@ export const useProfilePage = (
       if (id) {
         getUserById(id);
         // Is this the logged user's profile?
-        if (loggedUserData.id === id) {
-          setPageType("up");
-          // Is the logged user an admin?
-        } else if (loggedUserData.role === "admin") {
-          // Is the fetched user an admin?
-          user.status === "admin" ? setPageType("a2a") : setPageType("a2u");
-        } else {
-          setPageType("u2u");
-        }
+        if (loggedUserData.id === id) setPageType("up");
+        // Is the logged user an admin?
+        else if (loggedUserData.role === "admin")
+          if (user.status === "admin")
+            // Is the fetched user an admin?
+            setPageType("a2a");
+          else setPageType("a2u");
+        else setPageType("u2u");
       } else {
         getUserById(loggedUserData.id);
         setPageType("up");

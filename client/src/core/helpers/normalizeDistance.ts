@@ -8,7 +8,7 @@ export const normalizeDistance = (
   displayUnit = false
 ): string => {
   //Mile to Kilometer if "fr"
-  if (language === "fr") {
+  if (language === "fr")
     return `${(value * 1.51).toFixed(0)}${displayUnit ? " km." : ""}`;
-  } else return `${value.toString()}${displayUnit ? " mi." : ""}`;
+  return `${value.toString()}${displayUnit ? " mi." : ""}`;
 };

@@ -26,11 +26,9 @@ const refreshAuthToken = mem(
         const decodedToken: AuthToken["data"] & AuthToken["meta"] = jwt_decode(
           data.authToken
         );
-        if (decodedToken.rememberMe) {
+        if (decodedToken.rememberMe)
           cookiesManager.setCookie("authToken", data.authToken, true);
-        } else {
-          cookiesManager.setCookie("authToken", data.authToken, false);
-        }
+        else cookiesManager.setCookie("authToken", data.authToken, false);
       } else if (response.status === 401)
         cookiesManager.deleteCookie("authToken");
       window.location.href = "/profile/login";

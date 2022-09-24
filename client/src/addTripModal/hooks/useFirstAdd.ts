@@ -9,17 +9,17 @@ export const useFirstAdd: UseFirstAddManager = (setTripInputsFilled) => {
   const componentWillUnmount = useRef<boolean>(false);
 
   useEffect(() => {
-    setTripInputsFilled(() => {
-      return inputs.departure.time !== "" &&
-        inputs.arrival.time !== "" &&
-        inputs.type === "single" &&
-        inputs.departure.place_name !== "" &&
-        inputs.arrival.place_name !== ""
+    setTripInputsFilled(() =>
+      inputs.departure.time !== "" &&
+      inputs.arrival.time !== "" &&
+      inputs.type === "single" &&
+      inputs.departure.place_name !== "" &&
+      inputs.arrival.place_name !== ""
         ? true
         : inputs.frequent_trip_options.end_date !== ""
         ? true
-        : false;
-    });
+        : false
+    );
   }, [
     inputs.departure.time,
     inputs.arrival.time,
@@ -30,11 +30,12 @@ export const useFirstAdd: UseFirstAddManager = (setTripInputsFilled) => {
     setTripInputsFilled,
   ]);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       componentWillUnmount.current = true;
-    };
-  }, []);
+    },
+    []
+  );
 
   useEffect(
     () => localStorage.setItem("tripInputs", JSON.stringify(inputs)),

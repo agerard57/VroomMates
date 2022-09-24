@@ -1,3 +1,5 @@
+/* eslint-disable import/no-internal-modules */
+
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";

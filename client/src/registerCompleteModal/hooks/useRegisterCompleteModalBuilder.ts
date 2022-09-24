@@ -14,9 +14,9 @@ export const useRegisterCompleteModalBuilder: UseRegisterCompleteModalBuilderMan
 
     const finalPageAction = () => {
       tokenService.refreshAuthToken().then((response) => {
-        if (response.status === 200) {
+        if (response.status === 200)
           cookiesManager.setCookie("authToken", response.authToken, true);
-        }
+
         window.location.href = "/";
       });
     };

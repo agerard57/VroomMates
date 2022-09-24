@@ -15,17 +15,15 @@ export const useDetailsCard = (): { trip: Trip } => {
   usePageTitle(t("title"));
 
   useEffect(() => {
-    if (id) {
+    if (id)
       getTrip(id)
         .then((trip) => {
-          if (trip) {
-            setTrip(trip);
-          }
+          if (trip) setTrip(trip);
         })
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .catch((_err) => {
           window.location.href = "/";
         });
-    }
   }, [id]);
 
   return { trip };

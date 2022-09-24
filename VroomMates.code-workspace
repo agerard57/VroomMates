@@ -27,14 +27,22 @@
   ],
   "settings": {
     "cSpell.words": [
+      "backreference",
+      "cashify",
       "DBNAME",
+      "echarts",
+      "geolocate",
       "Geolocated",
+      "languagedetector",
       "mapbox",
       "mapboxgl",
       "Middlewares",
+      "parens",
       "Plein",
       "Signin",
-      "VroomMates"
+      "trivago",
+      "VroomMates",
+      "wayname"
     ],
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,

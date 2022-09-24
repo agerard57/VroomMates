@@ -26,19 +26,15 @@ export const useSignInBox = (): SignInBoxManager => {
     const email = data.get("email");
     const password = data.get("password");
     const rememberMe = data.get("rememberMe") === "on" ? true : false;
-    if (email && password) {
+    if (email && password)
       postLogin(email, password, rememberMe).then((response) => {
         if (response.status === 200) {
           cookiesManager.setCookie("authToken", response.authToken, rememberMe);
           toast.success(t(response.message));
-          response.isFirstLogin
-            ? openModal(screens)
-            : (window.location.href = "/");
-        } else {
-          toast.error(t(response.message));
-        }
+          if (response.isFirstLogin) openModal(screens);
+          else window.location.href = "/";
+        } else toast.error(t(response.message));
       });
-    }
   };
 
   return { handleSubmit };

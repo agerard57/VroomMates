@@ -28,7 +28,7 @@ export const useRouteManager = (): RouteManagerManager => {
       const decodedToken: AuthToken["data"] & AuthToken["meta"] =
         jwt_decode(cookie);
 
-      if (decodedToken.exp * 1000 < currentDate.getTime()) {
+      if (decodedToken.exp * 1000 < currentDate.getTime())
         tokenService.refreshAuthToken().then((response) => {
           if (response.status === 200) {
             setLoggedUserData(response.data);
@@ -39,7 +39,7 @@ export const useRouteManager = (): RouteManagerManager => {
             setIsLoading(false);
           }
         });
-      } else {
+      else {
         setLoggedUserData(decodedToken);
         setIsUserLoggedIn(true);
         setIsLoading(false);

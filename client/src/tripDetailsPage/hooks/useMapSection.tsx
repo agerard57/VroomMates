@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+// eslint-disable-next-line import/no-internal-modules
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import mapboxgl from "mapbox-gl";
 import { ZoomControl } from "mapbox-gl-controls";

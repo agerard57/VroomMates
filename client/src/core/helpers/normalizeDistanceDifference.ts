@@ -32,13 +32,8 @@ export const normalizeDistanceDifference: NormalizeDistanceDifferenceManager = (
   const distanceInKmRound = Math.round(distanceInKm * accuracy) / accuracy;
   const distanceInMRound = Math.round(distanceInM * accuracy) / accuracy;
 
-  if (lang === "fr") {
-    if (distanceInKmRound < 1) {
-      return `${distanceInMRound}m`;
-    } else {
-      return `${distanceInKmRound}km`;
-    }
-  } else {
-    return `${distanceInMiRound}mi`;
-  }
+  if (lang === "fr")
+    if (distanceInKmRound < 1) return `${distanceInMRound}m`;
+    else return `${distanceInKmRound}km`;
+  return `${distanceInMiRound}mi`;
 };

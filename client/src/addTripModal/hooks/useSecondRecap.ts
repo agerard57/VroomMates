@@ -14,15 +14,12 @@ export const useSecondRecap = () => {
     if (localStorageInputs) {
       setInputs(JSON.parse(localStorageInputs));
       postTrip(JSON.parse(localStorageInputs)).then((res) => {
-        if (res.status === 201) {
+        if (res.status === 201 && localStorageInputs) {
           toast.success(t(res.message));
-          setInputs(JSON.parse(localStorage.getItem("tripInputs")!));
-        } else {
-          toast.error(t(res.message));
-        }
+          setInputs(JSON.parse(localStorageInputs));
+        } else toast.error(t(res.message));
       });
     } else setInputs(tripInputsInitializer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { inputs };

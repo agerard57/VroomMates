@@ -25,16 +25,15 @@ export const useSecondProfilePic: UseSecondProfilePicManager = (
       if (fileObj.size > 3142728) {
         toast.error(t("messages.profilePic.max"));
         return;
-      } else {
-        const reader = new FileReader();
-
-        setPicObj(fileObj);
-        setProfilePicFilled(true);
-        reader.onloadend = () => {
-          setProfilePic(URL.createObjectURL(fileObj));
-        };
-        reader.readAsDataURL(fileObj);
       }
+      const reader = new FileReader();
+
+      setPicObj(fileObj);
+      setProfilePicFilled(true);
+      reader.onloadend = () => {
+        setProfilePic(URL.createObjectURL(fileObj));
+      };
+      reader.readAsDataURL(fileObj);
     }
   };
 
@@ -42,22 +41,24 @@ export const useSecondProfilePic: UseSecondProfilePicManager = (
     setProfilePicFilled(picObj !== null);
   }, [setProfilePicFilled, picObj]);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       componentWillUnmount.current = true;
-    };
-  }, []);
+    },
+    []
+  );
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (componentWillUnmount.current)
         if (profilePic !== defaultProfilePicSrc && picObj !== null)
           postProfilePic(picObj).then((res) => {
             if (res.status === 200) toast.success(t(res.message));
             else toast.error(t(res.message));
           });
-    };
-  }, [defaultProfilePicSrc, picObj, profilePic, t]);
+    },
+    [defaultProfilePicSrc, picObj, profilePic, t]
+  );
 
   return {
     profilePic,

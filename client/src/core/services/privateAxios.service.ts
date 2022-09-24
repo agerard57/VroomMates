@@ -9,12 +9,11 @@ axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 axios.interceptors.request.use(
   async (config) => {
-    if (authToken) {
+    if (authToken)
       config.headers = {
         ...config.headers,
         "x-access-token": authToken,
       };
-    }
 
     return config;
   },
@@ -31,12 +30,11 @@ axios.interceptors.response.use(
 
       const result = await tokenService.refreshAuthToken();
 
-      if (result?.accessToken) {
+      if (result?.accessToken)
         config.headers = {
           ...config.headers,
           "x-access-token": authToken,
         };
-      }
 
       return axios(config);
     }

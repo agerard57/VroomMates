@@ -41,5 +41,5 @@ export const Driver: FC<Props> = ({ status }) => {
         />
       </section>
     );
-  else return null;
+  return null;
 };

@@ -22,12 +22,14 @@ export const useModalManager = (): UseModalManager => {
 
   const previous = () => {
     slideSpecs[slideNumber].previousButtonAction?.();
-    slideNumber === 0 ? closeModal() : setSlideNumber(slideNumber - 1);
+    if (slideNumber === 0) closeModal();
+    else setSlideNumber(slideNumber - 1);
   };
   const last = slideSpecs.length - 1;
   const next = () => {
     slideSpecs[slideNumber].nextButtonAction?.();
-    slideNumber === last ? closeModal() : setSlideNumber(slideNumber + 1);
+    if (slideNumber === last) closeModal();
+    else setSlideNumber(slideNumber + 1);
   };
 
   const closeModal = () => {

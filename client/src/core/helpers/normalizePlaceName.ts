@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import { LanguageCode } from "../../language";
 
 type NormalizePlaceName = (
@@ -17,18 +18,20 @@ export const normalizePlaceName: NormalizePlaceName = (
     // If there are 3 or less segments, we assume that the first segment is the city name
     const city = segments.length <= 3 ? segments[0] : segments[1];
 
+    const near =
+      segments.length <= 3
+        ? lng === "en"
+          ? "in "
+          : "dans "
+        : lng === "en"
+        ? "near "
+        : "proche de ";
+
     switch (format) {
       case "full":
         return placeName.slice(0, placeName.length);
+
       case "near":
-        const near =
-          segments.length <= 3
-            ? lng === "en"
-              ? "in "
-              : "dans "
-            : lng === "en"
-            ? "near "
-            : "proche de ";
         return near + segments[0].replace(/\d/g, "");
 
       case "city":
@@ -37,7 +40,5 @@ export const normalizePlaceName: NormalizePlaceName = (
       default:
         return placeName;
     }
-  } else {
-    return placeName;
-  }
+  } else return placeName;
 };

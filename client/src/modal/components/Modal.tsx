@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Container, Row } from "react-bootstrap";
 
-import { useModal } from "../hooks/useModal";
+import { useModal } from "../hooks";
 import { modalStyles } from "../styles";
 import { Buttons } from "./Buttons";
 import { ProgressBar } from "./ProgressBar";

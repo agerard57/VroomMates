@@ -17,10 +17,10 @@ export const useReviewsPages = (
 ) => {
   const { t } = useTranslation("ReviewsPages");
 
-  const userId = loggedUserData!.id;
+  const userId = loggedUserData?.id || "";
 
   const [reviews, setReviews] = useState<UserTypes["Review"][]>([
-    UserInitializer["review"],
+    UserInitializer.review,
   ]);
 
   const currentPage = window.location.pathname.includes("received")
@@ -30,12 +30,13 @@ export const useReviewsPages = (
   usePageTitle(t(`reviews.${currentPage}.title`, { count: reviews.length }));
 
   useEffect(() => {
-    currentPage === "given"
-      ? getGivenReviewsByUserId(userId).then((reviews) => setReviews(reviews))
-      : getReceivedReviewsByUserId(userId).then((reviews) =>
+    if (userId !== "")
+      if (currentPage === "given")
+        getGivenReviewsByUserId(userId).then((reviews) => setReviews(reviews));
+      else
+        getReceivedReviewsByUserId(userId).then((reviews) =>
           setReviews(reviews)
         );
   }, [currentPage, userId]);
-
   return { reviews, currentPage, userId };
 };

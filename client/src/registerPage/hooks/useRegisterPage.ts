@@ -19,19 +19,19 @@ export const useRegisterPage = (): RegisterPageManager => {
     const data = Object.fromEntries(formData);
 
     const beautifiedData: PostRegisterProps = {
-      last_name: data["lastName"],
-      first_name: data["firstName"],
-      email: data["email"],
-      password1: data["password1"],
-      password2: data["password2"],
-      house_number: data["houseNumber"],
-      street_name: data["streetName"],
-      city: data["city"],
-      zip: data["zip"],
-      state: data["state"],
-      country: data["country"],
-      birth_date: data["birthDate"],
-      terms_and_conditions: data["termsAndConditions"],
+      last_name: data.lastName,
+      first_name: data.firstName,
+      email: data.email,
+      password1: data.password1,
+      password2: data.password2,
+      house_number: data.houseNumber,
+      street_name: data.streetName,
+      city: data.city,
+      zip: data.zip,
+      state: data.state,
+      country: data.country,
+      birth_date: data.birthDate,
+      terms_and_conditions: data.termsAndConditions,
     };
 
     return beautifiedData;
@@ -48,9 +48,7 @@ export const useRegisterPage = (): RegisterPageManager => {
         setTimeout(() => {
           window.location.href = "/profile/login";
         }, 2000);
-      } else {
-        toast.error(t(response.message));
-      }
+      } else toast.error(t(response.message));
     });
   };
 

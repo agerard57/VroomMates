@@ -8,6 +8,7 @@ exports.getGivenReviewsByUserId = (req, res) => {
       if (user[0].ratings && user[0].ratings.length > 0) {
         // Only get the ratings that the user has given
         const ratings = user[0].ratings.filter(
+          // eslint-disable-next-line eqeqeq
           (rating) => rating.author == userId
         );
         res.status(200).json(ratings);
@@ -27,11 +28,12 @@ exports.getReceivedReviewsByUserId = (req, res) => {
       select: "-_id name",
     })
     .then((user) => {
-      //Check if user.ratings exists and not empty
+      // Check if user.ratings exists and not empty
       if (user.ratings && user.ratings.length > 0) {
         user.ratings.forEach((rating) => {
-          rating.author.name.last_name =
-            rating.author.name.last_name.charAt(0) + ".";
+          rating.author.name.last_name = `${rating.author.name.last_name.charAt(
+            0
+          )}.`;
         });
       }
       res.status(200).json(user.ratings);

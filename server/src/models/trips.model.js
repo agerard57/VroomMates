@@ -68,17 +68,15 @@ const tripsSchema = mongoose.Schema(
       total: {
         type: "number",
         required: true,
-        /*         default: driver_fee + service_fee,*/
       },
     },
     trip_duration: {
       type: "number",
       required: true,
-      /*       default: (new Date(arrival.time) - new Date(departure.time)) / 3600000,*/
     },
     distance: {
       type: "number",
-      required: true, // TODO Calculate distance between departure and arrival
+      required: true,
     },
     status: {
       type: "String",

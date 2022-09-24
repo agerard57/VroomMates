@@ -1,8 +1,8 @@
 const TripsModel = require("../models/trips.model");
 const UsersModel = require("../models/users.model");
 
-const getTripsStats = () => {
-  return TripsModel.aggregate([
+const getTripsStats = () =>
+  TripsModel.aggregate([
     {
       $group: {
         _id: null,
@@ -21,10 +21,9 @@ const getTripsStats = () => {
       },
     },
   ]);
-};
 
-const getUsersStats = () => {
-  return UsersModel.aggregate([
+const getUsersStats = () =>
+  UsersModel.aggregate([
     {
       $group: {
         _id: null,
@@ -40,7 +39,6 @@ const getUsersStats = () => {
       },
     },
   ]);
-};
 
 exports.getStats = (_req, res) => {
   Promise.all([getTripsStats(), getUsersStats()])

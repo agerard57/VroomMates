@@ -1,8 +1,8 @@
+const axios = require("axios");
 const TripsModel = require("../models/trips.model");
+const mapboxToken = require("../config/mapbox.config");
 
 exports.getSearchResults = (req, res) => {
-  const axios = require("axios");
-  const mapboxToken = require("../config/mapbox.config");
   const { type, departureLocation, arrivalLocation, date } = req.query;
   const mapBoxUrl = (location) =>
     `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=${mapboxToken}`;
@@ -19,7 +19,7 @@ exports.getSearchResults = (req, res) => {
         TripsModel.find(
           {
             // Filter by type
-            type: type,
+            type,
             // Filter by departure location
             "departure.location": {
               $geoWithin: {
@@ -60,7 +60,7 @@ exports.getSearchResults = (req, res) => {
               const tripsArray = [];
               trips.forEach((trip) => {
                 const ratings = trip.driver.ratings.map((rating) =>
-                  parseInt(rating.rating)
+                  parseInt(rating.rating, 10)
                 );
 
                 trip.driver = {

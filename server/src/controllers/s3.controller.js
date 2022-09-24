@@ -1,7 +1,8 @@
-const UsersModel = require("../models/users.model");
-const s3Services = require("../services/s3");
 const fs = require("fs");
 const util = require("util");
+const UsersModel = require("../models/users.model");
+const s3Services = require("../services/s3");
+
 const unlinkFile = util.promisify(fs.unlink);
 
 exports.postProfilePicture = async (req, res) => {
@@ -25,11 +26,10 @@ exports.postProfilePicture = async (req, res) => {
           { photo_url: result.Key },
           { new: true }
         ).then((_user, err) => {
-          if (err) res.status(500).send(err);
-          else
-            return res
-              .status(200)
-              .send({ message: "messages.profilePic.uploaded" });
+          if (err) return res.status(500).send(err);
+          return res
+            .status(200)
+            .send({ message: "messages.profilePic.uploaded" });
         });
       })
       .catch((err) => {

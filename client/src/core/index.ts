@@ -50,7 +50,7 @@ export type {
 
 export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";
 
-export { tokenService } from "./services";
+export { tokenService, privateAxios, publicAxios } from "./services";
 
 export type { User } from "./interfaces";
 export { UserInitializer } from "./interfaces";

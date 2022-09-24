@@ -13,11 +13,12 @@ const refreshAuthToken = mem(
     const url = `${process.env?.REACT_APP_API_URL}/profile/refresh`;
 
     try {
-      const response = await publicAxios.post(url, {
-        body: JSON.stringify({
+      const response = await publicAxios.post(
+        url,
+        JSON.stringify({
           authToken: authToken,
-        }),
-      });
+        })
+      );
       const data = await response.data;
       data.status = response.status;
 
@@ -45,16 +46,13 @@ const deleteRefreshToken = async (authToken: string) => {
   const url = `${process.env?.REACT_APP_API_URL}/profile/signout`;
 
   try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+    const response = await publicAxios.post(
+      url,
+      JSON.stringify({
         authToken: authToken,
-      }),
-    });
-    const data = await response.json();
+      })
+    );
+    const data = await response.data;
     data.status = response.status;
     return data;
   } catch (error) {

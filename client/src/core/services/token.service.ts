@@ -32,11 +32,9 @@ const refreshAuthToken = mem(
         else cookiesManager.setCookie("authToken", data.authToken, false);
       } else if (response.status === 401)
         cookiesManager.deleteCookie("authToken");
-      window.location.href = "/profile/login";
       return data;
     } catch (error) {
       cookiesManager.deleteCookie("authToken");
-      window.location.href = "/profile/login";
     }
   },
   { maxAge: 10000 }

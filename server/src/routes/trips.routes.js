@@ -1,4 +1,3 @@
-//Search trip
 const searchPageController = require("../controllers/searchPage.controller");
 const tripsPageController = require("../controllers/tripsPage.controller");
 const tripDetailsPageController = require("../controllers/tripDetailsPage.controller");
@@ -6,8 +5,8 @@ const addTripModalController = require("../controllers/addTripModal.controller")
 const checkTripSearch = require("../middlewares/checkTripSearch");
 const authJwt = require("../middlewares/authJwt");
 
-//Search trips
-module.exports = function (app) {
+// Search trips
+module.exports = (app) => {
   app
     .route("/search")
     .get(

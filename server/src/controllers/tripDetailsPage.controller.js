@@ -29,7 +29,7 @@ exports.getTripDetailsById = (req, res) => {
         });
         const getAvgRating = (ratings) => {
           const mappedRatings = ratings.map((rating) =>
-            parseInt(rating.rating)
+            parseInt(rating.rating, 10)
           );
           return (
             mappedRatings.reduce((acc, curr) => acc + curr, 0) / ratings.length

@@ -3,7 +3,7 @@ const checkRegister = require("../middlewares/checkRegister");
 const checkLogin = require("../middlewares/checkLogin");
 const authJwt = require("../middlewares/authJwt");
 
-module.exports = function (app) {
+module.exports = (app) => {
   app
     .route("/profile/register")
     .post(

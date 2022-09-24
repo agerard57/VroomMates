@@ -1,7 +1,7 @@
 const reviewsPagesController = require("../controllers/reviewsPages.controller");
 const authJwt = require("../middlewares/authJwt");
 
-module.exports = function (app) {
+module.exports = (app) => {
   app
     .route("/reviews/given/:id([0-9a-f]{24})")
     .get(

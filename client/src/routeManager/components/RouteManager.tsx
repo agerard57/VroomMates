@@ -11,7 +11,6 @@ import { Layout } from "../../core";
 import { Dashboard } from "../../dashboard";
 import { ErrorScreen } from "../../errorScreen";
 import { LandingPage } from "../../landingPage";
-import { LoadingScreen } from "../../loadingScreen";
 import { PoliciesPages } from "../../policiesPages";
 import { ProfilePage } from "../../profilePage";
 import { RegisterPage } from "../../registerPage";
@@ -24,9 +23,7 @@ import { useRouteManager } from "../hooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 const RouteManager: FC = () => {
-  const { isUserLoggedIn, loggedUserData, isLoading } = useRouteManager();
-
-  if (isLoading) return <LoadingScreen />;
+  const { isUserLoggedIn, loggedUserData } = useRouteManager();
 
   return (
     <Router>

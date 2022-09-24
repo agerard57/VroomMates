@@ -16,6 +16,7 @@ import { i18n as SignInPage } from "../signInPage";
 import { i18n as TripDetailsPage } from "../tripDetailsPage";
 import { i18n as TripsPage } from "../tripsPage";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Modules = Record<string, { fr: any; en: any }>;
 
 const normalize = (

@@ -43,12 +43,14 @@ export const SignInBox: FC = () => {
             inputType="email"
             inputPlaceholder={t("signInSection.email")}
             icon={MailIcon}
+            autocomplete="email"
             isRequired
           />
         </Row>
         <Row>
           <Inputs.Text
-            inputName="password"
+            inputName="current-password"
+            autocomplete="current-password"
             inputType="password"
             inputPlaceholder={t("signInSection.password")}
             icon={PasswordIcon}

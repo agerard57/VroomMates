@@ -24,7 +24,7 @@ export const useSignInBox = (): SignInBoxManager => {
 
     const data = new FormData(event.target as HTMLFormElement);
     const email = data.get("email");
-    const password = data.get("password");
+    const password = data.get("current-password");
     const rememberMe = data.get("rememberMe") === "on" ? true : false;
     if (email && password)
       postLogin(email, password, rememberMe).then((response) => {

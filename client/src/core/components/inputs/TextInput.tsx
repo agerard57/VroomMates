@@ -14,6 +14,7 @@ type Props = {
   align?: "left" | "center";
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string;
+  autocomplete?: string;
 };
 
 export const TextInput: FC<Props> = ({
@@ -28,6 +29,7 @@ export const TextInput: FC<Props> = ({
   align = "center",
   onChange,
   value,
+  autocomplete,
 }) => {
   const InputStyle = css`
     box-sizing: border-box;
@@ -58,6 +60,7 @@ export const TextInput: FC<Props> = ({
       required={isRequired}
       css={InputStyle}
       onChange={onChange}
+      autoComplete={autocomplete}
       value={value}
     />
   );

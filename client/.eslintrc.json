@@ -19,13 +19,16 @@
       "version": "detect"
     },
     "import/resolver": {
-      "typescript": {
-        "project": "."
-      }
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {}
     }
   },
   "rules": {
     "accessor-pairs": "error",
+    "import/extensions": "off",
     "array-callback-return": [
       "error",
       {

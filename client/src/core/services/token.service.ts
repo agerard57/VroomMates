@@ -1,3 +1,4 @@
+/* eslint-disable import/no-internal-modules */
 import jwt_decode from "jwt-decode";
 import mem from "mem";
 

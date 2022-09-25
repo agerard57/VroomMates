@@ -8,6 +8,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import { AdminUserListPage } from "../../adminUserListPage";
 import { Desktop, LandscapeMode, Layout } from "../../core";
 import { Dashboard } from "../../dashboard";
 import { ErrorScreen } from "../../errorScreen";
@@ -24,7 +25,7 @@ import { useRouteManager } from "../hooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 const RouteManager: FC = () => {
-  const { isUserLoggedIn, loggedUserData } = useRouteManager();
+  const { isUserLoggedIn, loggedUserData, isUserAdmin } = useRouteManager();
 
   return (
     <Router>
@@ -83,8 +84,16 @@ const RouteManager: FC = () => {
               <Route
                 path="/reviews/received"
                 element={
-                  <ProtectedRoute isAllowed={isUserLoggedIn}>
+                  <ProtectedRoute isAllowed={isUserAdmin}>
                     <ReviewsPages loggedUserData={loggedUserData} />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/user-list"
+                element={
+                  <ProtectedRoute isAllowed={isUserLoggedIn}>
+                    <AdminUserListPage />
                   </ProtectedRoute>
                 }
               />

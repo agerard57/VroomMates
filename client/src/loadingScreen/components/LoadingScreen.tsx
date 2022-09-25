@@ -50,7 +50,7 @@ export const LoadingScreen: FC = () => {
       <img
         src={LoadingImage}
         css={css`
-          width: 70%;
+          width: 40vh;
           margin: 0 auto;
         `}
         alt="loading"

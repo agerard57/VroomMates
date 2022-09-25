@@ -5,10 +5,9 @@ const url = `${process.env?.REACT_APP_API_URL}/profile/close`;
 export const deleteAccount = async () => {
   try {
     const response = await privateAxios.delete(url);
-    const data = await response.data;
-    data.status = response.status;
+    const status = await response.status;
 
-    return data;
+    return status;
   } catch (error) {
     return [];
   }

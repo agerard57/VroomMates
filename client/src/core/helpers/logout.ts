@@ -1,8 +1,11 @@
 import { tokenService } from "../services";
 import { cookiesManager } from "./cookiesManager";
 
-export const logout = () => {
-  tokenService.deleteRefreshToken(cookiesManager.getCookie("authToken"));
-  cookiesManager.deleteCookie("authToken");
-  window.location.href = "/";
+export const logout = async () => {
+  await tokenService
+    .deleteRefreshToken(cookiesManager.getCookie("authToken"))
+    .then(() => {
+      cookiesManager.deleteCookie("authToken");
+      window.location.href = "/";
+    });
 };

@@ -5,20 +5,15 @@ import { cookiesManager } from "../helpers";
 import { AuthToken } from "../types";
 import { publicAxios } from "./publicAxios.service";
 
-const authToken = cookiesManager.getCookie("authToken");
-
 // Function is memoized to prevent multiple calls to the same function
 const refreshAuthToken = mem(
   async () => {
     const url = `${process.env?.REACT_APP_API_URL}/profile/refresh`;
 
     try {
-      const response = await publicAxios.post(
-        url,
-        JSON.stringify({
-          authToken: authToken,
-        })
-      );
+      const response = await publicAxios.post(url, {
+        authToken: cookiesManager.getCookie("authToken"),
+      });
       const data = await response.data;
       data.status = response.status;
 
@@ -44,12 +39,7 @@ const deleteRefreshToken = async (authToken: string) => {
   const url = `${process.env?.REACT_APP_API_URL}/profile/signout`;
 
   try {
-    const response = await publicAxios.post(
-      url,
-      JSON.stringify({
-        authToken: authToken,
-      })
-    );
+    const response = await publicAxios.post(url, authToken);
     const data = await response.data;
     data.status = response.status;
     return data;

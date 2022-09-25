@@ -8,10 +8,11 @@ export const postLogin = async (
   rememberMe: boolean
 ) => {
   try {
-    const response = await publicAxios.post(
-      url,
-      JSON.stringify({ email, password, rememberMe })
-    );
+    const response = await publicAxios.post(url, {
+      email,
+      password,
+      rememberMe,
+    });
     const data = await response.data;
     data.status = response.status;
     return data;

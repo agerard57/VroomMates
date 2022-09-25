@@ -43,6 +43,7 @@ export const ProfilePage: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
         <MainButton
           pageType={pageType}
           onClick={{
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             ban: () => {},
             manage: () => setAccountManagementMenu(!accountManagementMenu),
           }}

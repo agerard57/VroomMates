@@ -1,8 +1,10 @@
 export { normalizeDate } from "./normalizeDate";
 export { normalizePlaceName } from "./normalizePlaceName";
-export { normalizeTimeDifference } from "./normalizeTimeDifference";
+export { normalizeTime } from "./normalizeTime";
 export { normalizeDistance } from "./normalizeDistance";
+export { normalizeDistanceDifference } from "./normalizeDistanceDifference";
 export { normalizePrice } from "./normalizePrice";
 export { getStatusIcon } from "./getStatusIcon";
 export { cookiesManager } from "./cookiesManager";
 export { s3UrlBuilder } from "./s3UrlBuilder";
+export { logout } from "./logout";

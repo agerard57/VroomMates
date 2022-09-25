@@ -3,51 +3,59 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { BlueBorderBackground } from "../../core";
-import { Spinner } from "../assets";
+import { LoadingImage } from "../assets";
 
 export const LoadingScreen: FC = () => {
   const { t } = useTranslation("LoadingScreen");
-  return (
-    <BlueBorderBackground backgroundColor={"white"}>
-      <div
-        className="container"
-        css={css`
-          flex: 1;
-          flex-direction: row;
-          display: flex;
-          text-align: center;
-          justify-content: center;
-          align-items: center;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          opacity: 1;
-          transition: opacity 1s;
-          @keyframes fadeIn {
-            0% {
-              opacity: 0;
-            }
-            100% {
-              opacity: 1;
-            }
-          }
 
-          @keyframes fadeOut {
-            0% {
-              opacity: 1;
-            }
-            100% {
-              opacity: 0;
-            }
+  return (
+    <div
+      className="container"
+      css={css`
+        flex: 1;
+        flex-direction: row;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        visibility: hidden;
+        animation: fadein 1.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s; /* no spinner flickering for fast load times */
+        @keyframes fadein {
+          from {
+            visibility: visible;
+            opacity: 0;
           }
+          to {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      `}
+    >
+      <h2
+        css={css`
+          font-weight: 700;
         `}
       >
-        <h2>{t("loading")}</h2>
-        <Spinner />
-      </div>
-    </BlueBorderBackground>
+        {t("title")}
+      </h2>
+      <img
+        src={LoadingImage}
+        css={css`
+          width: 40vh;
+          margin: 0 auto;
+        `}
+        alt="loading"
+      />
+      <h2>{t("message")}</h2>
+    </div>
   );
 };

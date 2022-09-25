@@ -8,10 +8,10 @@ export {
   AllSetImage,
   RegisterImage,
   NotFoundImage,
+  CalendarIcon,
 } from "./assets";
 
 export {
-  BlueBorderBackground,
   Layout,
   RoundedContour,
   ProfilePic,
@@ -25,24 +25,34 @@ export {
   MenuListItem,
   Toaster,
   SearchBox,
+  Footer,
+  Desktop,
+  LandscapeMode,
 } from "./components";
 
 export {
   cookiesManager,
   normalizeDate,
   normalizePlaceName,
-  normalizeTimeDifference,
+  normalizeTime,
   normalizeDistance,
+  normalizeDistanceDifference,
   normalizePrice,
   getStatusIcon,
   s3UrlBuilder,
+  logout,
 } from "./helpers";
 
-export type { UserTypes, AuthToken, LoggedUserDataProps } from "./types";
+export type {
+  UserTypes,
+  AuthToken,
+  LoggedUserDataProps,
+  TripTypes,
+} from "./types";
 
 export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";
 
-export { tokenService } from "./services";
+export { tokenService, privateAxios, publicAxios } from "./services";
 
 export type { User } from "./interfaces";
 export { UserInitializer } from "./interfaces";

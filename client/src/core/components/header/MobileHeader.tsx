@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import fullLogo from "../../images/FullLogo.png";
+import { FullLogo } from "../../assets";
 
 export const MobileHeader: FC = () => (
   <Navbar
@@ -29,7 +29,7 @@ export const MobileHeader: FC = () => (
     >
       <Navbar.Brand as={Link} to="/">
         <img
-          src={fullLogo}
+          src={FullLogo}
           alt="vroommates-logo"
           css={css`
             height: 13vw;

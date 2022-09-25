@@ -20,6 +20,7 @@ declare module "*.json" {
 }
 
 declare module "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions" {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const content: any;
   export default content;
 }

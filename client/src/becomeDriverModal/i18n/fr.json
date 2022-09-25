@@ -17,7 +17,7 @@
       "body": "Parle-nous de ta voiture !",
       "brand": {
         "title": "Marque",
-        "placeholder": "Quel est la marque de la voiture ?"
+        "placeholder": "Quelle est la marque de la voiture ?"
       },
       "model": {
         "title": "Modèle",

@@ -30,17 +30,20 @@ exports.getUserTrips = (req, res) => {
       model: "Users",
       select: "_id name.first_name",
     })
-    .exec((err, tripsList) => {
+    .exec((err, tripsList) =>
       err
         ? res.status(500).send(err)
         : res.status(200).json({
-            tripsCreated: tripsList.filter((trip) => trip.driver._id == userId),
+            tripsCreated: tripsList.filter(
+              (trip) => trip.driver._id === userId
+            ),
             currentTrips: tripsList.filter(
-              (trip) => trip.status == "ongoing" || trip.status == "confirmed"
+              (trip) => trip.status === "ongoing" || trip.status === "confirmed"
             ),
             pastTrips: tripsList.filter(
-              (trip) => trip.status == "finished" || trip.status == "cancelled"
+              (trip) =>
+                trip.status === "finished" || trip.status === "cancelled"
             ),
-          });
-    });
+          })
+    );
 };

@@ -3,13 +3,16 @@ import { useTranslation } from "react-i18next";
 import {
   useGeolocation,
   normalizeDistance,
+  normalizeDistanceDifference,
   normalizeDate,
   normalizePlaceName,
 } from "../../core";
 import { useLanguage } from "../../language";
 import { TripInfosProps } from "../types";
 
-type TripInfosSectionManager = (tripCoordinates: TripInfosProps) => {
+type TripInfosSectionManager = (
+  tripCoordinates: TripInfosProps & { distance: number }
+) => {
   distanceFromUser: string | undefined;
   totalDistance: string;
   time: { departure: string; arrival: string };
@@ -19,39 +22,24 @@ type TripInfosSectionManager = (tripCoordinates: TripInfosProps) => {
 export const useTripInfosSection: TripInfosSectionManager = ({
   departure,
   arrival,
+  distance,
 }) => {
   const { t } = useTranslation("TripDetailsPage");
   const { language } = useLanguage();
   const { coordinates } = useGeolocation();
-
   const distanceFromUser = t("tripInfosSection.distanceFromUser", {
-    position: coordinates.length
-      ? normalizeDistance(
-          {
-            latitude: coordinates[0].toString(),
-            longitude: coordinates[1].toString(),
-          },
-          {
-            latitude: departure.coordinates[1],
-            longitude: departure.coordinates[0],
-          },
-          language
-        )
-      : undefined,
+    position:
+      coordinates.length === 2
+        ? normalizeDistanceDifference(
+            [coordinates[1], coordinates[0]],
+            departure.coordinates,
+            language
+          )
+        : undefined,
   });
 
   const totalDistance = t("tripInfosSection.totalDistance", {
-    distance: normalizeDistance(
-      {
-        latitude: departure.coordinates[1],
-        longitude: departure.coordinates[0],
-      },
-      {
-        latitude: arrival.coordinates[1],
-        longitude: arrival.coordinates[0],
-      },
-      language
-    ),
+    distance: normalizeDistance(distance, language, true),
   });
 
   const time = {

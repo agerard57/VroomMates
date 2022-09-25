@@ -7,10 +7,8 @@ type Props = {
   children: ReactNode;
 };
 
-export const ModalProvider: FC<Props> = ({ children }) => {
-  return (
-    <ModalContext.Provider value={useModalManager()}>
-      {children}
-    </ModalContext.Provider>
-  );
-};
+export const ModalProvider: FC<Props> = ({ children }) => (
+  <ModalContext.Provider value={useModalManager()}>
+    {children}
+  </ModalContext.Provider>
+);

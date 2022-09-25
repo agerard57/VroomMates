@@ -1,17 +1,15 @@
-import { cookiesManager } from "../../core";
+import axios from "axios";
 
 const url = (id: string) => `${process.env?.REACT_APP_API_URL}/trips/${id}`;
 
 export const getUserTrips = async (id: string) => {
   try {
-    const response = await fetch(url(id), {
-      method: "GET",
-      headers: new Headers({
+    const response = await axios.get(url(id), {
+      headers: {
         "Content-Type": "application/json",
-        "x-access-token": cookiesManager.getCookie("authToken"),
-      }),
+      },
     });
-    return await response.json();
+    return await response.data;
   } catch (error) {
     return [];
   }

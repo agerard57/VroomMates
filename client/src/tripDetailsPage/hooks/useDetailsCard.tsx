@@ -7,7 +7,7 @@ import { Trip, TripInitializer } from "../interfaces";
 import { getTrip } from "../services";
 
 export const useDetailsCard = (): { trip: Trip } => {
-  const { t } = useTranslation("DetailsCard");
+  const { t } = useTranslation("TripDetailsPage");
 
   const [trip, setTrip] = useState<Trip>(TripInitializer);
   const { id } = useParams();
@@ -15,17 +15,15 @@ export const useDetailsCard = (): { trip: Trip } => {
   usePageTitle(t("title"));
 
   useEffect(() => {
-    if (id) {
+    if (id)
       getTrip(id)
         .then((trip) => {
-          if (trip) {
-            setTrip(trip);
-          }
+          if (trip) setTrip(trip);
         })
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .catch((_err) => {
-          window.location.href = "/error?code=404";
+          window.location.href = "/";
         });
-    }
   }, [id]);
 
   return { trip };

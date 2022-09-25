@@ -6,8 +6,8 @@ type Props = {
   isFull: boolean;
 };
 
-export const FullLayout: FC<Props> = ({ isFull }) => {
-  return isFull ? (
+export const FullLayout: FC<Props> = ({ isFull }) =>
+  isFull ? (
     <div
       css={css`
         position: absolute;
@@ -22,4 +22,3 @@ export const FullLayout: FC<Props> = ({ isFull }) => {
       `}
     ></div>
   ) : null;
-};

@@ -45,5 +45,40 @@
     },
     "date": "When?",
     "searchButton": "Find me a VroomMate!"
+  },
+
+  "footer": {
+    "language": "Language:",
+    "about": {
+      "title": "About us:",
+      "text": "We are a platform made as a project by two students at Metz Numeric School. We poured months of our lives as well as our <3 into this project and we hope you'll like it :) "
+    },
+    "contact": {
+      "title": "Contact us:",
+      "me": "GERARD Alexandre",
+      "email": "vroommates@agerard.dev"
+    },
+    "t&c": {
+      "title": "Terms & Conditions:",
+      "privacyPolicy": "Privacy policy",
+      "cookiesPolicy": "Cookies policy"
+    },
+    "button": "Go back up",
+    "bottom": {
+      "left": "©2022 VroomMates",
+      "right": "All rights reserved."
+    }
+  },
+
+  "desktopPage": {
+    "title": "Hello there!",
+    "subtitle": "We noticed you currently are on a desktop to visit this app!",
+    "text": "For the time being, VroomMates is only accessible via smartphone, so please feel free to use our services this way 📱"
+  },
+
+  "landscapeMode": {
+    "title": "Hello there!",
+    "subtitle": "We noticed you currently are on landscape mode to visit this app!",
+    "text": "For the time being, VroomMates is only accessible via portrait 📱"
   }
 }

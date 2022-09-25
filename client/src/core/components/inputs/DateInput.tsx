@@ -20,6 +20,7 @@ export const DateInput: FC<Props> = ({
   icon,
   value,
   onChange,
+  isRequired,
 }) => {
   const InputStyle = css`
     box-sizing: border-box;
@@ -46,6 +47,10 @@ export const DateInput: FC<Props> = ({
       css={InputStyle}
       value={value}
       onChange={onChange}
+      required={isRequired}
+      // values are plausible
+      min="1900-01-01"
+      max="2040-12-31"
     />
   );
 };

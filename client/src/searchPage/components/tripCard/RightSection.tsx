@@ -16,7 +16,7 @@ type DriverProps = {
 
 type Props = {
   driver: DriverProps;
-  price: { $numberDecimal: string };
+  price: number;
   isFull: boolean;
 };
 
@@ -64,7 +64,7 @@ export const RightSection: FC<Props> = ({ driver, price, isFull }) => {
         `}
       >
         {!isFull
-          ? normalizePrice(price.$numberDecimal, language)
+          ? normalizePrice(price, language)
           : t("search.full").toUpperCase()}
       </h2>
     </Col>

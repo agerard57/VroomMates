@@ -1,3 +1,4 @@
 {
-  "loading": "Veuillez patienter pendant le chargement de la page..."
+  "title": "Veuillez patienter",
+  "message": "On charge :)"
 }

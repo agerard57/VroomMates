@@ -6,4 +6,6 @@ export const s3UrlBuilder: Props = (
 ) =>
   key.includes("http://") || key.includes("https://")
     ? key
-    : `https://vroommates-${bucket}.s3.eu-central-1.amazonaws.com/${key}`;
+    : `https://vroommates-${bucket}.s3.eu-central-1.amazonaws.com/${
+        key === "" ? "e6f5576639004a105dc76a6d0bbfb0d0" : key
+      }`;

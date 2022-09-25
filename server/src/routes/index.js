@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const cors = require("cors");
 const express = require("express");
 const morgan = require("morgan");
@@ -18,8 +19,7 @@ module.exports = function routes(app) {
   require("./profile.routes")(app);
   require("./s3.routes")(app);
   require("./searchPage.routes")(app);
-  require("./tripDetailsPage.routes")(app);
   require("./profilePage.routes")(app);
   require("./reviewsPages.routes")(app);
-  require("./tripsPage.routes")(app);
+  require("./trips.routes")(app);
 };

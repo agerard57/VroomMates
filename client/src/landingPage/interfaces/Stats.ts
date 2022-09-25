@@ -3,7 +3,7 @@ export interface Stats {
     nbSingleTrips: number;
     nbFrequentTrips: number;
     totalTrips: number;
-    totalDistance: { $numberDecimal: string };
+    totalDistance: number;
   };
   users: {
     nbDrivers: number;
@@ -17,7 +17,7 @@ export const StatsInitializer = {
     nbSingleTrips: 0,
     nbFrequentTrips: 0,
     totalTrips: 0,
-    totalDistance: { $numberDecimal: "0.0" },
+    totalDistance: 0.0,
   },
   users: {
     nbDrivers: 0,

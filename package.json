@@ -10,7 +10,8 @@
     "scripts"
   ],
   "scripts": {
-    "start": "concurrently \"yarn workspace server start:dev\" \"yarn workspace client start\""
+    "start": "concurrently \"yarn workspace server start:dev\" \"yarn workspace client start\"",
+    "tests": "concurrently \"yarn workspace client test\""
   },
   "private": true,
   "license": "MIT",

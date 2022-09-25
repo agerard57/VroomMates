@@ -1,6 +1,7 @@
+/* eslint-disable consistent-return */
 const UsersModel = require("../models/users.model");
 
-checkFields = (req, res, next) => {
+const checkFields = (req, res, next) => {
   const fields = [
     "last_name",
     "first_name",
@@ -14,6 +15,7 @@ checkFields = (req, res, next) => {
     "country",
     "birth_date",
   ];
+  // eslint-disable-next-line no-restricted-syntax
   for (const field of fields) {
     if (req.body[field] === "") {
       return res.status(400).json({ message: `messages.error.${field}.empty` });
@@ -23,7 +25,7 @@ checkFields = (req, res, next) => {
 };
 
 const checkDuplicateUser = (req, res, next) => {
-  const email = req.body.email;
+  const { email } = req.body;
   UsersModel.findOne({
     "email.email_address": email,
   }).exec((err, user) => {
@@ -40,7 +42,7 @@ const checkDuplicateUser = (req, res, next) => {
 };
 
 const checkEmail = (req, res, next) => {
-  const email = req.body.email;
+  const { email } = req.body;
   if (!email.includes("@")) {
     return res.status(400).json({ message: "messages.error.email.invalid" });
   }
@@ -103,7 +105,7 @@ const checkBirthDate = (req, res, next) => {
   next();
 };
 
-checkTermsChecked = (req, res, next) => {
+const checkTermsChecked = (req, res, next) => {
   if (!req.body.terms_and_conditions) {
     return res
       .status(400)

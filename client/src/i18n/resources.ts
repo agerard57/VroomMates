@@ -1,6 +1,9 @@
+import { i18n as AddTripModal } from "../addTripModal";
 import { i18n as BecomeDriverModal } from "../becomeDriverModal";
+import { i18n as CloseAccountModal } from "../closeAccountModal";
 import { i18n as Core } from "../core";
 import { i18n as Dashboard } from "../dashboard";
+import { i18n as ErrorScreen } from "../errorScreen";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
 import { i18n as PoliciesPages } from "../policiesPages";
@@ -13,6 +16,7 @@ import { i18n as SignInPage } from "../signInPage";
 import { i18n as TripDetailsPage } from "../tripDetailsPage";
 import { i18n as TripsPage } from "../tripsPage";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Modules = Record<string, { fr: any; en: any }>;
 
 const normalize = (
@@ -28,9 +32,12 @@ const normalize = (
   );
 
 const moduleResources = normalize({
+  AddTripModal,
   BecomeDriverModal,
+  CloseAccountModal,
   Core,
   Dashboard,
+  ErrorScreen,
   LandingPage,
   LoadingScreen,
   PoliciesPages,

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
+import { AddTripModalBuilder } from "../../../addTripModal";
 import { BecomeDriverModalBuilder } from "../../../becomeDriverModal";
 import { UserTypes } from "../../../core";
 import { MenuListItem } from "../../../core";
@@ -15,7 +16,8 @@ export const Driver: FC<Props> = ({ status }) => {
   const { t } = useTranslation("Dashboard");
 
   const { openModal } = useModal();
-  const screens = BecomeDriverModalBuilder();
+  const addTripScreens = AddTripModalBuilder();
+  const becomeDriverScreens = BecomeDriverModalBuilder();
 
   if (status === "passenger")
     return (
@@ -23,8 +25,7 @@ export const Driver: FC<Props> = ({ status }) => {
         <MenuListTitle title={t("driverSection.title")} />
         <MenuListItem
           title={t("driverSection.becomeDriver")}
-          onClick={() => openModal(screens)}
-          link="/dashboard"
+          onClick={() => openModal(becomeDriverScreens, "becomeDriver")}
         />
       </section>
     );
@@ -32,8 +33,11 @@ export const Driver: FC<Props> = ({ status }) => {
     return (
       <section>
         <MenuListTitle title={t("driverSection.title")} />
-        <MenuListItem title={t("driverSection.addTrip")} link="/driver/add" />
+        <MenuListItem
+          title={t("driverSection.addTrip")}
+          onClick={() => openModal(addTripScreens, "addTrip")}
+        />
       </section>
     );
-  else return null;
+  return null;
 };

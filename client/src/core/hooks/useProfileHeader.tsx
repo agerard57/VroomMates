@@ -13,12 +13,11 @@ export const useProfileHeader = (id: string) => {
   );
 
   useEffect(() => {
-    if (id.length > 0) {
+    if (id.length > 0)
       getUserData(id).then((data) => {
         setUser(data.user);
         setStats(data.stats);
       });
-    }
   }, [id]);
 
   // Get age from DOB

@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +25,10 @@ export const MainButton: FC<Props> = ({
       onClick={() => {
         window.history.back();
       }}
-      optionalStyling={`padding:0 15px; margin: 5%;`}
+      optionalStyling={css`
+        padding: 0 15px;
+        margin: 5%;
+      `}
     >
       {t("mainButton.back")}
     </Inputs.Button>
@@ -38,7 +43,10 @@ export const MainButton: FC<Props> = ({
         type="danger"
         buttonType="button"
         onClick={onClick.ban} // TODO Implement ban feature
-        optionalStyling={`padding:0 15px; margin: 5%;`}
+        optionalStyling={css`
+          padding: 0 15px;
+          margin: 5%;
+        `}
       >
         {t("mainButton.ban")}
       </Inputs.Button>
@@ -51,7 +59,10 @@ export const MainButton: FC<Props> = ({
         type="hollow"
         buttonType="button"
         onClick={onClick.manage}
-        optionalStyling={`padding:0 15px; margin: 5%;`}
+        optionalStyling={css`
+          padding: 0 15px;
+          margin: 5%;
+        `}
       >
         {accountManagementMenu
           ? t("mainButton.profile")

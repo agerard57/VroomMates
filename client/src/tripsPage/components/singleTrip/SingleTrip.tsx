@@ -22,7 +22,7 @@ export const SingleTrip: FC<Props> = ({ userId, trip }) => (
     css={css`
       display: flex;
       align-items: stretch;
-      padding: 10px;
+      padding: 1.5rem;
       justify-content: space-between;
     `}
     onClick={() => {

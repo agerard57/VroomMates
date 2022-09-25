@@ -1,0 +1,47 @@
+{
+  "title": "Ajouter un voyage",
+  "page": [
+    {
+      "subtitle": "Il est grand temps de rouler !",
+      "body": {
+        "type": { "single": "Unique", "frequent": "Fréquent" },
+        "date": {
+          "singleStartTitle": "Date de départ",
+          "at": "À",
+          "frequentStartTitle": "Date de début de la période",
+          "frequentEndTitle": "Date de fin de la période"
+        },
+        "frequency": {
+          "title": "Fréquence des trajets"
+        },
+        "map": {
+          "title": "Remplis l'addresse de départ et d'arrivée",
+          "departure": "Mets ici l'adresse de départ",
+          "arrival": "Mets ici l'adresse d'arrivée"
+        },
+        "seats": {
+          "title": "Nombre de places disponibles"
+        }
+      },
+      "nextButtonText": "Récapituler",
+      "previousButtonText": "Retour"
+    },
+    {
+      "subtitle": "Récapitulatif du trajet",
+      "body": {
+        "singlePlannedTitle": "Voyage prévu pour",
+        "frequentPlannedTitle": "Voyage prévu tous les",
+        "from": "Du",
+        "to": "au",
+        "seatAvailableTitle_one": "Place disponible",
+        "seatAvailableTitle_other": "Places disponibles",
+        "price": "Prix de la place"
+      },
+      "nextButtonText": "Fermer"
+    }
+  ],
+  "message": {
+    "success": "Votre trajet a bien été ajouté !",
+    "error": "Une erreur "
+  }
+}

@@ -1,5 +1,5 @@
 {
-    "cSpell.words": [
-        "vroommates"
-    ]
+  "cSpell.words": ["vroommates"],
+
+  "jest.jestCommandLine": "yarn run tests"
 }

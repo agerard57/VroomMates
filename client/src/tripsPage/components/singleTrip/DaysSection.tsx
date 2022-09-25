@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const DaysSection: FC<Props> = ({ dayOfWeek }) => {
-  const { days } = useDaysDisplay(dayOfWeek);
+  const { displayDays } = useDaysDisplay(dayOfWeek);
 
   return (
     <Row
@@ -30,7 +30,7 @@ export const DaysSection: FC<Props> = ({ dayOfWeek }) => {
         }
       `}
     >
-      {days}
+      {displayDays}
     </Row>
   );
 };

@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const DaysSection: FC<Props> = ({ tripDays }) => {
-  const { days } = useDaysDisplay(tripDays);
+  const { displayDays } = useDaysDisplay(tripDays);
   return (
     <div
       css={css`
@@ -26,7 +26,7 @@ export const DaysSection: FC<Props> = ({ tripDays }) => {
         }
       `}
     >
-      {days}
+      {displayDays}
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { getStats } from "../services";
 
 type StatsSectionOptions = {
   stats: Stats;
-  options: Object;
+  options: Record<string, unknown>;
 };
 
 export const useStatsSection = (): StatsSectionOptions => {
@@ -51,7 +51,7 @@ export const useStatsSection = (): StatsSectionOptions => {
         fontSize: 16,
       },
     },
-    series: data.map(function (data, idx) {
+    series: data.map((data, idx) => {
       const top = idx * 50;
       return {
         type: "pie",

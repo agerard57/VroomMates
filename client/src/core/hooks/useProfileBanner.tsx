@@ -9,11 +9,10 @@ export const useProfileBanner = (id: string) => {
   );
 
   useEffect(() => {
-    if (id.length > 0) {
+    if (id.length > 0)
       getProfilePicSrc(id).then((response) =>
         setProfilePicSrc(response.profilePicSrc)
       );
-    }
   }, [id]);
 
   return { profilePicSrc };

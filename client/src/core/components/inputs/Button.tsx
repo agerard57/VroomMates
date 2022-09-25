@@ -1,12 +1,14 @@
+/* eslint-disable complexity */
+
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { FC } from "react";
 
 type Props = {
   type: "primary" | "secondary" | "hollow" | "danger" | "small";
   buttonType?: "submit" | "button";
   onClick?: () => void;
-  optionalStyling?: any;
+  optionalStyling?: SerializedStyles;
   disabled?: boolean;
 };
 
@@ -14,6 +16,7 @@ export const Button: FC<Props> = ({
   children,
   type,
   buttonType = "button",
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onClick = () => {},
   optionalStyling,
   disabled,

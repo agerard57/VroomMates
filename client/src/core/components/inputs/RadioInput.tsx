@@ -50,6 +50,8 @@ export const RadioInput: FC<Props> = ({
         value={radioValue}
         checked={isActive}
         onClick={onClickRadio}
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        onChange={() => {}}
       />
       <span>{inputPlaceholder}</span>
     </label>

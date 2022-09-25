@@ -1,3 +1,5 @@
+/* eslint-disable complexity */
+
 /** @jsxImportSource @emotion/react */
 import { FormEvent, useEffect, useRef } from "react";
 import { useState } from "react";
@@ -10,7 +12,7 @@ export const useSearchBox: SearchBoxTypes["UseSearchBoxManager"] = () => {
 
   const [searchInputs, setSearchInputs] = useState<
     SearchBoxInterfaces["SearchInputs"]
-  >(SearchBoxInitializers["SearchInputs"]);
+  >(SearchBoxInitializers.SearchInputs);
 
   const [height, setHeight] = useState(0);
   const ref = useRef<HTMLFormElement>(null);
@@ -44,7 +46,6 @@ export const useSearchBox: SearchBoxTypes["UseSearchBoxManager"] = () => {
   }, []);
 
   // This sets the height of the search box for the animation
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (ref.current && ref.current.clientHeight)
       setHeight(ref.current.clientHeight);

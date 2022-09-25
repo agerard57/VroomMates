@@ -43,12 +43,14 @@ export const SignInBox: FC = () => {
             inputType="email"
             inputPlaceholder={t("signInSection.email")}
             icon={MailIcon}
+            autocomplete="email"
             isRequired
           />
         </Row>
         <Row>
           <Inputs.Text
-            inputName="password"
+            inputName="current-password"
+            autocomplete="current-password"
             inputType="password"
             inputPlaceholder={t("signInSection.password")}
             icon={PasswordIcon}
@@ -61,7 +63,7 @@ export const SignInBox: FC = () => {
             padding-top: 1rem;
           `}
         >
-          <Inputs.Checkbox
+          <Inputs.CheckboxInput
             inputName="rememberMe"
             labelContent={t("signInSection.rememberMe")}
           />
@@ -71,7 +73,7 @@ export const SignInBox: FC = () => {
           <Inputs.Button
             type="primary"
             buttonType="submit"
-            optionalStyling={`
+            optionalStyling={css`
               margin: 1rem 0;
             `}
           >

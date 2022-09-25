@@ -44,5 +44,40 @@
     },
     "date": "Quand?",
     "searchButton": "Lancer la recherche !"
+  },
+
+  "footer": {
+    "language": "Langue:",
+    "about": {
+      "title": "À propos",
+      "text": "VroomMates est une plateforme réalisée en tant que projet de fin d'année de licence, à Metz Numeric School. Nous avons travaillé des mois durant et y avons mis tout notre <3. On espère que cela vous plaira :)"
+    },
+    "contact": {
+      "title": "Nous contacter:",
+      "me": "GERARD Alexandre",
+      "email": "vroommates@agerard.dev"
+    },
+    "t&c": {
+      "title": "Termes & Conditions:",
+      "privacyPolicy": "Politique de confidentialité",
+      "cookiesPolicy": "Politique sur les cookies"
+    },
+    "button": "Remonter",
+    "bottom": {
+      "left": "©2022 VroomMates",
+      "right": "Tous droits réservés."
+    }
+  },
+
+  "desktopPage": {
+    "title": "Hello toi !",
+    "subtitle": "On a remarqué que tu utilisais une un ordinateur pour visiter cette application !",
+    "text": "Pour le moment, VroomMates est uniquement accessible avec un smartphone, donc n'hésite pas à recourir à nos services de cette façon 📱"
+  },
+
+  "landscapeMode": {
+    "title": "Hello toi !",
+    "subtitle": "On a remarqué que tu utilisais notre site en mode paysage !",
+    "text": "Pour le moment, VroomMates est uniquement utilisable en portrait 📱"
   }
 }

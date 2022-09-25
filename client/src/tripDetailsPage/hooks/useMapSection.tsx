@@ -1,8 +1,11 @@
 /** @jsxImportSource @emotion/react */
+// eslint-disable-next-line import/no-internal-modules
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import mapboxgl from "mapbox-gl";
 import { ZoomControl } from "mapbox-gl-controls";
 import { useEffect } from "react";
+
+import { useLanguage } from "../../language";
 
 type StatsSectionOptions = (tripCoordinates: {
   departure: [number, number];
@@ -10,11 +13,10 @@ type StatsSectionOptions = (tripCoordinates: {
 }) => void;
 
 export const useMapSection: StatsSectionOptions = (tripCoordinates) => {
+  const { language } = useLanguage();
+
   useEffect(() => {
-    if (
-      tripCoordinates.departure !== [0, 0] &&
-      tripCoordinates.arrival !== [0, 0]
-    ) {
+    if (tripCoordinates.departure && tripCoordinates.arrival) {
       const llb = new mapboxgl.LngLatBounds(
         tripCoordinates.departure,
         tripCoordinates.arrival
@@ -33,6 +35,7 @@ export const useMapSection: StatsSectionOptions = (tripCoordinates) => {
         profile: "mapbox/driving",
         interactive: false,
         alternatives: false,
+        language: language,
         controls: {
           instructions: false,
           inputs: false,
@@ -56,9 +59,13 @@ export const useMapSection: StatsSectionOptions = (tripCoordinates) => {
         await directions.setDestination(tripCoordinates.arrival);
         llb.getCenter();
         map.addControl(directions);
+        map.setLayoutProperty("country-label", "text-field", [
+          "get",
+          "name_" + language,
+        ]);
       });
 
       map.addControl(new ZoomControl(), "top-right");
     }
-  }, [tripCoordinates]);
+  }, [language, tripCoordinates]);
 };

@@ -1,5 +1,4 @@
 export { Layout } from "./Layout";
-export { BlueBorderBackground } from "./BlueBorderBackground";
 export { RoundedContour } from "./RoundedContour";
 export { Inputs } from "./inputs";
 export { ProfilePic } from "./ProfilePic";
@@ -11,3 +10,6 @@ export { ReviewsCard } from "./reviews";
 export { ProfileHeader, ProfileBanner } from "./profileBanner";
 export { Toaster } from "./Toaster";
 export { SearchBox } from "./searchBox";
+export { Footer } from "./footer";
+export { Desktop } from "./Desktop";
+export { LandscapeMode } from "./LandscapeMode";

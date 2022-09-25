@@ -35,7 +35,6 @@ export const Buttons: FC<Props> = ({ slide, previous, next, isDisabled }) => (
           padding-top: 0.5rem;
           background: transparent;
         `}
-        disabled={isDisabled}
       >
         {slide.previousButtonText}
       </Inputs.Button>

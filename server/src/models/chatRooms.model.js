@@ -33,8 +33,6 @@ const chatRoomsSchema = mongoose.Schema(
   { collection: "Chat_Rooms" }
 );
 
-chatRoomsSchema.index({ id: 1 }, { unique: true });
-
 chatRoomsSchema.plugin(uniqueValidator);
 
 const chatRoomsModel = mongoose.model("Chat_Rooms", chatRoomsSchema);

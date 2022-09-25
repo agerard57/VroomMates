@@ -1,20 +1,32 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import ReactECharts from "echarts-for-react";
 import { FC } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
+import { normalizeDistance } from "../../../core";
+import { useLanguage } from "../../../language";
 import { useStatsSection } from "../../hooks";
 import { StatBox } from "./StatBox";
 
 export const StatsSection: FC = () => {
   const { t } = useTranslation("LandingPage");
 
+  const { language } = useLanguage();
   const { stats, options } = useStatsSection();
+
   return (
     <section>
       <Container fluid>
         <Row className="mx-0 grid gap-0">
-          <h3>{t("statsSection.title")}</h3>
+          <h3
+            css={css`
+              margin: 2rem 0;
+            `}
+          >
+            {t("statsSection.title")}
+          </h3>
           <Col>
             <StatBox
               value={stats.trips.totalTrips}
@@ -24,9 +36,13 @@ export const StatsSection: FC = () => {
           </Col>
           <Col>
             <StatBox
-              value={stats.trips.totalDistance.$numberDecimal}
-              caption={t("statsSection.boxes.distance")} //TODO Convert distance
+              value={parseInt(
+                normalizeDistance(stats.trips.totalDistance, language),
+                10
+              )}
+              caption={t("statsSection.boxes.distance")}
               color="#82BBFF"
+              isDistance
             />
           </Col>
           <Col>
@@ -37,7 +53,11 @@ export const StatsSection: FC = () => {
             />
           </Col>
         </Row>
-        <Row>
+        <Row
+          css={css`
+            margin: 2rem 0 0 0;
+          `}
+        >
           <ReactECharts option={options} style={{ height: "500px" }} />
         </Row>
       </Container>

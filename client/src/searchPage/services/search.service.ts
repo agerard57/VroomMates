@@ -1,3 +1,4 @@
+import { publicAxios } from "../../core";
 import { QueriesProps } from "../types";
 
 export const getSearchResults = async ({
@@ -14,10 +15,10 @@ export const getSearchResults = async ({
   }: QueriesProps) =>
     `${process.env?.REACT_APP_API_URL}/search?type=${type}&departureLocation=${departureLocation}&arrivalLocation=${arrivalLocation}&date=${date}`;
   try {
-    const response = await fetch(
+    const response = await publicAxios.get(
       url({ type, departureLocation, arrivalLocation, date })
     );
-    return await response.json();
+    return await response.data;
   } catch (error) {
     return [];
   }

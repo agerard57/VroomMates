@@ -6,7 +6,7 @@
   },
 
   "descriptionSection": {
-    "title": "Du covoiturage ? Pourquoi ?",
+    "title": "Du covoiturage ?\nPourquoi ?",
     "description": "Chez VroomMates, nous croyons fermement que le covoiturage représente l'un des moyens de transport économique et écologique les plus efficaces : non seulement vous économisez de l'argent en utilisant notre service, mais vous aidez également à diviser l'empreinte carbone que vous auriez créée en utilisant votre voiture seule ! N'oubliez pas que cela réduit également le traffic sur les autoroutes 😉"
   },
 
@@ -14,7 +14,7 @@
     "title": "Quelques super statistiques !",
     "boxes": {
       "rides": "Voyages faits",
-      "distance": "Distance totale",
+      "distance": "Distance totale (km)",
       "users": "Utilisateurs totaux"
     },
     "charts": {

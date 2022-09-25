@@ -1,0 +1,47 @@
+{
+  "title": "Add a trip",
+  "page": [
+    {
+      "subtitle": "Time for you to drive!",
+      "body": {
+        "type": { "single": "Single", "frequent": "Frequent" },
+        "date": {
+          "singleStartTitle": "Departure date",
+          "at": "At",
+          "frequentStartTitle": "Starting date of the frequent trip",
+          "frequentEndTitle": "Ending date of the frequent trip"
+        },
+        "frequency": {
+          "title": "Trip frequency"
+        },
+        "map": {
+          "title": "Fill in the departure and arrival locations",
+          "departure": "Set your departure location",
+          "arrival": "Set your arrival location"
+        },
+        "seats": {
+          "title": "Number of available seats"
+        }
+      },
+      "nextButtonText": "Recap",
+      "previousButtonText": "Go back"
+    },
+    {
+      "subtitle": "Trip recap",
+      "body": {
+        "singlePlannedTitle": "Trip planned for",
+        "frequentPlannedTitle": "Trips planned every",
+        "from": "From",
+        "to": "to",
+        "seatAvailableTitle_one": "Seat available",
+        "seatAvailableTitle_other": "Seats available",
+        "price": "Seat price"
+      },
+      "nextButtonText": "Close the page"
+    }
+  ],
+  "message": {
+    "success": "Your trip has been added!",
+    "error": "An error occurred while adding your trip."
+  }
+}

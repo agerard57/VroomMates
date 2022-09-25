@@ -3,7 +3,7 @@ const DriversModel = require("../models/drivers.model");
 
 exports.getTripDetailsById = (req, res) => {
   TripsModel.findById(req.params.id, {
-    "price_per_seat.km_price": 0,
+    "price_per_seat.driver_fee": 0,
     "price_per_seat.service_fee": 0,
   })
     .populate({
@@ -29,7 +29,7 @@ exports.getTripDetailsById = (req, res) => {
         });
         const getAvgRating = (ratings) => {
           const mappedRatings = ratings.map((rating) =>
-            parseInt(rating.rating)
+            parseInt(rating.rating, 10)
           );
           return (
             mappedRatings.reduce((acc, curr) => acc + curr, 0) / ratings.length

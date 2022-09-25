@@ -18,13 +18,16 @@ exports.getUserById = (req, res) => {
     })
     .lean()
     .then((user) => {
-      user.name.last_name = user.name.last_name.charAt(0) + ".";
-      //Check if user.ratings exists and not empty
+      user.name.last_name = `${user.name.last_name.charAt(0)}.`;
+      // Check if user.ratings exists and not empty
       if (user.ratings && user.ratings.length > 0) {
-        const ratings = user.ratings.map((rating) => parseInt(rating.rating));
+        const ratings = user.ratings.map((rating) =>
+          parseInt(rating.rating, 10)
+        );
         user.ratings.forEach((rating) => {
-          rating.author.name.last_name =
-            rating.author.name.last_name.charAt(0) + ".";
+          rating.author.name.last_name = `${rating.author.name.last_name.charAt(
+            0
+          )}.`;
         });
         user.avg_rating =
           ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length;
@@ -32,9 +35,9 @@ exports.getUserById = (req, res) => {
       TripsModel.find({ driver: user._id }).then((trips) => {
         user.nb_trips_created = trips.length;
         // Count the number of trips that the user has been a passenger to
-        user.nb_trips_participated = trips.filter((trip) => {
-          return trip.passengers.includes(user._id);
-        }).length;
+        user.nb_trips_participated = trips.filter((trip) =>
+          trip.passengers.includes(user._id)
+        ).length;
         DriversModel.find({ user: user._id }).then((driver) => {
           // Check if there's a result
           if (driver.length > 0) {

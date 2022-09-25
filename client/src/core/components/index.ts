@@ -11,3 +11,5 @@ export { ProfileHeader, ProfileBanner } from "./profileBanner";
 export { Toaster } from "./Toaster";
 export { SearchBox } from "./searchBox";
 export { Footer } from "./footer";
+export { Desktop } from "./Desktop";
+export { LandscapeMode } from "./LandscapeMode";

@@ -7,6 +7,7 @@ type RouteManagerManager = {
   isUserLoggedIn: boolean;
   loggedUserData: LoggedUserDataProps["loggedUserData"];
   isUserAdmin: boolean;
+  loading: boolean;
 };
 
 export const useRouteManager = (): RouteManagerManager => {
@@ -14,6 +15,7 @@ export const useRouteManager = (): RouteManagerManager => {
   const [isUserAdmin, setIsUserAdmin] = useState<boolean>(false);
   const [loggedUserData, setLoggedUserData] =
     useState<LoggedUserDataProps["loggedUserData"]>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const cookie = cookiesManager.getCookie("authToken");
@@ -24,10 +26,10 @@ export const useRouteManager = (): RouteManagerManager => {
 
       setLoggedUserData(decodedToken);
       setIsUserLoggedIn(true);
-
       if (decodedToken.role === "admin") setIsUserAdmin(true);
-    }
-  }, [cookiesManager.getCookie("authToken")]);
+      setLoading(false);
+    } else setLoading(false);
+  }, []);
 
-  return { isUserLoggedIn, loggedUserData, isUserAdmin };
+  return { isUserLoggedIn, loggedUserData, isUserAdmin, loading };
 };

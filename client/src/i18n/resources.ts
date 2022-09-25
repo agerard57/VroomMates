@@ -1,4 +1,5 @@
 import { i18n as AddTripModal } from "../addTripModal";
+import { i18n as AdminUserListPage } from "../adminUserListPage";
 import { i18n as BecomeDriverModal } from "../becomeDriverModal";
 import { i18n as CloseAccountModal } from "../closeAccountModal";
 import { i18n as Core } from "../core";
@@ -33,6 +34,7 @@ const normalize = (
 
 const moduleResources = normalize({
   AddTripModal,
+  AdminUserListPage,
   BecomeDriverModal,
   CloseAccountModal,
   Core,

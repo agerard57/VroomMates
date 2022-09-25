@@ -3,11 +3,14 @@
 /** @jsxImportSource @emotion/react */
 import { FormEvent, useEffect, useRef } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { SearchBoxInterfaces, SearchBoxInitializers } from "../interfaces";
 import { SearchBoxTypes } from "../types";
 
 export const useSearchBox: SearchBoxTypes["UseSearchBoxManager"] = () => {
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
   const [searchInputs, setSearchInputs] = useState<
@@ -20,7 +23,9 @@ export const useSearchBox: SearchBoxTypes["UseSearchBoxManager"] = () => {
   const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsOpen(false);
-    window.location.href = `/search?type=${searchInputs.type}&departureLocation=${searchInputs.departureLocation}&arrivalLocation=${searchInputs.arrivalLocation}&date=${searchInputs.date}`;
+    navigate(
+      `/search?type=${searchInputs.type}&departureLocation=${searchInputs.departureLocation}&arrivalLocation=${searchInputs.arrivalLocation}&date=${searchInputs.date}`
+    );
   };
 
   useEffect(() => {

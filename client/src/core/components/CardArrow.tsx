@@ -3,8 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Col } from "react-bootstrap";
 
-export const SideArrow: FC = () => (
-  /* TODO HOVER */
+export const CardArrow: FC = () => (
   <Col
     xs={1}
     css={css`
@@ -14,6 +13,10 @@ export const SideArrow: FC = () => (
       justify-content: center;
       background: #0000000f;
       margin-right: 10px;
+
+      &:hover {
+        background: #0000001f;
+      }
     `}
   >
     &gt;

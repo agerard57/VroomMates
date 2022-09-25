@@ -49,7 +49,7 @@ export const useProfilePage = (
         getUserById(loggedUserData.id);
         setPageType("up");
       }
-  }, [id, loggedUserData, user.status]);
+  }, [user.status]);
 
   return { user, pageType };
 };

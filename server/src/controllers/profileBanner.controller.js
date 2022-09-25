@@ -1,5 +1,6 @@
 const UsersModel = require("../models/users.model");
 const TripsModel = require("../models/trips.model");
+const getAvgRating = require("../utils/getAvgRating");
 
 exports.getProfilePicSrc = (req, res) => {
   UsersModel.findById(req.params.id, {
@@ -30,19 +31,17 @@ exports.getUserData = (req, res) => {
     .lean()
     .then((user) => {
       user.name.last_name = `${user.name.last_name.charAt(0)}.`;
-      // Check if user.ratings exists and not empty
       if (user.ratings && user.ratings.length > 0) {
-        const ratings = user.ratings.map((rating) =>
-          parseInt(rating.rating, 10)
-        );
         user.ratings.forEach((rating) => {
-          rating.author.name.last_name = `${rating.author.name.last_name.charAt(
-            0
-          )}.`;
+          if (rating.author === null) rating.author = "deleted";
+          else
+            rating.author.name.last_name = `${rating.author.name.last_name.charAt(
+              0
+            )}.`;
         });
-        user.avg_rating =
-          ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length;
+        user.avg_rating = getAvgRating(user.ratings);
       }
+
       TripsModel.find({ driver: user._id }).then((trips) => {
         user.nb_trips_created = trips.length;
         // Count the number of trips that the user has been a passenger to

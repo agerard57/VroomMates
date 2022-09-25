@@ -10,4 +10,11 @@ export {
   ArrivalIcon,
   DepartureIcon,
 } from "./icons";
-export { AllSetImage, RegisterImage, NotFoundImage, FullLogo } from "./images";
+
+export {
+  AllSetImage,
+  RegisterImage,
+  NotFoundImage,
+  FullLogo,
+  PhoneImage,
+} from "./images";

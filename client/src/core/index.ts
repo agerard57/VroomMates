@@ -26,6 +26,8 @@ export {
   Toaster,
   SearchBox,
   Footer,
+  Desktop,
+  LandscapeMode,
 } from "./components";
 
 export {

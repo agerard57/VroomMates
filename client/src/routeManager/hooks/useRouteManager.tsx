@@ -6,10 +6,12 @@ import { AuthToken, cookiesManager, LoggedUserDataProps } from "../../core";
 type RouteManagerManager = {
   isUserLoggedIn: boolean;
   loggedUserData: LoggedUserDataProps["loggedUserData"];
+  isUserAdmin: boolean;
 };
 
 export const useRouteManager = (): RouteManagerManager => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false);
+  const [isUserAdmin, setIsUserAdmin] = useState<boolean>(false);
   const [loggedUserData, setLoggedUserData] =
     useState<LoggedUserDataProps["loggedUserData"]>(null);
 
@@ -22,8 +24,10 @@ export const useRouteManager = (): RouteManagerManager => {
 
       setLoggedUserData(decodedToken);
       setIsUserLoggedIn(true);
+
+      if (decodedToken.role === "admin") setIsUserAdmin(true);
     }
   }, [cookiesManager.getCookie("authToken")]);
 
-  return { isUserLoggedIn, loggedUserData };
+  return { isUserLoggedIn, loggedUserData, isUserAdmin };
 };

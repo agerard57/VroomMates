@@ -27,13 +27,17 @@ exports.getReceivedReviewsByUserId = (req, res) => {
       model: "Users",
       select: "-_id name",
     })
+    .lean()
     .then((user) => {
       // Check if user.ratings exists and not empty
       if (user.ratings && user.ratings.length > 0) {
         user.ratings.forEach((rating) => {
-          rating.author.name.last_name = `${rating.author.name.last_name.charAt(
-            0
-          )}.`;
+          if (rating.author === null) rating.author = "deleted";
+          else
+            rating.author.name.last_name = `${rating.author.name.last_name.charAt(
+              0
+            )}.`;
+          rating.rating = parseInt(rating.rating, 10);
         });
       }
       res.status(200).json(user.ratings);

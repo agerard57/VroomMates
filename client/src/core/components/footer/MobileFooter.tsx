@@ -68,6 +68,7 @@ export const MobileFooter: FC = () => {
                   ? "white"
                   : "rgba(255, 255, 255, 0.56)"};
                 padding: 0.2rem;
+                cursor: pointer;
               `}
               onClick={() => change("en")}
             >
@@ -82,6 +83,7 @@ export const MobileFooter: FC = () => {
                   ? "white"
                   : "rgba(255, 255, 255, 0.40)"};
                 padding: 0.2rem;
+                cursor: pointer;
               `}
               onClick={() => change("fr")}
             >

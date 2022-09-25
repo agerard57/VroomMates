@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import { Inputs, RoundedContour } from "../../core";
 import { useRegisterPage } from "../hooks";
@@ -11,6 +12,7 @@ export const SignUpBox: FC = () => {
   const { t } = useTranslation("RegisterPage");
 
   const { handleSubmit } = useRegisterPage();
+  const navigate = useNavigate();
 
   const sectionStyle = css`
     padding: 0.5rem 0;
@@ -177,7 +179,10 @@ export const SignUpBox: FC = () => {
             labelContent={
               <>
                 {t("registerBox.terms")}{" "}
-                <a href="/policies#termsAndConditions">
+                <a
+                  href="#termsAndConditions"
+                  onClick={() => navigate("/policies#termsAndConditions")}
+                >
                   {t("registerBox.termsLink")}
                 </a>
               </>

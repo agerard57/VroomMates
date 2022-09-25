@@ -3,12 +3,14 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import { useAdminUserListPage } from "../hooks";
 import { UserCard } from "./UserCard";
 
 export const AdminUserListPage: FC = () => {
   const { t } = useTranslation("AdminUserListPage");
+  const navigate = useNavigate();
 
   const { handleSearch, filteredUsers } = useAdminUserListPage();
 
@@ -49,6 +51,7 @@ export const AdminUserListPage: FC = () => {
             border-bottom: #dfdfdf 1px solid;
             padding: 0.5rem;
           `}
+          onClick={() => navigate(`/user/${user.id}`)}
         >
           <UserCard user={user} />
         </Row>

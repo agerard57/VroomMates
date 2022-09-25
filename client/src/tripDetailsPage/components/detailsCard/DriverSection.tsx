@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import { Inputs, ProfilePic } from "../../../core";
 import { CarIcon } from "../../assets";
@@ -16,6 +17,8 @@ type Props = {
 
 export const DriverSection: FC<Props> = ({ tripId, driver, car }) => {
   const { t } = useTranslation("TripDetailsPage");
+
+  const navigate = useNavigate();
 
   return (
     <Row
@@ -96,9 +99,7 @@ export const DriverSection: FC<Props> = ({ tripId, driver, car }) => {
           <Row>
             <Inputs.Button
               type="hollow"
-              onClick={() => {
-                window.location.href = `/messages?chat=${tripId}`;
-              }}
+              onClick={() => navigate(`/messages?chat=${tripId}`)}
             >
               {t("driverSection.contact")}
             </Inputs.Button>
@@ -118,7 +119,7 @@ export const DriverSection: FC<Props> = ({ tripId, driver, car }) => {
             outsidePictureStyling={css`
               width: 5rem;
             `}
-            onClick={() => (window.location.href = `/user/${driver.id}`)}
+            onClick={() => navigate(`/user/${driver.id}`)}
           />
         </Col>
       </Row>
@@ -129,9 +130,7 @@ export const DriverSection: FC<Props> = ({ tripId, driver, car }) => {
       >
         <Inputs.Button
           type="hollow"
-          onClick={() => {
-            window.location.href = `/user/${driver.id}`;
-          }}
+          onClick={() => navigate(`/user/${driver.id}`)}
         >
           {t("driverSection.profile")}
         </Inputs.Button>

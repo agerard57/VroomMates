@@ -9,11 +9,13 @@ export const useModalManager = (): UseModalManager => {
   ];
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [modalName, setModalName] = useState<string>("");
   const [slideSpecs, setSlideSpecs] = useState<SlideSpec[]>(emptySlideSpec);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const [slideNumber, setSlideNumber] = useState<number>(0);
 
-  const openModal = (slideSpecs: SlideSpec[]) => {
+  const openModal = (slideSpecs: SlideSpec[], name: string) => {
+    setModalName(name);
     setSlideNumber(0);
     setSlideSpecs(slideSpecs);
     setIsOpen(true);
@@ -40,6 +42,7 @@ export const useModalManager = (): UseModalManager => {
   };
 
   return {
+    modalName,
     isOpen,
     slideSpecs,
     openModal,

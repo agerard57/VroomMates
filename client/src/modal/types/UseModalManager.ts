@@ -3,9 +3,10 @@ import { Dispatch, SetStateAction } from "react";
 import { SlideSpec } from "./SlideSpec";
 
 export type UseModalManager = {
+  modalName: string;
   isOpen: boolean;
   slideSpecs: SlideSpec[];
-  openModal: (slideSpecs: SlideSpec[]) => void;
+  openModal: (slideSpecs: SlideSpec[], modalName: string) => void;
   closeModal: () => void;
   iterator: {
     previous: () => void;

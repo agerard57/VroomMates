@@ -30,7 +30,7 @@ export const AccountSection: FC<Props> = ({ userStatus }) => {
       {userStatus === "passenger" ? (
         <MenuListItem
           title={t("accountManagementMenu.account.driver")}
-          onClick={() => openModal(BecomeDriverScreens)}
+          onClick={() => openModal(BecomeDriverScreens, "becomeDriver")}
         />
       ) : null}
       {userStatus === "driver" || userStatus === "admin" ? (
@@ -51,7 +51,7 @@ export const AccountSection: FC<Props> = ({ userStatus }) => {
       />
       <MenuListItem
         title={t("accountManagementMenu.account.close")}
-        onClick={() => openModal(closeAccountScreens)}
+        onClick={() => openModal(closeAccountScreens, "closeAccount")}
         color="#ff5656"
         isBold
       />

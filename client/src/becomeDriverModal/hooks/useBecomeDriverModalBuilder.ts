@@ -6,7 +6,7 @@ import { UseBecomeDriverModalBuilderManager } from "../types";
 
 export const useBecomeDriverModalBuilder: UseBecomeDriverModalBuilderManager =
   () => {
-    const { setIsDisabled, iterator } = useModal();
+    const { modalName, setIsDisabled, iterator } = useModal();
     const { slideNumber } = iterator;
 
     const [driverLicenseFilled, setDriverLicenseFilled] =
@@ -22,10 +22,13 @@ export const useBecomeDriverModalBuilder: UseBecomeDriverModalBuilderManager =
     }, []);
 
     useEffect(() => {
-      setIsDisabled(
-        (!userAlreadyRequested && slideNumber === 1 && !driverLicenseFilled) ||
-          (!userAlreadyRequested && slideNumber === 2 && !carInputsFilled)
-      );
+      if (modalName === "becomeDriver")
+        setIsDisabled(
+          (!userAlreadyRequested &&
+            slideNumber === 1 &&
+            !driverLicenseFilled) ||
+            (!userAlreadyRequested && slideNumber === 2 && !carInputsFilled)
+        );
     }, [
       slideNumber,
       driverLicenseFilled,

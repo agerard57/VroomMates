@@ -6,7 +6,7 @@ import { BecomeDriverModalBuilder } from "../../../becomeDriverModal";
 import { UserTypes } from "../../../core";
 import { MenuListItem } from "../../../core";
 import { MenuListTitle } from "../../../core";
-import { SlideSpec, useModal } from "../../../modal";
+import { useModal } from "../../../modal";
 
 type Props = {
   status?: UserTypes["Status"];
@@ -19,15 +19,13 @@ export const Driver: FC<Props> = ({ status }) => {
   const addTripScreens = AddTripModalBuilder();
   const becomeDriverScreens = BecomeDriverModalBuilder();
 
-  const openModalHandler = (screens: SlideSpec[]) => () => openModal(screens);
-
   if (status === "passenger")
     return (
       <section>
         <MenuListTitle title={t("driverSection.title")} />
         <MenuListItem
           title={t("driverSection.becomeDriver")}
-          onClick={openModalHandler(becomeDriverScreens)}
+          onClick={() => openModal(becomeDriverScreens, "becomeDriver")}
         />
       </section>
     );
@@ -37,7 +35,7 @@ export const Driver: FC<Props> = ({ status }) => {
         <MenuListTitle title={t("driverSection.title")} />
         <MenuListItem
           title={t("driverSection.addTrip")}
-          onClick={openModalHandler(addTripScreens)}
+          onClick={() => openModal(addTripScreens, "addTrip")}
         />
       </section>
     );

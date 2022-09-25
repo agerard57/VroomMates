@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 
 import { RoundedContour } from "../../../core";
-import { useProcessDistance } from "../../hooks";
 
 type Props = {
   value: number;
@@ -12,12 +11,7 @@ type Props = {
   isDistance?: boolean;
 };
 
-export const StatBox: FC<Props> = ({
-  value,
-  caption,
-  color,
-  isDistance = false,
-}) => (
+export const StatBox: FC<Props> = ({ value, caption, color }) => (
   <RoundedContour>
     <div>
       <div
@@ -44,7 +38,7 @@ export const StatBox: FC<Props> = ({
             color: ${color};
           `}
         >
-          {useProcessDistance(value, isDistance)}
+          {value}
         </span>
       </div>
       <hr />

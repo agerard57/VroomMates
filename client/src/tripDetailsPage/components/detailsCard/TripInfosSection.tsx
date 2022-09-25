@@ -7,12 +7,18 @@ import { TripArrow } from "../../assets";
 import { useTripInfosSection } from "../../hooks";
 import { TripInfosProps } from "../../types";
 
-export const TripInfosSection: FC<TripInfosProps> = ({
+type DistanceProp = {
+  distance: number;
+};
+
+export const TripInfosSection: FC<TripInfosProps & DistanceProp> = ({
+  distance,
   departure,
   arrival,
 }) => {
   const { distanceFromUser, totalDistance, time, placeName } =
-    useTripInfosSection({ departure, arrival });
+    useTripInfosSection({ departure, arrival, distance });
+
   return (
     <Row
       css={css`

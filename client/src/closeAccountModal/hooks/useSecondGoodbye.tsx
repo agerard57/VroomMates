@@ -9,13 +9,11 @@ export const useSecondGoodbye = () => {
   const { t } = useTranslation("CloseAccountModal");
 
   useEffect(() => {
-    deleteAccount().then((response) => {
-      if (response.status === 204) {
+    deleteAccount().then((status) => {
+      if (status === 204) {
         cookiesManager.deleteCookie("authToken");
-        toast.success(t(response.message));
-      } else {
-        toast.error(t(response.message));
-      }
+        toast.success(t("message.success"));
+      } else toast.error(t("message.error"));
     });
   }, [t]);
 };

@@ -1,7 +1,7 @@
 type LocationProps = {
   time: Date;
   placeName: string;
-  coordinates: [string, string];
+  coordinates: [number, number];
 };
 
 export type TripInfosProps = {

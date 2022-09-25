@@ -68,5 +68,17 @@
       "left": "©2022 VroomMates",
       "right": "All rights reserved."
     }
+  },
+
+  "desktopPage": {
+    "title": "Hello there!",
+    "subtitle": "We noticed you currently are on a desktop to visit this app!",
+    "text": "For the time being, VroomMates is only accessible via smartphone, so please feel free to use our services this way 📱"
+  },
+
+  "landscapeMode": {
+    "title": "Hello there!",
+    "subtitle": "We noticed you currently are on landscape mode to visit this app!",
+    "text": "For the time being, VroomMates is only accessible via portrait 📱"
   }
 }

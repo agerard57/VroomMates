@@ -19,7 +19,6 @@ export const CenterSection: FC<Props> = ({ departure, arrival }) => {
   return (
     <Row>
       <Col
-        xs={4}
         css={css`
           display: flex;
           flex-direction: column;
@@ -34,7 +33,6 @@ export const CenterSection: FC<Props> = ({ departure, arrival }) => {
         <Row>{normalizeDate(arrival.time, language, "time")}</Row>
       </Col>
       <Col
-        xs={1}
         css={css`
           display: flex;
           justify-content: center;
@@ -51,7 +49,8 @@ export const CenterSection: FC<Props> = ({ departure, arrival }) => {
           justify-content: space-between;
           align-items: flex-start;
           font-size: 0.8rem;
-          div {
+          text-align: left;
+          .Row {
             padding: 0 10px !important;
           }
         `}

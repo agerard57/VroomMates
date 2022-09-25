@@ -29,21 +29,23 @@ export const useThirdCar: UseThirdCarManager = (setCarInputsFilled) => {
     );
   }, [setCarInputsFilled, inputs.brand, inputs.model, inputs.color]);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       componentWillUnmount.current = true;
-    };
-  }, []);
+    },
+    []
+  );
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (componentWillUnmount.current)
         postCar(inputs).then((res) => {
           if (res.status === 200) toast.success(t(res.message));
           else toast.error(t(res.message));
         });
-    };
-  }, [inputs, t]);
+    },
+    [inputs, t]
+  );
 
   return {
     handleInputChange,

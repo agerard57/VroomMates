@@ -35,8 +35,7 @@
         "to": "au",
         "seatAvailableTitle_one": "Place disponible",
         "seatAvailableTitle_other": "Places disponibles",
-        "singlePrice": "Prix de la place",
-        "frequentPrice": "Prix de la place par voyage"
+        "price": "Prix de la place"
       },
       "nextButtonText": "Fermer"
     }

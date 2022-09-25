@@ -1,3 +1,4 @@
+// eslint-disable-next-line consistent-return
 const hasEveryFieldBeenFilled = (req, res, next) => {
   const { type, departureLocation, arrivalLocation, date } = req.query;
 

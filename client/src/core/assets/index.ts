@@ -7,5 +7,14 @@ export {
   PetIcon,
   TalkIcon,
   CalendarIcon,
+  ArrivalIcon,
+  DepartureIcon,
 } from "./icons";
-export { AllSetImage, RegisterImage, NotFoundImage } from "./images";
+
+export {
+  AllSetImage,
+  RegisterImage,
+  NotFoundImage,
+  FullLogo,
+  PhoneImage,
+} from "./images";

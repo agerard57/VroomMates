@@ -6,7 +6,7 @@ import { Col, Row } from "react-bootstrap";
 import {
   normalizePlaceName,
   normalizeDate,
-  normalizeTimeDifference,
+  normalizeTime,
   normalizeDistance,
 } from "../../../core";
 import { useLanguage } from "../../../language";
@@ -15,15 +15,21 @@ import { TripArrow } from "../../assets";
 type PointProps = {
   time: Date;
   placeName: string;
-  coordinates: { $numberDecimal: string }[];
 };
 
 type Props = {
   departure: PointProps;
   arrival: PointProps;
+  tripDuration: number;
+  distance: number;
 };
 
-export const LeftSection: FC<Props> = ({ departure, arrival }) => {
+export const LeftSection: FC<Props> = ({
+  departure,
+  arrival,
+  tripDuration,
+  distance,
+}) => {
   const { language } = useLanguage();
   return (
     <Col
@@ -75,21 +81,8 @@ export const LeftSection: FC<Props> = ({ departure, arrival }) => {
             }
           `}
         >
-          <p>- {normalizeTimeDifference(departure.time, arrival.time)}</p>
-          <p>
-            -{" "}
-            {normalizeDistance(
-              {
-                latitude: departure.coordinates[0].$numberDecimal,
-                longitude: departure.coordinates[1].$numberDecimal,
-              },
-              {
-                latitude: arrival.coordinates[0].$numberDecimal,
-                longitude: arrival.coordinates[1].$numberDecimal,
-              },
-              language
-            )}
-          </p>
+          <p>- {normalizeTime(tripDuration)}</p>
+          <p>- {normalizeDistance(distance, language, true)}</p>
         </Col>
       </Row>
       <Row>

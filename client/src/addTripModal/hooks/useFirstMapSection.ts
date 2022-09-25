@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line import/no-internal-modules
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import mapboxgl from "mapbox-gl";
 import { useEffect, Dispatch, SetStateAction } from "react";

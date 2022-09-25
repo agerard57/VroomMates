@@ -7,30 +7,28 @@ type Props = {
   labelContent: ReactNode | string;
 };
 
-export const CheckboxInput: FC<Props> = ({ inputName, labelContent }) => {
-  return (
-    <div
+export const CheckboxInput: FC<Props> = ({ inputName, labelContent }) => (
+  <div
+    css={css`
+      display: flex;
+      align-items: flex-start;
+    `}
+  >
+    <input
+      type="checkbox"
+      id={inputName}
+      name={inputName}
       css={css`
-        display: flex;
-        align-items: flex-start;
+        place-items: start;
+      `}
+    />
+    <label
+      htmlFor={inputName}
+      css={css`
+        margin-left: 5px;
       `}
     >
-      <input
-        type="checkbox"
-        id={inputName}
-        name={inputName}
-        css={css`
-          place-items: start;
-        `}
-      />
-      <label
-        htmlFor={inputName}
-        css={css`
-          margin-left: 5px;
-        `}
-      >
-        {labelContent}
-      </label>
-    </div>
-  );
-};
+      {labelContent}
+    </label>
+  </div>
+);

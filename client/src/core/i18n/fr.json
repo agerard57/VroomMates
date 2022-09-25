@@ -67,5 +67,17 @@
       "left": "©2022 VroomMates",
       "right": "Tous droits réservés."
     }
+  },
+
+  "desktopPage": {
+    "title": "Hello toi !",
+    "subtitle": "On a remarqué que tu utilisais une un ordinateur pour visiter cette application !",
+    "text": "Pour le moment, VroomMates est uniquement accessible avec un smartphone, donc n'hésite pas à recourir à nos services de cette façon 📱"
+  },
+
+  "landscapeMode": {
+    "title": "Hello toi !",
+    "subtitle": "On a remarqué que tu utilisais notre site en mode paysage !",
+    "text": "Pour le moment, VroomMates est uniquement utilisable en portrait 📱"
   }
 }

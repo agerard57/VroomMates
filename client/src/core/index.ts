@@ -26,14 +26,17 @@ export {
   Toaster,
   SearchBox,
   Footer,
+  Desktop,
+  LandscapeMode,
 } from "./components";
 
 export {
   cookiesManager,
   normalizeDate,
   normalizePlaceName,
-  normalizeTimeDifference,
+  normalizeTime,
   normalizeDistance,
+  normalizeDistanceDifference,
   normalizePrice,
   getStatusIcon,
   s3UrlBuilder,
@@ -49,7 +52,7 @@ export type {
 
 export { useDaysDisplay, useGeolocation, usePageTitle } from "./hooks";
 
-export { tokenService } from "./services";
+export { tokenService, privateAxios, publicAxios } from "./services";
 
 export type { User } from "./interfaces";
 export { UserInitializer } from "./interfaces";

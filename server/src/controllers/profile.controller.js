@@ -1,16 +1,15 @@
-const UsersModel = require("../models/users.model");
 const bcrypt = require("bcryptjs");
-const generateJwt = require("../utils/generateJwt");
 const schedule = require("node-schedule");
 const jwt = require("jsonwebtoken");
+const fs = require("fs");
+const path = require("path");
+const UsersModel = require("../models/users.model");
+const generateJwt = require("../utils/generateJwt");
 const jwtConfig = require("../config/jwt.config");
 const getAvgRating = require("../utils/getAvgRating");
 const DriversModel = require("../models/drivers.model");
 const TripsModel = require("../models/trips.model");
 const s3 = require("../services/s3");
-const fs = require("fs");
-const path = require("path");
-const { profile } = require("console");
 
 exports.register = (req, res) => {
   const user = new UsersModel({
@@ -38,7 +37,7 @@ exports.register = (req, res) => {
 };
 
 exports.login = (req, res) => {
-  const rememberMe = req.body.rememberMe;
+  const { rememberMe } = req.body;
 
   UsersModel.findOne({
     "email.email_address": req.body.email,
@@ -86,7 +85,6 @@ exports.login = (req, res) => {
               (err, _user) => {
                 if (err) {
                   console.error(err.message);
-                  return;
                 }
               }
             );
@@ -158,13 +156,12 @@ exports.refresh = (req, res) => {
         );
         return res.status(200).send({
           message: "Token refreshed successfully",
-          authToken: authToken,
-        });
-      } else {
-        return res.status(401).send({
-          message: "Refresh token expired",
+          authToken,
         });
       }
+      return res.status(401).send({
+        message: "Refresh token expired",
+      });
     }
     return res.status(401).send({
       message: "No refresh token found",
@@ -178,17 +175,19 @@ exports.signOut = (req, res) => {
     ignoreExpiration: true,
   });
 
-  UsersModel.findOneAndUpdate(
-    { _id: payload.id },
-    { $set: { refreshTokens: [] } },
-    (err, _user) => {
-      if (err) {
-        res.status(500).json({ message: err.message });
-        return;
+  if (token)
+    UsersModel.findOneAndUpdate(
+      { _id: payload.id },
+      { $set: { refreshTokens: [] } },
+      (err, _user) => {
+        if (err) {
+          res.status(500).json({ message: err.message });
+          return;
+        }
+        res.status(200).json({ message: "signOut.success" });
       }
-      res.status(200).json({ message: "signOut.success" });
-    }
-  );
+    );
+  else res.status(401).json({ message: "signOut.success" });
 };
 
 exports.closeAccount = (_req, res) => {
@@ -206,7 +205,6 @@ exports.closeAccount = (_req, res) => {
           (err) => {
             if (err) {
               res.status(500).json({ message: "message.error" });
-              return;
             }
           }
         );
@@ -216,7 +214,6 @@ exports.closeAccount = (_req, res) => {
       DriversModel.deleteOne({ user: userId }, (err) => {
         if (err) {
           res.status(500).json({ message: "message.error" });
-          return;
         }
       });
     }
@@ -245,7 +242,6 @@ exports.closeAccount = (_req, res) => {
           (err, _trip) => {
             if (err) {
               res.status(500).json({ message: "message.error" });
-              return;
             }
           }
         );

@@ -11,8 +11,8 @@ export const ProtectedRoute: FC<Props> = ({
   isAllowed,
   redirectPath = "/home",
   children,
-}) => {
-  return isAllowed ? (
+}) =>
+  isAllowed ? (
     children ? (
       <>{children}</>
     ) : (
@@ -21,4 +21,3 @@ export const ProtectedRoute: FC<Props> = ({
   ) : (
     <Navigate to={redirectPath} replace />
   );
-};

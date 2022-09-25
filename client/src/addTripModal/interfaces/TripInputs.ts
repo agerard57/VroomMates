@@ -35,7 +35,7 @@ export interface TripInputs {
 }
 
 export const locationInitializer = {
-  type: "Point" as "Point",
+  type: "Point" as const,
   coordinates: [0, 0] as [number, number],
 };
 

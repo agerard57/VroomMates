@@ -24,13 +24,13 @@ export const ArrowSection: FC<Props> = ({ departure, arrival }) => {
         border-bottom: 1px solid #e6e6e6;
         padding: 0.5rem 0;
         display: flex;
+        display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        justify-content: space-between;
         align-content: center;
         justify-content: center;
         align-items: center;
         color: #333333;
-        white-space: nowrap;
       `}
     >
       <Col
@@ -60,8 +60,10 @@ export const ArrowSection: FC<Props> = ({ departure, arrival }) => {
           p {
             margin: 0;
             font-weight: 600;
+            white-space: pre-wrap;
           }
         `}
+        xs={9}
       >
         <Row>
           <p>{normalizePlaceName(departure.place_name, "full", language)}</p>

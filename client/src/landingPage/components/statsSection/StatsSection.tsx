@@ -5,13 +5,17 @@ import { FC } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
+import { normalizeDistance } from "../../../core";
+import { useLanguage } from "../../../language";
 import { useStatsSection } from "../../hooks";
 import { StatBox } from "./StatBox";
 
 export const StatsSection: FC = () => {
   const { t } = useTranslation("LandingPage");
 
+  const { language } = useLanguage();
   const { stats, options } = useStatsSection();
+
   return (
     <section>
       <Container fluid>
@@ -32,7 +36,10 @@ export const StatsSection: FC = () => {
           </Col>
           <Col>
             <StatBox
-              value={parseInt(stats.trips.totalDistance.$numberDecimal, 10)}
+              value={parseInt(
+                normalizeDistance(stats.trips.totalDistance, language),
+                10
+              )}
               caption={t("statsSection.boxes.distance")}
               color="#82BBFF"
               isDistance

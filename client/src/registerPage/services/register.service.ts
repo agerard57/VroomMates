@@ -1,18 +1,13 @@
+import { publicAxios } from "../../core";
 import { PostRegisterProps } from "../types";
 
 const url = `${process.env?.REACT_APP_API_URL}/profile/register`;
 
 export const postRegister = async (formData: PostRegisterProps) => {
   try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const response = await publicAxios.post(url, formData);
 
-    const data = await response.json();
+    const data = await response.data;
     data.status = response.status;
     return data;
   } catch (error) {

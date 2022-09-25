@@ -1,8 +1,9 @@
-const UsersModel = require("../models/users.model");
+/* eslint-disable consistent-return */
 const bcrypt = require("bcryptjs");
+const UsersModel = require("../models/users.model");
 
 const checkEmail = (req, res, next) => {
-  const email = req.body.email;
+  const { email } = req.body;
   if (email === "")
     return res.status(204).json({ message: "messages.error.email.empty" });
   if (!email.includes("@")) {
@@ -39,7 +40,7 @@ const checkPasswordSyntax = (req, res, next) => {
 };
 
 const checkUserExistsAndValidPassword = (req, res, next) => {
-  const email = req.body.email;
+  const { email } = req.body;
 
   UsersModel.findOne({
     "email.email_address": email,

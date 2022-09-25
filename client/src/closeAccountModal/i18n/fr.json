@@ -2,7 +2,7 @@
   "page": [
     {
       "title": "Clore mon compte",
-      "body": "Hey là, est-tu sûr de vouloir clôturer ton compte ?",
+      "body": "Hé là, es-tu sûr de vouloir clôturer ton compte ?",
       "message": "Cette décision est définitive.",
       "nextButtonText": "Oui, clore mon compte",
       "previousButtonText": "Non ! Je veux rester !"

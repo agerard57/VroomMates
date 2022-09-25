@@ -17,12 +17,10 @@ const setCookie = (key: string, value: string, rememberMe: boolean) => {
   });
 };
 
-const getCookie = (key: string) => {
-  return cookies.get(key);
-};
+const getCookie = (key: string) => cookies.get(key);
 
 const deleteCookie = (key: string) => {
-  cookies.remove(key);
+  cookies.remove(key, { path: "/" });
 };
 
 export const cookiesManager: cookiesManagerManager = {

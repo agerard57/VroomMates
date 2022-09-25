@@ -17,16 +17,16 @@ export const MobileFooter: FC = () => {
         <path
           d="M0 37H320V579H160H0V37Z"
           fill="url(#paint0_linear_221_1974)"
-          fill-opacity="0.7"
-          shape-rendering="crispEdges"
+          fillOpacity="0.7"
+          shapeRendering="crispEdges"
         />
       </g>
       <g filter="url(#filter1_d_221_1974)">
         <path
           d="M-18.5 419.5L21.6805 431.16C60.2135 442.343 100.512 446.148 140.457 442.377V442.377C153.462 441.149 166.548 441.039 179.572 442.048L216.077 444.876C243.399 446.992 270.864 443.454 296.758 434.482L340 419.5L320 579H0L-18.5 419.5Z"
           fill="black"
-          fill-opacity="0.03"
-          shape-rendering="crispEdges"
+          fillOpacity="0.03"
+          shapeRendering="crispEdges"
         />
       </g>
       <g filter="url(#filter2_d_221_1974)">
@@ -68,6 +68,7 @@ export const MobileFooter: FC = () => {
                   ? "white"
                   : "rgba(255, 255, 255, 0.56)"};
                 padding: 0.2rem;
+                cursor: pointer;
               `}
               onClick={() => change("en")}
             >
@@ -82,6 +83,7 @@ export const MobileFooter: FC = () => {
                   ? "white"
                   : "rgba(255, 255, 255, 0.40)"};
                 padding: 0.2rem;
+                cursor: pointer;
               `}
               onClick={() => change("fr")}
             >
@@ -241,9 +243,9 @@ export const MobileFooter: FC = () => {
           width="328"
           height="550"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -276,9 +278,9 @@ export const MobileFooter: FC = () => {
           width="366.5"
           height="167.5"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -311,9 +313,9 @@ export const MobileFooter: FC = () => {
           width="320"
           height="114.204"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -346,9 +348,9 @@ export const MobileFooter: FC = () => {
           y2="478.429"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.0001" stop-color="#367FEF" stop-opacity="0.994792" />
-          <stop offset="0.0260417" stop-color="#367FEF" />
-          <stop offset="1" stop-color="#FF9877" />
+          <stop offset="0.0001" stopColor="#367FEF" stopOpacity="0.994792" />
+          <stop offset="0.0260417" stopColor="#367FEF" />
+          <stop offset="1" stopColor="#FF9877" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_221_1974"
@@ -358,9 +360,9 @@ export const MobileFooter: FC = () => {
           y2="96"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#A3C7FF" />
-          <stop offset="0.390625" stop-color="#85B5FE" />
-          <stop offset="1" stop-color="#C8B0C0" />
+          <stop stopColor="#A3C7FF" />
+          <stop offset="0.390625" stopColor="#85B5FE" />
+          <stop offset="1" stopColor="#C8B0C0" />
         </linearGradient>
       </defs>
     </svg>

@@ -14,7 +14,7 @@ export const FrequentStartDateSection: FC<SetInputProp> = ({ setInputs }) => {
   const [time, setTime] = useState<string>("");
 
   useEffect(() => {
-    if (date && time) {
+    if (date && time)
       setInputs((prev) => ({
         ...prev,
         departure: {
@@ -26,7 +26,6 @@ export const FrequentStartDateSection: FC<SetInputProp> = ({ setInputs }) => {
           start_date: `${date}T${time}`,
         },
       }));
-    }
   }, [date, time, setInputs]);
 
   return (

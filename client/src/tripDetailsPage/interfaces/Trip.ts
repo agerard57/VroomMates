@@ -2,7 +2,7 @@ import { s3UrlBuilder } from "../../core";
 
 interface Location {
   type: string;
-  coordinates: { $numberDecimal: string }[];
+  coordinates: [number, number];
 }
 
 export interface Driver {
@@ -37,7 +37,7 @@ export interface Trip {
     time: Date;
   };
   passengers: Passenger[];
-  price_per_seat: { total: { $numberDecimal: string } };
+  price_per_seat: { total: number };
   type: string;
   frequent_trip_options?: {
     day_of_week: number[];
@@ -51,10 +51,9 @@ export interface Trip {
   driver: Driver;
 }
 
-const LocationInitializer = {
-  _id: "",
+const LocationInitializer: Location = {
   type: "",
-  coordinates: [{ $numberDecimal: "6" }, { $numberDecimal: "49" }],
+  coordinates: [6, 49] as [number, number],
 };
 
 const DriverInitializer = {
@@ -76,7 +75,7 @@ const PassengerInitializer = {
   photo_url: "",
 };
 
-export const TripInitializer = {
+export const TripInitializer: Trip = {
   _id: "",
   departure: {
     location: LocationInitializer,
@@ -89,7 +88,7 @@ export const TripInitializer = {
     time: new Date("2000-01-01T00:00:00Z"),
   },
   price_per_seat: {
-    total: { $numberDecimal: "0" },
+    total: 0,
   },
   passengers: [PassengerInitializer],
   type: "single",

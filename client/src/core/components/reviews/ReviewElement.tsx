@@ -58,7 +58,7 @@ export const ReviewElement: FC<Props> = ({ review }) => {
             text-align: justify;
           `}
         >
-          <span>"{review.message}"</span>
+          <span>&quot;{review.message}&quot;</span>
         </div>
       </div>
       <hr

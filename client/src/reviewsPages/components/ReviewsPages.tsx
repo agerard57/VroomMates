@@ -33,7 +33,7 @@ export const ReviewsPages: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
           onClick={() => {
             window.history.back();
           }}
-          optionalStyling={`
+          optionalStyling={css`
             margin: 1rem 0;
             width: 100%;
           `}

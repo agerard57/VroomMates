@@ -9,6 +9,7 @@ type Props = {
 
 export const RoundedContour: FC<Props> = ({
   children,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onClick = () => {},
   outsideStyling,
 }) => (

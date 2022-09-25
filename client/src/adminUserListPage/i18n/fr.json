@@ -1,0 +1,13 @@
+{
+  "title": "Admin - Utilisateurs",
+  "header": "Liste des utilisateurs",
+  "search": "Rechercher par nom",
+  "status": {
+    "passenger": "Passager",
+    "driver": "Conducteur",
+    "admin": "Administrateur",
+    "banned": "Banni"
+  },
+  "registeredSince": "Inscrit depuis",
+  "endOfList": "Fin de la liste"
+}

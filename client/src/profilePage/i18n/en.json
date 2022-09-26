@@ -12,7 +12,8 @@
     "back": "Back",
     "accountManagement": "Account management",
     "profile": "My profile",
-    "ban": "Ban"
+    "ban": "Ban",
+    "unBan": "Unban"
   },
 
   "cards": { "bio": "Bio", "car": "Car", "hobbies": "Hobbies" },
@@ -53,5 +54,10 @@
   "reviews": {
     "title_one": "Review",
     "title_other": "Last reviews"
+  },
+
+  "message": {
+    "ban": "{{name}} has been banned",
+    "unBan": "{{name}} has been unbanned"
   }
 }

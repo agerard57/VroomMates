@@ -41,6 +41,7 @@
     "curly": ["error", "multi"],
     "default-case-last": "error",
     "default-param-last": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "dot-notation": [
       "error",
       {

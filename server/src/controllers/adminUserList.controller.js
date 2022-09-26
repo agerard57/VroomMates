@@ -2,7 +2,7 @@ const UsersModel = require("../models/users.model");
 const getAvgRating = require("../utils/getAvgRating");
 
 exports.getUsers = (_req, res) => {
-  UsersModel.find()
+  UsersModel.find({}, null, { sort: { registered_since: -1 } })
     .then((users) => {
       const formattedUsers = users.map((user) => ({
         id: user._id,

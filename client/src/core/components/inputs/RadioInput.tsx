@@ -31,10 +31,8 @@ export const RadioInput: FC<Props> = ({
     border-radius: 60px;
     outline: none;
     white-space: nowrap;
+    cursor: pointer;
 
-    &:hover {
-      cursor: pointer;
-    }
     ${isActive ? "border-color: #00a8ff;" : ""}
   `;
 

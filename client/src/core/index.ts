@@ -28,6 +28,7 @@ export {
   Footer,
   Desktop,
   LandscapeMode,
+  CardArrow,
 } from "./components";
 
 export {

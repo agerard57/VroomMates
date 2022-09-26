@@ -1,0 +1,13 @@
+{
+  "title": "Admin - User list",
+  "header": "User list",
+  "search": "Search by name",
+  "status": {
+    "passenger": "Passenger",
+    "driver": "Driver",
+    "admin": "Admin",
+    "banned": "Banned"
+  },
+  "registeredSince": "Registered since",
+  "endOfList": "End of list"
+}

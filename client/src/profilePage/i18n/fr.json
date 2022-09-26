@@ -14,7 +14,8 @@
     "back": "Retour",
     "accountManagement": "Gestion du profil",
     "profile": "Mon profil",
-    "ban": "Bannir"
+    "ban": "Bannir",
+    "unBan": "Débannir"
   },
 
   "cards": { "bio": "Bio", "car": "Voiture", "hobbies": "Hobbys" },
@@ -55,5 +56,10 @@
   "reviews": {
     "title_one": "Avis",
     "title_other": "Derniers avis"
+  },
+
+  "message": {
+    "ban": "{{name}} a été banni",
+    "unBan": "{{name}} a été débanni"
   }
 }

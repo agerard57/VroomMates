@@ -28,6 +28,7 @@ export const DaysSection: FC<SetInputProp> = ({ setInputs }) => {
       <Row
         css={css`
           width: -webkit-fill-available;
+          width: -moz-available;
           display: block;
         `}
       >

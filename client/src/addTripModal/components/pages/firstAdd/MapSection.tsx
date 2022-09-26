@@ -44,9 +44,7 @@ export const MapSection: FC<SetInputProp> = ({ setInputs }) => {
             overflow-x: scroll;
             border-radius: 10px;
           `}
-        >
-          <span>WebGL not supported</span>
-        </div>
+        />
       </Row>
     </Row>
   );

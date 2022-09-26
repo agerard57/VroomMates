@@ -1,4 +1,4 @@
-const profileController = require("../controllers/profile.controller");
+const profileController = require("../controllers/profile/profile.controller");
 const checkRegister = require("../middlewares/checkRegister");
 const checkLogin = require("../middlewares/checkLogin");
 const authJwt = require("../middlewares/authJwt");
@@ -41,4 +41,8 @@ module.exports = (app) => {
   app
     .route("/profile/close")
     .delete([authJwt.isUserLogged], profileController.closeAccount);
+
+  app
+    .route("/user/ban/:id")
+    .put([authJwt.isUserLogged, authJwt.isAdmin], profileController.banUser);
 };

@@ -19,7 +19,7 @@ import { AboutList } from "./list";
 export const ProfilePage: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   const { t } = useTranslation("ProfilePage");
 
-  const { user, pageType } = useProfilePage(loggedUserData);
+  const { user, pageType, banUserHandler } = useProfilePage(loggedUserData);
 
   const [accountManagementMenu, setAccountManagementMenu] =
     useState<boolean>(false);
@@ -43,8 +43,7 @@ export const ProfilePage: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
         <MainButton
           pageType={pageType}
           onClick={{
-            // eslint-disable-next-line @typescript-eslint/no-empty-function
-            ban: () => {},
+            ban: banUserHandler,
             manage: () => setAccountManagementMenu(!accountManagementMenu),
           }}
           accountManagementMenu={accountManagementMenu}

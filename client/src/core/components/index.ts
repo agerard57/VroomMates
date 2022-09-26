@@ -13,3 +13,4 @@ export { SearchBox } from "./searchBox";
 export { Footer } from "./footer";
 export { Desktop } from "./Desktop";
 export { LandscapeMode } from "./LandscapeMode";
+export { CardArrow } from "./CardArrow";

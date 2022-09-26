@@ -27,16 +27,19 @@ export const useTripInfosSection: TripInfosSectionManager = ({
   const { t } = useTranslation("TripDetailsPage");
   const { language } = useLanguage();
   const { coordinates } = useGeolocation();
-  const distanceFromUser = t("tripInfosSection.distanceFromUser", {
-    position:
-      coordinates.length === 2
-        ? normalizeDistanceDifference(
-            [coordinates[1], coordinates[0]],
-            departure.coordinates,
-            language
-          )
-        : undefined,
-  });
+  const distanceFromUser =
+    coordinates.length === 2
+      ? t("tripInfosSection.distanceFromUser", {
+          position:
+            coordinates.length === 2
+              ? normalizeDistanceDifference(
+                  [coordinates[1], coordinates[0]],
+                  departure.coordinates,
+                  language
+                )
+              : undefined,
+        })
+      : undefined;
 
   const totalDistance = t("tripInfosSection.totalDistance", {
     distance: normalizeDistance(distance, language, true),

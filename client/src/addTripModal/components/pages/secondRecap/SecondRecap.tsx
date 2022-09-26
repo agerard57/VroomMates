@@ -60,7 +60,6 @@ export const SecondRecap: FC = () => {
         freeSeats={inputs.free_seats}
         totalPricePerSeat={inputs.price_per_seat.total}
       />
-      ,
     </Container>
   );
 };

@@ -43,6 +43,7 @@ export const HobbiesCard: FC<Props> = ({ hobbies }) => {
         <Row
           css={css`
             width: -webkit-fill-available;
+            width: -moz-available;
           `}
         >
           {hobbies.map((hobby, index) => (

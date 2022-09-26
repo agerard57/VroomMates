@@ -1,6 +1,7 @@
 import { FormEvent, FormEventHandler } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import { usePageTitle } from "../../core";
 import { postRegister } from "../services";
@@ -12,6 +13,7 @@ type RegisterPageManager = {
 
 export const useRegisterPage = (): RegisterPageManager => {
   const { t } = useTranslation("RegisterPage");
+  const navigate = useNavigate();
 
   usePageTitle(t("title"));
 
@@ -45,9 +47,7 @@ export const useRegisterPage = (): RegisterPageManager => {
     postRegister(formBeautifier(data)).then((response) => {
       if (response.status === 200) {
         toast.success(t(response.message));
-        setTimeout(() => {
-          window.location.href = "/profile/login";
-        }, 2000);
+        setTimeout(() => navigate("/profile/login"), 2000);
       } else toast.error(t(response.message));
     });
   };

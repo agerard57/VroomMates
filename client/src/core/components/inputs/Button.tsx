@@ -33,6 +33,7 @@ export const Button: FC<Props> = ({
             height: 50px;
             padding: 2px;
             background-clip: content-box;
+            cursor: ${disabled ? "not-allowed" : "pointer"};
             ${optionalStyling};
           `}
           onClick={onClick}

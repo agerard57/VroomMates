@@ -22,6 +22,7 @@ export const ProfileHeader: FC<Props> = ({ id }) => {
         css={css`
           align-items: center;
           text-align: -webkit-center;
+          text-align: -moz-center;
         `}
       >
         <Col>

@@ -32,6 +32,7 @@ export const SignUpBox: FC = () => {
 
         input:not([type="checkbox"]) {
           width: -webkit-fill-available;
+          width: -moz-available;
         }
 
         .row > div:first-of-type > input {

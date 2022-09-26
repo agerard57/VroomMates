@@ -66,8 +66,7 @@ export const useFirstMapSection: UseMapSectionManager = (setInputs) => {
     directionsOne.on("route", (e: any) => {
       const arrivalTime = (departureTime: string) =>
         new Date(
-          new Date(departureTime ? departureTime : "1900-12-01").getTime() +
-            e.route[0].duration * 1000
+          new Date(departureTime).getTime() + e.route[0].duration * 1000
         );
 
       setInputs((prev) => ({

@@ -5,9 +5,9 @@ import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { useFirstMapSection } from "../../../hooks";
-import { SetInputProp } from "../../../types";
+import { FirstAddProps } from "../../../types";
 
-export const MapSection: FC<SetInputProp> = ({ setInputs }) => {
+export const MapSection: FC<FirstAddProps> = ({ setInputs, inputs }) => {
   const { t } = useTranslation("AddTripModal");
 
   useFirstMapSection(setInputs);
@@ -37,14 +37,30 @@ export const MapSection: FC<SetInputProp> = ({ setInputs }) => {
         `}
       >
         <div
-          className="mapOneWrapper"
-          id="mapOne"
           css={css`
             height: 40vh;
             overflow-x: scroll;
             border-radius: 10px;
+
+            input {
+              pointer-events: ${inputs.departure.time !== "" ? "auto" : "none"};
+            }
+
+            padding: 0;
+            margin: 0;
           `}
-        />
+        >
+          <div
+            className="mapOneWrapper"
+            id="mapOne"
+            css={css`
+              height: -webkit-fill-available;
+              height: -moz-available;
+              width: 100%;
+              pointer-events: none;
+            `}
+          />
+        </div>
       </Row>
     </Row>
   );

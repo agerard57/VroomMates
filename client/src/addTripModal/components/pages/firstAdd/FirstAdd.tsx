@@ -61,7 +61,7 @@ export const FirstAdd: FC<Props> = ({ setTripInputsFilled }) => {
               <DaysSection setInputs={setInputs} />
             </>
           )}
-          <MapSection setInputs={setInputs} />
+          <MapSection inputs={inputs} setInputs={setInputs} />
           <SeatsSection inputs={inputs} setInputs={setInputs} />
         </form>
       </Row>

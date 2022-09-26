@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
+import { FC, Fragment } from "react";
 import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
@@ -67,8 +67,8 @@ export const Card: FC<Props> = ({ cardName, userId, trips }) => {
         `}
       >
         {trips.length > 0 ? (
-          trips.map((trip: Trip) => (
-            <>
+          trips.map((trip: Trip, index: number) => (
+            <Fragment key={index}>
               <SingleTrip key={trip._id} trip={trip} userId={userId} />
               <hr
                 css={css`
@@ -79,7 +79,7 @@ export const Card: FC<Props> = ({ cardName, userId, trips }) => {
                   }
                 `}
               />
-            </>
+            </Fragment>
           ))
         ) : (
           <EmptyCard cardName={cardName} />

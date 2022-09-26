@@ -12,6 +12,7 @@ type Props = {
 
 export const AccountSection: FC<Props> = ({ userStatus }) => {
   const { t } = useTranslation("ProfilePage");
+
   const { openModal } = useModal();
   const BecomeDriverScreens = BecomeDriverModalBuilder();
   const closeAccountScreens = CloseAccountModalBuilder();

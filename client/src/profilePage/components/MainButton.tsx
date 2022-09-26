@@ -34,40 +34,53 @@ export const MainButton: FC<Props> = ({
     </Inputs.Button>
   );
 
-  return pageType === "u2u" || pageType === "a2a" ? (
-    backButton
-  ) : pageType === "a2u" ? (
+  return (
     <div>
       {backButton}
-      <Inputs.Button
-        type="danger"
-        buttonType="button"
-        onClick={onClick.ban} // TODO Implement ban feature
-        optionalStyling={css`
-          padding: 0 15px;
-          margin: 5%;
-        `}
-      >
-        {t("mainButton.ban")}
-      </Inputs.Button>
-    </div>
-  ) : (
-    // Case "up":
-    <div>
-      {backButton}
-      <Inputs.Button
-        type="hollow"
-        buttonType="button"
-        onClick={onClick.manage}
-        optionalStyling={css`
-          padding: 0 15px;
-          margin: 5%;
-        `}
-      >
-        {accountManagementMenu
-          ? t("mainButton.profile")
-          : t("mainButton.accountManagement")}
-      </Inputs.Button>
+      {
+        // Case "a2u":
+        pageType === "a2u" ? (
+          <Inputs.Button
+            type="danger"
+            buttonType="button"
+            onClick={onClick.ban}
+            optionalStyling={css`
+              padding: 0 15px;
+              margin: 5%;
+            `}
+          >
+            {t("mainButton.ban")}
+          </Inputs.Button>
+        ) : // Case "a2b":
+        pageType === "a2b" ? (
+          <Inputs.Button
+            type="danger"
+            buttonType="button"
+            onClick={onClick.ban}
+            optionalStyling={css`
+              padding: 0 15px;
+              margin: 5%;
+            `}
+          >
+            {t("mainButton.unBan")}
+          </Inputs.Button>
+        ) : pageType === "up" ? (
+          // Case "up":
+          <Inputs.Button
+            type="hollow"
+            buttonType="button"
+            onClick={onClick.manage}
+            optionalStyling={css`
+              padding: 0 15px;
+              margin: 5%;
+            `}
+          >
+            {accountManagementMenu
+              ? t("mainButton.profile")
+              : t("mainButton.accountManagement")}
+          </Inputs.Button>
+        ) : null
+      }
     </div>
   );
 };

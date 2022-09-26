@@ -22,6 +22,7 @@ export const Navbar: FC = () => {
         align-items: baseline;
         flex-wrap: nowrap;
         width: -webkit-fill-available;
+        width: -moz-available;
         background-color: #ffffff;
         bottom: 0;
         font-family: "Baloo2";

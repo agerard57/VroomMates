@@ -23,10 +23,10 @@ export const useAdminUserListPage: UseAdminUserListPageManager = () => {
     setFilteredUsers(
       users.filter(
         (user) =>
-          user.name.firstName
+          `${user.name.firstName} ${user.name.lastName}`
             .toLowerCase()
             .includes(e.target.value.toLowerCase()) ||
-          user.name.lastName
+          `${user.name.lastName} ${user.name.firstName}`
             .toLowerCase()
             .includes(e.target.value.toLowerCase())
       )

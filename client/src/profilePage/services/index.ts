@@ -1,1 +1,1 @@
-export { getUser } from "./user.service";
+export { getUser, manageUserBan } from "./user.service";

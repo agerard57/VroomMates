@@ -1,1 +1,1 @@
-export type { PageType } from "./PageType";
+export type { PageType, UseProfilePageManager } from "./PageType";

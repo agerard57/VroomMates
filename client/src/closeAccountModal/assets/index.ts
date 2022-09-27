@@ -1,4 +1,4 @@
-import ByeImage from "./byeImage.jpg";
-import QuestionImage from "./questionImage.jpg";
+import ByeImage from "./byeImage.webp";
+import QuestionImage from "./questionImage.webp";
 
 export { QuestionImage, ByeImage };

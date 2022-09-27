@@ -1,5 +1,5 @@
-import CarImage from "./carImage.jpg";
-import DriverImage from "./driverImage.jpg";
-import DriverLicenseImage from "./driverLicenseImage.png";
+import CarImage from "./carImage.webp";
+import DriverImage from "./driverImage.webp";
+import DriverLicenseImage from "./driverLicenseImage.webp";
 
 export { CarImage, DriverImage, DriverLicenseImage };

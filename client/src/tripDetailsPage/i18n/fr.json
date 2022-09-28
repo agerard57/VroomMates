@@ -18,8 +18,26 @@
   },
 
   "passengersSection": { "title": "Passagers" },
+
   "buttonsSection": {
     "order": "Commander",
+    "cancel": "Annuler",
+    "banned": "Banni",
+    "done": "Terminé",
+    "canceled": "Annulé",
+    "signIn": "Connecte-toi",
     "copiedMessage": "Lien copié dans le presse-papier !"
+  },
+
+  "message": {
+    "cancel": {
+      "success": "Ton voyage a été annulé avec succès !",
+      "error": "Une erreur est survenue lors de l'annulation de ton voyage."
+    },
+
+    "participation": {
+      "success": "Tu ne participes plus à ce voyage !",
+      "error": "Une erreur est survenue lors de la suppression de ta participation."
+    }
   }
 }

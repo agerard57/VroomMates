@@ -1,1 +1,3 @@
-export { getTrip } from "./trip.service";
+export { removePassenger } from "./passenger.service";
+
+export { getTrip, cancelTrip } from "./trip.service";

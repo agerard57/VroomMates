@@ -7,6 +7,7 @@ import { i18n as Dashboard } from "../dashboard";
 import { i18n as ErrorScreen } from "../errorScreen";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
+import { i18n as PaymentRecapPage } from "../paymentRecapPage";
 import { i18n as PoliciesPages } from "../policiesPages";
 import { i18n as ProfilePage } from "../profilePage";
 import { i18n as RegisterCompleteModal } from "../registerCompleteModal";
@@ -42,6 +43,7 @@ const moduleResources = normalize({
   ErrorScreen,
   LandingPage,
   LoadingScreen,
+  PaymentRecapPage,
   PoliciesPages,
   ProfilePage,
   RegisterCompleteModal,

@@ -27,8 +27,7 @@ import { useRouteManager } from "../hooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 const RouteManager: FC = () => {
-  const { isUserLoggedIn, loggedUserData, userRole, loading } =
-    useRouteManager();
+  const { isUserLoggedIn, loggedUserData, loading } = useRouteManager();
 
   if (loading) return <LoadingScreen />;
 
@@ -73,6 +72,14 @@ const RouteManager: FC = () => {
                 element={<TripDetailsPage loggedUserData={loggedUserData} />}
               />
               <Route
+                path="/payment/recap/:id"
+                element={
+                  <ProtectedRoute isAllowed={isUserLoggedIn}>
+                    <PaymentRecapPage loggedUserData={loggedUserData} />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
                 path="/trips"
                 element={
                   <ProtectedRoute isAllowed={isUserLoggedIn}>
@@ -92,7 +99,7 @@ const RouteManager: FC = () => {
               <Route
                 path="/reviews/received"
                 element={
-                  <ProtectedRoute isAllowed={userRole === "admin"}>
+                  <ProtectedRoute isAllowed={loggedUserData?.role === "admin"}>
                     <ReviewsPages loggedUserData={loggedUserData} />
                   </ProtectedRoute>
                 }

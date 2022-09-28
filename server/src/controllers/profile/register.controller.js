@@ -19,9 +19,9 @@ module.exports = (req, res) => {
 
   user.save((err, _user) => {
     if (err) {
-      res.status(500).json({ message: err.message });
+      res.status(500).json({ message: "messages.error" });
       return;
     }
-    res.status(200).json({ message: "User registered successfully" });
+    res.status(200).json({ message: "messages.success" });
   });
 };

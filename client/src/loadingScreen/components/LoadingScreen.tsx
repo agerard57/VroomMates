@@ -3,10 +3,14 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { LoadingImage } from "../assets";
+import { LoadingImage1, LoadingImage2, LoadingImage3 } from "../assets";
 
 export const LoadingScreen: FC = () => {
   const { t } = useTranslation("LoadingScreen");
+
+  const loadingImage = [LoadingImage1, LoadingImage2, LoadingImage3][
+    Math.floor(Math.random() * 3)
+  ];
 
   return (
     <div
@@ -48,7 +52,7 @@ export const LoadingScreen: FC = () => {
         {t("title")}
       </h2>
       <img
-        src={LoadingImage}
+        src={loadingImage}
         css={css`
           width: 40vh;
           margin: 0 auto;

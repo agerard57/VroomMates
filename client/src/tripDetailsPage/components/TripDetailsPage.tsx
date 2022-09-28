@@ -3,11 +3,15 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Container } from "react-bootstrap";
 
-import { ColoredBackground } from "../../core";
+import { ColoredBackground, LoggedUserDataProps } from "../../core";
 import { useDetailsCard } from "../hooks";
 import { DetailsCard } from "./detailsCard";
 
-export const TripDetailsPage: FC = () => {
+type Props = {
+  loggedUserData: LoggedUserDataProps["loggedUserData"];
+};
+
+export const TripDetailsPage: FC<Props> = ({ loggedUserData }) => {
   const { trip } = useDetailsCard();
 
   return (
@@ -17,7 +21,7 @@ export const TripDetailsPage: FC = () => {
           padding: 0 7vw;
         `}
       >
-        <DetailsCard trip={trip} />
+        <DetailsCard trip={trip} loggedUserData={loggedUserData} />
       </Container>
     </ColoredBackground>
   );

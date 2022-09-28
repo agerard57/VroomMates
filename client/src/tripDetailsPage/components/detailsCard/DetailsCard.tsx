@@ -2,21 +2,22 @@
 import { css } from "@emotion/react";
 import { FC } from "react";
 
-import { RoundedContour } from "../../../core";
+import { RoundedContour, LoggedUserDataProps } from "../../../core";
 import { Trip } from "../../interfaces";
-import { ButtonsSection } from "./ButtonsSection";
 import { DateSection } from "./DateSection";
 import { DaysSection } from "./DaysSection";
 import { DriverSection } from "./DriverSection";
 import { MapSection } from "./MapSection";
 import { PassengersSection } from "./PassengersSection";
 import { TripInfosSection } from "./TripInfosSection";
+import { ButtonsSection } from "./buttonsSection";
 
 type Props = {
   trip: Trip;
+  loggedUserData: LoggedUserDataProps["loggedUserData"];
 };
 
-export const DetailsCard: FC<Props> = ({ trip }) => (
+export const DetailsCard: FC<Props> = ({ trip, loggedUserData }) => (
   <RoundedContour
     outsideStyling={css`
       display: flow-root;
@@ -73,6 +74,11 @@ export const DetailsCard: FC<Props> = ({ trip }) => (
         border: 1px solid;
       `}
     />
-    <ButtonsSection />
+    <ButtonsSection
+      trip={trip}
+      loggedUserData={loggedUserData}
+      driver={trip.driver}
+      passengers={trip.passengers}
+    />
   </RoundedContour>
 );

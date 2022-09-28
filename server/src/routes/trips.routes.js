@@ -1,6 +1,5 @@
 const searchPageController = require("../controllers/searchPage.controller");
 const tripsPageController = require("../controllers/tripsPage.controller");
-const tripDetailsPageController = require("../controllers/tripDetailsPage.controller");
 const addTripModalController = require("../controllers/addTripModal.controller");
 const checkTripSearch = require("../middlewares/checkTripSearch");
 const authJwt = require("../middlewares/authJwt");
@@ -21,11 +20,6 @@ module.exports = (app) => {
       [authJwt.isUserLogged, authJwt.isSameUser],
       tripsPageController.getUserTrips
     );
-
-  // Get a trip by id
-  app
-    .route("/trip/:id([0-9a-f]{24})")
-    .get(tripDetailsPageController.getTripDetailsById);
 
   // Add a trip
   app

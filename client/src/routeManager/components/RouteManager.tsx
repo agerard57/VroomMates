@@ -14,6 +14,7 @@ import { Dashboard } from "../../dashboard";
 import { ErrorScreen } from "../../errorScreen";
 import { LandingPage } from "../../landingPage";
 import { LoadingScreen } from "../../loadingScreen";
+import { PaymentRecapPage } from "../../paymentRecapPage";
 import { PoliciesPages } from "../../policiesPages";
 import { ProfilePage } from "../../profilePage";
 import { RegisterPage } from "../../registerPage";
@@ -26,7 +27,7 @@ import { useRouteManager } from "../hooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 const RouteManager: FC = () => {
-  const { isUserLoggedIn, loggedUserData, isUserAdmin, loading } =
+  const { isUserLoggedIn, loggedUserData, userRole, loading } =
     useRouteManager();
 
   if (loading) return <LoadingScreen />;
@@ -67,7 +68,10 @@ const RouteManager: FC = () => {
                   </ProtectedRoute>
                 }
               />
-              <Route path="/trip/:id" element={<TripDetailsPage />} />
+              <Route
+                path="/trip/:id"
+                element={<TripDetailsPage loggedUserData={loggedUserData} />}
+              />
               <Route
                 path="/trips"
                 element={
@@ -88,7 +92,7 @@ const RouteManager: FC = () => {
               <Route
                 path="/reviews/received"
                 element={
-                  <ProtectedRoute isAllowed={isUserAdmin}>
+                  <ProtectedRoute isAllowed={userRole === "admin"}>
                     <ReviewsPages loggedUserData={loggedUserData} />
                   </ProtectedRoute>
                 }

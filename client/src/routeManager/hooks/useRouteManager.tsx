@@ -1,18 +1,23 @@
 import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
 
-import { AuthToken, cookiesManager, LoggedUserDataProps } from "../../core";
+import {
+  AuthToken,
+  cookiesManager,
+  LoggedUserDataProps,
+  UserTypes,
+} from "../../core";
 
 type RouteManagerManager = {
   isUserLoggedIn: boolean;
   loggedUserData: LoggedUserDataProps["loggedUserData"];
-  isUserAdmin: boolean;
+  userRole: UserTypes["Status"];
   loading: boolean;
 };
 
 export const useRouteManager = (): RouteManagerManager => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false);
-  const [isUserAdmin, setIsUserAdmin] = useState<boolean>(false);
+  const [userRole, setUserRole] = useState<UserTypes["Status"]>("visitor");
   const [loggedUserData, setLoggedUserData] =
     useState<LoggedUserDataProps["loggedUserData"]>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -26,10 +31,10 @@ export const useRouteManager = (): RouteManagerManager => {
 
       setLoggedUserData(decodedToken);
       setIsUserLoggedIn(true);
-      if (decodedToken.role === "admin") setIsUserAdmin(true);
+      setUserRole(decodedToken.role);
       setLoading(false);
     } else setLoading(false);
   }, []);
 
-  return { isUserLoggedIn, loggedUserData, isUserAdmin, loading };
+  return { isUserLoggedIn, loggedUserData, userRole, loading };
 };

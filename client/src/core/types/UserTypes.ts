@@ -1,4 +1,10 @@
-type Status = "passenger" | "driver" | "admin" | "banned" | undefined;
+type Status =
+  | "visitor"
+  | "passenger"
+  | "driver"
+  | "admin"
+  | "banned"
+  | undefined;
 
 type Review = {
   author: {

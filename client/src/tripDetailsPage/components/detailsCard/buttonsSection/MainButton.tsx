@@ -1,12 +1,11 @@
 /* eslint-disable complexity */
 import { FC } from "react";
-import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { LoggedUserDataProps, Inputs } from "../../../../core";
+import { useMainButton } from "../../../hooks";
 import { Driver, Passenger, Trip } from "../../../interfaces";
-import { cancelTrip, removePassenger } from "../../../services";
 
 type Props = {
   trip: Trip;
@@ -25,25 +24,8 @@ export const MainButton: FC<Props> = ({
 
   const navigate = useNavigate();
 
-  const handleCancelTrip = () => {
-    cancelTrip(trip._id).then((err) => {
-      if (err) toast.error(t("message.cancel.error"));
-      else {
-        toast.success(t("message.cancel.success"));
-        navigate("/trips");
-      }
-    });
-  };
-
-  const handleCancelParticipation = () => {
-    removePassenger(trip._id).then((err) => {
-      if (err) toast.error(t("message.participation.error"));
-      else {
-        toast.success(t("message.participation.success"));
-        navigate("/trips");
-      }
-    });
-  };
+  const { handleOrderTrip, handleCancelTrip, handleCancelParticipation } =
+    useMainButton(trip);
 
   // If the trip is done
   if (trip.status === "done")
@@ -63,7 +45,7 @@ export const MainButton: FC<Props> = ({
 
   // If the user is logged in
   if (loggedUserData) {
-    // If user is banned //TODO Add protection in api route
+    // If user is banned
     if (loggedUserData.role === "banned")
       return (
         <Inputs.Button type="secondary" disabled>
@@ -89,10 +71,7 @@ export const MainButton: FC<Props> = ({
 
     // If neither of the above, order
     return (
-      <Inputs.Button
-        type="secondary"
-        onClick={() => navigate(`/payment/recap/${trip._id}`)}
-      >
+      <Inputs.Button type="secondary" onClick={handleOrderTrip}>
         {t("buttonsSection.order")}
       </Inputs.Button>
     );

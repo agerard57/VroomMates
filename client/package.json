@@ -53,7 +53,7 @@
   },
   "scripts": {
     "check:prettier": "yarn prettier --check .",
-    "check:unused-exports": "yarn ts-unused-exports ./tsconfig.json",
+    "check:unused-exports": "npx ts-unused-exports ./tsconfig.json",
     "checks": "yarn run check:unused-exports && yarn run check:prettier",
     "start": "react-scripts start",
     "build": "react-scripts build",

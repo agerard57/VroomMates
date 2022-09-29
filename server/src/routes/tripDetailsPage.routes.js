@@ -8,6 +8,10 @@ module.exports = (app) => {
     .delete([authJwt.isUserLogged], tripDetailsPageController.cancelTrip);
 
   app
-    .route("/passenger/:id([0-9a-f]{24})")
+    .route("/passenger/add/:id([0-9a-f]{24})")
+    .put([authJwt.isUserLogged], tripDetailsPageController.addPassenger);
+
+  app
+    .route("/passenger/remove/:id([0-9a-f]{24})")
     .put([authJwt.isUserLogged], tripDetailsPageController.removePassenger);
 };

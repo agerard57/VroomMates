@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { RegisterImage } from "../../../core";
+import { ByeImage } from "../../assets";
 import { useSecondGoodbye } from "../../hooks";
 
 export const SecondGoodbye: FC = () => {
@@ -22,7 +22,7 @@ export const SecondGoodbye: FC = () => {
     >
       <Row>
         <img
-          src={RegisterImage}
+          src={ByeImage}
           alt="register pic"
           css={css`
             width: 60vw;

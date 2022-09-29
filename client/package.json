@@ -53,7 +53,7 @@
   },
   "scripts": {
     "check:prettier": "yarn prettier --check .",
-    "check:unused-exports": "npx ts-unused-exports ./tsconfig.json",
+    "check:unused-exports": "yarn ts-unused-exports ./tsconfig.json",
     "checks": "yarn run check:unused-exports && yarn run check:prettier",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -90,7 +90,7 @@
     "react-error-overlay": "6.0.9",
     "react-toast-notifications": "^2.5.1",
     "ts-jest": "^27.0.1",
-    "ts-unused-exports": "^8.0.0"
+    "ts-unused-exports": "^7.0.3"
   },
   "resolutions": {
     "react-error-overlay": "6.0.9",

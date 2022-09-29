@@ -20,4 +20,4 @@ body {
 /* If modal is opened, prevent the user from being able to scroll */
 body:has(#modal.opened) {
   overflow: hidden;
-} 
+}

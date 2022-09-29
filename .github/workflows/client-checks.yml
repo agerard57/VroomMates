@@ -1,0 +1,16 @@
+name: Client checks
+
+on:
+  push:
+    paths:
+      - .github/workflows/client-check.yaml
+      - "client/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: yarn workspace client run checks

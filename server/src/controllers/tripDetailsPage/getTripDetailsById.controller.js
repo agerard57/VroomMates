@@ -1,7 +1,7 @@
-const TripsModel = require("../models/trips.model");
-const DriversModel = require("../models/drivers.model");
+const TripsModel = require("../../models/trips.model");
+const DriversModel = require("../../models/drivers.model");
 
-exports.getTripDetailsById = (req, res) => {
+module.exports = (req, res) => {
   TripsModel.findById(req.params.id, {
     "price_per_seat.driver_fee": 0,
     "price_per_seat.service_fee": 0,
@@ -14,7 +14,7 @@ exports.getTripDetailsById = (req, res) => {
     .populate({
       path: "passengers",
       model: "Users",
-      select: "-_id name.first_name photo_url",
+      select: "_id name.first_name photo_url",
     })
     .lean()
     .exec((_err, trip) => {
@@ -52,5 +52,3 @@ exports.getTripDetailsById = (req, res) => {
       }
     });
 };
-
-// Get trip by id and get DriversModel by driver id

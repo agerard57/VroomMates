@@ -66,7 +66,7 @@ export const Button: FC<Props> = ({
             border-radius: 13px;
             ${optionalStyling};
             &:active {
-              text-decoration: underline;
+              text-decoration: ${disabled ? "none" : "underline"};
             }
           `}
           onClick={onClick}

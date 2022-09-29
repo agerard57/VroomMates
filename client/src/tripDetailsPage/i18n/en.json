@@ -21,6 +21,23 @@
 
   "buttonsSection": {
     "order": "Order",
+    "cancel": "Cancel",
+    "banned": "Banned",
+    "done": "Done",
+    "canceled": "Canceled",
+    "signIn": "Sign in",
     "copiedMessage": "Link copied in your clipboard!"
+  },
+
+  "message": {
+    "cancel": {
+      "success": "Trip canceled!",
+      "error": "Error while canceling trip."
+    },
+
+    "participation": {
+      "success": "You are no longer participating to this trip!",
+      "error": "Error while leaving trip."
+    }
   }
 }

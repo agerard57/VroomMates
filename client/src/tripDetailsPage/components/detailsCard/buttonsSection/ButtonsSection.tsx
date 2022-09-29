@@ -6,11 +6,26 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { Inputs } from "../../../core";
-import { BackArrowIcon, CopyUrlIcon } from "../../assets";
+import { Inputs, LoggedUserDataProps } from "../../../../core";
+import { BackArrowIcon, CopyUrlIcon } from "../../../assets";
+import { Driver, Passenger, Trip } from "../../../interfaces";
+import { MainButton } from "./MainButton";
 
-export const ButtonsSection: FC = () => {
+type Props = {
+  trip: Trip;
+  loggedUserData: LoggedUserDataProps["loggedUserData"];
+  driver: Driver;
+  passengers: Passenger[];
+};
+
+export const ButtonsSection: FC<Props> = ({
+  trip,
+  loggedUserData,
+  driver,
+  passengers,
+}) => {
   const { t } = useTranslation("TripDetailsPage");
+
   const navigate = useNavigate();
 
   return (
@@ -51,9 +66,12 @@ export const ButtonsSection: FC = () => {
           padding: 0;
         `}
       >
-        <Inputs.Button type="secondary">
-          {t("buttonsSection.order")}
-        </Inputs.Button>
+        <MainButton
+          trip={trip}
+          loggedUserData={loggedUserData}
+          driver={driver}
+          passengers={passengers}
+        />
       </Col>
       <Col>
         <Inputs.Button

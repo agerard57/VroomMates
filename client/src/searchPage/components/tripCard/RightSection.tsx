@@ -33,11 +33,7 @@ export const RightSection: FC<Props> = ({ driver, price, isFull }) => {
         align-items: center;
         justify-content: space-between;
         text-align-last: center;
-
-        // Overwrites profile pic size
-        img:first-of-type {
-          width: 20vw;
-          height: 20vw;
+        padding: 0;
       `}
     >
       <div>
@@ -46,6 +42,10 @@ export const RightSection: FC<Props> = ({ driver, price, isFull }) => {
           rating={driver.rating}
           displayStars
           isVerified={driver.isVerified}
+          outsidePictureStyling={css`
+            width: 20vw;
+            height: 20vw;
+          `}
         />
         <h3
           css={css`

@@ -80,7 +80,7 @@ const tripsSchema = mongoose.Schema(
     },
     status: {
       type: "String",
-      enum: ["pending", "confirmed", "ongoing", "done", "cancelled"],
+      enum: ["pending", "confirmed", "ongoing", "done", "canceled"],
     },
   },
   { collection: "Trips" }

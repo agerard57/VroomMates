@@ -90,7 +90,7 @@
     "react-error-overlay": "6.0.9",
     "react-toast-notifications": "^2.5.1",
     "ts-jest": "^27.0.1",
-    "ts-unused-exports": "^7.0.3"
+    "ts-unused-exports": "^8.0.0"
   },
   "resolutions": {
     "react-error-overlay": "6.0.9",

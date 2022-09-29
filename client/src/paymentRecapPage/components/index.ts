@@ -1,1 +1,0 @@
-export { PaymentRecapPage } from "./PaymentRecapPage";

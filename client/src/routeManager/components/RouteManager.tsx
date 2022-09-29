@@ -14,7 +14,6 @@ import { Dashboard } from "../../dashboard";
 import { ErrorScreen } from "../../errorScreen";
 import { LandingPage } from "../../landingPage";
 import { LoadingScreen } from "../../loadingScreen";
-import { PaymentRecapPage } from "../../paymentRecapPage";
 import { PoliciesPages } from "../../policiesPages";
 import { ProfilePage } from "../../profilePage";
 import { RegisterPage } from "../../registerPage";
@@ -70,14 +69,6 @@ const RouteManager: FC = () => {
               <Route
                 path="/trip/:id"
                 element={<TripDetailsPage loggedUserData={loggedUserData} />}
-              />
-              <Route
-                path="/payment/recap/:id"
-                element={
-                  <ProtectedRoute isAllowed={isUserLoggedIn}>
-                    <PaymentRecapPage loggedUserData={loggedUserData} />
-                  </ProtectedRoute>
-                }
               />
               <Route
                 path="/trips"

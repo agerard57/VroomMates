@@ -1,4 +1,3 @@
-export type { User } from "./User";
 export { UserInitializer } from "./User";
 
 export type { ProfileHeader } from "./ProfileHeader";

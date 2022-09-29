@@ -25,7 +25,7 @@ export interface Trips {
   pastTrips: Trip[];
 }
 
-export const TripInitializer = {
+const TripInitializer = {
   _id: "",
   departure: {
     place_name: "",

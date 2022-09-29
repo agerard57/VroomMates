@@ -3,7 +3,7 @@ name: Client checks
 on:
   push:
     paths:
-      - .github/workflows/client-check.yaml
+      - .github/workflows/client-check.yml
       - "client/**"
 
 jobs:

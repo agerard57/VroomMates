@@ -3,7 +3,7 @@ name: Api checks
 on:
   push:
     paths:
-      - .github/workflows/api-checks.yaml
+      - .github/workflows/api-checks.yml
       - "server/**"
 
 jobs:

@@ -42,7 +42,7 @@ export const AccountSection: FC<Props> = ({ userStatus }) => {
       ) : null}
       <MenuListItem
         title={t("accountManagementMenu.account.profile")}
-        link="/profile/edit-profile"
+        link="/profile/edit"
         isBold
       />
       <MenuListItem

@@ -11,6 +11,7 @@ import {
 import { AdminUserListPage } from "../../adminUserListPage";
 import { Desktop, LandscapeMode, Layout } from "../../core";
 import { Dashboard } from "../../dashboard";
+import { EditProfilePage } from "../../editProfilePage";
 import { ErrorScreen } from "../../errorScreen";
 import { LandingPage } from "../../landingPage";
 import { LoadingScreen } from "../../loadingScreen";
@@ -63,6 +64,14 @@ const RouteManager: FC = () => {
                 element={
                   <ProtectedRoute isAllowed={isUserLoggedIn}>
                     <ProfilePage loggedUserData={loggedUserData} />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/profile/edit"
+                element={
+                  <ProtectedRoute isAllowed={isUserLoggedIn}>
+                    <EditProfilePage />
                   </ProtectedRoute>
                 }
               />

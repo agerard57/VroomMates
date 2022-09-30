@@ -4,6 +4,7 @@ import { i18n as BecomeDriverModal } from "../becomeDriverModal";
 import { i18n as CloseAccountModal } from "../closeAccountModal";
 import { i18n as Core } from "../core";
 import { i18n as Dashboard } from "../dashboard";
+import { i18n as EditProfilePage } from "../editProfilePage";
 import { i18n as ErrorScreen } from "../errorScreen";
 import { i18n as LandingPage } from "../landingPage";
 import { i18n as LoadingScreen } from "../loadingScreen";
@@ -39,6 +40,7 @@ const moduleResources = normalize({
   CloseAccountModal,
   Core,
   Dashboard,
+  EditProfilePage,
   ErrorScreen,
   LandingPage,
   LoadingScreen,

@@ -31,6 +31,11 @@ module.exports = (app) => {
     );
 
   app
+    .route("/profile/edit")
+    .get([authJwt.isUserLogged], profileController.getEditInfos)
+    .put([authJwt.isUserLogged], profileController.postEditUser); // TODO : Add middlewares
+
+  app
     .route("/profile/edit/about")
     .put([authJwt.isUserLogged], profileController.editAbout);
 

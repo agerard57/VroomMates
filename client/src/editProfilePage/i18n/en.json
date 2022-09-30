@@ -1,0 +1,54 @@
+{
+  "title": "Edit profile",
+
+  "fields": {
+    "name": {
+      "firstName": "First name",
+      "lastName": "Last name"
+    },
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "address": {
+      "houseNumber": "Nb",
+      "streetName": "Street name",
+      "city": "City",
+      "state": "State",
+      "zip": "ZIP",
+      "country": "Country"
+    },
+    "birthDate": "Birth date"
+  },
+
+  "bio": {
+    "title": "Your bio",
+    "placeholder": "Tell us more about yourself..."
+  },
+  "q&a": {
+    "title": "Q&A",
+    "talk": {
+      "true": "Likes to talk during trips",
+      "false": "Prefers not to talk during trips"
+    },
+    "music": {
+      "true": "Likes to listen to music during trips",
+      "false": "Doesn't listen to music during trips"
+    },
+    "pet": {
+      "true": "Likes to have pets during trips",
+      "false": "Doesn't like to have pets during trips"
+    }
+  },
+
+  "hobbies": {
+    "title": "Your Hobbies",
+    "placeholder": "Add your hobbies...",
+    "empty": "No hobbies added yet",
+    "errors": {
+      "length": "Your hobby can't be longer than 20 characters",
+      "alreadyExists": "This hobby already exists",
+      "empty": "Your hobby can't be empty",
+      "max": "You can only add 5 hobbies"
+    }
+  }
+}

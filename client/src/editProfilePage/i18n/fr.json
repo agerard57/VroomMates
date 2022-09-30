@@ -1,0 +1,46 @@
+{
+  "title": "Editer le profil",
+
+  "profilePicture": "Photo de profil",
+
+  "personalInfos": {
+    "title": "Informations personnelles",
+    "fields": {
+      "name": {
+        "firstName": "Prénom",
+        "lastName": "Nom"
+      },
+      "email": "Email",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirme le mot de passe",
+      "address": {
+        "houseNumber": "Nb",
+        "streetName": "Nom de la rue",
+        "city": "Ville",
+        "state": "Département",
+        "zip": "ZIP",
+        "country": "Pays"
+      },
+      "birthDate": "Date de naissance"
+    }
+  },
+  "bio": {
+    "title": "Ta bio",
+    "placeholder": "Dis-nous en plus sur toi..."
+  },
+  "q&a": {
+    "title": "Questions / Réponses",
+    "talk": {
+      "true": "Aime parler en route",
+      "false": "Préfère ne pas parler en route"
+    },
+    "music": {
+      "true": "Aime écouter de la musique en route",
+      "false": "N'écoute pas de musique en route"
+    },
+    "pet": {
+      "true": "Accepte les animaux en route",
+      "false": "Ne préfère pas voyager avec des animaux"
+    }
+  }
+}

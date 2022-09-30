@@ -1,6 +1,6 @@
 import { TripTypes } from "../../core";
 
-export interface Location {
+interface Location {
   type: "Point";
   coordinates: [number, number];
 }
@@ -34,7 +34,7 @@ export interface TripInputs {
   trip_duration: number;
 }
 
-export const locationInitializer = {
+const locationInitializer = {
   type: "Point" as const,
   coordinates: [0, 0] as [number, number],
 };

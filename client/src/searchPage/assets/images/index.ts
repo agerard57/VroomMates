@@ -1,3 +1,3 @@
-import StartLookingImage from "./startLookingImage.jpg";
+import StartLookingImage from "./startLookingImage.webp";
 
 export { StartLookingImage };

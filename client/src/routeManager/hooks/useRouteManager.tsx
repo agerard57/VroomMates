@@ -6,13 +6,10 @@ import { AuthToken, cookiesManager, LoggedUserDataProps } from "../../core";
 type RouteManagerManager = {
   isUserLoggedIn: boolean;
   loggedUserData: LoggedUserDataProps["loggedUserData"];
-  isUserAdmin: boolean;
   loading: boolean;
 };
 
 export const useRouteManager = (): RouteManagerManager => {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false);
-  const [isUserAdmin, setIsUserAdmin] = useState<boolean>(false);
   const [loggedUserData, setLoggedUserData] =
     useState<LoggedUserDataProps["loggedUserData"]>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -25,11 +22,12 @@ export const useRouteManager = (): RouteManagerManager => {
         jwt_decode(cookie);
 
       setLoggedUserData(decodedToken);
-      setIsUserLoggedIn(true);
-      if (decodedToken.role === "admin") setIsUserAdmin(true);
       setLoading(false);
     } else setLoading(false);
   }, []);
 
-  return { isUserLoggedIn, loggedUserData, isUserAdmin, loading };
+  const isUserLoggedIn =
+    loggedUserData?.role !== "visitor" || loggedUserData?.role === undefined;
+
+  return { isUserLoggedIn, loggedUserData, loading };
 };

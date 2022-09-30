@@ -41,8 +41,7 @@ exports.getUserTrips = (req, res) => {
               (trip) => trip.status === "ongoing" || trip.status === "confirmed"
             ),
             pastTrips: tripsList.filter(
-              (trip) =>
-                trip.status === "finished" || trip.status === "cancelled"
+              (trip) => trip.status === "finished" || trip.status === "canceled"
             ),
           })
     );

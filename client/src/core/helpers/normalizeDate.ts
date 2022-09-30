@@ -53,8 +53,8 @@ export const normalizeDate: NormalizeDate = (date, lng, dateFormat) => {
 
     case "time":
       return new Date(date).toLocaleTimeString(langFormat, {
-        hour: "numeric",
-        minute: "2-digit",
+        hour: "2-digit",
+        minute: "numeric",
       });
     default:
       return dateFormat;

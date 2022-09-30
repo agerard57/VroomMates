@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { FC } from "react";
 import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import { ProfilePic } from "../../../core";
 import { Passenger } from "../../interfaces";
@@ -13,6 +14,9 @@ type Props = {
 
 export const PassengersSection: FC<Props> = ({ passengers }) => {
   const { t } = useTranslation("TripDetailsPage");
+
+  const navigate = useNavigate();
+
   return passengers.length ? (
     <div>
       <Row
@@ -46,8 +50,9 @@ export const PassengersSection: FC<Props> = ({ passengers }) => {
               justify-items: center;
             `}
           >
-            <ProfilePic //TODO MAKE ONCLICK THAT REDIRECTS TO PROFILE PAGE ?
+            <ProfilePic
               src={passenger.photo_url}
+              onClick={() => navigate(`/user/${passenger._id}`)}
               outsidePictureStyling={css`
                 width: 4rem;
               `}

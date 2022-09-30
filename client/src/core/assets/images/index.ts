@@ -1,7 +1,7 @@
-import AllSetImage from "./allSetImage.jpg";
-import FullLogo from "./fullLogo.png";
-import NotFoundImage from "./notFoundImage.jpg";
-import PhoneImage from "./phoneImage.png";
-import RegisterImage from "./registerImage.jpg";
+import AllSetImage from "./allSetImage.webp";
+import FullLogo from "./fullLogo.webp";
+import NotFoundImage from "./notFoundImage.webp";
+import PhoneImage from "./phoneImage.webp";
+import RegisterImage from "./registerImage.webp";
 
 export { AllSetImage, RegisterImage, NotFoundImage, FullLogo, PhoneImage };

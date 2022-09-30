@@ -20,6 +20,7 @@ export interface Driver {
 }
 
 export interface Passenger {
+  _id: string;
   first_name: string;
   photo_url: string;
 }
@@ -71,6 +72,7 @@ const DriverInitializer = {
 };
 
 const PassengerInitializer = {
+  _id: "",
   first_name: "",
   photo_url: "",
 };

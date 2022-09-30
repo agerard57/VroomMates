@@ -15,7 +15,15 @@ const RouteManager = lazy(() => pMinDelay(import("./routeManager"), 2000));
 
 export const App: FC = () => (
   <I18nextProvider i18n={i18n}>
-    <Toaster />
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+      gutter={8}
+      containerStyle={{ marginTop: "7vh" }}
+      toastOptions={{
+        duration: 5000,
+      }}
+    />
     <Suspense fallback={<LoadingScreen />}>
       <ModalProvider>
         <RouteManager />

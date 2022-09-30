@@ -1,3 +1,3 @@
-import SignInImage from "./signInImage.jpg";
+import SignInImage from "./signInImage.webp";
 
 export { SignInImage };

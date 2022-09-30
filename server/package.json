@@ -9,8 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "tsc": "tsc",
-    "type-check": "tsc --noEmit"
+    "checks": "yarn eslint . && yarn prettier --check ."
   },
   "license": "MIT",
   "dependencies": {

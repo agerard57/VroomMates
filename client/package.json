@@ -52,9 +52,9 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "check:prettier": "npx prettier --check .",
-    "check:unused-exports": "npx ts-unused-exports ./tsconfig.json",
-    "check": "npm run check:unused-exports && npm run check:prettier",
+    "check:prettier": "yarn prettier --check .",
+    "check:unused-exports": "yarn ts-unused-exports ./tsconfig.json",
+    "checks": "yarn run check:unused-exports && yarn run check:prettier",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",

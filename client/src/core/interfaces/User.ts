@@ -1,19 +1,3 @@
-interface Review {
-  author: {
-    name?: {
-      first_name: string;
-      last_name: string;
-    };
-  };
-  message: string;
-  rating: number;
-  date: Date;
-}
-
-export interface User {
-  review: Review;
-}
-
 const ReviewInitializer = {
   author: {
     name: {

@@ -8,6 +8,7 @@ module.exports = (_req, res) => {
     password: 0,
     status: 0,
     ratings: 0,
+    refreshTokens: 0,
     registered_since: 0,
   }).exec((err, user) => {
     if (err) {

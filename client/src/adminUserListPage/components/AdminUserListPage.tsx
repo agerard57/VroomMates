@@ -10,6 +10,7 @@ import { UserCard } from "./UserCard";
 
 export const AdminUserListPage: FC = () => {
   const { t } = useTranslation("AdminUserListPage");
+
   const navigate = useNavigate();
 
   const { handleSearch, filteredUsers } = useAdminUserListPage();

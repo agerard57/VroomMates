@@ -18,11 +18,13 @@ export const Inbox: FC<Props> = ({ status }) => {
         title={t("inboxSection.messages")}
         link="/inbox/messages"
         notifications={1}
+        id="messagesId"
       />
       <MenuListItem
         title={t("inboxSection.notifications")}
         link="/inbox/notifications"
         notifications={7}
+        id="notificationsId"
       />
     </section>
   ) : null;

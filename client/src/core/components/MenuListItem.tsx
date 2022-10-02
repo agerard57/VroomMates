@@ -11,6 +11,7 @@ type Props = {
   color?: string;
   isBold?: boolean;
   notifications?: number;
+  id?: string;
 };
 
 export const MenuListItem: FC<Props> = ({
@@ -20,6 +21,7 @@ export const MenuListItem: FC<Props> = ({
   color,
   isBold = false,
   notifications,
+  id,
 }) => (
   <Link
     to={link || "#"}
@@ -46,6 +48,7 @@ export const MenuListItem: FC<Props> = ({
         {title}
       </Col>
       <Col
+        id={id}
         xs={2}
         css={css`
           text-align: right;

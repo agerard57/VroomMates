@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loading screen 1`] = `
+<div>
+  <div
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "bottom": 16,
+        "left": 16,
+        "pointerEvents": "none",
+        "position": "fixed",
+        "right": 16,
+        "top": 16,
+        "zIndex": 9999,
+      }
+    }
+  />
+  <div
+    className="container css-11p4ir5-Component"
+  >
+    <h2
+      className="css-1g3gldr-Component"
+    >
+      Please wait!
+    </h2>
+    <img
+      alt="loading"
+      className="css-1afbq1x-Component"
+      src="loadingImage.gif"
+    />
+    <h2>
+      We are loading :)
+    </h2>
+  </div>
+</div>
+`;

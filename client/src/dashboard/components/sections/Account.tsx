@@ -52,8 +52,13 @@ export const Account: FC<LoggedUserDataProps> = ({ loggedUserData }) => {
   ) : (
     <section>
       <MenuListTitle title={t("accountSection.title")} />
-      <MenuListItem title={t("accountSection.signIn")} link="/profile/login" />
       <MenuListItem
+        title={t("accountSection.signIn")}
+        id="signInId"
+        link="/profile/login"
+      />
+      <MenuListItem
+        id="signUpId"
         title={t("accountSection.signUp")}
         link="/profile/register"
       />

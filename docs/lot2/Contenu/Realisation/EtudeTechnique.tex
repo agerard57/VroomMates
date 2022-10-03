@@ -1,0 +1,38 @@
+
+\section{Étude du projet}
+
+Cette partie a pour but de revenir sur les fonctionnalités de la plateforme. Au vu du nombre conséquent de features, nous allons segmenter l'étude de celles-ci en fonction du milieu opérant. \newline
+\textit{NOTE: Toutes les parties ou features précédant un astérisque n'ont pas encore été réalisés / mises en production.}
+
+
+\subsection{Gestion de compte}
+
+Les visiteurs ont tous accès aux pages d'inscription et de connexion. Lors de la première connexion, l'utilisateur sera invité à entrer des informations complémentaires et facultatives via un modal. Finalement, l'utilisateur sera redirigé vers la page d'accueil. 
+Dès lors, l'utilisateur pourra consulter sa page de profil et effectuer des modifications sur son compte. Si l'envie lui prend, ce dernier a la possibilité de se déconnecter voire de clore son compte.
+
+\subsection{Gestion des voyages}
+
+Concernant les voyages, n'importe quel type d'utilisateur a la possibilité d'effectuer une recherche de voyages en fonction :
+
+\begin{itemize}
+  \item Du type (trajet simple, trajet régulier);
+  \item De l'adresse de départ;
+  \item De l'adresse d'arrivée;
+  \item De la date de départ.
+\end{itemize}
+
+Dès lors, une liste de voyages sera proposé. Chaque voyage est donc clickable pour accéder aux détails. De cette page, en fonction de l'utilisateur, plusieurs actions peuvent apparaître. C'est donc d'ici que l'on peut s'ajouter / se retirer de la liste de passagers, ou retirer le voyage.
+Finalement, on peut noter une page de gestion des voyages: une fois la participation confirmée, chaque voyage est répertorié dans une page énumérant les voyages crées, les voyages en cours et les voyages terminés.
+
+\subsection{Gestion des conducteurs}
+
+Un utilisateur peut, du menu, faire sa demande pour devenir conducteur. Un modal s'ouvre et demande de fournir le permis de conduire et des informations sur la voiture du futur conducteur. Les informations seront envoyés dans la base de données et le document sera stocké sur le serveur, le temps de la demande.
+Une fois devenu conducteur, ce dernier à la possibilité d'ajouter / de retirer un voyage.
+
+\subparagraph{Gestion de la messagerie*}
+
+La messagerie comprend les chats ainsi que les notifications. Pour les chats, il est possible de communiquer entre utilisateurs de façon instantanée. En terminant un voyage, un modal propose au passager de noter le conducteur. Concernant les notifications, chaque action du site (nouveau message non lu, nouveau passager s'ajoutant à son voyage, réponse de la demande de conducteur, ...) notifie l'utilisateur concerné.
+
+\subparagraph{Gestion de l'administration}
+
+Les administrateurs ont plusieurs pages et fonctionnalités leur étant dédiés. Ces derniers ont premièrement accès à une simple page de statistiques\textbf{*}, purement visuelle. Il existe ensuite une page qui liste tous les utilisateurs de la plateforme et enfin, la page de demande de conduite\textbf{*}. On note aussi la possibilité de bannir/débannir les utilisateurs (non-administrateurs) et la possibilité de suppression de voyages. 

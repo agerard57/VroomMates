@@ -4,8 +4,7 @@ import { FC, Fragment } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-import { Inputs } from "../../../../core";
-import { AddButton, RemoveButton } from "../../../assets";
+import { AddButton, RemoveButton, Inputs } from "../../../../core";
 import { ThirdAboutProps } from "../../../types";
 
 type Props = {

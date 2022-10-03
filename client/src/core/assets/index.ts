@@ -9,6 +9,8 @@ export {
   CalendarIcon,
   ArrivalIcon,
   DepartureIcon,
+  AddButton,
+  RemoveButton,
 } from "./icons";
 
 export {

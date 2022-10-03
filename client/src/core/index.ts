@@ -9,6 +9,8 @@ export {
   RegisterImage,
   NotFoundImage,
   CalendarIcon,
+  AddButton,
+  RemoveButton,
 } from "./assets";
 
 export {

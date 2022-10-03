@@ -1,7 +1,10 @@
 {
   "title": "Editer le profil",
 
-  "profilePicture": "Photo de profil",
+  "profilePicture": {
+    "title": "Photo de profil",
+    "button": "Changer la photo"
+  },
 
   "personalInfos": {
     "title": "Informations personnelles",
@@ -24,10 +27,12 @@
       "birthDate": "Date de naissance"
     }
   },
+
   "bio": {
     "title": "Ta bio",
     "placeholder": "Dis-nous en plus sur toi..."
   },
+
   "q&a": {
     "title": "Questions / Réponses",
     "talk": {
@@ -42,5 +47,20 @@
       "true": "Accepte les animaux en route",
       "false": "Ne préfère pas voyager avec des animaux"
     }
-  }
+  },
+
+  "hobbies": {
+    "title": "Tes hobbys",
+    "placeholder": "Ajoute tes hobbies...",
+    "empty": "Aucun hobby",
+    "errors": {
+      "length": "Ton hobby ne doit pas dépasser 20 caractères",
+      "alreadyExists": "Ce hobby existe déjà",
+      "empty": "Le champ ne peut pas être vide",
+      "max": "Tu ne peux pas ajouter plus de 5 hobbies"
+    }
+  },
+
+  "updateButton": "Mettre à jour",
+  "cancelButton": "Annuler"
 }

@@ -1,7 +1,10 @@
 {
   "title": "Edit profile",
 
+  "profilePicture": { "title": "Profile picture", "button": "Change picture" },
+
   "fields": {
+    "title": "Personal infos",
     "name": {
       "firstName": "First name",
       "lastName": "Last name"
@@ -50,5 +53,8 @@
       "empty": "Your hobby can't be empty",
       "max": "You can only add 5 hobbies"
     }
-  }
+  },
+
+  "updateButton": "Update",
+  "cancelButton": "Cancel"
 }

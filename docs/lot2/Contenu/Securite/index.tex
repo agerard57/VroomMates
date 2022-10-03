@@ -1,0 +1,46 @@
+\chapter{Sécurité}
+Conformément aux nombreuses recherches faites (on notera parmi elles le "OWASP top ten" \parencite{Ref1}),nous avons réalisé une check-list exhaustive du sujet de la sécurité. Cette check-list sera, pour cette partie, séparée en plusieurs groupes:
+ 
+\section{CORS et en-têtes}
+
+Pour le back-end, le front-end et les services externes, \textbf{une forte politique CORS} a été mise en place.
+
+De plus, il est nécessaire de passer à chaque requête (hormis quelques exceptions, comme le login) le token dans le header (\textbf{x-access-token}).
+
+\section{AWS S3}
+
+Initialement, les permis de conduire ainsi que les photos de profil devaient être stockés sur un serveur européen AWS S3 (eu-central-1). Cependant, lors de la soutenance du lot 1, il a été soulevé que le stockage des données sensibles (dans ce cas le permis de conduire) dans S3 peut être entièrement évité si ces dernières sont stockées directement sur le serveur, le temps de la vérification. Nous nous sommes tournés vers ce système.
+
+Néanmoins, le stockage des photos reste tout de même idéal dans un bucket. Il a fallu donc paramétrer correctement les autorisations et accès accordés. En plus de la configuration CORS (--> \ref{CORS S3}), vient donc s'ajouter la mise en place de policies avec AWS IAM. Nous avons verrouillé l'accès au bucket S3 en créant un profil utilisateur pour VroomMates qui va uniquement autoriser la lecture, la modification et la suppression des données (\ref{Permissions IAM}). L'utilisateur IAM aura désormais une clef d'accès unique à passer lors d'une interaction avec S3 (stockée dans avec les variables d'environnement).
+
+
+\section{Gestion des dépendances}
+
+Nous utilisons des dépendances dans le back-end et le front-end. Afin d'éviter toute question de performance et de sécurité, nous avons décidé de mettre en place une maintenance des dépendances. Heureusement pour nous, sur GitHub, \textbf{Dependabot} nous permet de gérer au mieux ces problèmes.
+
+\section{Données sensibles dans la codebase}
+
+Pour éviter toute fuite de données sensibles de la part du développeur (ex. fuite de Keys), notre code contient toutes les clefs et mots de passe dans les fichiers .env. De plus, le code est continuellement scanné par \textbf{Github defender} qui nous signalera de toute faute de ce calibre.
+
+\section{Protocole HTTPS}
+\label{HTTPS}
+
+Le client et l'api sont tous deux sécurisés avec le protocole HTTPS. Là où Heroku gère automatiquement le HTTPS, Netlify était un peu plus complexe à mettre en place. Les sous-domaines netlify utilisent par défault https. Cependant, nous avons utilisé une addresse personelle (agerard.dev). Il a donc fallu gérer la création du certificat TLS/SSL (via \href{https://letsencrypt.org/}{Let's Encrypt})
+
+\section{JWT / Cookie}
+
+Un système d'authentification et d'accès aux ressources par token a été mis en place. On utilise des token JWT encryptés en HS256 avec chacun son propre passphrase secret, afin d'éviter toute faille. Lors de l'authentification, l'api va donc générer deux tokens:
+
+\begin{itemize}
+  \item Le premier est un token d'authentification, contenant la meta du token (date d'expiration, de création, ...) ainsi que le strict minimum de payload (id, nom, url de photo, type d'utilisateur, ...). Ce dernier ne contient aucune information sensible puisque ce qu'il sera retourné au client est stocké dans un cookie (avec les flags secure et http only). Sa durée de vie varie entre la durée de la session et 15 minutes, en fonction des choix de connexion de l'utilisateur (case "Se souvenir de moi").
+  \item Le second jeton est un token de rafraîchissement. Le client n'aura jamais accès à ce token et a une durée maximale de 1 mois avant qu'une tâche CRON supprime ce dernier de la base de données.
+\end{itemize}
+
+Chaque appel d'api privée nécessite d'envoyer ce jeton, sans quoi, la ressource est bloquée. Quand un jeton envoyé à une route expire, des intercepteurs Axios vont déclencher le rafraîchissement du token avec le second token dans la base de données; Si la manoeuvre rafraîchit bien le token client, Axios retente la requête précédente avec le nouveau jeton.
+
+Diagramme de séquence du process : \ref{Diagramme de séquence: JWT}
+
+\section{Mots de passe forts}
+
+Notre site force une certaine complexité à l'utilisateur, ce qui restreint l'utilisateur à générer un mot de passe de minimum 10 caractères, avec minimum une minuscule, une majuscule, un chiffre et un caractère spécial lors de la création de son compte. nous demandons de rentrer une seconde fois le mot de passe afin de le confirmer. 
+Dès lors, les mots de passe sont cryptés avec le module bcrypt qui va saler plusieurs fois et hasher le mot de passe avant de le stocker dans la base de données.
